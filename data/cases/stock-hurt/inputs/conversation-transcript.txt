@@ -1,0 +1,3524 @@
+- Sprawdopodob
+
+zbudował Wojtek NCRMA na Apsicach, który jest taki trochę kurczę, wygląda jak tawella w eksemu bardziej.
+
+Nie jest przyjazd, ale jakby gromadzi te dane.
+
+W sensie jest tymi lidami, zarządza, też rozdziela te lidy.
+
+Tak, jeśli chodzi o kilkudziany klientów, to tak rozdziela.
+
+W pipeline'ie trzeba kolejny krok handlowca zautomatyzować, żeby on dostał jak najmniej do zrobienia, żeby przyszedł na gotowe, w trzeciem wiadomości odpisał: "Dzień dobry, to już rozwariamy z człowiekiem".
+
+No tak, żeby była taka baza tego wszystkiego.
+
+Dokładnie, bo ja w ogóle nie widzę sensu aż takiego używania handlowców w tym samym procesie.
+
+W sensie jak zrobiliśmy dla jednego z klientów WSA, to była logistyczna, dosyć podobny model biznesowy co u was, to jest inny produkt, ale zesadza sama.
+
+Stworzyliśmy system, który automatyzuje cały proces i to jest wszystko w jednym dashboardzie zamknięte
+
+czyli od znalezienia klienta, w takich firmach jest to łatwe, bo de facto każdy wasz klient ma kiesczną siedzibę
+
+nie ma klientów, którzy są obecnie tylko one raczej
+
+gdzieś muszą ten towar magazynować
+
+załóżmy, nawet jeśli nie to można zastosować
+
+w firmach logistycznych tak jest, każdy klient jest faktycznie dostępny
+
+mają jakąś siedzibę na Google Mapsach i jak odrobiliśmy ten cały proces zautomatyzowany jest tak,
+
+że klientów szukamy poprzez jakieś konkretne fraze, dostosowujemy to do ICP, na Google Mapsach skredujemy to wszystko,
+
+wrzucamy to w ujednoliconego CRM-a, model ewaluuje każdego leada poprzez jakieś narzędzia typu ZoomInfo, Apollo,
+
+jakiekolwiek takie do dostania większej informacji o każdym kliencie,
+
+gdzie masz na przykład przychód, czy nie wiem, czy dostali finansowanie, jakie macie kriteria.
+
+Następnie wiadomo, na stronie są takie generyczne odpadze o contact info,
+
+czyli właśnie mail do customer support i tego typu rzeczy.
+
+Co my zrobiliśmy to połączyliśmy to w taki sposób, że on na przykład po e-mailu znajduje ich Linkedina,
+
+Następnie grzebie głębiej, czyli kontakt do bezpośredniej osoby, nie do kontaktmapa.filma.pl, tylko do człowieka, który ma jakąś sensowną merangę, np. CO, od operacji.
+
+- Są menadżem od czegoś, zakupów czy czegoś. - Tak, grzebiemy tak głęboko jak się da i do tych wszystkich ludzi wysyłamy do każdego inną spersonalizowaną wiadomość, kraftowaną przez AI, ale w jakichś tak naszych bizach, styl naszych firm i tak dalej.
+
+i następnie to wszystko zbieramy w ten ujednoczony dashboard i jest informacja.
+
+Gdzie została wysłała informacja, czy była odpowiedź, czy nie było.
+
+Gdzie ja widzę największy lewar handlowców, to w momencie jak już jest odpowiedź od kogoś z tych osób decyzyjnych,
+
+wtedy handlowiec dzwoni i już dogaduje kompletniejsze tematy, a nie na tym pierwszym etapie,
+
+gdzie on wysyła maile ręcznie.
+
+Po pierwsze to jest nieefektywne, po drugie błędy się zdarzają,
+
+Po drugie te wiadomości nie są spersonalizowane często, bo im się nie chce po prostu.
+
+A jak wiadomości mają kiepską jakość, to po pierwsze to obniża jakość waszej domeny, w sensie ten TAS score.
+
+Czyli część z waszych maili trafia do spamów, jest ważne, że są maile.
+
+No i spalę tego typu problemów.
+
+No więc ja widzę ten największy lewa handlowscy na tym ostatnim etapie.
+
+Jak już jest odpowiedź i wtedy oni faktycznie zwolnią, dogadujemy jakiegoś konkretnego deala.
+
+a cały ten pierwszy proces do pierwszego kontaktu, pierwszej kolejizmwzrotnej od klienta jest nadzorowany przez ten system i de facto zbiór agentów od ewaluacji itd.
+
+Ja tak to widzę.
+
+No ta pierwsza część, którą tam wpisaliśmy, czyli ten...
+
+Business quality już po tryliście.
+
+Tak, czyli działa na bazie trylitów, pisze pierwsze wiadomości do tych zniżczym business quality i robi trecią robotę.
+
+Tak de facto trzeba byłoby dobudować do tego, moglibyśmy zobaczyć czy się na to...
+
+No i szukacze lidów, którzy operują na lidu, bo jedno to jest Perplexity i wszystkie te AI, ale na przykład teraz kupiliśmy taką DNB,
+
+tej dawej, z który jest niezła, tylko znowu to jest to samo, jak tu na przykład Agata mówi: "kurde, to jest tyle czasu, żeby tam ktoś w ogóle coś odpowiedział".
+
+znowu zrobić kredzią robotę z tego DNP, tylko mamy taką lipę, że my tam za 4 tysiące rącznie czy 5
+
+i mamy inwestycją w najwyższą w tym pakiecie, że możemy ściągnąć tylko 5 tysięcy kontaktów.
+
+- Ale 5 tysięcy na ile? Na rok? - Na tysiąc wysłany mieliśmy 4 odpowiedzi i 1 kontakt aktywny i nie doszło do transakcji.
+
+- Byśmy się poddali za powodą po prostu.
+
+- Też właśnie dla mnie ważne było zrozumienie, bo ty cały czas, Kuba, właśnie słusznie moim zdaniem wskazujesz na to, że ten kontakt z tym klientem B2B powinien być bardziej profesjonalny, bardziej opakowany, jak do klienta detalicznego nawet.
+
+Więc jestem ciekawy, jak wy próbujecie ich złowić, jaką wiadomość piszecie, czy macie jakieś katalogi, jak wizualizujecie to, co macie do sprzedaży, nie?
+
+To mnie interesuje.
+
+Tutaj akurat mieliśmy takie szkolenia sprzedażowe z tym sarnieckim, co najpierw powiedziałem o tym goście.
+
+No i trochę jakby poprawił nas, bo pisaliśmy takiej bardzo gorzej jakości wiadomości.
+
+On jest w takim cold mailingu i tak dalej, bo to potrafił naprawdę napisać taką wiadomość,
+
+czy w ogóle zrobić rozmowę telefoniczną, która naprawdę była dużo ciekawsza.
+
+Nie chciało się, każdy z Was na pewno miał kuczy takie dziesiątki takich cold holi, panele fotowoltaiczne,
+
+przeróżnych, telefon, promocji itd.
+
+Tylko rozmawiasz w końcu albo jak ktoś ci da do słowa to mówisz dziękuję.
+
+Trochę poszkoliliśmy i mamy taki algorytm, więc jest jakiś tam drawcik.
+
+i kopiują sobie nawet do Jeminaja i jakby w tym formacie, zresztą by, śmiejemy się, że Jeminaja nauczyliśmy kim jest Krzysztof Sarnecki, bo jak już piszemy mu w promcie, żeby odpoczyć po stylu Sarneckiego, no to wiecie, czy reklamacje, czy coś, no jakby ta komunikacja się mega ostatnio u nas, ostatni rok, jakby poprawiła, no nie, no na pewno nie jest idealna i wiadomo, no jak to ludzie, nie, i jak to czasami, ja, kurde, a ta pierwsza węsia jest jakaś taka, no nie do końca,
+
+ale ktoś już to wyślę, bo nie chce się komunikować.
+
+A mógłby być taki kurcze jeszcze, no taki szczepół jeszcze jest, że tutaj po prostu
+
+z 97% można pomóc z komunikacji na Whatsappie.
+
+Po prostu większość clientów...
+
+97%?
+
+A pierwszy kontakt też.
+
+Wszystkie, znaczy nie, jak szukają i nie ma łot zapad,
+
+to oczywiście wszyscy są wysyłane na e-mail, ale później,
+
+jak tam z dużymi, z małymi, no to ja też jestem zdziwiony,
+
+ale tak jest po prostu, większość pracy jest na e-mail.
+
+Czyli 3% jest na mailu?
+
+Tak, mniej więcej.
+
+A to starasz.
+
+Jakie jest sieciunki, czyli jak mamy takie duże klienki.
+
+To bardzo oficjalne.
+
+To wszystko muszą mieć na mail do ciebie, kontrakty itd.
+
+To jest jakiś typu CCC, z który mega się trudno pracuje.
+
+Jakby to są ważne dile, ale...
+
+Natomiast zrobiliśmy, też muszę mówić,
+
+i nie mogliśmy
+
+Powiedziałem, że nie biznesowy, to senci mają kontakt z klientami taki, że jak jadą na narty, to powiedzą, że jadą na narty, i się zapytają, to jest normalna ludzka rozmowa.
+
+No jasne.
+
+Wojtkowi się udało sparsować te rozmowy do pliku tekstowego.
+
+I pomysł jest też taki, żeby w bazie danych klientów, poza tymi suchymi danymi, typu zamówienia itd.,
+
+była cały odno kontekst rozmowy i piszesz w czacie
+
+wiesz, a co u tego klienta, a drugie
+
+skraper chodzi jakiś bod, co tydzień robi przypominajki codziennie
+
+wyświetla się gdzieś tam w panelu, w środę miała się Pani odezwać do kogoś, bo wraca
+
+we wtorek wrócił z urloku na jakąś wiadomość, a temu się syn rozpadował, to zapytaj się o syna, czym zrobią
+
+jest szansa na zakup jakiegoś brandu, to przeszukaj wiadomości, kto się o to pytał
+
+no, zrób jakieś similarity tych produktów itd.
+
+No bo jak działamy tylko na transakcje, no to często te transakcje pokazują tylko to, co udało się znaleźć,
+
+ale przeżywają nowe produkty itd.
+
+I to nie jest ogarnięcie jakby umysłowo przez człowieka, żeby nad tym wszystkim,
+
+nawet jak tam każdy ma, nie wiem, kilkudziesięciu takich powiedzmy aktywnych klientów, z którymi pracuje,
+
+kolejne tam z 200, no jakichś, single strzałowców, no tu można jakby tą jakość rozmowy z tymi ludźmi poprawić.
+
+Nie mówię, że pisał kulte bot, jak tam u twojego syna, ale jakbym podpowiadał, robił taki panel po prostu.
+
+Nie gubić kontekstu, tak?
+
+Nie gubić kontekstu, przypominać. Ja wiem jak my z Paweł pracowaliśmy w sprzedaży, ile się gubiło po prostu tej informacji.
+
+Zapominałem i tak dalej, wiesz, tu kult jakiś deal wypadnie, tu coś nowego i coś, co było dla ci wyważne tydzień temu ci wylaju z głowy.
+
+A te informacje w ogóle gdziekolwiek są zcentralizowane? Nie ma jakiegoś takiego, dasz board, gdzie nie wiem, jest informacja, klient, ostatni kontakt teraz, jaka była wiadomość?
+
+CRM, tak nie?
+
+No w CRM wiadomości nie ma.
+
+Jest tylko kontakt, jest tylko...
+
+Tam są tylko jakby
+
+zrealizowane transakcje
+
+które były z danym klientem.
+
+Czyli to, czy handlowe z kontakt
+
+zależy od tego, czy nie przegapie maile
+
+albo im generalnie
+
+Nie ma jakiegoś kontaktu.
+
+No wiesz, gdybyśmy
+
+tego pipeline'a...
+
+Zrobili analitykę
+
+w WhatsApp-owych rozmów, to byłoby dużo łatwiej
+
+Myślaliśmy, że w domówie nie można wytrzymać.
+
+Po prostu podsumowanie tych rozmów czy coś i jakoś to spiąć z chatbotem i wstecznie z systemem.
+
+Natomiast to jest koncepcja, która do realizacji trochę minie.
+
+Tak, poza tym jeśli chodzi o bazę klientów, to tam mamy ponad tysiących klientów,
+
+ale generalnie jest tak, że ci klienci, każdy handlowiec ma powiedzmy 50 transakcji,
+
+30 transakcji, 25 transakcji w miesiącu, to nie są duże ilości transakcji.
+
+Także oni, tych wartościowych klientów, każdy ma kilku i o nich na pewno dba.
+
+Najsłabiej jest z tymi mniejszymi klientami, którzy gdzieś tam...
+
+Można się nie poczyć za dbami, nie wiem, że z dbami.
+
+Wiesz, jak dopytywałem jeszcze o ten sposób kontaktu, to próbuję zrozumieć proces decyzyjny tego klienta,
+
+bo wiecie, dostajesz taką wiadomość, poświęcisz kilka sekund na zastanowienie się, czy mnie to interesuje, czy nie.
+
+I teraz pytanie, czy on może kliknąć na jakiś link, zobaczyć Wasz katalog, zobaczyć coś więcej na Wasz temat,
+
+tak żeby już na tym predecyzyjnym etapie mógł być zachęcony bądź odrzucony.
+
+Więc zastanawiam się po prostu, jak wygląda Wasz trochę taki katalog produktowy dla takich klientów.
+
+Katarzyk produktowy jest ogólnie dostępny na naszej stronie internetowej, a handlowcy wysyłają pojedyncze wiadomości na dany towar, na daną markę.
+
+Wysyłają, mają na grupę podzielonych tych dientów i wysyłają powiedzmy, nie wiem, przechodzi dzisiaj...
+
+Bo katalog możesz sobie pokazać, jak wygląda.
+
+I klienci dostają ci. Pięci na razie są przyzwyczajeni w takim sposób, że jak dostajesz karton, a go interesuje, to od razu coś tam słowo napisze.
+
+No i klient wtedy już handlowę zbyt nie odpuszcza.
+
+Czyli jego próbują złowić jakby na konkretny brand.
+
+Na konkretny brand, albo nawet jak nie na konkretny brand,
+
+to jak sobie zobaczy i przypomina sobie o nazwę,
+
+to wtedy mówi: "Tego nie, ale coś innego".
+
+No i wtedy trwa wymiana informacji.
+
+Albo ten PDF-owy, który wysuwają.
+
+Wojtek, to sobie będzie pewnie jeszcze o to,
+
+jak ma nasza pierwsza wiadomość, tak?
+
+Czy to jest suwy tekst?
+
+Tak, bo chodzi mi o to, że jeżeli zwizualizujesz im swoją ofertę,
+
+Czyli on wyśle mu poza swoim tekstem, że zobacz, mamy ten brand i od razu wyświetlają się tam wizualizacje, przykładowe najciekawsze.
+
+Tak, tak, tak.
+
+Albo filmiki, albo zdjęcia, jest jakaś informacja krótka, tam to jest zrobione.
+
+My testowaliśmy tutaj, spadły jakby dwa rodzaje informacji, jedną taką dłuższą, która wyglądała na bardzo spersonalizowaną,
+
+Ale klienci jednak na tą odzapie, oni przejawiają takie reakcje, że oni są przyzwyczajeni do szybkich decyzji i krótkich rozwój.
+
+Jest to, podoba mi się, ile nie dziękuję. Albo nie interesuje mnie.
+
+Kiedyś przyjaciół jakiegoś raz za granicy klienci i powiedzieli tak: "Tysyłacie nam wiadomości i nie gnieajcie się, że nie odpisuje".
+
+Opisujemy tylko na tą stronę.
+
+I to nie jest przejaw tego, że nasi informujemy, tylko po prostu mamy tyle informacji,
+
+i przechodzi tyle ofert, że my odpowiadamy tylko na tej informacji.
+
+Dlatego dopytuję, bo ja sam jak podejmuję taki proces decyzyjny i też dostaję,
+
+no to w tym tekście wystarczy jedno słowo kluczowe, czyli zakładam w tym przypadku
+
+ta konkretna marka, ten brand, o którym chcecie go złowić,
+
+ale na koniec sam się łapię na tym, że jeżeli jest jakiś link,
+
+Klikam w niego i w ciągu kilku sekund podejmuję decyzję, czy to co tam zobaczyłem nie przekonuje czy nie.
+
+Dlatego o to dopytuję, bo to też może być bardzo ważne, jeżeli udałoby nam się dobudować coś, co by tą ofertę personalizowało i gdyby ten link był w stanie...
+
+Unfrozen, nie?
+
+Trochę tak, ale tutaj też jest ten agent wypisany i jakby jednym z agentów jakbyś znowu wziął, bo to tak wygląda na dykatach produktów, nie?
+
+No widziałem.
+
+No jakby za dużo informacji klienci, wiecie, te 40 stron czy 30, jak nie znajdą od razu czegoś interesujące, to po prostu nie mogą wyglądać.
+
+Jakby produkt informator, to jest kolejny bot.
+
+Ja bym chciał to z Tobą zrobić, że to jest jakby bot, który jest opięty pod magazyn,
+
+w sensie mogą też opisywać ten produkt.
+
+W WMS mamy tam takie pole komentarz, jaki to jest sezon, wresna lato, są jakieś dodatkowe komentarze, ale dajmy na to, że dalej to wygląda trochę jak kurcze zmienna w bazie danych.
+
+Jedna jest opisowa, ale ona jest krótka. A tu moglibyśmy jakby zajechać w danym tekstowinu.
+
+Znaczy tak, klient odpisał o tym produkcie opinię, w sensie nawet na WhatsAppie.
+
+Bo ten złodzawa, Paweł, a puje, że to opinia producie, dopisuje ją i jest jakby mamy więcej w tym produkcie, mamy wspólną bazę.
+
+I ten pierwszy stage, no to byśmy go testowali dla sejsu, bo sejaci też się gubią, my mamy 100 ponad produktów w kultury.
+
+I kurczę, czasami my z Pawełem w sejsu sprzedawaliśmy 20 a 30 produktów na magazynie, to zapominało się.
+
+Przeżał klient i z 8 produktów, które chciało mu się pokazać, pokazało się 6.
+
+O dwóch się zapomniało.
+
+Pierwsze to był taki formator, gdzie po prostu sobie serii zrozmawia.
+
+Albo mamy introduction, przyszedł tutaj Staszek, wchodzi ktoś na pierwsze dwa miesiące, nie wiem co się dzieje,
+
+ma bota, pisze: "Ej, ja, klient szuka wiosny, latu, coś takiego w tej cenie".
+
+wychodzi analiza. Z tym były problemy, tu jest mała rozmiarówka, dużo czarkych spodni itd.
+
+My też jesteśmy transparentnymi, nie ścigniamy pieniądze, bo nie ma sensu.
+
+Wiemy, że jest kupa, to możemy tu jest kupa i ona tak wygląda.
+
+A po prostu to jest klienta decyzja, czy chce tą kupę, bo mamy za to niższą cenę, czy woli bez kupy,
+
+to już nie decyduje, ale zawsze jakby, naszą misją jest to, żeby jak najwięcej pieniędzy dostał informacji,
+
+żeby nie był rozczarowany czy czymś
+
+a druga kwestia jakby ten podział fajnie
+
+ten producent informator
+
+moglibyśmy na stronie takiego chatbota
+
+który rozmawia
+
+jest tam pewnie wtedy trochę zblokowany
+
+żeby konkurencja nie zrobiła nam znowu
+
+skrapowania oferty codziennie
+
+jak się sprzedaje
+
+tylko miałby pewne blokady
+
+w pewnym momencie odsyłał jednak rozmowę do salesa
+
+że
+
+takie jakby ogólniki
+
+i do takiego produktu informatora, niektórych był pod WMS-a i tak dalej podpięty.
+
+Charakter zamówowy produkt trochę ułatwiał, mógłby zdjęcia, podsyłań i tak dalej, robić jakieś takie proste rzeczy.
+
+Dobra, to jest fajny pomysł.
+
+A jeszcze w kontekście personalizacji oferty, na jakiejś zasadzie to jest w sensie,
+
+handlowiec się odzywa do jakiegoś sklepu, który sprawdza, że oni specjalizują się w towarach,
+
+Jakąś okreśną kategorię, na przykład ubrań, to handlowy dobiera ofertę w kontekście tego,
+
+czy daje mu ogólną ofertę, do każdego jest ta sama oferta wysłana, w sensie mamy takie ciuchy...
+
+Jeśli nie wie nic o klientzie, to jest ogólna informacja, żeby przedstawić firmę,
+
+że jesteśmy dystrybutorem odjeżdżego obietu i dopiero jeśli jest jakikolwiek kontakt,
+
+to wtedy pada pytanie o konkretne marki, jakie są dostępne, co możemy zrobić.
+
+Natomiast z tymi klientami, z którymi mamy kontakt, to większość klientów mamy skarakteryzowanych.
+
+Kim są ci klienci?
+
+To są firmy, które prowadzą studiarza odkretową albo przez internet, albo mają sklepy stacjonarne i internet, albo są też kulturniami.
+
+są sieci sklepów na przykład, atletowych i tacy się nam najbardziej podobają.
+
+Tak, najwięcej odbiorą.
+
+Takimi jest właśnie, handel wygląda w ten sposób, że na przykład mamy towar, oni chcą dużo,
+
+my się dogadujemy co do jak oni albo wybierają, albo nie, przygotowujemy dla nich oferty, idzie strzał,
+
+a później przez dłuższy czas oni na przykład tego nie chcą, tam tego nie chcą, poszukają czegoś.
+
+To nie jest tak, że mamy buty w takim rozmiarze, w takiej i takiej firmy, co miesiąc potrzebujemy tam powiedzmy 500 kg takich butów.
+
+To jest inny charakter, po prostu trochę pracy.
+
+Raczej, że ktoś handluje tanimi butami, to chce dostać tanie buty.
+
+Raczej mniej więcej 95% klientów szuka marek premium w niskich cenach.
+
+i to nie jest takie łatwe, bo za te marki trzeba jednak zapłacić.
+
+Najbardziej zazwyczaj się opłaca kupić od jakiejś multi-brandowej firmy, czyli nie z toby Adidasa, bo Adidas od razu z tym punkty zadaje, że macie samego Adidasa i to już kosztuje 20% net do ceny katalogowej.
+
+My staramy się te rzeczy kupić w mixie z różnymi markami, typu od firmy Alazalando, gdzie będzie Adidas i w ogóle cały przekrój.
+
+Jak tych marek jest, nie wiem, tych fajnych kilkadziesiąt procent, nie wiem, między 20 a 30 a 70 nawet, bo 70 to jest turbo super, no to...
+
+To będzie się bardziej opłacało, niż takie kupowanie pojedyńczych brandów, nie?
+
+A wracając do tych klientów, czyli dobrze to rozumiem, że Wy kupujecie ten towar hurtem o bezpośrednio takiego przykładowego Zalando, płacicie 7% z ceny katalogowej i potem albo uda Wam się sprzedać to bezpośrednio outletowi, albo hurtowni, która z kolei ma kontakty do outletu.
+
+Czyli Wam się bardziej opłaca dostać bezpośrednio do outletu z pominięciem kurtownika, bo zakładam, że kurtownikowi sprzedacie, nie wiem, kupicie za 7 sprzedacie za jedną.
+
+No, nie wiem, że jest, że kultownikowi oczywiście, wiesz, część jest takimi mniejszymi kurtowniami, gdzie, no, powiedzmy, ma magazyn nie 3 tysiące metrów, tylko 500,
+
+i bardziej jest na przykład do więcej, by jest jakiś pakiet sprzedaje czy coś.
+
+Więc dla nas klient to klient.
+
+Ok, na kultowni zrobimy 15-20% marżę,
+
+a na minie będzie 25, ale towar wyjeżdża.
+
+Ja wiem.
+
+Dla nas problemem nie jest marża,
+
+a dla nas problemem jest to, żeby nam towar wyjeżdżał.
+
+Jasne.
+
+Wszystko zależy jeszcze od podaży danego towaru,
+
+bo jeśli mamy bardzo mało i mamy na tych klientów już tak,
+
+to co jest, którzy są w stanie więcej zapłacić niż kultownik,
+
+to wiadomo, że sprzedamy do tamtych.
+
+jeśli towaru jest ogrom, to też narych, który jest olbrzymian, to będziemy się cieszyć, jeśli sprzedamy do jednej i drugi.
+
+To przykład teraz About You, pierwszy tam, no, deal about you, nie do końca towar, który na towar peda i tak dalej,
+
+ale firm, z którymi About You, te największe firmy, powiedzmy, powyżej miliarda euro przychodu, chcą współpracować,
+
+no oni idą do każdego, że o, kurde, ktoś do mnie napisał ten, no oni weryfikują firmy, im poważniejsza firma,
+
+H&M, Adidas to kurde mają mega weryfikacje.
+
+Nie chcą po prostu...
+
+Dlatego po prostu podejrzewam, że oni dostają mnóstwo węgłości.
+
+Jak już się dokopiesz do tego zaocnego grona tej współpracy bezpośredniej,
+
+to nawet kultownie są, są warte współpracy.
+
+My też się nie obrażamy na nikogo i współpracujemy z każdym,
+
+bo lepiej jest zarobić na sprzedaży kultowej 10% niż tego nie zarobić.
+
+Jasne, tylko ogólnie idealnym, wymarzanym scenariuszem jest,
+
+żeby się trafiali głównie do outletów i żeby cały to wartować.
+
+Tak, fajną bazę outletów zbudować sobie to jest bezpiecznie.
+
+Naprawdę to zrozumiałeś zrobić.
+
+Bezpieczna za większa.
+
+Nie ma się w nich, to jest większe pole wyboru,
+
+niż mniejszy, niż mniejsza ilość dożyty.
+
+Ok, bo logistyka obsługi hurtowni, czy takiego outletu jakoś dużo się różni?
+
+Kosztowo czy nie?
+
+My generalnie mamy tak, że mamy z firmami,
+
+z logistycznymi podpisane jakieś tam porozumienia na mniejsze ilości, a do nich to nie trak po prostu cała się żarówka.
+
+Rozumiem.
+
+Co ja sobie jeszcze myślałem odnośnie tego procesu pozyskania klientów, to z tego co zrozumiałem, to oferta w tej osobie nie jest za bardzo personalizowana.
+
+Ta sama oferta leczy do wszystkich, niezależnie od tego jaki mają sklep.
+
+Są sklepy, które, tak jak mówiłem, specjalistycznie odpoczywają, obuwia, innych, chyba i tak dalej.
+
+że jak oni zobaczą taką ogólną ofertę, że my jesteśmy dostawcą odzieży adaletowej itd.,
+
+pewnie dużo od nich odrzucą ofertę z samego od razu, bez wejścia w szczegóły,
+
+że może byście mieli faktycznie ten towar, który on jest zainteresowany,
+
+ale przez to, że on dostał tą ogólną informację na początku, żeby sprzedaliście wszystko,
+
+odrzucił ten kontakt i dlatego ta komersja mogła być mała,
+
+gdzie fajnie mógłby zadziałać jakiś agent AI,
+
+to by zweryfikował, jaki to jest klienta, jaki mają sklep,
+
+miałby też połączenie jakimś api, co to jest z waszym CRM odnośnie tego, jakie macie stoki magazynowe
+
+i dopasował ofertę w taki sposób, że powiedziałam dokładnie, jeśli macie ten towar, że my mamy to na stanie
+
+i połączyć to, co on sprzedaje z tym, co wy macie, a nie dawać mu taką ogólną ofertę
+
+Nawet jak to handlowcy zrobią, to wiadomo, że ten proces nigdy...
+
+gdzieś muszą ten czas oszczędzać. Jakby wejdą na stronę, zobaczył mniej więcej, ok to, ale nigdy nie zrobi się takiego, nie skrapując tego i nie podsumowując, zawsze to będzie takie, wiesz, na oko.
+
+wejdźcie sobie do naszego kontonu na legro, mamy ile tam stron produktów?
+
+Nie ktoś ręcznie potrafi odpowie, co my sprzedajemy, to tutaj się idzie zgubić.
+
+Więc na pewno ta jakość charakterystycznej klienta się poprawi i będzie lepsza personalizacja.
+
+Oczywiście ambosy to robią, ale na pewno są zna i tak wyrobić.
+
+Im więcej kompasy dostawa, to rzadko nasi odbiorcy fokusują się na konkretnym asoptymencie.
+
+Przeważnie jest tak, że to są multi-brendy, że oni sprzedają odzież na przykład w wielu marek,
+
+a jeszcze, żeby było śmieszniej, zmieniają koncepcję handowania.
+
+Jedni clienti na przykład handowali tanimi produktami,
+
+przez ileś lat z nami teraz obserwują rynek, to teraz wchodzimy w premium marki,
+
+czyli odwracają to całkowicie.
+
+To jest jedna rzecz, co bym zapisał, co byłoby też ciekawe, ale nie zapisaliśmy.
+
+Są jakieś tam zdjęcia robione, teraz dziewczyna nowa robi, bo tam niektóre rzeczy są sprzedane,
+
+filmiki i tak dalej, to o czym mówiliśmy, Excel, ale moglibyśmy zrobić z każdego produktu taką prezentację,
+
+Czyli, że ktoś dostaje w jednolitej formie, nawet jak tych informacji jest niedużo.
+
+Może być tylko informacja jaka jest cena za kilo i 30 czy 50 dnieś.
+
+A może to być plik, który będzie interaktywny, będzie można, czy to jest choose czy nie.
+
+Czyli zbudować znowu layout prezentacji takiego produktu.
+
+Jak już klient wyklika gdzieś tam, opowie o tych produktach, to zamiast dostać znowu taką ręczną ten,
+
+dostajemy gotowe prezentacje produktów, każdego produktu.
+
+i właśnie o coś takiego mi chodziło.
+
+Przypuszczam, żeby to Wam zwiększyło konwersję,
+
+bo ktoś dostanie takiego leada,
+
+kliknie sobie spersonalizowaną prezentację,
+
+znacznie łatwiej będzie go przekonać.
+
+Dokładnie.
+
+My zauważyliśmy, że mamy stronę internetową,
+
+kontakty do handlowców,
+
+ale odkąd umieściliśmy tam na przykład
+
+u odzata takiego filmowego,
+
+no to dynamicznie przyrosła ilość klientów,
+
+którzy tam program doplikają i się pojawiają wiadomości.
+
+więc takie coś na przykład
+
+klik i od razu nie szuka jakiegoś kontaktu, nie wpisuje
+
+tylko samo to już sprawiło, że
+
+ilość tych klientów, którzy przychodzą przez ten
+
+znacznie wzrosła
+
+w ogóle zarządzanie stroną, nie?
+
+wchodzimy w polecanym, a my polecany braki w magazynie
+
+a w koniec dobre, nie?
+
+bo to są torebki
+
+to jest super hotcake
+
+A klienci tacy przychodzący, którzy przychodzą na stronę czy na jakieś inne wasze
+
+nieosocjalne, skąd oni przychodzą? Jak oni pierwsza słyszy i o was?
+
+Jakoś działacie aktywnie?
+
+Tak.
+
+Mamy sobie w skróceniu z firmą, która prowadzi te serwone,
+
+Google, wyszukiwania, tez, czacie, BTC już tam.
+
+- Czy to dobrze to działa? Jakoś rozmierzyliście, jak procent klientów właśnie z inbounded, a ile z...
+
+- Tak, tak, no, to wszystko ma.
+
+- Masz się ten marketing może być...
+
+- A za to wole nie jesteście ogólnie?
+
+- Znaczy, dopuściliśmy na chwilę, bo kiedyś mieliśmy po prostu tam to SEO i tak dalej,
+
+później te ceny mega wzrosły i tak jakby stwierdziliśmy, dobra, fach jest nie.
+
+- Ceny za kampanię na Google-acjach czy ich jako agencja za obsługę?
+
+To była tam firma tam z lat temu, więc nie wiem, firma nam wyszła cenę z 500 zł na 2.5 i stwierdziliśmy, dobra, pakiet jest nam to potrzebne, będziemy działać po portalach branżowych.
+
+Jak zaczynaliśmy.
+
+To po prostu 7 lat temu, nie? Przeczyliśmy na te mercandii, nie?
+
+Jakby więcej wydawaliśmy na takie strony branżowe.
+
+Mercandii, tam oczywiście są płatne te oproszenia i tak dalej.
+
+I tam ta konwersja jest, no nie najgorsza, nie? Była.
+
+Ale wróciliśmy jakby do tego, takiego po prostu promowania strony.
+
+Jakby widać to jest poobserwującego. No my mamy 1700 obserwującego Instagramie.
+
+Nasza konkurencja ma 6 tysięcy, druga 5 tysięcy.
+
+Jakby no pierwsza to jest bod Instagramowy, który chodzi po takich firmach
+
+i pisze tylko do obserwujących, nie?
+
+Robi tą charakterystykę, robi kontakt, czyli tak.
+
+charakteryzuje co to jest za firma, czyli business quality, kontakt quality i po prostu atakujemy Instagrama i tak dalej.
+
+Odpuściliśmy to, wróciliśmy do tego w sierpiu, w sierpiu wróciliśmy, więc to zbliża się rok.
+
+Dużo leadów chyba przyszło.
+
+Tak, tak, tak. Jest statystyka po prostu teraz, że się nie okresuje.
+
+A w należności to w nas też.
+
+No i tak jakby wiadomo, że w pierwszym miesiącu wszystko zmieniają się na strony, te opisy, wszystko było zmieniane, żeby oni podzieli.
+
+Jakoś to działa też, dajemy akcy dodatkowo na wyklucenie jakichś konkretnych kodów, które nam zależy, to też dajemy reklamę.
+
+No i na razie tak działa. No teraz to przesadła, ma stosowa, która się więcej działa na Instagrama, więc...
+
+A nie masz nic tego raportu marketingowego, a nie masz za tamte dobra, czy coś pod rekonomunicją?
+
+- To do czego jest używany ten Notion, skoro on miał być CRM, a teraz jest czym w takim razie?
+
+- Bazą wiedzy chyba, nie? - Ekipedio.
+
+- No i jakby też dwie firmy, nie? - A no tak, no tak.
+
+- Był pomysł, że będzie jakby Notion do wszystkiego, wyrował się w danych, więc jakby pierwsza koncepcja była Notion plus Google Sheetsy, nie?
+
+czyli jakby share'owane dane, gdzie dane do Google Sheets, a Noxion jest bardziej obdobą, ale nie ogarną tego Noxion tutaj w dziale handlowym.
+
+- Zacinał się po prostu ze zbytych loży. - Tak, tak.
+
+- Ograniczenia ze względu na przykład, że wszyscy widzieli wszystko, albo nikt nie widział nic.
+
+Więc nie można było tak zrobić, a nam zależy na chronieniu danych do klientów, więc...
+
+Handowiz ma swoich piętów, ale my nie chcemy, żeby drugi handowiz ma...
+
+Nie chcemy, żeby przetrała do konkurencji jak i tak...
+
+No jest to jest prawa, nie?
+
+I na tym, żeśmy wnoszli po ledni, bo tam nie było takiej możliwości wydzielania...
+
+Jesteście pewni, że nie było tej możliwości...
+
+Nie zapisaliśmy...
+
+Znaczy Wojtek to zrobił,
+
+oprzed jakimiś skryptami w Pythonie i tak dalej,
+
+zrobił po prostu taki konwajn,
+
+udało by się to zrobić,
+
+tylko to było nie użytecz,
+
+że się jakaś zmiana, to się wypieprzyło,
+
+bo tam były skrypty, formuły,
+
+uruchomił tam to po 3 miesiącach prac
+
+i stwierdziliśmy, że taki elastyczny system jest do wypieczenia.
+
+Zróbmy od nowa i zdecydowaźmy się na środowisko Google'a, które jest drugim.
+
+Bo dużo mamy też w Shitsach pracujemy.
+
+Mamy, każdy mało Workspace'a,
+
+takich, co pracujemy przy komputerze,
+
+więc stwierdziliśmy, dobra, to idziemy nie w klikie Excelowe, które giną,
+
+tylko starajmy się też robić te...
+
+A myśleliście na przykład o Airtable?
+
+Czy nie było takiego...?
+
+Wdrożyliśmy to też w styli ten notion,
+
+jakby notion jest bardziej używany.
+
+Nawet zarządzania projektami jakoś dziewczyny
+
+mówiły, że mega zmiana była z tym notion,
+
+bo tak to były pogubione te informacje.
+
+Teraz jest znowu zmiana, że zamaczasz sobie
+
+gmaila w Geminiu i podsumuj mi maile,
+
+a kto tam pisał i jakby znowu odzysk informacji
+
+załatwiejszy. Już nie trzeba sobie tak pięknie tego
+
+jednak AI zmienia zasady gry
+
+i AirTable chyba miał
+
+wiem, że coś było testowane z AirTable
+
+wydaje mi się, że mam takie uruchomienie, że było tam jeszcze 2-3 systemy
+
+bo to był Monday.com
+
+i chyba AirTable, ale odpadły
+
+z tym nosem, które
+
+masz załóż te oznaczanie
+
+relacje na bazę danych, które po prostu się zajebiście łączą, a tamte systemy będą bardziej toporne.
+
+Teraz nie spełnił do końca naszych oczekiwania.
+
+Teraz jest takim trochę bytem, kurczę, no specyficznym, szczególnie ze spole handlowe.
+
+W sensie my to wykorzystujemy, mamy taką stronę handlową, na której wszystkie dany,
+
+do tych list, które przechodzą do cennika, informacje dotyczące działalności.
+
+To jest taka strona, gdzie jest dużo takich zakładów, wszyscy wiedzą, że to w jednym listu jest przynajmniej.
+
+Rozumiem, rozumiem. Czyli takie wiki bardziej się stało.
+
+No, to bardzo.
+
+Ok.
+
+Customowego CRM nie próbowaliście tworzyć w jakiś sposób?
+
+Mamy CLM, gdzie mamy bazę klientów, gdzie mamy...
+
+Takiego w pełni z customizowanego kodwa, że macie wszystkie funkcjonalności w jednym miejscu,
+
+że wybrzymaj
+
+A czyli nie przez to, że się zacinał, tylko przez braki prywatności.
+
+Żeby obejść tą prywatność, Pan Wojtek obszedł, tak to oformułował, że to było już walne.
+
+My mogliśmy zrobić dwie rzeczy: zrezygnować z prywatności, czyli przychodzi do nas Sejs,
+
+dostaje pełną bazę danych naszych klientów, co było nieakceptowalne, bo mieliśmy,
+
+co się chwaliły od nas firmy konkurencyjne, że zajebiście,
+
+- Czyli rz
+
+Mamy to w jakiś sposób zrobione, że to co wysyłamy po kolei te wiadomości są tutaj.
+
+Tu są statycje, kto wysłał do ilu klientów tego typu piste.
+
+Jak ktoś wyśle, to co robi, żeby to się pojawiło?
+
+Z bazy danych musi odplikać, że wysłał do klienta.
+
+Tak, dużo takich pedagerycznych roboty.
+
+No a tutaj mamy kolejne, czyli bazę klientów.
+
+Jak klikamy na danego klienta, nie wiem, obojętnie jakichś...
+
+No to pojawia się od razu cała historia, która tam...
+
+Transakcyjna.
+
+Transakcyjna.
+
+A ile miesięcznie wysyła wiadomości Jeden Chodlowiec?
+
+No, tutaj są transakcje, pod transakcjami są z kolei same sprzedaże, po kolei asoktymentowe, można zobaczyć kiedy kto w poprzednim razie.
+
+Ile by się pole, żeby wysłała? No kilkaset pewnie miesięcznie.
+
+Kilkaset tysięcy, tak?
+
+Kilkadziesiąt dziennie, bo zależycie, nie tak słodziować.
+
+Wy ich zatrudniacie in-house, czy to są też zewnętrznie, jacyś agenci?
+
+Teoretycznie są zewnętrznie, natomiast z nimi to jest taka praca,
+
+Wiktoria jest na Ukrainie, ona tam podkrutuje,
+
+tylko że pracowała u nas rok gdzieś na lat, nie?
+
+Ok.
+
+Wiktoria jest więcej, 2 lat, 2 lat.
+
+A potem przeszła na swoje.
+
+Opróciła do mnie, w Ukrainie.
+
+Rozumiem.
+
+No dobrze, panowie, ogólnie sprawa wygląda tak,
+
+że jest dużo wątków, które nie są ze sobą powiązane.
+
+- Wszystkie dotyczą skródarzeń, jeżeli... - Tak, tak.
+
+Wszystkie dotyczą tego samego, tylko czasami jeden nie łączy się z drugim.
+
+Trochę tak to wygląda w filmie przecież, że firma jest taką strukturą
+
+i nie zawsze te wszystkie powiązania się ze sobą zazębiają.
+
+I tu mamy dokładnie taki sam przykład, chociażby patrząc na to,
+
+że rozmawiamy sobie o narzędziach i te narzędzia albo przestają
+
+bo trzeba migrować bazę danych i okazuje się, że znowu traci się coś na tych połączeniach.
+
+Pytanie, ile z tych narzędzi faktycznie dobrze spełnia swoje zadanie,
+
+a ile jest tylko po to, że przyzwyczailiśmy się do nich, utknęliśmy na nich
+
+i teraz nie do końca wiemy, co z nimi zrobić, bo to może właśnie robić ten problem.
+
+Ja myślę, że to, co należałoby w tym momencie zrobić, to może zaczynając od samej góry,
+
+bo sobie zaraz przejdziemy do szczegółów, to jest przede wszystkim ujednolicić to,
+
+żeby ten przepływ informacji
+
+faktycznie był szybki, no nie?
+
+Bo ja mam wrażenie, tak po tej rozmowie,
+
+jak sobie tutaj gadamy,
+
+że ten przepływ po prostu czasami
+
+spotyka jakiś zator, nie?
+
+I jakieś dziury,
+
+przez które ta woda po prostu wypływa, nie?
+
+Czyli jak mamy tą rurę
+
+z tym przepływem informacji,
+
+jak sobie wyobrazimy, że to jest po prostu rura,
+
+przez którą płynie woda, załóżmy,
+
+i dosyć te informacje, no to ona gdzieś jest dziurawa
+
+i te informacje po prostu nie przepływają, nie?
+
+Idzie informacja,
+
+że obniżamy cenę produktów, ktoś nie przeczytał na dashboardzie, nie było go w firmie, pracował zdalnie, nie ma tej informacji.
+
+Nie ma jednego centrum informacyjnego, jakby...
+
+Takiej wyrocznej, nie ma.
+
+...zbudowanie jakby mózgu takiego firmy, który po prostu, wiecie, wstanął.
+
+To jest jakby dwóch zdalnych.
+
+My zrobiliśmy rękę, nie, nogę, coś tam, gdzieś tam jakieś powiązanie jest, ale...
+
+Trochę się to trzyma, trochę się rusza, nie, ręka i noga.
+
+Tak, trochę na mięśniu.
+
+Ale dobrze, bo tak się wybuduje firma. Na samym początku nie wiadomo do końca jeszcze jak będzie to wyglądać na samym końcu, jeszcze jak firma szybko, dynamicznie rośnie, to trzeba ją łapać trochę na trytytkach, żeby to wszystko jakoś funkcjonowało.
+
+Natomiast myślę, że teraz jest dobry moment na to, żeby się temu przyjrzeć z bliska i żeby ten czynnik ludzki był możliwie najmniejszy, bo to jest też frustrujące dla ludzi, którzy ogólnie pracują w firmie.
+
+Najbardziej za przeproszeniem, no kurwa ich to, że po prostu cały czas wykonują te same zadania, które są nudne i które w ogóle nie dają jakiejkolwiek takiej wartości, nawet pieniężnej do firmy, tylko po prostu trzeba je odbędnić, żeby coś gdzieś się pojawiło w jakiejś bazie danych.
+
+Nie wysłałem maila, muszę jeszcze kliknąć tu, kurde.
+
+Dziesięć razy kliknąłem, ale wysłałem jeszcze piętnaście maili.
+
+Dobra, może ktoś tam nie zobaczy.
+
+A potem masz narzędzie, z którego nikt nie chce korzystać.
+
+Potem masz narzędzie, z którego nikt nie chce korzystać.
+
+Więc myślę, że to, co teraz musimy zrobić przede wszystkim,
+
+to uszczelnić tą rurę.
+
+Tylko nawet nie w taki sposób, żeby ją łatać,
+
+tylko w taki sposób, żeby ją po prostu wymienić na taką, która działa.
+
+która jest po prostu orkiestratorem, bazą danych, wyrocznią tak zwaną, oraklem,
+
+który jest w stanie te wszystkie informacje połapać.
+
+Wezmę sobie to, wiem, że ten pilot, o tam tutaj to, zrobię to, to wtedy mogę to przełożyć tu.
+
+Nie będzie tego robił człowiek, nie będę tego robił ja na tym stole,
+
+tylko będzie ta wyrocznia, która będzie w stanie po prostu wynikowo jedną rzecz wykonać
+
+na podstawie inputu, który dostanie z drugiej strony.
+
+Myślę, że to musimy sobie przede wszystkim zanalizować i to musimy sobie zbadać, żeby to działało dobrze. Teraz jak to zrobić? Bo nie do końca się da to zrobić, że dobra, to wyciągamy tą całą, zrywamy tą rurę i wkładamy nową, no bo trochę tej wody zacznie wypływać i zacznie to być po prostu problematycznie, bo w niej cały czas jest ciśnienie.
+
+Więc ja myślę, że zrobiłbym to w taki sposób, żeby po prostu zlokalizować te punkty, które bolą na samym początku najbardziej. Ale już z myślą, że jeśli będziemy je realizować, to nawet jeśli walczymy nad tą filiżanką i to chcemy rozwiązać, żeby coś się z tym działo, to wiemy, że to jest tylko jeden puzel całej większej układanki.
+
+Czyli na przykład, wypisali się tutaj kilka takich robotów, kilka takich automatyzacji, które faktycznie mogłyby mieć miejsce.
+
+Trzeba by było zlokalizować te, które realnie mogą zarobić po prostu kasę, albo zarobić, albo zaoszczędzić.
+
+Bo to może być też tak, że zaoszczędzimy tyle procesów.
+
+No, może sobie już założyłem kurtkę.
+
+To dobrze, że mam kurtkę.
+
+Lepiej się pracuję w lepiej możliwości.
+
+Słyszałem, że jak...
+
+Chyba, że nas powoli wyrzucacie,
+
+bo to też jest takie...
+
+Słyszałem, że jak tych spółek
+
+dużych przychodzą kontrole w Stanach,
+
+to właśnie obniżają im
+
+temperaturę.
+
+Ja jestem sen...
+
+Jak każdy senek jest się w porządku.
+
+W każdym bądź razie,
+
+ja bym zlokalizował albo problem,
+
+który może nam
+
+wygenerować kasę,
+
+albo który może jej
+
+zaoszczędzić sporo.
+
+Zacząłbym od tego, żeby go rozwiązać, ale już myśląc o tym, że on będzie wpięty w jakąś strukturę.
+
+Czyli nie na zasadzie, ej, to może teraz z Norden, a może Absita, a chuj, czy to się tam będzie łączyć z tym, czy z tym, to jeszcze nie wiem.
+
+Na razie nam to rozwiąże problem, nie?
+
+W ten sposób doprowadzamy do sytuacji, gdzie faktycznie ciężko jest to podpiąć jak do jakiegoś orakla.
+
+Ale jeśli podejdziemy do tego w taki sposób, że rozwiążmy ten problem, ale mając na uwadze to, że to musi się zintegrować z narzędziem, które będzie w stanie nam całą firmę zautomatyzować,
+
+to jesteśmy w stanie powoli te problemy rozwiązywać.
+
+Czyli na początku zajmiemy się tym,
+
+później zajmiemy się tym, później zajmiemy się tym,
+
+mając na uwadze to, że to musi się wszystko połączyć z tym.
+
+I wtedy tak naprawdę jesteśmy w stanie
+
+tą firmę poukładać w taki sposób,
+
+że ona nie będzie od razu po naszym wdrożeniu działać zajebiście,
+
+ale po tych wdrożeniach, które są w stanie
+
+zautomatyzować konkretne procesy,
+
+będziemy widzieć coraz większe ciśnienie w tej rurze.
+
+Czyli ta dziurka już jest uszczelniona,
+
+ta już jest uszczelniona, ta już jest uszczelniona,
+
+ciśnienie się coraz bardziej zwiększa, firma zaczyna być coraz bardziej produktywna.
+
+W momencie, kiedy już mamy pomysł, jak to wszystko naprawić, to wtedy wkładamy już
+
+gotową automatyzację, która tym wszystkim zarządza jako taki orkiestrator.
+
+Więc ja bym do tego w ten sposób podszedł, żebyśmy znaleźli najpierw priorytety,
+
+rozwiązali te priorytety i w ten sposób iteracyjnie doszli do czegoś większego,
+
+co jest w stanie poukładać całą firmę. Co Wy o tym myślicie?
+
+Znaczy wiesz, będzie to na pewno trudna praca, ale ona jest do wykonania.
+
+Jak ja sobie słucham tego tutaj, bo tak w roli bardziej słuchacza stwierdziłem, że tutaj wystąpię na samym początku, żeby w ogóle zrozumieć jak to działa, wziąć to na bęben, że tak powiem.
+
+To są problemy, które niektóre są bardziej wymagające,
+
+drugie mniej, ale one są wszystkie do rozwiązania, uważam.
+
+Te przepływy w firmach, te kontakty, aktualizacje bazy danych,
+
+to są wszystko rzeczy, które się mogą dniać automatycznie,
+
+tylko trzeba po prostu do tego odpowiednich narzędzi.
+
+I też zaangażowania po Waszej stronie,
+
+czyli żebyśmy mieli taki insight wewnętrzny,
+
+faktycznie co się tam dzieje.
+
+To już teraz powiedzieliście w pewnym stopniu,
+
+więc to już też nam rozświetla trochę tą drogę.
+
+Natomiast gdybyście mieli powiedzieć jedną rzecz,
+
+o której chcielibyście, żebyśmy zaczęli.
+
+Na zasadzie, kurde, jak sobie myślicie,
+
+kurza mnie ta jedna rzecz,
+
+naprawdę nie mogę przez nią spać
+
+i chciałbym, żeby to po prostu
+
+lepiej działało już dzisiaj, już zaraz,
+
+dlatego, że nie mogę
+
+przestać po prostu o tym myśleć. To pytanie, co by to było?
+
+Czego moglibyśmy zacząć?
+
+Ja mogę powiedzieć,
+
+co nie najbardziej kurza.
+
+Handlowcy przeczasują internet,
+
+używają jakieś
+
+AI modeli,
+
+używają Google'a, Buzz, jednej, drugiej Apollo
+
+i nagle spotykamy się, bo już nie ma znaczenia jak go do nas nasi
+
+czy ktoś go tam przekazał, nagle się pojawia gośnik i mówi, że on ma 10 sklepów
+
+na przykład, ale kogoś od ją bym.
+
+Wszyscy szukaliśmy, nie? Na przykład.
+
+No właśnie.
+
+Albo na Litwie, robiliśmy nawet tak, że daliśmy dziewczynom Maciejewicze
+
+grzebią na lewo i prawo, wybrały tam powiedzmy, nie wiem, 10 klientów
+
+i nawet pojechały na wizyty do tych klientów
+
+a potem pojawia się jakiś kontakt, który mówi, że
+
+oni mają tam sieć, zaopatrują
+
+sieć sklepów w obuwie
+
+na całych tych we wschodnich krajach
+
+Czyli Ciebie wkurza to?
+
+A mnie wkurza to po prostu, że
+
+handlowcy tracą sporo czasu
+
+na to, żeby wysyłać wiadomości, szukać, kontaktować się
+
+I to nie są wartościowe czasem kontaktów.
+
+Trafiają w kudu.
+
+A nawet się pojawia jakaś firma czy gość, który gdzieś tam funkcjonuje,
+
+oni są na ryku i w Polsce są, podejrzewam,
+
+klienci, którzy prowadzą tego typu biznesy,
+
+ale nie wiem, z jakiegoś powodu słabo są obecni w internecie,
+
+ciężko ich namierzyć, ciężko ich znaleźć,
+
+nie wiem jaka jest w szkole.
+
+Czyli masz wtedy poczucie takiej straty czasu,
+
+że kurde, oni tyle i kudów wsadzili w to,
+
+żeby znaleźć odpowiedniego klienta,
+
+a się okazuje, że on przy zupełnie innym źle.
+
+Przepraszam, ja tutaj mam 10 sklepów na przykład i kupię piła.
+
+Rozumiem.
+
+Gdzie ty byłeś?
+
+No dobra, a jak ci klienci przychodzą, to czy to są klienci, którzy są do zweryfikowania w necie?
+
+W takim sensie, że...
+
+Bo wiesz, jak to przychodzi osoba, która w ogóle nie istnieje w sieci...
+
+To ja to rozumiem, to nie mam pretensji, ale są firmy, które gdzieś tam...
+
+Są widoczne, ale nie docieramy tam.
+
+albo albo jakby się przypisały do swojego segmentu, no trudno mi powiedzieć, albo nie, ale nie zapały.
+
+To jest jeden temat. A drugi temat to jest to, co na początku Kuba powiedziała o takiej konkurencji w Rumunii, która szybko rośnie unfrozen.
+
+Że oni mają po prostu taką, niby prowadzą kult, a mają wiadomość jak zadekado.
+
+To też może serficzne też, że...
+
+komunikacja
+
+wchodzi i od razu ma kontakt
+
+to co też
+
+tutaj kolega powiedział
+
+dostaje informację
+
+ma linka i od razu
+
+dokręci
+
+tamta firma jakoś tak ma
+
+te dane ma przedstawione, że
+
+nikt nie musi się za dużo wysiać
+
+widzi towar, widzie
+
+ceny od raju
+
+po jakiej może to kupić ma
+
+jakby ma dostęp do tego towaru, który jest na magazynie.
+
+Bo chodzi o to, że my mamy bardzo dużo towarów, mamy grupę handlowców,
+
+a po środku jest na przykład nasza strona internetowa.
+
+Wchodzi na stronę, ktoś tam widzi zdjęcia, a nieraz jest...
+
+No nie wiem po prostu jak jeszcze bardziej...
+
+Czyli mają fajnie zrobione infrastrukturę, tak że to jest wszystko transparentne, tak?
+
+Czy mają jakoś tak zrobione te...
+
+Weźmiemy ich na bęben, bo to nie może być...
+
+Trzeba ich po prostu skopiować, nie?
+
+To co...
+
+To co aktualizowano, oni po prostu dynamicznie rosną.
+
+To jest inny model.
+
+My sprzedajemy pakiety, często nie mamy tracące listy pakunkowe, bo sprzedajemy na kilo i po prostu wiem, że to jest dana marka, że tam jest ileś procent kciuków, sukienek, spodmi, danej kategorii.
+
+Ale nie ma konkretnego modelu, nie ma wszystkich informacji odnośnie pojedynczego produktu.
+
+a oni są tak zrobione, że mają te wszystkie informacje
+
+i ty możesz sobie złożyć pakiet
+
+wymarzony pakiet 100 sztuk
+
+wybierając sobie z listy
+
+tutaj macie selekcję
+
+to jest to, o czym w ogóle
+
+my mamy narzędzia
+
+dziewczyny zrobiły na elektro takie narzędzia
+
+które mogą na to zrobić
+
+ale oni mają dwa modele sprzedaży
+
+jeden to jest właśnie piking
+
+czyli można sobie każdą sztukę wybrać
+
+ale nawet jak cena jest wyższa
+
+ale druga opcja to jest taka
+
+jest taka, że nawet jak dostajesz paletę, możesz też tam serki pokazać paletę
+
+w lotce
+
+i wchodzisz z takiego lota, masz go opisanego tam, dajmy nawet 88 sztuk
+
+i wchodzisz i masz każdą rzecz po prostu zrobioną
+
+i wszystko masz co jest w tym lotcie
+
+jest rozmiarówka, jest scenary
+
+i wszystko co jest w środku masz w tych...
+
+I to jest właśnie to, o co pytałem właśnie, co chciałbym osiągnąć, wysyłając to do klientów.
+
+Pytanie, czy Wy nie poszycie w takim modelu z uwagi na jakieś ograniczenia logistyczne, techniczne?
+
+Znaczy tak, ja bym parę rzeczy rozdzielił, no bo wiadomo, można wszystko na razy zrobić, tylko to będzie trudne.
+
+Oczywiście.
+
+Zróbmy coś najwyższej. Najwyższej jest to, że mamy listę pakunkową, mamy Excela i nie wiem, połowa produktów teraz ma dzisiaj Excela,
+
+można mniej więcej?
+
+Nawet nie wiem czy nie więcej.
+
+Też jeszcze razy jest, że kiedyś większość naszych produktów to był big rate, czyli rzeczy z defektami
+
+i to kupowaliśmy zazwyczaj na kilogramy, to nie miało list pakunkowy w ogóle.
+
+W tym momencie przeszliśmy na ten model bardziej upgrade'owy
+
+i im więcej upgrade'ów kupujemy, tym więcej mamy tych informacji, czyli
+
+z całą listą pakunkową, często zdjęcia nawet są na tych listach.
+
+- No rozmiar... - Wiesz, daję to z Excel, to jest mało przyjazne, więc jakby zrobić z Excela po prostu produkt.
+
+Dziewczyny na Allegro zrobiły dwie fajne rzeczy. Mają skrypt, który po zdjęciach analizuje zdjęcia, te wszystkie tam kategorie,
+
+bo każdy producent inne ma te kolumny w tym i robi z tego opis produktu.
+
+Głównie chyba bazujące na zdjęciu. To jest jakby taki prostszy bot, ale zrobiły z tego bota, który potrafi rozwiązać
+
+największą gorączkę "Detalistów online"
+
+tzn. prawa do zdjęć
+
+bo większość firm na Alegru to po prostu
+
+jebie te zdjęcia katalogowe
+
+no i raz na...
+
+przychodzi pozem
+
+tak naprawdę tych pozów jest mniej niż by się wydawało
+
+tylko jest to taka blokada
+
+bo jak wiecie, jest średnia firma to ktoś powie
+
+a dobra, pociągam sobie te zdjęcia
+
+ale jak jest większa firma to powie nie, ja w to nie pójdę
+
+bo to mi imidż zniszczy i tak dalej
+
+po prostu nie zrobi tego
+
+I możemy teraz tak, mamy zdjęcie kartalogowe i możemy na podstawie tego zdjęcia wygenerować na własnej modelce, AI-owe zdjęcie.
+
+Dać klientowi do używania na stronie i kupujesz po prostu i produkt z informacją produktową, z licencją naszą.
+
+Zrobienie tego zdjęcia to chyba 18 czy 20 groszy kosztuje, nie?
+
+To jest tam w banana zrobione.
+
+Ten skręt, jakby niedawno się to udało, to była końcówka marca, coś takiego, nie?
+
+No i chciałbym ten know-how tutaj ściągnąć, obudować to w stronę, w użyteczność dla klientów, który wyglądał by tak jak unfrozen.
+
+No wiecie co to robi? To robi to, że oni pewnie mają handlowców, na pewno mają, ale to jest produkt sam w sobie.
+
+Tutaj jakiś outlet może bezpośrednio wejść na stronę, wystarczy, że oni to reklamują, on złożył zamówienie bezpośrednio tutaj.
+
+Nie musi rozmawiać z handlowcem.
+
+Ja bym powiedział, że nie wiem jaka jest skala waszego biznesu, a ich porównywaliście mniej więcej?
+
+No, oni nas przebili, bo w milionach euro to chyba w 25 roku mieli 10 milionów euro przychodu, czy 8, więc przebili już nasz hurt, no bo hurt w tym momencie to rok tam 7 milionów euro gdzieś tam, więc jakby już przebili, a jak wiecie, no my jesteśmy 12 lat, nie 5, nie?
+
+Bo po prostu Wy robicie, tak jak patrz na to z boku, podobny biznes,
+
+tylko że oni opakowują to trochę jak Apple, a Wy opakowujecie to trochę jak Xiaomi.
+
+Moi znamy to jest...
+
+I chcemy to robić, i chcemy też, żeby...
+
+Proszę...
+
+Nie obrażaj się Xiaomi, bo nie jest to przepakowało.
+
+Dobra, to...
+
+Nie możecie bycie pocięli za Xiaomi.
+
+Powiedzam.
+
+Dobra, po co fon, po co fon.
+
+Ale to nie jest jedyna firma, która tak urosła.
+
+Drugą firmą jest Miglo z elektronicą, która zaczęła działać.
+
+Firma z 5 lat się długości z Polipudy po ten i zrobili to samo na paletach Amazona, gdzie po prostu każdą rzecz skanują i można też te loty wybrać.
+
+Zajebiste.
+
+W sumie nie mają nawet w pikingu rzeczy, ale masz pełną informację o locie.
+
+Wersja apnowizualna jest zupełnie inna i nie ma do tego technologię.
+
+Trzeba ją opakować, zbudować.
+
+Możemy poskonalić, bo nie powiem, że jest idealna.
+
+Trzeba po prostu zebrać do kupy i pieprznąć to wszystko w jeden ten, obudować tego pipeline'a.
+
+Oni też żyszą jakąś reklamę taką, bardziej zjaję, się wytarzają w tych pakietach i tak dalej.
+
+To jest marketing.
+
+Oni szatnęli też dużo na tym zakupie w ciebie i nic to tam poniosło.
+
+Aha, czyli że ludzie kupują, ale nie będą coś w środku.
+
+My też mieliśmy ich tutaj, ale chodzi o to, że oni będą kubiują.
+
+Jeszcze raz?
+
+Tak jak chcemy kubować garaż na przykład.
+
+To jest to samo, że było przeniesione modelu na Polskę, bo oni nie było.
+
+Chodzi o to, że oni u nas tutaj pokazowali, ale nie z odzieżą słabą.
+
+Oni głównie elektronie.
+
+Ja mi się wydaje, to jest oczywiście moja hipoteza niedłudowodnienia,
+
+że gdyby nasza strona wyglądała jak on Frozen, to ci klienci, którzy nadają ten program,
+
+by weszli i sobie to zobaczyli, to by większa była konwersja zakupów.
+
+Jak wiesz, wiesz, pakietowy.
+
+No bo wchodzą kurde jakieś takie...
+
+Na naszej stronie wchodzi, widzi zdjęcia, widzi mniej więcej jaki to jest towar.
+
+Też wszystkich progów nie podajemy, no bo tych hurtowych nie chcemy podawać,
+
+żeby to, jak mówię, nie skrapowali po cenach, konkurencja.
+
+No więc on musi wykonać ilość czynności, skontaktować się z handlowcem, albo pakiet może kupić u nas przez stronę.
+
+Ale generalnie jak ktoś chce więcej kontaktów.
+
+A co będzie na zdjęciach, nie będzie koniecznie dbać.
+
+Jest tak, że my jako kultowó to mówimy, że to są przykładowe zdjęcia. Oni kupi tej toreki czy...
+
+Oni kupi, tak?
+
+Oni kupi. I oni mają... pipeline wygląda ich sprzedażowy bardzo prosto.
+
+towar wjeżdża, możesz sobie wybierać, tam pisze, że oni działają trochę za na do lunch, nie?
+
+Tyle, że musisz tam minimalnie wybrać za 500 euro, płacisz, dajmy na to 25% ceny z metki, nie?
+
+25% z metki i oni to piszą, że skoro akcja tam trwa, nie wiem, 3 dni, bo robią tak właśnie jak na za na do lunch,
+
+później mają wiele dni na spakowanie tego i to jest typu 10-14 dni biznesowych, że Ty to dostaniesz
+
+i płacisz 25%, a robisz sobie share picking, a później wchodzi to w loty i dajmy na to, że to jest 18%
+
+czy może 16% w zależności od lota, a oni akurat weszli takie palety po prostu, tam od palety do 3, to jest paleta
+
+i po prostu dostajesz tą samą pełną informację.
+
+- Już wtedy... - Tak, tak.
+
+- Natomiast według mnie ten Shari Picking, ok, być może byłby lepszy,
+
+ale sama w ogóle ta druga część, ta prezentacja tych palet,
+
+bez nawet pickingu, to jest, wiecie, geni czędzie,
+
+bo wchodzę i widzę cały pakiet, zajebiście rozmiary i tak dalej,
+
+no kupujesz oczami, no każdy z nas kupuje oczami,
+
+ja nie wyobrażam z Excela, no chyba, że ktoś ma jakby głęboki autyzm,
+
+no to kupuje tabelkami, ale...
+
+- I nie zmniejszy. - I ludzie, którzy prowadzą autolety,
+
+to raczej nie są autystycy, tylko...
+
+Wiecie, ludzie, którzy też, ja konsumenci kupują moczami i brakuje na tego.
+
+Trzeba to spiąć. Mamy pewne zarzędzia, spiąć, zautomatyzować.
+
+A czy jakaś rzecz, która tutaj jest widoczna, byłaby u Was logistycznie niemożliwa do wykonania?
+
+No w tym. Tam, gdzie nie ma listów.
+
+No nie ma listów.
+
+Ale to, po taki produkt, może będziemy po prostu znowuć produkty, które w stanie to skanować i mieć listów.
+
+Sprzedaż pokaże, skoro będziemy więcej, lepiej rotować produkty, które mają listy pakunkowe, to ich udział wzrośnie.
+
+I będziemy wymagać na producentach dostarczy na listę, to też ich zmienia.
+
+Jak współpracujemy z pośrednikiem z Niemiec i on mówi: "Kupiłem, wiecie, 2,3 żarówek, mam listę, ale ja nie wiem, co wam wysyłam"
+
+i minusów nie te działanie, a po prostu gubią te informacje.
+
+A my jak się podopychamy bezpośrednio do towaru, będziemy w takim stanie go sprzedawać,
+
+no to mamy jakby zupełnie co innego.
+
+Zastanowiliśmy tak naprawdę, nawet raz prowadziliśmy kampanię dla, jak się nazywa to, z tymi przecenami.
+
+Podobne do tego.
+
+- Wiesz, było to problematyśnie.
+
+- To był na księcie Józefa.
+
+- Oni zrobili znacznie większą produktyzację.
+
+Wy tak naprawdę sprzedając produkt nie sprzedajecie tylko produktu, ale sprzedajecie usługę handlowca, który musi bawić się z klientem, obsługiwać go, wykonać się...
+
+- Przed waszych problemów zapisane kartce to jest handlowe.
+
+- Tak, wysłać kilkadziesiąt wiadomości dziennie.
+
+To jest wszystko w cenie produktu, który wy zarabiacie i w tej marży, którą generujecie.
+
+Tutaj de facto oni zrobili pełną produktyzację, więc ich marża może być nawet troszeczkę większa,
+
+z tego względu, że oni nie mają w tej marży kosztu handlowca, który musi wykonać tyle pracy,
+
+żeby w ogóle ten produkt sprzedać, więc myślę, że to jest zdecydowanie dobre podejście,
+
+bo to jest na zasadzie, tak wygląda ta woda, chcesz czy nie chcesz, a nie na zasadzie,
+
+a porozmawiajmy, wymienimy informacje...
+
+- Słowaj, jak stawaj pod stół i powiedzmy, że masz wodę, nie?
+
+- No, dokładnie, dokładnie, to jest znacznie, znacznie lepsze, tak wygląda, podoba ci się...
+
+To jest zajebista woda.
+
+Nie podoba ci się to nie bierzesz.
+
+Jak perlaż, no nie?
+
+To w ogóle, dobrze, że o tym mówicie,
+
+to w ogóle od tego powinniśmy zacząć,
+
+to w ogóle jest początek kroki.
+
+Na zasadzie to jest azymut,
+
+że my chcemy być tu i zrobimy wszystko,
+
+poukładajmy wszystkie klocki,
+
+żeby tam być, no nie?
+
+Dwie ciekawostki mogę naprozę powiedzieć.
+
+mają bardzo dużo, poczekaj, skąd my bliższym klientów?
+
+przychód, no bo mają duży przychód, mają małe zamówienia, więc mają dużo większość klientów, ale nie wiem czy jakiś tam numer
+
+rejestracji nie widziałem, który był mega duży, mega imponujący.
+
+Wiadomo, koszty marketingowe, zysków nie pokazywali, więc bardzo dużo marketingów pakowali, ale po cenach widzimy, że to jest jakieś atrakcyjne cenowo.
+
+w sensie, że cena to nie jest jakaś problemiska, nie, po prostu jest, może być wyższa
+
+czyli podnoszą marze
+
+to marze są atrakcyjne też
+
+ale wyglądają, wie co kupuję, mało tego, w ogóle to nie klientów możesz też uderzyć
+
+ale mają zajebistą charakterystykę, słuchajcie, rejestracja u nas na stronie
+
+to też by się wydawało dziwne, nie, ale u nich rejestracja na stronie
+
+to jest tak, formularz, gdzie nas znalazłeś, i tak wszystko musisz wypełnić
+
+nie ma, wiesz, nie ma...
+
+I później tak, jesteś sklepem internetowym, proszę linka do sklepu.
+
+Sprzedaż na OLX, proszę linka do konta.
+
+Jesteś hurtownią, zdjęcie maksymalna.
+
+I tu są pola wymagane.
+
+Tak, wymagane.
+
+Nawet do hurtowni mają wymagane pole.
+
+Zajebiście.
+
+Mają kilka razy więcej klientów, powiedzmy, że dwa razy więcej klientów,
+
+którzy są tak scharakteryzowani i wtedy sterowani marketingiem.
+
+Piękna bazowa.
+
+5 tysięcy miesięcznie na każdy kanał, ok. Ten obcinamy, ten skaluujemy. Widzą wszystko na kartce.
+
+To jest piękny onboarding, piękna baza danych.
+
+No to moim zdaniem idziemy w tym kierunku.
+
+Bo wiecie, bo możemy spędzić, zszargeujemy od Was bardzo fajną kartę za zrobienie tego.
+
+Ale uważam, że jeżeli Wy nie podejmiecie tej rękawicy konkurencyjnej,
+
+to nie chcę mówić, że Was zjedzą, bo cały czas zbudowaliście swoją pozycję na rynku,
+
+ale czemu nie moglibyśmy robić tego podobnie, czemu nie moglibyście zawalczyć o to,
+
+żeby wejść na jeszcze wyższy poziom, kiedy jakaś konkurencja z Rumunii robi to samo, co Wy,
+
+tylko opakowuje to znacznie lepiej.
+
+To jest pytanie do Was, czy jesteście gotowi na to, że tutaj będzie też trochę ciężko na pewno, żeby dojść do tego miejsca.
+
+Ja tak nie uważam, że...
+
+W takim sensie, że to pewnie będzie wymagać trochę rozwalenia kilku procesów i poukładania ich zupełnie na nowo.
+
+Wiesz, czy chcecie, bo czasami dopadnie...
+
+Nie wiem, jak to mogłyby proces rozwalić.
+
+Kwestia, jak dostawy przychodzą po prostu.
+
+Znaczy no, magazyn ma wymiast, ale to jest najważniejsza.
+
+Ale to jest najważniejsza, ale...
+
+No, coś takiego, nie?
+
+No ja bym miał satysfakcję, jakbyśmy wyszli po wdrożeniu u Was
+
+i sprawilibyśmy, że wychodzi się biznesowo na wyższy poziom.
+
+A nie, że tylko usprawniamy jakieś procesy dla samego usprawniania.
+
+To jest poziom, który...
+
+My z Maciej mamy bardzo proste podejście do biznesu, ale to jest bardzo sprawdzalne.
+
+I się sprawdza po prostu, że widzimy coś, co działa, kopiujemy bezczelnie i dodajemy swoje przewagi konkurencyjne.
+
+Większość biznesów tak zbudowaliśmy i w marketingu to działa.
+
+Jeżeli mamy taki przykład, to ja bym tylko zapytał, jakie jeszcze są Wasze ewentualne przewagi konkurencyjne.
+
+Czy widzicie, że macie lepszy towar?
+
+Możemy tym potem na przykład dorobić wszystkie zdjęcia na modelach, czego oni nie mają.
+
+Bo mamy statystyki, co mamy? Mamy sklep detaliczny, na który mamy dużo danych.
+
+Wiemy, że obcięta głowa sprzedaje się gorzej niż pełna głowa.
+
+Wiemy, że obcięta głowa sprzedaje się lepiej niż zwykła koszulka.
+
+Wiemy, że trzeba to zdjęcie jakby po alegronie, ale wiecie,
+
+sprzedajemy tam dwadzieścia kilka tysięcy rzeszemiesięcznie, więc mamy know-how detaliczny.
+
+- Zdjęcia kontekstowe. - Tak, kontekstowe i tak dalej możemy je dorobić, dopromptować właśnie sezonowe.
+
+- Tu jest na przykład widzę kolejny błąd, jest tylko zdjęcie z przodu, a zdjęcia z tyłu generują przynajmniej detalu, używ lepszą sprzedaż.
+
+- Ok. - To są dwa zdjęcia, w sensie przod i tył.
+
+- Pokażecie te wasze zdjęcie, co generowaliście?
+
+- Czyli na razie nie było dostawane.
+
+- To jest na druga firma tego używa.
+
+- Na Allegro.
+
+- Ja nie wiem do końca... - Które były te...
+
+- A ci to na razie nie jest reszcalowanie, że wszystkie...
+
+- Wiemy o co chodzi, Janek i ja to ubię...
+
+- Bo to też mnie dziwam strasznie drogo, bo jak macie kilka...
+
+-... i to jest robione pewnie, pomyślmy się, z takim API, jakiegoś...
+
+... czy jakiegoś innego narzędzia do generowania AI, to...
+
+- Poczekajcie, zrobimy tak...
+
+Kasia Pitek, nie? Chyba dzwoni od razu.
+
+Użytkownik jakoś.
+
+A bez to pierwsze, nie wiem czy co nie będzie nasza.
+
+Jeszcze z innej beczki poszukiwane.
+
+Wszystkie produkty.
+
+O nie, kurczę, na przykład jest jakiś kontekstor, to nie.
+
+I uzyskaliście taką jakość, że produkty nie są zmieniane w ogóle?
+
+Żaden detal, tekstura itd.
+
+Czy zdarza się jakieś halucynacje, zdarzają się?
+
+Kurczę, ja nie mam z tego.
+
+Ja robię dokładnie te same rzeczy i to jest największy problem.
+
+Nie ma się to jak najbardziej zrobić, ale domyślam się, że one korzystają w tym całym silniku z gotowych narzędzi, jakiś API, jakiegoś X-Finder, czy czegoś innego.
+
+I w takich modelach nie ma pewnej kontroli nad takimi detalami, bo nawet załóżmy, że się zmieni, no nie wiem, cokolwiek, tak?
+
+Czyli na przykład bardzo dużo rzeczy może być inaczej, niekolwiek będzie inny.
+
+I ja tu widzę, że to troszeczkę inaczej, nie będę już chodził w szczegóły techniczne, ale da się ten model mieć tak lokalnie,
+
+żeby mieć pełną kontrolę nad tym, że ten ciuch jest identyczny, też tekstura, faktura
+
+O tym modelu poznawiamy ze stylu, bo oni mają ten model
+
+jakby tam dziewczyny stworzyły własnymi siłami, jak my chcieliśmy to użyć tutaj
+
+narzędzie oczywiście możemy opakować, dołączyć do całego ekosystemu
+
+zrobić to jakby inną prezentację itd.
+
+ale jakby użyć tego narzędzia, byśmy możemy doskonalić, może dziewczynom pomóc
+
+A jeszcze z innej peczki, czemu w sumie tylko nalak rozprzedaje się?
+
+Ja jestem...
+
+Znaczy nie tylko, ale to jest podłączenie pod...
+
+Jakieś early, tak, early, tak, Empik.
+
+Teraz próbują wejść na te gamazony jeszcze.
+
+Gdzieś tam chyba jeszcze są, ale to no generalnie jednak mimo wszystko...
+
+98% to jest ale...
+
+Jest sklep Outlay, który też będzie...
+
+Pytanie, czy wyznać tutaj bardziej o detalu?
+
+Myślę, że dwa spotkania z Rummeny i tu chłopaki akurat mniej tam o detalu wiedzą.
+
+My wiemy, którym narzędzie można użyć.
+
+To narzędzie, mamy klienta z Bułgarii, który umarł.
+
+W sensie tak, fundusz kupił ich za 28 milionów dolarów, oni mieli 800 pracowników, którzy głównie robili zdjęcia
+
+I ja już w jedzie lat temu mówię: "Kurde, zróbmy tego, po prostu wygadamy swoje modelki AI i niech te rzeczy zostaną nakładane"
+
+I tak, tylko oni nie do końca, nie wiedzieliśmy ile to będzie kosztować, zrobiliśmy jakiś wpływ w koncert za 20 tysięcy złotych, powiedzmy 3 tygodnie siedział jakiś tam programista
+
+Wyglądało to jak ujec mnie jak ja pakarłem czterna lata temu.
+
+I była krótka piłka, że słuchajcie, każda kolejna usprawnienie będzie coraz droższe i coraz...
+
+Teraz dostajemy to za grosze, możemy tego użyć.
+
+No i mogliśmy też do takich klientów, ale wracamy do tego.
+
+Możemy być następnym klientem, dostajesz.
+
+Jest kolejna rzecz. Dziewczyny podpisały tą umowę z taką firmą, robili system machine learningowy do zarządzania cenami.
+
+To było też manualnie robione itd.
+
+Ten system też byśmy klientom udostępnili.
+
+Kupacie nas towar, macie to w sklepie czy internetowym, czy nawet stacjonarnym.
+
+Wiadomo, że stacjonarnym pewnie trudniej zarządzać, pewnie każdy ma pełną informację,
+
+wiesz, sklepem, tylko może kupić czasami jakieś metkowanie, czy coś,
+
+ale do sklepów internetowych dajmy wam machine learningowy system za darmo.
+
+Oni tak nie będą, on frozen tego nie będzie miał, bo nie ma detalu, a my mamy.
+
+600, 400 tysięcy już nie pamiętam, jak to jest system.
+
+Mega dużo danych i tak dalej. Tutaj Wojtek właśnie, który bym tutaj zgadzaliś, próbował się 3 miesiące z tym bawić, ale nie dał rady.
+
+w Pajkawie te biblioteki, coś tak wydaje, ale mamy 400 tysięcy rzeczy na magazynie
+
+i to są to unikalne sklepki i tak dalej, tam trzeba jakieś podobieństwa badać, similarities, no odpad, nie?
+
+i wszystkie te rzeczy możemy dawać nie tą kultową, nie?
+
+Nie.
+
+No, mówię, ja bym chciał też pytać tych osób, które stworzyły ten system, wydaje mi się, to jest tak jak mówiłem, czyli raczej nieskalowani, to wiecie bardzo drogo, mając jakąś...
+
+Bo swojej infrastruktury nie ma...
+
+Ale, że wiecie?
+
+Zrobione przez tego AI-bota?
+
+To była jakaś sukienka.
+
+W każdym razie, ja podejrzewam, że ten, jak one to zrobiły, to nie będzie dobre rozwiązanie, ale da się to fajnie...
+
+- Tak, jak najbardziej.
+
+- Na wyposzczonej infrastrukturze, bo to
+
+w takiej skali już się nie robi
+
+używając jakichś gotowych narzędzi
+
+typu jakichś X-Wid, czy cokolwiek innego, co generuje narzędzia
+
+bo to skali 10 tysięcy dnień
+
+to będą koszty
+
+bez sensu
+
+- Tak
+
+- To zostało na pewno
+
+przez API zrobione
+
+do tego
+
+albo GPT
+
+Kasia, jesteś może przy kąpie?
+
+A podesłał mi trochę zdjęć tych wygenerowanych przez tego AI.
+
+Może linki podezwać na WhatsAppie, albo do Serkiego, bo jakby jest jego dom podpięty, to weź Serkiego kilka linków myśli.
+
+Może na info, a nie proszę na info właśnie.
+
+To jest pierwszy przykład, który można zautomatyzować, bo nie wiadomo gdzie wysłać te piki.
+
+Na info albo na WhatsAppie.
+
+No bo za bardzo szybciej będzie.
+
+Znaczy da się jeszcze szybciej, bo patrz jak on się powoli ładuje.
+
+Tak, to pewnie może mam.
+
+Patrz tu.
+
+Wystarczy, żeby była przestrzej spółdzielona w firmie, taki dysk spółdzielony i to nie mówię o Google Drive'ie.
+
+Akurat dwa dni w firmie, no nie chcemy go tak włączyć, więc to...
+
+Ale wiesz, taki szybki dysk do małych danych, szybko przesłanych, no nie?
+
+Dobra, to już są detale, nie ma co...
+
+Takie deskamping zrobiliśmy, że my mamy swego WordSpace, a nie przynajmniej swojego.
+
+Dobrze, to bardzo dobrze.
+
+Ale chodzi mi, że one nawet nie są połączone, że jakby mogę udostępnić z notebooka prywatnego, to mogę komuś udostępnić.
+
+A jak jestem na notebooku, ten stokkurtowym, nie mogę to poza organizację wysłać.
+
+Rozumiem.
+
+Są może plusy, minusy jakiegoś tam.
+
+Raczej przepływ informacji, brak typu informacji, żeby więcej minusów niż ten.
+
+- Jestem, jestem, jestem.
+
+- Powiedziałam, że tu jest tam posyła.
+
+- Czemu, tutaj trochę podniosłaś tu lekoratura?
+
+- Daj 24, kurde.
+
+- Daj się 22.
+
+- Kurde, ale ja już sobie zdaję sprawę, jak wy funkcjonujecie.
+
+Czyli patrzycie na tą ich firmę i tak sobie myślicie, kurde, tak szybko rozstoj.
+
+Fajnie by było też tak rozstoj i oni wiesz, coraz przyspieszają, no nie?
+
+a wy widzicie jak ten pociąg odjeżdża, kurde ja bym mega chciał pomóc wam, jakby podjąć tą rękawicę, żeby z nimi zawalczyć, bo to jest, macie już dużą pozycję na rynku,
+
+nic nie stoi na przeszkodzie, żeby po prostu spróbować ten biznes wyskalować, a ja myślę, że to co oni robią, jakbyście to skopiowali i zrobili to mądrze,
+
+to wasz biznes może nawet podwoić.
+
+Oni nie dość, że sprzedają te same produkty, co wy drożej,
+
+to jeszcze sprzedają ich dzięki temu modelowi więcej.
+
+Ja wiem, że pewnie wydają trochę kasy na marketing,
+
+ale to uwierzcie mi, jak powiedziałeście, że oni mają 5-6 tysięcy
+
+followersów na Instagramie, to...
+
+Tam inna konkurencja ma, która tam bardzo z tymi pakietami.
+
+Zresztą zobaczy ile ma na Panią Neistach.
+
+- A co by się da podgonić, to jest problem.
+
+- Ja myślę, że nawet w tym marketingu instagramowym tutaj, jakbyśmy z Waszym działaną sprzedaży porozmawiali,
+
+spokojnie byśmy byli w stanie ich podgonić i to niedużymi kosztami.
+
+- Oni mają 22 tysiące 4 tysiące razy.
+
+- No to jest, no nie, no nie możemy pozwolić, słuchajcie, że jakaś konkurencja z Rumunii nas tutaj wyprzedza, no cholera jasna.
+
+No tak, ale to jest fajny biznes, to w samym coś takiego zrobił.
+
+To z 18 tysięcy, więc no przejechali nas jakby...
+
+No się zagrażają do kult, tak?
+
+Nie, no musimy...
+
+A tutaj pojawił się taki pomysł, bo ten Stokur to była firma w pokoju, Stoki, Hurtownia, sprzedaży międzynarodowej jeszcze nie myśleliśmy, jednak zostało.
+
+Rebrandingów, Estili mieliśmy kilka, bo kiedyś się nazywało "Moda Hiszpańska", zaromantowaliśmy, później "Vestida", "Estila" troszkę bardziej jednak kojarzyła się z mody i tak dalej.
+
+Tu nie zrobiliśmy. No i tutaj mam pomysł, żeby zrobić może nie taki rebranding, że z Tokudumże, ale na przykład, to jak i ten, Stokario na przykład, nie?
+
+tworzymy na razie podstronę, nie?
+
+Może to nawet na nową domenę kierować, jest to jakby
+
+swierny ekosystem i zaczyna działać troszkę jakby
+
+osobna firma, nie? W sensie stokario, no to stokario
+
+czyli macie tagant frozen, nie?
+
+No, dokładnie, dokładnie.
+
+Spoko zdjęcia, nie? No jakby, wiesz, no
+
+pod warunkiem, że są produkty identyczne, bo to jest duży problem
+
+jak się korzystać tak powiedza typu gotowe jakieś generatory
+
+to ono jest bardzo ciężko zachować tą spójność.
+
+Tylko też wchodzimy w szczegóły.
+
+Tak, tak, ale wrzucam problem, że to jest na pewno...
+
+To, mówię, to będziemy z detałem wypełnioneć, co ten, co tam się...
+
+Widzę, że nie powysłała żadnych tych zdjęć, no, z twarzami, bo...
+
+A pamiętam, że mówiłeś, że większość klientów chciałby kupować rzeczy premium, prawda?
+
+W dobrych cenach.
+
+Tych pytają o...
+
+Wyższkasz, że myślisz o mercedes-enicach.
+
+No właśnie.
+
+I u was to jest 20% tych...
+
+Nie chcemy kupować rzeczy premium, marki premium.
+
+Natomiast biorąc pod uwagę doświadczenia firmy,
+
+nie chcemy kupować drogo.
+
+Dostępność tych drogich marek, czy dostępność tych znanych marek premium jest ograniczona.
+
+Każdy o nie walczy.
+
+Wiecie skąd oni je biorą np.?
+
+Mniszowo działamy w zakresie takich marek, np. innych, brytyjskich, a skąd oni je biorą?
+
+Lepiej od producenta, ale nie sądzę, żeby wszyscy mieli kontakt.
+
+- Często jest tak, że od producenta dalej ten poziom cenowy jest na tyle wysoki, że właśnie lepiej nam jest kupić jakiś budyjkrant.
+
+- To typo Amazonas, gdzie będzie duży fajna lista i będzie tam 23% premium, ale to jak już kupuje.
+
+- Bo czasami wystarczy opakować rzeczy nie premium, po prostu jako premium.
+
+Jest masa sklepów, nie wiem, możecie sobie pisać Parisian, która po prostu bierze rzeczy, kojarzy.
+
+- To wiem, ale to chyba nie ten case.
+
+To znaczy, chodzi mi o to, że jak na tej stronie, którą załóżmy, że kopiłam un-frozena, opakujesz te ciuchy jako takie, które spełniają pewne standardy, quality itd.
+
+i wytworzysz takie przekonanie, że o, to jest miejsce, gdzie mogę mieć dostęp do ciuchów, nawet jeżeli nie wszystkie one będą, no to od razu, mimo że one nie będą, to człowiek będzie je kojarzył po prostu z tego, nie?
+
+Sprzedając rzeczy w ten sposób jak Unfrowsen na przykład, to jesteśmy w stanie na pewno uzyskać ceny sprzedaży większą niż to co robimy w tym momencie.
+
+No i być może odtworzy nam się więcej furtek do tych producentów, gdzie na przykład 20% ceny z ERP na ten moment to jest za dużo, żeby to sprzedać dalej w tym systemie, co aktualnie działamy.
+
+ale poprzez taką stronę jak alt frozen, może to będzie dokładnie, może to jest realne.
+
+Nowe drzwi otworzymy z naszym dostępem do dużych klientów, bo wydaje mi się, że nasza przywaga na alt frozen,
+
+ale mogą oczywiście być naivne, to jest taka, że oni mają tylko dostęp do większych klientów,
+
+bo ci klienci nie do końca będą w ten sposób kupować, to jest walka o małego i średniaka,
+
+to jest fajna, to jest dywersyfikacja, średni nam odpada i tutaj liżemy rany po 2 klientach, 3 rok.
+
+Nawet duży wiesz klient, jak będzie mógł sobie zobaczyć taką stronę versus to, co macie obecnie?
+
+Może, to się bawią tu narrację, że duży klient jednak szuka ceny, nie kupi tego.
+
+On wie, że jest duży.
+
+Tylko możemy tak opakować stronę dla nich, cenami takimi, które chcecie ustalić, żeby to tak wyglądało.
+
+Ale możemy też zrobić kurde zdjęcia.
+
+Wyobraźcie sobie, że firma, zresztą powiem ten remis, tam 800 pracowników robili zdjęcia, chcieliśmy zrobić im tego bota wspólnie, ale poddaliśmy się wstępić na temu.
+
+Ona akurat padła praktycznie. Jakby model biznesowy się wypiepszył, bo co się stało, no ja wiecie, minimalna pensja w Bułgarii urosła jeszcze bardziej niż w Polsce.
+
+I my do nich przychodząc takim, to byśmy ich po pierwsze uratowali.
+
+To nie jest jedyna firma, która w ten sposób działa.
+
+I możemy im dać po prostu, no wiesz, naprawdę coś niekawego.
+
+Czasami to jest, tylko wydaje mi się, że Remis to jest taka duża firma, która działała jak mała.
+
+Tylko było do perfekcji, właśnie o czym mówiliście wcześniej, ten proces był tak perfekcyjny,
+
+to również jest zdjęć, że tam opowiadają te właściciel
+
+białe zdjęcia, że aparaty są poustawiane, że my zdjęć
+
+50 dziennie robią osoba itd. czy ileś
+
+to truba efektywna i tak jakby to kręcenie śluby się okazało, że tak się wypierdeliło
+
+- No ok, więc się zerwał - WIĆ się zerwał
+
+i firma niżera walczy teraz najważniejszym parametem też dostanie te wypowiedzi
+
+- Ok, ja pierdzięle, niesamowite
+
+- 800 osób, które zdjęcia albo tutaj kupą miś
+
+To oni mówią "lubo"
+
+i też jest pomysł powiedzieć:
+
+"A ci, damy wam to rozwiązanie"
+
+Tu akurat chupaki wyciścicie
+
+Przeceniarkę, maszynienowy model
+
+do zarządzania cenami, który robimy dla Allegro
+
+bo to też jest tam ręcznie robione
+
+i tam jest dużo produktów sprzedajemy
+
+za drogo, za wolno się wyprze ceny
+
+i tak dalej, tam się widzi dynamiczne sterowanie cen
+
+i możemy takim kontaktem dać za larm
+
+Kupiasz u nas produkt, masz kurwa
+
+na narzędzie, które 150 tysięcy euro kosztuje stworzenie takiego narzędzia, a może mniej, jak ktoś ma mniej produktów, to pewnie mniej, nie?
+
+Ale wiesz, no jak ludzie wrzucą do LLM, a no LLM nie będzie tak, kurde, tej historii, tego wszystkiego pamięta, nie?
+
+No, więc dajemy Ci to za darmo, tylko kupią nas, nie?
+
+Więc jesteśmy, według mnie, jesteśmy w stanie rozjechać nam prozent, nie?
+
+Zajuby to po prostu.
+
+Ten mańce mi się podobał.
+
+To jest dobry mańce do tego, żeby zacząć to robić, nie?
+
+Hmm.
+
+No dobrze, ja myślę, że tak, bo tutaj padło, że fajnie by było zacząć na samym początku od tego, żeby znajdować te firmy w miarę automatycznie.
+
+To co tutaj padło.
+
+To jest taki proces, który chyba w każdej firmie powinien funkcjonować.
+
+Natomiast myślę, że zacząłbym od tego, skoro idziemy w kierunku unfrozen, to zacząłbym od tego, żeby przygotować proces pod to, żebyśmy byli faktycznie w stanie zidentyfikować, co jest w tych boxach.
+
+To jest to pierwsze pytanie, które zadałem, jak tam chodziliśmy. Czyli to będzie taką naszą bazą, która pozwoli nam tak naprawdę zbudować wokół tego infrastrukturę.
+
+bo później przychodzi zbudowanie serwisu internetowego, który faktycznie prezentuje w ten sposób ofertę.
+
+To spoko, to jest jeden z klocków, ale to jest bardziej taki finalny klocek.
+
+Natomiast na samym początku dobrze by było zbudować pod to backend, czyli logika, która idzie cała w tle,
+
+pod to, żeby to właśnie było w ten sposób zaprezentowane.
+
+Więc myślę, że to jest pierwszy w ogóle workflow, który możemy sobie odpalić.
+
+Tutaj po waszej stronie też będzie zastanowienie się, jak z zarzędziami, które macie obecnie na stronie,
+
+tam na stronie, można by było tą identyfikację przeprowadzić. My też tutaj na pewno będziemy
+
+chcieli Wam w tym pomóc, żeby to jak najlepiej zoptymalizować i te dane wyciągnąć do narzędzia,
+
+które będzie taką właściwie rocznią i będzie podawać je już stricte do tego serwisu internetowego.
+
+Więc myślę, że to jest pierwszy workflow. Natomiast zastanawiam się jeszcze nad innymi równoległymi,
+
+które mogłyby też pójść od samego początku, skoro to boli też najbardziej, czyli znajdowanie
+
+tych leadów, w sensie, że handlowcy nie znajdą leadów, które przychodzą innymi drzwiami.
+
+Myślę, że to jesteśmy też w stanie w miarę pochłowni i zorganizować,
+
+żeby jednak oni mieli lever w postaci sztucznej inteligencji, która pracuje za nimi
+
+albo nawet jakieś bardziej deterministyczne automatyzacje, które po prostu za nich to robią.
+
+Więc to jest ta rzecz.
+
+I trzecia już rzecz to jest bardziej zastanowienie się nad, to też padło,
+
+komunikacją z klientem, żeby ona była bardziej taka bezpośrednia,
+
+bardziej taka jak B2C, bo też o tym rozmawialiśmy,
+
+żeby to nie było takie wielokrokowe, takie trudne do przejścia,
+
+tylko jak najbardziej szybkie, prędkie i łatwe do skonsumowania przez tego klienta.
+
+One clicky takie, nie?
+
+No, dokładnie.
+
+Więc to jest to, od czego można by było odpalić na samym początku.
+
+I tam też w Notion widziałem, było rozpisane jeszcze znacznie więcej tych tak naprawdę automatyzacji.
+
+Czyli mamy tak: sprawdzać cen, produkt informator, V2B online.
+
+Ja myślę, że fajnie by było też od samego początku, jak już wchodzimy w to, zastanowić się najpierw nad tym, co będzie takim węzłem informacji.
+
+Bo ja bym chciał na samym początku zrozumieć, że było Notion, teraz jest Upsheet itd.
+
+Jakby chciałbym zrozumieć, to też te Janek będzie się na pewno zrozumieć,
+
+stak technologiczny, którego używacie do czego, nie?
+
+Może się okazać, że mamy na stole 20 zabawek, ale pięć ama się w ogóle nie bawimy,
+
+a pięć to już tak trochę nie działają, nie?
+
+Więc może się okazać, że w ogóle wytniemy tak naprawdę jakieś te zabawki
+
+i skupimy się na tych, które działają, albo weźmiemy jedną zabawkę,
+
+która robi to samo co cztery inne, żebyśmy tutaj zaczęli jakby już działać nad tym,
+
+żeby to flow było fajnie zautomatyzowane i żeby było wydajne.
+
+No bo dzięki temu będziemy mieli bazę, będziemy mieli fundament do tego,
+
+żeby budować ten pipeline faktycznie wydajny.
+
+Pisz serkielista baza danych narzędzi używanych w firmie.
+
+I cały przepływ od...
+
+Czuję, że cieszę się, że macie to w jednym miejscu.
+
+Nie ma radość, nie ma radość, baza wszystkich bazów.
+
+Baza wszystkich bazdanych.
+
+Na to nie chodziłem.
+
+Mi się podoba ta baza wszystkich bazdanych.
+
+To jest trochę jak szef wszystkich szefów.
+
+Widać, że jest to...
+
+Albo lista narzędzi mógł do siebie rozdrać.
+
+No i to już byś mógł wpisywać się w bota, który piszesz.
+
+Ty daj mi tą bazę.
+
+Jest ten...
+
+Jest ten...
+
+No wiem
+
+Gdzie to było?
+
+Gdzie to było?
+
+Gdzie to było?
+
+Wystarczy jeden konektor z klona i on by ci to zdalał
+
+I taki partner
+
+Ale nie, teraz mówię
+
+No, nie wiem, 2-3 miesiące temu
+
+No wiem, wiem
+
+Znaczy on już dawniej, już wcześniej, ale
+
+Z rok
+
+- To jest nieupdatejowana, została po to stworzona tak w wdrażaniu, żebyśmy po prostu sami zidentyfikowali ili jest narzędzie.
+
+Myślę, że każdy zobaczy, że nie, nie wierzę, nie, to aż tyle.
+
+- Ok, czyli... - Zestawienie systemu używanych filmów.
+
+- O, coś się pojawi...
+
+- Liderówka... - O, jest...
+
+- Database... - Piękny...
+
+- No tam, ale że
+
+korzystają z aplikacji, czyli aplikację poszukuje klientów, a później komisuje ręcznie.
+
+Możesz wejść w jakiś system, może nie dąży się, ale jakiś system jak otworzysz.
+
+Weź nie wiem, czyli klientem poształmy na Gmail.
+
+Weź na przykład Google Sheets, jak otworzysz OpenWej, to tutaj są procesy filmy.
+
+Ale powstał pomysł, żeby to w ten sposób jakby zmapować
+
+I to zmapowanie było może w 70%
+
+Ja bym to zostawiłem, baza raportów i tak dalej, który tam wyjdzie
+
+Na pewno to nie oddaje w 100% rzeczywistości
+
+No też trochę tutaj to nie był użyteczny
+
+Trudno było wymagać od handlowców, żeby dwóch tych systemów używali
+
+To jest jeden wygodny i ten.
+
+Jest WMS jeszcze, którego teraz mamy.
+
+Jest WMS.
+
+Ja myślę, że możemy zrobić taką opiskę faktycznie używany.
+
+A nie, wiecie, tego, nagrobek, czy ten, wchodzimy do archiwum.
+
+No tak, no bo właśnie ja tego się boję, nie?
+
+W sensie, że są tutaj na pewno narzędzia, które są kompletnie nie używane.
+
+Tak, tak, tak.
+
+100%.
+
+I teraz trzeba je, jak na świecie, wyrzucić do śmieci.
+
+Kompletnie.
+
+Pozbyć się ich po prostu definitywnie, żeby to odchudzić, żeby skupić się na tym, co faktycznie działa.
+
+Podejrzewam, że to, co tutaj działa, to jest 15-20% tej listy, która tam jest rozpisana.
+
+To jest najważniejsza.
+
+To jest wówkim, nie?
+
+Natomiast my tutaj na miejscu to działamy głównie na AppSid, Office, WMS i Whatsapp.
+
+Można tak powiedzieć, że to są...
+
+Ok, ok.
+
+Powiedzcie na co przygotować, by tak przygotować...
+
+No jasne, to na pewno zrobimy, no nie?
+
+Pewnie, pewnie, tak też tak.
+
+To na pewno zrobimy.
+
+No dobrze, a jak chodzi o klienta poczty, to korzystacie z gmaila?
+
+Jeśli chodzi o klientów, to jak mówię tam...
+
+O programowanie pocztowe.
+
+Czyli z Gmail Output
+
+To nie, to mamy Gmail'a
+
+Wszystko jest na Gmail'a
+
+To dobrze, to fajnie
+
+Mamy standardowego pakiet standard
+
+Więc każdy ma też Gemini'a
+
+To fajnie
+
+Trochę trudniej, ale trochę łatwia
+
+A korzystacie z jakiejś
+
+jednej sztuśnej inteligencji, czy różnych RLM'ów?
+
+Gemini'a
+
+Wydaje mi się, że głównie Gemini'a
+
+Gemini'a ma każdy swojego
+
+Wspólne konta, bardziej na zestwór, na przykład GPD i Perplexity, na razie mamy komputer jednego kupionego
+
+Ale to bardziej Wojtek po prostu używa
+
+Wojtek to jest taki IT guy od sobą specjalistą
+
+Dokładnie, on jest przerośnięty tym wszystkim i nie wydala
+
+Wojtek jest wkurzony, że firma chce dużo zrobić, nie?
+
+ale jestem w porządek, że
+
+jak to, no Wojtek
+
+z unfrozen
+
+to rozpiska
+
+kiedy?
+
+To nie dziwiejsze, że jest przeciążone.
+
+No no
+
+No tak, więc wiesz
+
+Rozumiem
+
+sporo spadło na mnie, ale no dobrze
+
+No dobra, słuchajcie panowie, trzeba teraz przede wszystkim
+
+no co no
+
+Tego jest tak dużo, że my
+
+na pewno będziemy, pierwszy krok w ogóle po naszej stronie
+
+zrozumienie tego, czyli analiza tych danych, żebyśmy w ogóle zrozumieli, w którym miejscu jesteście.
+
+Ja bym prosił, żeby przygotować listę narzędzi, które są takimi najważniejszymi,
+
+które faktycznie korzystacie na co dzień, nie? Bo od tego myślę, że przede wszystkim
+
+zaczniemy i od tego będziemy mogli zrobić podejście do tej zbudowania takiego mózgu firmy.
+
+Czyli nie lista stu narzędzi, które kiedyś używaliśmy, tylko lista narzędzi,
+
+które faktycznie przychodząc do firmy, każdy ma w głowie, dobra, to odpalę sobie to,
+
+bo tam mam informacje, których potrzebuję.
+
+I cały proces po kolei, to znaczy też ten proces inwentaryzacji,
+
+jak podróż czapia na magazyn, gdzie są zdjęcia, opis,
+
+wszystkie takie rzeczy.
+
+W sensie bazę danych byłoby dobrze też mieć.
+
+Na zasadzie, czy to jest na Google Drive, czy to jest gdzieś indziej,
+
+jak wygląda ta komunikacja i wymiana danych.
+
+No to tu właśnie firma nie ma tego na rzeczy.
+
+- Nie ma, ok. - Ma swojego ERPA, który jest napisany pod nas do tego.
+
+Natomiast to jest drugie spotkanie. Użycie tego genu, zdjęć i tak dalej, części tego know-how.
+
+To jest drugie spotkanie z detalem i chcemy to przenieść.
+
+- Tak. - No to jest tak.
+
+- No to jest tak, ale ja pod uwagę, że nie wiadomo, że klientów dostajemy listę poprzednkowych sprzedajemy teraz w tym przypadku carami kierami.
+
+No tak, ale to jest połowa roboty od wyczyszczania towarów spada.
+
+A tylko się ręcznie przyznawamy, co tam jest w jednym dostawie i potem klient kultowy.
+
+Zostawiamy listę, to mamy listę.
+
+Tak, co nie ma listę, co ma jakieś produkty prane, że...
+
+To najczęściej to jest ten kilo, jak po prostu kilo, albo...
+
+Ale to wtedy tak jak na naszej stronie wygląda, że są przykładowe produkty wybrane,
+
+powiedzmy, jest cała paleta, robią 20 produktów zdjęć,
+
+wysyłają do klienta, klient wie, że to są przykładowe, nie te dokładnie, które są.
+
+Bo jeszcze jest na przykład 10 wyłącznie palet i one wszystkie korzystają z tych samych z nich.
+
+Być może, uda nam się, jeśli się połączymy też fizycznie z powrotem,
+
+bo dziewczyny mają narzędzie, które też tam skrapuje różne strony i tak dalej, ściąga te rzeczy.
+
+W skrócie to też, no minimalnie tutaj powiem Wam jak wygląda upload tam
+
+Upload tam wygląda tak, że jest baza dana zeskrapowana tam z kilkoma milionami produktów
+
+Dziewczyna przy komputerze skanuje rzecz, skanerem, nie?
+
+I wyświetlaje się cały ten produkt info
+
+No nie zawsze on jest, ale dość jest, więc
+
+być może też moglibyśmy część tam tych narzędzi gdzieś tutaj wykorzystać
+
+To na pewno, to na pewno
+
+Tylko, że one wszystkie rzeczy są skanowane
+
+Ale chodzi mi o to, że mamy paletę rzeczy w hulcie, które nie mamy listy pakunkowej.
+
+Używając narzędzia STV, czyli skaner, baza danych STV, mamy upload.
+
+Nie musimy dostarczyć od producenta, bo pierdoliliśmy się producentowi na stronę, mamy jego bagapa rzeczy,
+
+przerabiamy sobie to na listę pakunkową, mamy też narzędzia.
+
+No tak, a jak rozumiem to jest połowa praktycznie waszych produktów.
+
+Druga połowa, nie? Zajmimy się najpierw tym, co są te listy, to my proszy rajcem, a później sobie jedzimy w szczególnie
+
+To jest jeszcze jedna rzecz, że magazyn tego wszystkiego nie przerobi po sztuce picking czy coś
+
+Albo na przykład inna sprawa, no wiecie, ciężarówka to jest 33 palety
+
+No i tak, czasami jest numer palety, numer pudła, gdzie ta rzecz jest, jest referencja, a czasami to jest po prostu, to jest gdzieś na wyciężowce, nie wie gdzie
+
+Czy nie chcecie się bawić w taki picking jak oni? Bardziej lotnych?
+
+Ja myślę, że pierwszą rzeczą powinno być to, że paleta z listą pakunkową wlatuje coś takiego.
+
+A później czy zrobimy picking? Zrobimy picking.
+
+Ok, ale później. Bo to już jest logistyka.
+
+Ja sobie wyobrażam tak, że mając tego Excela, który nam przychodzi i ten Excel to jest ta ciężarówka fizycznie,
+
+33 palety, no to Excela przerabiamy na coś takiego, żeby pokazać produkt, który jest na prozent.
+
+Jest tam jakiś czas, oni mają trzy dni, no w sumie, że jest to pewnie krótki czas,
+
+u nas to może będzie tydzień na początku i przez ten tydzień wszyscy klienci sobie pikują z tych 33 palet.
+
+To jest jeden czas i dobra, no i tam...
+
+- Wza tym jeszcze raz pakujecie. - Na tej ciężarce nie będzie 10 tysięcy sztuk.
+
+Dwa tysiące sztuk sprzedaliśmy w ten sposób.
+
+Po sztuce ludzie tam pikowali.
+
+No i przeragamy to, że ludzie skarują.
+
+No i teraz pytanie, jak usprawić ewentualnie ten proces.
+
+Ja mam do tego uwagę. Wydaje mi się, że dlaczego to nie do końca będzie tak działało.
+
+Bo zobaczcie, Afrozy działa na paletach.
+
+Jeśli pi***niemy klientowi 10 tysięcy rzeczy, to on się z tym zgubi.
+
+- Nie, ale chodzi mi o to, że jeden produkt to jest jedna paleta.
+
+- Ale lota, a oni mają jeszcze całe tutaj, nie?
+
+- No nie, ale słuchaj, wchodzisz w lotę, lot to jest kilkadziesiąt do dwustu rzeczy.
+
+Jak pierdolisz dziesięć tysięcy, to przetłoczysz pieniądze.
+
+- Ale teraz nie, trzeba ciężarówkę podzielić.
+
+- Jak wejdziesz na ile mają te produkty głównych tu?
+
+- Tysiąc sześćset. Dwie palety w PIKING-u.
+
+Nie.
+
+Ale to maja tylko...
+
+No w tych produktach, które są dostępne do wyboru
+
+jako piknik.
+
+Ale to może maja, nie?
+
+Na samej grze jest.
+
+8,8.
+
+Nikt nie wrzuca 10 tysięcy,
+
+bo to się zmęczy.
+
+Wiesz, oni tutaj idą w modelu
+
+tego Zalando Launch, że zobacz,
+
+jakbyś cofnął jeszcze,
+
+jest konkretna marka, czyli
+
+wchodzi Karl Lagerfeld
+
+Zobaczcie, jest nawet czas do kiedy można się na to zdecydować, czy oni dopięli konkretną markę.
+
+Tak mają wyglądać, bo musimy po pierwsze zeryfikować...
+
+U Was też to mogło tak wyglądać?
+
+Tak, tylko musimy przyjąć na ten stan, zyskać nowe, że mamy informację, co jest w prawiecie.
+
+No bo jeżeli kliencie ubieżemy, nie będziemy mieć później tego na cierowunkiem...
+
+Ja to widzę inaczej. Przez na cierowunkach 33 rzeczy.
+
+Mamy problemę listę pachunkową.
+
+Stwierdzamy, że robimy 3 loty z tego na ten wyższej cenie,
+
+skanujemy skanerem, sprawdzamy co się stało,
+
+ze skanowania rzeczy skanerem, nie pamiętam, jak to jest koszt procesu, nie duży,
+
+typu 10 groszy rzecz, z 33 palet robimy 3, przeszło proces.
+
+Kolejną dostawę, widzimy, że się sprzedaje, z 33 palet wybieramy 6 palet, robimy loty.
+
+Ale tu już widzisz, musimy coś zeskanować przedtem,
+
+a gdybyśmy z samego Excela zamieniani przez AI na coś takiego...
+
+- To trzeba przekopać przez całą ciężarówkę, żeby wiesz, że przed jedną rzecz.
+
+- Ale właśnie o to chodzi, że ma klient po filtrach, może sobie wybierać,
+
+że nie, chce sukienki, chce jakąś markę, po filtrach sobie zawęża co chce,
+
+ale to jest jak sklep, że nie, 10 tysięcy rzeczy jest nawet wtedy, nie?
+
+I masz czego wybrać rzeczywiście, a nie, że z 88 rzeczy wybierasz.
+
+- Wiesz, możemy zrobić to według mnie, wyzrobienie tego i w jeden sposób, i w drugim nie jest problemem.
+
+Bo to jak proces zostanie operacyjnie przeniesiony na magazyn, czy inputem będzie EXCEL z 1000 rzeczy czy z 10 000, to jest jakby wtórna rzecz, decyzja operacyjna.
+
+Że jak magazyn powie: "Kurwa, no ale pakowanie stwierdzonych jest przejmane", to po prostu tego nie zrobimy, bo się na końcu okazuje, że brakuje dwóch rzeczy.
+
+Im więcej rzeczy, to tym większa szansa na sprzedaż, bo klien będzie nie oszczędzonych.
+
+Albo może robić co tydzień na przykład 3 palety i nie robić od razu 10 000, tylko na przykład stopieło.
+
+Warto zrobić jedno i drugie, bo to co Paweł mówi ma rację absolutnie. Są osoby, które będą doceniały, że mają szerszy wybór, ale to co oni robią też jest fajne.
+
+Czyli przychodzi im konkretny brand, na przykład jest Karl Lagerferre albo Moschino i od razu masz takie poczucie, że ta oferta jest...
+
+Weź te loty. To jest kurwa najlepszy właśnie, nie w loty, tylko będziesz tam albo nie, albo możesz w loty weź, weź w lota i daj jakąś markę co opisali.
+
+Bugs, dobra, guest to może jeszcze będzie sam guest, nie?
+
+Ale weź Valentino, Steve Madden, no dawaj, dawaj to.
+
+I zobaczycie marki.
+
+Guest w ten.
+
+A, no to dobra, tu jest akurat cztery.
+
+Ale często jest tak, że opisują, że jest jakaś tam marka,
+
+tej marki jest tam kurdej 7%.
+
+Dlaczego, bo o to chodzi, bo jest zajebiste,
+
+że wrzucasz jednego Hugo Bossa i pozostałe tam powiedzmy
+
+pakorowane, czy jakieś...
+
+- To można zrobić, że będziemy sprzedawać, jakby tych, którzy mają marketingi na mniejszy złoty, później jakieś palety, a później można dać jeszcze jedną, jakby cała miasta, po konkursie, które nie będą.
+
+- Cała ciążka. - Cała ciążka.
+
+- To jak oni tego tylko tyle mają, bo jak widziałem na początku, kiedy tam wchodziłeś, to tam 10 tysięcy plus rzecz, coś tam.
+
+- Na pewno nie ma, ja widziałem bardziej, że to jest wcale duża...
+
+Ja też, oni kupują Zalando, a widziałem, bo widziałem ich na Instagramie, widziałem te rolki, nie wiem czy te nie o nich, bo widziałem chyba podobne kartony,
+
+które też tam gdzieś wystąpili na tym magazynie i oni po prostu to, ja myślę, że oni bardzo długo to procesują, naprawdę, oni przedostawiamy
+
+to wszystko procesują, skanują, później mają to na magazynie, widziałem też te regale, tylko niższe, tak jak mamy, tylko oni jakby tam mają te półki i że oni...
+
+- To nie możecie tam podjechać, że niech można na magazynie podjechać, czy potę nie konkurencji, możecieć, czy to właśnie.
+
+- Możecie zapraszacie. - Tak, możecie zapraszacie.
+
+- Wiemy, gdzie następna wycieczka. - Ja bym się przeniechał, wiesz, nie?
+
+- A faktycznie nie wejdziesz na ich ofertę, jak nie masz konta.
+
+- Nie ma żadnych ofertów, to trwa.
+
+- W tym momencie to może mają 500 produktów.
+
+- Ale to patrzy się wkuroty, bo ktoś ma podziennieść na niej.
+
+- Tak.
+
+- Że jedna, jest 5, 6 i tak dalej. Cały czas zmieniają.
+
+- Jak pokażesz za dużo tych palet, to ludzie zaszczą tak zgubią się.
+
+Ja początkowo myślałem, że to będzie taki sklep internetowy, znając z naszej możliwości ilościowej, że wkłada nagle 30 tysięcy sztuk na sklep internetowy jako świeżyna.
+
+Tylko, że to jest na razie na paletach. Dopiero po akcji tygodniowej, kiedy wszyscy klienci sobie powybierają, lecimy z rozdysponowaniem tych rzeczy do tych co by brali,
+
+a ewentualnie potem z tego co zostało robimy właśnie loty paletowe, gdzie dalej mamy zainteresowaną całą paletę,
+
+ale już nie ma tego fakingu, tylko masz powiedzmy, nie wiem, te 100 sztuk w palecie i masz dokładnie wypisane co tam jest.
+
+- Mi się akurat wydaje, że będzie trzeba towar podzielić, na przykład połowę gotowe palety,
+
+kieńczy, którzy powiedzą: "Panie, jacy gotowe palety mi to jest niepotrzebne",
+
+drugą połowę dzielisz i jakby, aha, to skanowanie będzie.
+
+No właśnie przed jakimkolwiek procesem, czyli nie wydając praktycznie pieniędzy na koszty procesowania tego,
+
+no wyobrażając sobie tak, że zamieniamy właśnie tego Excela w to, nie?
+
+Poprzez AI i dopiero po tym, jak już klienci wybiorą sobie rzeczy, zaczynamy procesowanie.
+
+I to procesowanie by się dziwiło na takie rzeczy, że pakujemy to, co kupili i to, co zostało, już mamy zmiotaryzowane, bo będziemy to procesować.
+
+Wtedy będziemy musieli całą dostawę przez kanapę.
+
+No właśnie tak.
+
+Ale masz ten instrument zwaną każdą koletę.
+
+Ale jeżeli byłem przed tym, nie będę zgadza się, nie wiem, tak?
+
+Z wszystkich dostawców, nie wiem,
+
+ponad ciebie cały czas, że zgadza się 5%
+
+do takiej liniewanii, co nie zgadza się.
+
+Niektórzy poniesie to 15% w ilości.
+
+Ja nie wiem, czy skarrowany.
+
+Tak, tak, tak, z ilością.
+
+Wcześniej trzeba wybuchniętą i uprzedzić,
+
+że część produkców, które wybiorą,
+
+mogą finalnie na przykład przez błędy magazynowe nie być dostępne.
+
+Albo przeskanować, podzielić na palety, opisać, czy to jest na tej palecie, to na tej, to jest lot, to jest picking i jakby skan je na początku i po prostu dopisujemy informacje o kontenerze.
+
+Bo w moją cenie, jeśli ktoś zamówi 200 rzeczy, a będzie trzeba 30 czy 20 tysięcy rzeczy przeskanować, żeby 200 wysłać, nawet w 2 razy większą ceną, to gra będzie nie małe świeczki.
+
+Pytanie, ile jesteśmy w stanie sprzedać w ten sposób.
+
+A czy oni może zaczniemy się zaznawiać od tej strony?
+
+Oni oferują, że przez 3 dni możecie sobie wybieranie.
+
+Ja to rozumiem tak, że przychodzi do nich...
+
+Został tutaj, ja miałem 15-20 dni, bo ja dostałem, jeśli chodzi o to.
+
+Tak, w Pickingu? Tak.
+
+Tak.
+
+Ja właśnie tak byłem...
+
+A, ok.
+
+Tak, czyli może oni robią to, co mówi Paweł, nie?
+
+Czyli najpierw przychodzi paleta, nie wiem, Nike'a,
+
+czy tu akurat z X-Brands, czyli wybrali kilka marek premium.
+
+Ludzie sobie pikują przez określony okres czasu,
+
+potem to co nie zostanie, ładują wszystko do lota
+
+no i tam już trzeba kupić hurtowo
+
+A u nas by to mogło wyglądać tak, że przychodzi dostawa
+
+nie wiem czy to z biznesowego punktu widzenia
+
+ale pierwsze spróbujemy ją sprzedać w całości
+
+dajemy sobie tam 3 dni, jeśli się nie udaje
+
+to przychodzimy do tego modelu
+
+i wtedy tak skanujemy
+
+chyba że oni tutaj w ogóle wybierają takie dostawy
+
+są bardzo dobrze skatalogowane od samego początku
+
+i w ogóle nie muszą robić tego rozpoznania
+
+i wtedy wrzucają czasy
+
+niektórzy dostawcy robią tak, że na kartonie jest lista
+
+jest łatwiej to znaleźć
+
+ale biorąc pod uwagę taki model, gdybyśmy mieli zastosować
+
+że jedni mają, inni nie mają, to musielibyśmy
+
+tak, że przyjąć, że nawet jak Maciej
+
+ma 6659 sztuk
+
+- Mam macie trzy dni na wybór, a my później i tak i tak skanujemy cały rodzaj.
+
+- Patrz, 6659 tam mają coś 500 coś.
+
+To jest 1600 modeli, to nie jest jakaś fajna, no to będą się pieprzyć z tym.
+
+Znaczy, według mnie to jest wtórna rzecz, co wrzucimy w aplodzie.
+
+Czy zdecydujemy, że przeskanowane na magazynie 3 palety czy 30,
+
+operacyjnie wiecie coś opatrza co nie.
+
+Potrzebne jest narzędzie, które
+
+z bliku Excelowego robią stronę internetową
+
+i daje informacje.
+
+To się da zrobić.
+
+Przy czym oni też, trzeba przyznać, że mają
+
+te marki bardziej takie
+
+premium, nie wiem jakie Wy macie
+
+u siebie do sprzedaży,
+
+ale widzę, że oni głównie starają się
+
+właśnie takie łatwo sprzedawalne. Nie wiem czy mają też jakieś inne... Tutaj biznesowo trzeba byłoby to porównać.
+
+Mi się wydaje, że jesteśmy w stanie wyciągnąć dodatkowe pieniądze nawet nie z prawie rzeczy.
+
+To co Wojtek mówiłeś o tym, że nawet gówniana rzecz będzie dobrze.
+
+Ktoś zobaczył, 7% kupuje na przykład, czy 8% jestem w stanie kupić, nie wiem, jakieś PLT w małej ilości, dostaję wszystko, sprzedam.
+
+Dlustka warta 100, kupuję za 8 złotych.
+
+Dlatego ja właśnie nazwałbym tą może stokary, może jest spoko nazwą, podoba mi się, ale poszukałbym czegoś, co się kojarzy właśnie z marką premium jako cały brand na dedykowaną taką stronę,
+
+bo jeżeli cała marka będzie promowana jako premium, czyli przykładowo Stockhood czy Estillo, no to nawet jak będziesz w ramach tej marki sprzedawał rzeczy nie premium, to ludzie sobie pomyślą, ale to jest premium.
+
+i tak to niestety działa, więc myślę, że o tym też możemy porozmawiać.
+
+Żeby nie było, Stokario zaproponował Jamie.
+
+A co napisałeś, że podobał Ci się Filmsikario?
+
+Szczęście nie prosi o prawa autorskie.
+
+Tak, tak, ja przyczytałem mu prompta, żeby wyjść na ten portal właśnie.
+
+To jest tych markach, unfrozen jak na to patrzę, mam takie poczucie, że to jest premium, to jest młodzieżowe, jest takie nowoczesne.
+
+Unfrozen, jeżeli nie za młodzieżowe, to też stok, to mi się wydaje, że od tego jest trochę, że nie rozisz kasy.
+
+Odmrażają po prostu stoki magazynowe.
+
+I to jest też fajne dla firm, w zakupach, bo u nas też na stronie stworzyliśmy tak naprawdę, bo ta strona ma ile?
+
+tamto rok pozostaw.
+
+I stworzyliśmy w końcu selekcję dla firm,
+
+które chcą się pozbyć z tobą.
+
+Że nie jesteśmy tylko sprzedawcą, ale też możemy zarządzić
+
+własnymi jakąś taką komunikację dla tych firm.
+
+I wydaje mi się, że może nie widzimy tego,
+
+tak łatwo tego nie da się zidentyfikować,
+
+ale na jakiś tam schajem, jak jest rozmowa,
+
+no pewnie nas ze starą strony jakby załatrzyli,
+
+to mogliby stwierdzić, kurde, no nie wiem,
+
+czy ten z nich współpracować.
+
+- Wszystkie rozwierdziesz jeszcze te loty, bo ja spróbowałem tam weź, ale muszę wpisać KRS i jakby wszystkie...
+
+- Musisz zdjęcie magazynu, ale właśnie, no musisz po prostu wyjadować zdjęcie magazynu w Gemini.
+
+No, wiesz, to jest takie, kojarzycie, nie? To zabezpieczenie na krytytkę i są takie menu, że w obecnych czasach to jest po prostu kurwa.
+
+- No, ale na co się już ulicy? - Zabezpieczenie na chrupka.
+
+- Okej. - Co, szukałeś coś na siebie?
+
+- Tak, tak, tak.
+
+- Tak, tak, tak.
+
+- Właścisk.
+
+- Właścisk.
+
+- I tutaj musisz cały kupić lot,
+
+z przykładowo 138 sztuk, tak?
+
+I oni to jeszcze,
+
+zobaczysz, że oni to też bardzo mądrze kategoryzują, nie?
+
+- Bardzo.
+
+- Jest przykładowo moda damska
+
+z różnymi rodzajami sukienek,
+
+więc sklep, który handluje takimi rzeczami
+
+od razu mogę pomyśleć, dobra,
+
+biorę cały taki lot.
+
+No bo to też jest wyzwanie, nie? W sensie, żeby nie było tam nic głupiego dla tego końcowego odbiorcy.
+
+Bo ja wiem, że wy chętnie byście po prostu rzucili całą tą paletę jak leci, no nie?
+
+Bo to jest tańsze niż selekcjonowanie, tylko no...
+
+Możliwe, że taki sposób, jaki oni przyjęli sprawia, że...
+
+Nawet jestem przekonany, że sprawia, że się to lepiej sprzedaje.
+
+No...
+
+Tak naprawdę te palety jak się rozparceły, to one wyglądają fajnie, nie?
+
+To jest bardzo możliwe, że z tego zalałam to pewnie jest jakieś tam zarządzanie, żeby za dużo butów czy czegoś nie poszło, może być to jakiś ergonomium, ale to później można wśród maszynienia zrobić jak to zrobić.
+
+No właśnie, jak będziemy skatery z mamy piecach, wrzucasz na Excel i powie 60% stoku, jednej do góry paleta, to zrób na stoki, to zrób piki.
+
+Wtedy jak mamy taką modę damską, to on mając Excel'a przez EA jakby przerobi te dane w taki sposób, żeby wrzucić to wszystko do innego...
+
+Ale wstępnie za 12% to Mango, Jack & Jones OnLive, przecież to jest jakby...
+
+Jack & Jones OnLive to jest jednak jeden koncent, bestseller, ale GAP to jest zupełnie inny, MLS to jest jeszcze inny.
+
+Wiesz co, to wszystko za lando.
+
+To nie, to za lando, według mnie jak leci, nie?
+
+Ale wygląda fajnie, nie?
+
+Ale pierdolnie to z Zalando, czyli oni się dogadali z Zalando na zwroty, czy po prostu bardziej zajęli?
+
+Zalando to nie, ma kilka milionów rzeczy niesprzedanych, starych i tak dalej, po prostu utonęło w tych akademach.
+
+I my też mamy oferty zakupu, tylko to jest trochę za drogi znowu, albo za mało premium, albo coś.
+
+Często mamy towar lepszy niż oni, tylko może pakowany.
+
+Tak. Na sumie model z Nizalando to jest raczej lipa z tego co przynajmniej dziewczyny z Aleko mówiły, że to są stare rzeczy, już tam nie, nie, nie, jak je.
+
+Hmm, okej.
+
+A ostatnio ucieli właśnie chyba 90% kosztów związanych z modelkami, z systemem fotograficznym, właśnie przez Eiger.
+
+No to, ale mieli naszego premiera też, widziałem, że na Zalando był.
+
+Tak?
+
+Widzieliście ostatnio?
+
+Nie, nie.
+
+W sensie, że wygenerowało modela jakoś pewnie i może się wzorowało na nim przez przypadek, no i by sobie wręcz, że tu bierze koszulkę na ZA LANDO.
+
+Było, było.
+
+Wojtek, jak zobaczysz swoją twarz na tytelę...
+
+*śmiech*
+
+*śmiech*
+
+*śmiech*
+
+O, nie?
+
+Nie, że jest to taki prosto poświęci.
+
+Szasz jest szczególnie.
+
+Zawsze jest to murzyn oczywiście.
+
+No, oczywiście.
+
+A na świecie jest typowy maryzalan.
+
+Chcesz też może białko?
+
+Nie, w sensie...
+
+Szota?
+
+A, ja chętnie.
+
+Kto ja chętnie.
+
+Kurczę, fajnie
+
+żebyśmy ustalili, czy jesteśmy w stanie to osiągnąć.
+
+Bo jeżeli sobie to wszystko pospisujemy, dowiemy się,
+
+no to będziemy wiedzieć, czy to jest rabiane.
+
+Na ten moment wydaje się, że tak, ale po prostu chcielibyśmy się do tego przygotować.
+
+Jak myślisz, Janek?
+
+Ja myślę, że to samo wyzwanie, najważniejszą opcją jest to,
+
+żeby spiąć fizyczny stan rzeczy,
+
+jak stworzyć sobie to.
+
+I to będzie istotne, zmapować te procesy jak one fizycznie wyglądają
+
+Jak te palety są, można się skanować
+
+Czyli wiemy dokładnie co tam jest jak chcemy to dzielić
+
+I jak dojdziemy do tego, to zrobimy się cały proces
+
+To możemy do tego złożyć sort, ale nie na obrót
+
+Jest tu zboczalne
+
+Wiatrówkę sprzedanie
+
+No, dosyć może to wywoła
+
+Dzięki
+
+Dobra
+
+No to przechodząc do action pointów
+
+Tak de facto my napiszemy, czego potrzebujemy.
+
+Action point są takie, że ja myślę, że nasza współpraca zacznie się od tego,
+
+że my nie wejdziemy i nie damy Wam od razu gotowego produktu, który konkretną rzecz rozwiązuje,
+
+dlatego że tutaj jest bardzo customowe podejście, więc my będziemy musieli ten produkt zaprojektować
+
+pod waszą firmę, bo jesteście już w sumie sporą firmą i macie dużo przede wszystkim,
+
+dużo się w tej firmie dzieje, więc to rozwiązanie musi być trochę bardziej customowe.
+
+Najważniejszym krokiem to jest zbudowanie takiej wyrośni, takiego mózgu,
+
+który faktycznie będzie w stanie te wszystkie end pointy połapać,
+
+więc jeśli idziemy w kierunku unfrozen, to na pewno zaprojektowanie procesu.
+
+Teraz też pytanie, bo ja widzę już po tej rozmowie, że to nie jest takie proste,
+
+żeby ten picking czy te palety zidentyfikować w taki sposób, żeby one dawały taki output.
+
+Pytanie czy tutaj też potrzebujecie naszej pomocy, żebyście jakoś przeszli przez ten proces,
+
+czy jesteście w stanie jakby doprowadzić do tego, że ten output na stronę już będziecie w stanie wygenerować.
+
+Żebyście też może...
+
+Możemy przesłać jakieś przykładowe może te Excel'e.
+
+No.
+
+Ja sobie to przynajmniej tak wyobrażałem, żeby z tego Excela stworzyć produkty na stronę
+
+rozpośrednio i dopiero potem wchodzimy w procesowanie tego, jak już wiemy, ile sprzedamy.
+
+Może byś nie wypał rzeczywiście, jeśli na 10 tysięcy już to sprzedamy z tonie.
+
+To jest bez sensu wtedy.
+
+Ale gdybyśmy sprzedali nawet tak 20% po zupełnie innych cenach już do tej pory,
+
+a 80% robimy loty, czy tam na kilo, niektórzy dalej będą piszcili po 1 kilo,
+
+no to może część na kilo, 5% żeści na kilo, a reszta na loty, cymenteryzowane palety.
+
+A te excele są ogólnie precyzyjnie wykonane? Jak je dostajecie?
+
+To każda marka inaczej.
+
+To różne dane są też...
+
+Ale pokrywają się z tym, co fizycznie?
+
+Zazwyczaj.
+
+To są małe błędy, to jest to małe błędy.
+
+O to zazwyczaj chodzi.
+
+Możemy dopytać o alegrę, bo oni teraz z tego Trendiola,
+
+to jest chyba najbardziej zinwentaryzowanych w tym momencie
+
+i jak oni to dostają, możemy dopytać, czy rzeczywiście się to zgadza.
+
+Od dwóch miesięcy wprowadziliśmy coś takiego na Alegrą,
+
+że w momencie, kiedy towar wjeżdża, już nie przechodzi przez ludzi,
+
+którzy skanują tą rzecz, tlepią te aukcje i tak dalej,
+
+bo wchodzi to praktycznie przez AI od razu gdzieś do bazy na aukcje jest wyrzucane,
+
+ale z kartonu jest pakowane od razu na adresole, na magazyn,
+
+zeskładowane. Czyli znaczna część jest już uproszczona procesem.
+
+Rozumiem.
+
+Bezdefektowe rzeczy, nie?
+
+Bezdefektowe to przeglądają dalej, nie?
+
+Jest Amazon, jest Vipi, jest Trendy O, z którym możemy zacząć.
+
+No to jak my przygotujemy, co byśmy na razie chciały, to później możemy sobie podorabiać.
+
+Pod Trendy O możemy zacząć, wydaje mi się, że to jest najbardziej...
+
+- Wreszcie jakieś marki, które mamy...
+
+- Są na SOSa mamy jeszcze, no na SOSa nie ma w ogóle listy,
+
+- No, jest karta napisane przez karta.
+
+- Teraz ten, no, z Tobie, ma od Jut, tam w sumie też mamy informacje, nie?
+
+- Jest to, prawda, naprawdę, no na te 60 żarówę wybierzemy kilkanaście, nie?
+
+- Dobra, spodziewa się.
+
+- No dobra, to słuchajcie, no ja myślę, że i tak musimy to sprawdzić,
+
+to z transkrypcia do spotkania, żebyśmy mieli, że tak powiem, pewność co do tego.
+
+Ale z Waszej strony myślę, że ważna rzecz do przemyślenia jest to, bo faktycznie trudno będzie wylimywać ryzyko, o którym mówił Paweł, czyli czy po tym share pickingu okaże się, że to się sprzedaje czy nie sprzedaje.
+
+Tak de facto, póki tego nie zrobimy, to nie będziemy wiedzieć.
+
+Wy też musicie się upewnić, czy chcecie iść w tym kierunku, czy możecie iść w tym kierunku,
+
+że faktycznie ktoś z pracowników będzie wyciągał, katalogował te ciuchy
+
+i ewentualnie przeglądał, zanim to wyjdzie z ciężarówki.
+
+Bo jeżeli tak, no to super, my wtedy będziemy mieć więcej możliwości,
+
+ale jeżeli dochodzi ci do wniosku, że biznesowo to jest ryzykowne,
+
+to wtedy musimy się zastanowić, czy może iść bardziej w całe loty.
+
+idealnie byłoby zrobić to co oni, ale sami też musicie policzyć jakby czas i koszt takiego
+
+Wiecie, to zrobienie jest bardzo proste. Powiedzmy, że dostajemy listą 20 tysięcy rzeczy i to jest jakby okazuje się, że nie ma capacity, żeby to zrobić, no to robimy tak:
+
+Wyjmujemy 3 palety, 3 tysiące rzeczy skanujemy, dajemy do tego upload i to idzie na lody, nie?
+
+paleta nr 1, 2, 3, 3 produkty wjeżdżają i jest jakby gotowa, a czwarta jest spikyj.
+
+A co ocenie spikowane, leci do tamtej listy z powrotem.
+
+Więc jakby tu jest dużo metod, żeby od razu nie rozpieprzać wszystkiego, tylko można sobie dawkować.
+
+Czyli nie widzicie w tym?
+
+No tak, można też wykorzystać bazę Allegro, bo przecież te same rzeczy, znaczy, może nie te same, ale znaczna większość rzeczy,
+
+już jest inwentaryzowana, już jest spakowana i wiemy w którym dokładnie miejscu jest na Antresoli
+
+i jakbyśmy podłączyli chociażby tego Trendiola, gdzie tam są różne marki pod to,
+
+no to nagle możemy w pewnym momencie, właściwie w jednym momencie wyrzucić 30 tysięcy rzeczy
+
+i wie jak wybiera, to z dnia na dzień mu wysłać, bo to już jest inwentaryzowane.
+
+Tu jest w ogóle też jeden taki problem biznesowy, który dotyka Allegro.
+
+Allegro chętniej kupuje big-grade'y, bo mają dużą różnorodność i lepiej sprzedają.
+
+Ale, ale...
+
+Big-grade'y, czyli tak jest...
+
+Z epektami, nie?
+
+Tylko, no bo problem był taki, że te sztuki agrade'owe, ten koszt procesowania tego uploadu na Allegro był drogi.
+
+Teraz jeśli to obniżamy, to możemy właśnie kultorowo sprzedawać.
+
+No bo możemy, a, który Allegro by normalnie nie kupiło, bo mówię, kurde, będziemy to gniegli, wrzucimy te powa 10 tysięcy sztuk, niech już będzie na Allegro,
+
+damy klientom kultowym do wyboru. Będą kultowi, będą to tam jakieś mogą być co tydzień, dwa razy w miesiącu itd.
+
+Nie musi to jakby ciągle być tam dostępne, można to jakbyś tam zamykać ten, a Allegro będzie sobie tam przez ten proces sprzedawało.
+
+Nagle okazuje się, że dobra, share picking skończyliśmy, bo to już naprawdę są słabe wyniki, bo kurde, to zamówienie jest tylko czy coś.
+
+Pakujemy to w lotę, obniżamy cenę i zarządzamy tym, więc oni jakby by skorzystali, bo dostaną w miarę tanio dodatkowe produkty na ten.
+
+Zresztą będą też na ten słabey tak ubiegrzeć.
+
+Ale słuchajcie, w związku z tą migracją z Allegro, to...
+
+Bo rozmawiałem też z Kubą,
+
+i Kuba mówił, że rozważacie tą migrację z Allegro
+
+na ten Marketplace Brzoski.
+
+Czy tutaj macie jakieś wyzwania logistyczne związane?
+
+No, no jesteśmy tam już na tym...
+
+Jak to wygląda na przykład?
+
+Nie wiem, jak to wygląda, to właśnie się z nami.
+
+Ok, ok.
+
+Jestem ciekaw, czy macie z tym związane jakieś wyzwania logistyczne?
+
+no bo zakładam, że bazę kilkudziesięciu tysięcy jak najwięcej produktów trzeba przenieść.
+
+Jestem ciekawy jak to...
+
+Zakładam, że to inny dział po prostu.
+
+No to już więcej dzieszynowu.
+
+Dobra, to sobie zrobię, bo sobie skupiam.
+
+A jak chodzi o STilo, no bo tam jest wszystko świetnie, rozumiem, skategoryzowane, prawda?
+
+To jest data.
+
+Tak, każdy produkt.
+
+I to idzie z tej firmy tam, czy to jest inny w ogóle pipeline inflowu produktów?
+
+Część z produktów idzie z tego magazynu tam, ale znaczna część też bezpośrednio przyjeżdża do nich.
+
+Oni wiedzą co, co chcą kupić i tak dalej na przykład.
+
+I oni sobie to kategorizują, jak im to przyjeżdża.
+
+Czyli ten proces jest przetestowany, de facto.
+
+Tak, tak. My mamy AirPad, który wiecie, z zabezpieczenia za małej SOSa, bo oni nam nie dali na API, nie dali nam tego, więc musieliśmy sobie...
+
+Kiedyś jak im padnie strona, wiem, że te skrawery są połączane, bo mieliśmy kilka milionów produktów, nie?
+
+Po prostu zrobione, nie wszystkimi się handluje itd.
+
+Dzieńczyny tam zarządzają tą bazą, co itd.
+
+Trzymanie serwerów.
+
+Ok, ale to jak ten proces?
+
+Zresztą kod też należy do nas, to znaczy my jako my jesteśmy za głupi, żeby to użyć, jakbyś tam małpie rakietę.
+
+ale mamy prawa autorskie do tego, żeby tego używać.
+
+To nie jest jakby, nie dostaliśmy boxa, nie?
+
+Zapłaciliśmy za to, że możemy sobie tego kodu użyć.
+
+Natomiast tam z ingerencjami był problem.
+
+Jak się coś wypieprzy, to chłopaki powiedzieli, że "Kurde, ale płacicie nam za utrzymanie".
+
+Jak się coś wypieprzy, to nie chcemy w ramach supportu naprawiać czyniś błędów.
+
+No i wtedy to raczej byłoby być może skopiowanie funkcjonalności,
+
+uruchomienie jakby osobnej instancji, która nic nie może namyszać.
+
+Rozumiem. Ja myślę, że bym zaczął w ogóle od...
+
+Abstrahując od tego, że idziemy w kierunku tego "Auf unfrozen",
+
+to zacząłbym od optymalizacji działu handlowego.
+
+Myślę, że... bo tam i tak się pojawią automatyzacje, które są konieczne do wdrożenia
+
+na samym początku, które po prostu niezależnie od tego,
+
+gdzie będziemy w drodze wejścia na model unfrozen i tak będą potrzebne i tak będą działać.
+
+One się nie zdewaluują. Może niektóre się trochę zmienią, bo podepię się je pod innego oraka,
+
+inny ten mózg firmy, to jeszcze do tego dojdziemy.
+
+Ale ja myślę, że by w ogóle zacząć od jakichś takich twardych rzeczy, a nie na zasadzie spotkajmy się, pogadajmy i pomyślmy,
+
+to myślę, że dobrym krokiem byłoby zacząć wdrożenie w dziale handlowym.
+
+i to już będzie jakby, już będziemy widzieć, że coś powstaje, że coś się automatyzuje, że coś się usprawnia
+
+i w tle robić podjazd taki infrastrukturalny pod to, żeby uzyskać to co małym prozent.
+
+To jest endgame, tak jak Wojtek powiedział bardzo dobrze, natomiast zanim tam dojdziemy, no to zacząłbym się już z czymś bawić,
+
+już nad czymś działać, a nie tak kurczę debatować tylko nad tym największym problemem,
+
+bo wiadomo, że on najwięcej czasu nam śnieś, żeby go usprawnić.
+
+Natomiast ja mogę dodać, że z mojej perspektywy zrobimy to i wam to usprawni proces na tu i teraz,
+
+to będzie bardzo pomocne, ale mnie najbardziej kręci to, żeby podnieść tą rękawicę rywalizacji z unfrozen,
+
+żeby otworzyć Wam nowy model biznesowy, bo uważam, że tutaj możecie zobaczyć największe efekty,
+
+możecie zobaczyć niesamowity przeskok i to nie będzie łatwe, ale jest to rabialne, to mnie cieszy
+
+i to na pewno będzie dawało nam też sporo satysfakcji, że zobaczymy takie realne efekty u Was w firmie
+
+i Wy przede wszystkim to zobaczycie, to może poprawić Waszą wypadę.
+
+Jakbym miał to porównać, to wejście na Boder on Frozen to jest misja.
+
+Jak odpalamy sobie jakąś grę i nie ugramy, to jest ta misja, nie?
+
+Że musimy dojść do tego momentu i to jest ten endgame.
+
+Natomiast usprawienie działu handlowe to jest taki sidequest, nie?
+
+Na zasadzie pójdę sobie tu i mogę to wszystko ogarnąć, tu i mogę to wszystko ogarnąć.
+
+Więc zacząłbym, jakby misją, nie, nawet nie zacząłbym.
+
+Misją jest wejście na on Frozen i od tego zaczynamy, nie?
+
+tylko jesteśmy na samym początku tej drogi, ale już mamy pierwszy sidequest obok jakim jest dział handlowy, który można ogarnąć.
+
+Więc ja bym to w ten sposób sformułował, bo będziemy sobie te dziury, z których się wylewa ta woda, trochę po prostu fajnie łatać
+
+i już takimi rozwiązaniami, które nie są tymczasowe, tylko dążą do tego, żeby ten pipeline później wymienić na taki, który utrzymał znacznie, znacznie wyższe ciśnienie.
+
+Tak bym to zrobił, systemowo po prostu.
+
+a chłopaki spotkanie robimy jeszcze z Allegro, bo poznacie tą też część firmy, o której trochę mnie już wiemy.
+
+Możemy wiesz, no jak to mi nie chcecie.
+
+Co można wykorzystać, bo jest może część gotowych narzędzi, które może kucze przerobicie, albo użyjecie, albo powiecie:
+
+"Dobra, fajnie, amatorsko zrobiliście", ale my nie wchodzimy też w te dane techniczne.
+
+Dziwczyny nam mówią: "Słuchajcie, udało nam się, wysyłają rezultat, poprosimy o brawo".
+
+Super, mam się dało, dzięki nawet wiesz, no...
+
+No jasne, jasne.
+
+Ja myślę, że zrobilibyśmy sobie koniecznie spotkanie.
+
+Mnie też bardzo interesuje ten proces migracji, bo uważam, że tutaj może być wiele potencjalnych fuck upów,
+
+no bo pomyślcie sobie o tym, że przerzucacie się z jednego marketplace'u na drugi,
+
+z marketplace'u, który już wam generuje fajny revenue stream,
+
+ale teraz będzie się trzeba na nim przebić, no nie?
+
+Wydaje mi się, że w ogóle moglibyśmy się zastanowić, znając mechanizmy tego marketplace'u,
+
+jak sprawić, że od samego początku Wasz sklep będzie dobrze pozycjonowany,
+
+że to mnie nawet tak prywatnie interesuje, więc my chętnie byśmy się z nimi zobaczyli,
+
+tylko przypuszczam, że na osobnym spotkaniu, nie? Tak, żebyśmy sobie to skończyli.
+
+Jakiś dzień wstępny możemy ustalić?
+
+Wiem, tydzień w tym tygodniu przyszłym, jak to widzicie, nie?
+
+Jak macie, uważasz, idziemy jutro od razu?
+
+Może, no, to mogę tu z Paweł, z Nataszą, żeby tam Kasia była i Natalia
+
+To trzeba z nim pogadać, nie?
+
+No spokojnie
+
+To jakby wrócimy do was, nie?
+
+Tak, w racie czego to muszę...
+
+Ja mówię, że jedynie co mamy w Katowic, ale to są i tak dziewczyny bardziej tutaj
+
+No to ja mogę skoczyć, no powiedzmy...
+
+No to...
+
+Nie, jeszcze nie potwierdził, to był bardzo, wiesz...
+
+Kolejny był wieczorem, Kuba nie odzywał się...
+
+A, dobra, to inaczej, weźmy sobie Kuba, jak tak słyszę, dwa terminy, czyli wtorek i...
+
+Wtorek i sfatę nie ma, nie?
+
+To wtorek, sieroda, co?
+
+Dobra.
+
+I ustalimy.
+
+Dobra.
+
+Dobrze.
+
+Fajnie.
+
+Myślę, że mamy to złapane tak na pierwszy strzał, bo to zaczynamy dopiero, ale myślę, że mamy to fajnie złapane.
+
+Wiemy przynajmniej jak będzie wyglądał proces.
+
+Ja mam nadzieję, że się spotkamy tutaj za dwa lata i w końcu to działa, nie?
+
+- To już dwa miesiące!
+
+- To się mówiłem, że dwa lata wiesz, jak już te...
+
+- A jeszcze...
+
+- Właśnie powiem, że jeszcze nie doszedłem do tego, że za dwa lata
+
+firma się potroiła
+
+i teraz unfrozen patrzy tam za Wami
+
+i się zastanawia, cholera, jak teraz tych Polaków tutaj dogonić, nie?
+
+- No to bym z najlepiej. - To denerwuje.
+
+Tak jak teraz oni denerwują Was.
+
+No ale fajnie jest się czym zainspirować.
+
+- Ale zaprosili Was do siebie, ci z unfrozen, tak?
+
+- W zasadzie zapraszają, mają takie ogólne zaproszenie, że przyjedzie telegacę wszyscy, nie?
+
+- Jak to działa? Jaki jest cel takiego spotkania?
+
+- Samo cel, chyba, że pracę przyjechać, jak pracujemy.
+
+- Pana, ty plasty Polaków, jak już go...
+
+- Bogdan, gdzie to trzeba przyjechać? Do Bukaresztu?
+
+- Przyjedźcie, zobaczycie jak pracujemy, tak?
+
+- Ja, szumak, ale nie chrysamy naszą okrację, żeby od nas kupili towarant,
+
+co nama kontakt, to nama może powiedzieć nawet jako
+
+wiesz, zakupowiec, sprzedawca, no nie wiem,
+
+wiesz, można powiedzieć, że
+
+ale to jest ważne, ja bym się przyjechał
+
+z Kreci i zobaczył, wiesz, jak to działa
+
+na miejscu, jak i pojechał, bo wpisałem
+
+po prostu, jakby wiesz, że...
+
+No to już wiesz, Kuba, gdzie na wakacje jedziemy w tym roku.
+
+Byłem, byłem.
+
+Super. Dobra, mamy to.
+
+Bardzo dziękujemy za Was czas.
+

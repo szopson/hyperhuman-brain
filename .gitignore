@@ -32,6 +32,12 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+.env.local
+.env*.local
+
+# case outputs (keep folder structure via .gitkeep)
+data/cases/*/outputs/*
+!data/cases/*/outputs/.gitkeep
 
 # vercel
 .vercel
