@@ -1,0 +1,2296 @@
+{
+  "metadata": {
+    "case_id": "stock-hurt",
+    "generated_at": "2025-01-20T12:00:00Z",
+    "pipeline_version": "0.1-phase-a",
+    "input_sources": [
+      {
+        "type": "transcript",
+        "identifier": "meeting-stockhurt-hyperhuman",
+        "token_count": null
+      }
+    ]
+  },
+  "company": {
+    "id": "company-stockhurt",
+    "name": "Stockhurt (Estilo / Stocario robocza)",
+    "anonymized_name": "StockHurt-PL",
+    "industry": "Hurt odzieżowy / dystrybucja odzieży outletowej",
+    "sub_industry": "B2B stock fashion wholesale + detal online (Allegro)",
+    "business_model": "Firma kupuje stoki magazynowe odzieży (głównie premium marki w mixie multi-brand) od dystrybutorów typu Zalando, sprzedaje hurtowo (B2B) do outletów, hurtowni i sieci sklepów oraz detalicznie przez Allegro i własną stronę.",
+    "revenue_estimate": {
+      "value": 7000000,
+      "currency": "EUR",
+      "period": "yearly"
+    },
+    "revenue_breakdown": {
+      "hurt_B2B": 0.7,
+      "detal_allegro": 0.3
+    },
+    "employee_count_estimate": null,
+    "years_in_business": 12,
+    "geo_markets": [
+      "PL",
+      "LT",
+      "RO",
+      "DE",
+      "EU"
+    ],
+    "source_quotes": [
+      {
+        "text": "hurt w tym momencie to rok tam 7 milionów euro gdzieś tam (...) my jesteśmy 12 lat",
+        "source": "transcript",
+        "speaker": "founder",
+        "timestamp": null,
+        "confidence": "high"
+      },
+      {
+        "text": "sprzedajemy tam dwadzieścia kilka tysięcy rzeszemiesięcznie, więc mamy know-how detaliczny",
+        "source": "transcript",
+        "speaker": "founder",
+        "timestamp": null,
+        "confidence": "medium"
+      }
+    ]
+  },
+  "processes": [
+    {
+      "id": "proc-lead-search",
+      "name": "Wyszukiwanie i pozyskiwanie leadów B2B",
+      "description": "Handlowcy ręcznie przeczesują internet, używają AI modeli, Google, Apollo, D&B oraz zakupionych baz aby znaleźć potencjalnych klientów B2B (outlety, hurtownie, sieci sklepów). Następnie wysyłają wiadomości ręcznie.",
+      "category": "sales",
+      "current_owner_role": "Handlowiec",
+      "frequency": "daily",
+      "estimated_hours_per_execution": null,
+      "estimated_executions_per_month": null,
+      "tools_used": [
+        "tool-apsica-crm",
+        "tool-dnb",
+        "tool-apollo",
+        "tool-gemini"
+      ],
+      "knowledge_ready": {
+        "score": 4,
+        "reasoning": "Wiedza rozproszona, nie ma jednolitego playbooka, każdy handlowiec robi po swojemu",
+        "gaps": [
+          "brak ICP zdefiniowanego",
+          "brak playbooka cold outreach"
+        ]
+      },
+      "tools_ready": {
+        "score": 4,
+        "reasoning": "Apsica CRM gromadzi leady ale jest topornym narzędziem, brak unifikacji",
+        "gaps": [
+          "brak integracji ze źródłami",
+          "ręczne wpisywanie"
+        ]
+      },
+      "integration_ready": {
+        "score": 3,
+        "reasoning": "Apsica zbudowana custom przez Wojtka, brak API/MCP",
+        "missing_mcp": [
+          "CRM MCP",
+          "Apollo MCP",
+          "email MCP"
+        ]
+      },
+      "skill_ready": {
+        "score": 5,
+        "reasoning": "Proces jest powtarzalny ale chaotyczny; opisywalny ale nie do końca",
+        "is_repeatable": true,
+        "is_describable": true
+      },
+      "depends_on": [],
+      "enables": [
+        "proc-outreach",
+        "proc-deal-close"
+      ],
+      "source_quotes": [
+        {
+          "text": "Handlowcy przeczasują internet, używają jakieś AI modeli, używają Google'a, Apollo (...) nagle spotykamy się i okazuje się że ktoś ma 10 sklepów",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "proc-outreach",
+      "name": "Cold outreach do leadów B2B (mail/WhatsApp)",
+      "description": "Handlowcy ręcznie wysyłają wiadomości spersonalizowane (lub często niespersonalizowane) na maile generyczne (kontakt@firma.pl) zgodnie z algorytmem Sarneckiego, używają Gemini do pomocy w pisaniu. Niska konwersja.",
+      "category": "sales",
+      "current_owner_role": "Handlowiec",
+      "frequency": "daily",
+      "estimated_hours_per_execution": null,
+      "estimated_executions_per_month": null,
+      "tools_used": [
+        "tool-gmail",
+        "tool-gemini",
+        "tool-whatsapp"
+      ],
+      "knowledge_ready": {
+        "score": 5,
+        "reasoning": "Mają algorytm Sarneckiego skopiowany do Gemini",
+        "gaps": [
+          "brak A/B testów",
+          "brak metryk per handlowiec"
+        ]
+      },
+      "tools_ready": {
+        "score": 3,
+        "reasoning": "Ręczne wysyłki z Gmaila, brak sequencerów",
+        "gaps": [
+          "brak sales engagement platform",
+          "brak email warmup"
+        ]
+      },
+      "integration_ready": {
+        "score": 2,
+        "reasoning": "Brak integracji Gmail<->CRM",
+        "missing_mcp": [
+          "Gmail MCP integration",
+          "WhatsApp MCP"
+        ]
+      },
+      "skill_ready": {
+        "score": 6,
+        "reasoning": "Po szkoleniu z Sarneckim handlowcy wiedzą jak pisać, ale jakość spada gdy się nie chce",
+        "is_repeatable": true,
+        "is_describable": true
+      },
+      "depends_on": [
+        "proc-lead-search"
+      ],
+      "enables": [
+        "proc-deal-close"
+      ],
+      "source_quotes": [
+        {
+          "text": "Na tysiąc wysłany mieliśmy 4 odpowiedzi i 1 kontakt aktywny i nie doszło do transakcji",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        },
+        {
+          "text": "97% komunikacji można pomóc z komunikacji na WhatsAppie",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "id": "proc-product-presentation",
+      "name": "Prezentacja oferty produktowej klientom",
+      "description": "Handlowcy wysyłają PDF-y lub pojedyncze wiadomości na konkretny brand. Klienci są przyzwyczajeni do krótkich komunikatów. Brak interaktywnego katalogu - oferta nie jest personalizowana per klient.",
+      "category": "sales",
+      "current_owner_role": "Handlowiec",
+      "frequency": "daily",
+      "estimated_hours_per_execution": null,
+      "estimated_executions_per_month": null,
+      "tools_used": [
+        "tool-whatsapp",
+        "tool-website",
+        "tool-gmail"
+      ],
+      "knowledge_ready": {
+        "score": 5,
+        "reasoning": "Wiedza o produktach jest częściowo w WMS w polu komentarz",
+        "gaps": [
+          "brak unifikowanej karty produktu",
+          "brak prezentacji wizualnych"
+        ]
+      },
+      "tools_ready": {
+        "score": 3,
+        "reasoning": "Strona ma katalog ale ogólny, brak personalizowanych prezentacji",
+        "gaps": [
+          "brak product configuratora",
+          "brak share picking"
+        ]
+      },
+      "integration_ready": {
+        "score": 3,
+        "reasoning": "WMS nie połączony z CRM ani z prezentacjami",
+        "missing_mcp": [
+          "WMS MCP"
+        ]
+      },
+      "skill_ready": {
+        "score": 5,
+        "reasoning": "Handlowcy potrafią ale gubią się przy 100+ produktach",
+        "is_repeatable": true,
+        "is_describable": true
+      },
+      "depends_on": [
+        "proc-inventory"
+      ],
+      "enables": [
+        "proc-deal-close"
+      ],
+      "source_quotes": [
+        {
+          "text": "my mamy 100 ponad produktów w kultury (...) sprzedawaliśmy 20 a 30 produktów na magazynie, to zapominało się",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "proc-inventory",
+      "name": "Inwentaryzacja dostaw (ciężarówek/palet)",
+      "description": "Towar wjeżdża 33 paletami w ciężarówce. Część ma listy pakunkowe (zalando/upgrade), część nie (kilo/big-grade). Brak jednolitego procesu skanowania - kiedyś było wszystko ręcznie, teraz Allegro ma AI uproszczenie.",
+      "category": "logistics",
+      "current_owner_role": "Magazynier",
+      "frequency": "weekly",
+      "estimated_hours_per_execution": null,
+      "estimated_executions_per_month": null,
+      "tools_used": [
+        "tool-wms",
+        "tool-erp-custom"
+      ],
+      "knowledge_ready": {
+        "score": 4,
+        "reasoning": "Proces nieformalny, różnie traktowane dostawy z/bez list",
+        "gaps": [
+          "brak SOP dla big-grade",
+          "brak procesu unifikacji exceli od dostawców"
+        ]
+      },
+      "tools_ready": {
+        "score": 5,
+        "reasoning": "WMS i custom ERP istnieją",
+        "gaps": [
+          "brak konwersji excel->produkty na stronę"
+        ]
+      },
+      "integration_ready": {
+        "score": 4,
+        "reasoning": "WMS i ERP w miarę spięte, ale nie ze stroną dla B2B",
+        "missing_mcp": [
+          "WMS->website MCP"
+        ]
+      },
+      "skill_ready": {
+        "score": 6,
+        "reasoning": "Magazyn umie, ale skalowanie pickingu nieprzetestowane na B2B",
+        "is_repeatable": true,
+        "is_describable": true
+      },
+      "depends_on": [],
+      "enables": [
+        "proc-product-presentation",
+        "proc-allegro-listing"
+      ],
+      "source_quotes": [
+        {
+          "text": "ciężarówka to jest 33 palety (...) czasami to jest gdzieś na wyciężowce, nie wie gdzie",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        },
+        {
+          "text": "5% (...) zgadza się do takiej liniewanii, co nie zgadza się. Niektórzy poniesie to 15% w ilości",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "id": "proc-customer-knowledge",
+      "name": "Zarządzanie wiedzą o kliencie / historią rozmów",
+      "description": "Rozmowy z klientami głównie na WhatsAppie (97%), nie są zapisywane w CRM. CRM ma tylko transakcje. Brak centralnego dashboardu z kontekstem klienta, historią, planem follow-up.",
+      "category": "customer_success",
+      "current_owner_role": "Handlowiec",
+      "frequency": "daily",
+      "estimated_hours_per_execution": null,
+      "estimated_executions_per_month": null,
+      "tools_used": [
+        "tool-whatsapp",
+        "tool-apsica-crm"
+      ],
+      "knowledge_ready": {
+        "score": 2,
+        "reasoning": "Wiedza jest w głowach handlowców i rozproszonych WhatsAppach",
+        "gaps": [
+          "brak parsowania WA",
+          "brak summary rozmów"
+        ]
+      },
+      "tools_ready": {
+        "score": 3,
+        "reasoning": "CRM nie ma wiadomości, są tylko transakcje",
+        "gaps": [
+          "brak integracji WA<->CRM"
+        ]
+      },
+      "integration_ready": {
+        "score": 2,
+        "reasoning": "Wojtek udało się sparsować rozmowy do pliku tekstowego, ale nie ma jeszcze pełnej integracji",
+        "missing_mcp": [
+          "WhatsApp Business MCP"
+        ]
+      },
+      "skill_ready": {
+        "score": 4,
+        "reasoning": "Handlowcy gubią informacje, zapominają",
+        "is_repeatable": false,
+        "is_describable": true
+      },
+      "depends_on": [],
+      "enables": [
+        "proc-deal-close"
+      ],
+      "source_quotes": [
+        {
+          "text": "No w CRM wiadomości nie ma. Jest tylko kontakt (...) tam są tylko zrealizowane transakcje",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        },
+        {
+          "text": "Nie gubić kontekstu, przypominać. Ja wiem jak my z Paweł pracowaliśmy w sprzedaży, ile się gubiło po prostu tej informacji",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "proc-allegro-listing",
+      "name": "Listowanie produktów na Allegro (detal)",
+      "description": "Od 2 miesięcy AI generuje opisy/aukcje z fotografii i list pakunkowych, towar idzie od razu z kartonu na półki. Dziewczyny też zbudowały bot do zdjęć AI rozwiązujący problem praw do zdjęć katalogowych.",
+      "category": "operations",
+      "current_owner_role": "Zespół Allegro",
+      "frequency": "daily",
+      "estimated_hours_per_execution": null,
+      "estimated_executions_per_month": null,
+      "tools_used": [
+        "tool-allegro",
+        "tool-ai-zdjecia",
+        "tool-erp-custom"
+      ],
+      "knowledge_ready": {
+        "score": 7,
+        "reasoning": "Proces przetestowany, działa, AI generuje opisy",
+        "gaps": []
+      },
+      "tools_ready": {
+        "score": 7,
+        "reasoning": "Custom AI bot działa",
+        "gaps": [
+          "zewnętrzne API drogie przy skali"
+        ]
+      },
+      "integration_ready": {
+        "score": 6,
+        "reasoning": "Spięte z WMS",
+        "missing_mcp": []
+      },
+      "skill_ready": {
+        "score": 8,
+        "reasoning": "Dział Allegro ogarnia",
+        "is_repeatable": true,
+        "is_describable": true
+      },
+      "depends_on": [
+        "proc-inventory"
+      ],
+      "enables": [],
+      "source_quotes": [
+        {
+          "text": "Od dwóch miesięcy wprowadziliśmy coś takiego na Alegrą, że w momencie kiedy towar wjeżdża, już nie przechodzi przez ludzi",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "proc-pricing",
+      "name": "Zarządzanie cenami detalicznymi (Allegro)",
+      "description": "Aktualnie ręczne zarządzanie cenami na 400 tys SKU na Allegro. Wojtek próbował zbudować system ML do zarządzania cenami w Pythonie 3 miesiące - nie udało się.",
+      "category": "sales",
+      "current_owner_role": "Dział Allegro / Wojtek",
+      "frequency": "daily",
+      "estimated_hours_per_execution": null,
+      "estimated_executions_per_month": null,
+      "tools_used": [
+        "tool-allegro",
+        "tool-erp-custom"
+      ],
+      "knowledge_ready": {
+        "score": 5,
+        "reasoning": "Wiedza biznesowa istnieje, dynamika cen znana",
+        "gaps": [
+          "brak modeli similarity"
+        ]
+      },
+      "tools_ready": {
+        "score": 3,
+        "reasoning": "Brak działającego systemu ML",
+        "gaps": [
+          "ML pricing engine"
+        ]
+      },
+      "integration_ready": {
+        "score": 4,
+        "reasoning": "Allegro API dostępne",
+        "missing_mcp": [
+          "Allegro MCP"
+        ]
+      },
+      "skill_ready": {
+        "score": 4,
+        "reasoning": "Wojtek nie dał rady sam",
+        "is_repeatable": false,
+        "is_describable": true
+      },
+      "depends_on": [
+        "proc-allegro-listing"
+      ],
+      "enables": [],
+      "source_quotes": [
+        {
+          "text": "Wojtek (...) próbował się 3 miesiące z tym bawić, ale nie dał rady. W Pajkawie te biblioteki (...) 400 tysięcy rzeczy na magazynie",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "pains": [
+    {
+      "id": "pain-handlowcy-czas",
+      "title": "Handlowcy tracą sporo czasu na ręczne poszukiwanie leadów i kontakty, które nie konwertują",
+      "description": "Handlowcy przeczesują Google, Apollo, D&B ręcznie. Konwersja: 1000 wysłanych = 4 odpowiedzi = 1 kontakt aktywny = 0 transakcji. Trafiają na klientów już znalezionych przez konkurencję lub w ogóle pomijają wartościowych klientów.",
+      "category": "time_waste",
+      "affected_processes": [
+        "proc-lead-search",
+        "proc-outreach"
+      ],
+      "affected_roles": [
+        "Handlowiec"
+      ],
+      "frequency": "daily",
+      "severity": "high",
+      "strategic_impact": "major",
+      "founder_emotional_intensity": "frustrating",
+      "founder_quoted_phrase": "a mnie wkurza to po prostu, że handlowcy tracą sporo czasu na to, żeby wysyłać wiadomości",
+      "source_quotes": [
+        {
+          "text": "a mnie wkurza to po prostu, że handlowcy tracą sporo czasu na to, żeby wysyłać wiadomości, szukać, kontaktować się i to nie są wartościowe czasem kontaktów",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "pain-lost-leads",
+      "title": "Wartościowi klienci umykają - handlowcy nie znajdują tych, którzy przychodzą innymi drzwiami",
+      "description": "Pojawia się klient z 10 sklepami, którego nikt nie znalazł, mimo że szukali. Albo dziewczyny pojechały na Litwę do 10 klientów, a klient z siecią na całe kraje wschodnie pojawił się z zewnątrz. Brak systemu mapującego rynek.",
+      "category": "lost_revenue",
+      "affected_processes": [
+        "proc-lead-search"
+      ],
+      "affected_roles": [
+        "Handlowiec"
+      ],
+      "frequency": "weekly",
+      "severity": "high",
+      "strategic_impact": "major",
+      "founder_emotional_intensity": "frustrating",
+      "founder_quoted_phrase": "Gdzie ty byłeś?",
+      "source_quotes": [
+        {
+          "text": "nagle się pojawia gośnik i mówi, że on ma 10 sklepów na przykład (...) Wszyscy szukaliśmy",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "pain-lost-context-wa",
+      "title": "Gubienie kontekstu klienta - rozmowy WhatsApp nie są nigdzie centralizowane",
+      "description": "97% komunikacji idzie przez WhatsApp ale CRM ma tylko transakcje. Informacje o kliencie (kiedy wróci z urlopu, syn rozpoczął, jakiej marki szuka) giną w prywatnych telefonach handlowców.",
+      "category": "knowledge_silos",
+      "affected_processes": [
+        "proc-customer-knowledge"
+      ],
+      "affected_roles": [
+        "Handlowiec",
+        "Founder"
+      ],
+      "frequency": "daily",
+      "severity": "high",
+      "strategic_impact": "major",
+      "founder_emotional_intensity": "frustrating",
+      "founder_quoted_phrase": "ile się gubiło po prostu tej informacji",
+      "source_quotes": [
+        {
+          "text": "Nie gubić kontekstu, przypominać. Ja wiem jak my z Paweł pracowaliśmy w sprzedaży, ile się gubiło po prostu tej informacji",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "pain-no-product-viz",
+      "title": "Oferta wysyłana klientom jest niespersonalizowana i wizualnie słaba (Excel/PDF/tekst)",
+      "description": "Oferta sprzedaży to często surowy tekst lub Excel z listą pakunkową. Klienci kupują oczami, więc tracimy konwersję. Strona zawiera ogólny katalog bez personalizacji per segment klienta.",
+      "category": "customer_experience",
+      "affected_processes": [
+        "proc-product-presentation",
+        "proc-outreach"
+      ],
+      "affected_roles": [
+        "Handlowiec"
+      ],
+      "frequency": "daily",
+      "severity": "high",
+      "strategic_impact": "major",
+      "founder_emotional_intensity": "frustrating",
+      "founder_quoted_phrase": "kupujesz oczami, no każdy z nas kupuje oczami",
+      "source_quotes": [
+        {
+          "text": "jakby to wyglądało jak Excel, to jest mało przyjazne (...) kupujesz oczami, no każdy z nas kupuje oczami",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "pain-tools-fragmentation",
+      "title": "Fragmentacja narzędzi - dziury w 'rurze' przepływu informacji",
+      "description": "Firma ma dziesiątki narzędzi (Apsica, Notion, Google Sheets, WMS, custom ERP, Allegro, Gemini, Apollo, D&B), które nie są zintegrowane. Notion się zacinał, Excele giną, AirTable/Monday odpadły. Brak orakla/mózgu firmy.",
+      "category": "tooling_friction",
+      "affected_processes": [
+        "proc-lead-search",
+        "proc-customer-knowledge",
+        "proc-product-presentation"
+      ],
+      "affected_roles": [
+        "Handlowiec",
+        "Founder",
+        "Wojtek"
+      ],
+      "frequency": "constant",
+      "severity": "critical",
+      "strategic_impact": "blocks_endgame",
+      "founder_emotional_intensity": "frustrating",
+      "founder_quoted_phrase": "ta rura jest dziurawa i informacje po prostu nie przepływają",
+      "source_quotes": [
+        {
+          "text": "Idzie informacja, że obniżamy cenę produktów, ktoś nie przeczytał na dashboardzie, nie było go w firmie (...) Nie ma jednego centrum informacyjnego",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "pain-no-pickability",
+      "title": "Brak możliwości share-picking jak Unfrozen - duża część dostaw bez list pakunkowych",
+      "description": "~50% produktów (big-grade, kupione na kilo) nie ma list pakunkowych. Konkurent Unfrozen ma piękną stronę z share-pickingiem każdej sztuki, lotami z pełną informacją - rośnie szybciej.",
+      "category": "scaling_blocker",
+      "affected_processes": [
+        "proc-inventory",
+        "proc-product-presentation"
+      ],
+      "affected_roles": [
+        "Magazynier",
+        "Founder"
+      ],
+      "frequency": "weekly",
+      "severity": "high",
+      "strategic_impact": "blocks_endgame",
+      "founder_emotional_intensity": "burning",
+      "founder_quoted_phrase": "unfrozen nas przebił",
+      "source_quotes": [
+        {
+          "text": "oni nas przebili (...) w 25 roku mieli 10 milionów euro przychodu (...) a my jesteśmy 12 lat, nie 5",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "pain-pricing-manual",
+      "title": "Ręczne zarządzanie cenami 400tys SKU na Allegro - próba ML failed",
+      "description": "400 tysięcy unikalnych SKU, ceny ustawiane ręcznie. Wojtek poświęcił 3 miesiące na model ML similarity - nie udało się. Produkty sprzedają się za drogo lub za wolno.",
+      "category": "manual_repetitive_work",
+      "affected_processes": [
+        "proc-pricing"
+      ],
+      "affected_roles": [
+        "Wojtek",
+        "Dział Allegro"
+      ],
+      "frequency": "daily",
+      "severity": "medium",
+      "strategic_impact": "moderate",
+      "founder_emotional_intensity": "mentioned",
+      "founder_quoted_phrase": null,
+      "source_quotes": [
+        {
+          "text": "Wojtek (...) próbował się 3 miesiące z tym bawić, ale nie dał rady (...) 400 tysięcy rzeczy na magazynie",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "pain-wojtek-overload",
+      "title": "Wojtek przeciążony - jeden 'IT guy od wszystkiego'",
+      "description": "Wojtek jest 'przerośnięty tym wszystkim i nie wydala'. Buduje custom CRM (Apsica), próbuje ML, parsuje WhatsApp - pojedyncza osoba na 12-letnią firmę z 400k SKU.",
+      "category": "scaling_blocker",
+      "affected_processes": [
+        "proc-lead-search",
+        "proc-pricing"
+      ],
+      "affected_roles": [
+        "Wojtek"
+      ],
+      "frequency": "constant",
+      "severity": "high",
+      "strategic_impact": "major",
+      "founder_emotional_intensity": "mentioned",
+      "founder_quoted_phrase": "Wojtek jest wkurzony, że firma chce dużo zrobić",
+      "source_quotes": [
+        {
+          "text": "Wojtek to jest taki IT guy od sobą specjalistą (...) on jest przerośnięty tym wszystkim i nie wydala",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "pain-founder-detachment",
+      "title": "Founderzy stracili pełny obraz firmy",
+      "description": "Paweł i Maciej zbudowali firmę siłą determinacji przez 12 lat. Doszli do operacyjnej dojrzałości — kadra zarządzająca przejęła stery, oni odsuwają się od codziennej operacji. Ale firma traci 5% rocznie nie z powodu rynku, lecz dlatego, że nikt nie ma już ich pełnego obrazu. Decyzje strategiczne zapadają z niepełnymi danymi. To pułapka średniego rozwoju.",
+      "category": "scaling_blocker",
+      "affected_processes": [],
+      "affected_roles": [
+        "Paweł",
+        "Maciej"
+      ],
+      "frequency": "constant",
+      "severity": "critical",
+      "strategic_impact": "blocks_endgame",
+      "founder_emotional_intensity": "burning",
+      "founder_quoted_phrase": null,
+      "source_quotes": [
+        {
+          "text": "firma z roku na rok traci 5% przychodów, popadła w stagnację",
+          "source": "inferred",
+          "speaker": "Konrad (HyperHuman consultant briefing)",
+          "timestamp": null,
+          "confidence": "high"
+        },
+        {
+          "text": "ten mózg firmy ma być takimi ich oczami, mózgiem, uszami, żeby oni wiedzieli, co w tej firmie się dzieje",
+          "source": "inferred",
+          "speaker": "Konrad (HyperHuman consultant briefing)",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "risk-unfrozen",
+      "title": "Konkurencja Unfrozen z Rumunii rośnie szybciej i może zjeść rynek",
+      "category": "competitive",
+      "description": "Unfrozen ma 10M EUR przychodu po 5 latach vs 7M EUR Stockhurt po 12 latach. Lepsza produktyzacja (share picking + loty z pełnymi danymi), lepsza komunikacja (jak Apple vs Xiaomi), pełna automatyzacja bez handlowców.",
+      "time_horizon": "near_term_6_12_months",
+      "probability": "likely",
+      "impact": "major",
+      "specific_actors": [
+        "Unfrozen",
+        "Miglo"
+      ],
+      "mitigation_status": "planned",
+      "source_quotes": [
+        {
+          "text": "unfrozen (...) w 25 roku mieli 10 milionów euro przychodu (...) a my jesteśmy 12 lat",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        },
+        {
+          "text": "nie możemy pozwolić (...) że jakaś konkurencja z Rumunii nas tutaj wyprzedza",
+          "source": "transcript",
+          "speaker": "consultant",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "risk-data-leak",
+      "title": "Ryzyko wycieku bazy klientów do konkurencji",
+      "category": "competitive",
+      "description": "Notion odpadł bo nie można było wydzielić uprawnień. Konkurenci się chwalili że mają bazę. Apsica zbudowana częściowo aby chronić prywatność danych klientów per handlowiec.",
+      "time_horizon": "imminent_3_months",
+      "probability": "possible",
+      "impact": "moderate",
+      "specific_actors": null,
+      "mitigation_status": "partial",
+      "source_quotes": [
+        {
+          "text": "nam zależy na chronieniu danych do klientów (...) co się chwaliły od nas firmy konkurencyjne",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "risk-allegro-dependency",
+      "title": "98% sprzedaży detalu na Allegro - koncentracja kanału",
+      "category": "concentration",
+      "description": "Detal idzie głównie przez Allegro. Migracja na marketplace Brzoski planowana. Ryzyko utraty pozycjonowania przy migracji albo zmianach polityki Allegro.",
+      "time_horizon": "imminent_3_months",
+      "probability": "likely",
+      "impact": "major",
+      "specific_actors": [
+        "Allegro",
+        "Brzoska Marketplace"
+      ],
+      "mitigation_status": "planned",
+      "source_quotes": [
+        {
+          "text": "98% to jest ale (...) Teraz próbują wejść na te gamazony jeszcze",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "risk-supply-mismatch",
+      "title": "Listy pakunkowe od dostawców niedokładne (5-15% rozjazd)",
+      "category": "operational",
+      "description": "5% rozjazdu zazwyczaj, niektórzy do 15% różnicy ilościowej między listą a fizyczną dostawą. Wpływa na ryzyko share-pickingu.",
+      "time_horizon": "imminent_3_months",
+      "probability": "certain",
+      "impact": "moderate",
+      "specific_actors": null,
+      "mitigation_status": "none",
+      "source_quotes": [
+        {
+          "text": "5% do takiej liniewanii, co nie zgadza się. Niektórzy poniesie to 15% w ilości",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "medium"
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "id": "metric-revenue-hurt",
+      "name": "Przychód hurt B2B roczny",
+      "category": "money",
+      "current_value": 7000000,
+      "unit": "EUR/rok",
+      "context": "Główny stream przychodu, B2B sprzedaż stoków odzieży",
+      "related_processes": [
+        "proc-outreach",
+        "proc-product-presentation"
+      ],
+      "benchmark_estimate": "10M+ EUR jak Unfrozen",
+      "source_quotes": [
+        {
+          "text": "hurt w tym momencie to rok tam 7 milionów euro gdzieś tam",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "metric-cold-conversion",
+      "name": "Konwersja cold outreach",
+      "category": "rate",
+      "current_value": "4/1000 odpowiedzi, 0 transakcji",
+      "unit": "%",
+      "context": "1000 maili = 4 odpowiedzi = 1 kontakt aktywny = 0 transakcji finalnie",
+      "related_processes": [
+        "proc-outreach"
+      ],
+      "benchmark_estimate": "1-2% odpowiedzi przy dobrej personalizacji",
+      "source_quotes": [
+        {
+          "text": "Na tysiąc wysłany mieliśmy 4 odpowiedzi i 1 kontakt aktywny i nie doszło do transakcji",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "metric-customer-base",
+      "name": "Baza klientów B2B",
+      "category": "count",
+      "current_value": "~1000+",
+      "unit": "klientów",
+      "context": "Każdy handlowiec ma 25-50 transakcji miesięcznie, kilku wartościowych klientów",
+      "related_processes": [
+        "proc-customer-knowledge"
+      ],
+      "benchmark_estimate": null,
+      "source_quotes": [
+        {
+          "text": "mamy ponad tysiących klientów (...) każdy handlowiec ma powiedzmy 50 transakcji, 30 transakcji, 25 transakcji w miesiącu",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "metric-wa-share",
+      "name": "Udział WhatsApp w komunikacji klient",
+      "category": "rate",
+      "current_value": "~97",
+      "unit": "%",
+      "context": "97% komunikacji klient toczy się na WhatsAppie, 3% mail (głównie duże kontrakty typu CCC)",
+      "related_processes": [
+        "proc-customer-knowledge"
+      ],
+      "benchmark_estimate": null,
+      "source_quotes": [
+        {
+          "text": "z 97% można pomóc z komunikacji na Whatsappie",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "metric-allegro-sales",
+      "name": "Sprzedaż detalu Allegro miesięcznie",
+      "category": "volume",
+      "current_value": "~20000+",
+      "unit": "sztuk/miesiąc",
+      "context": "Detal Allegro to know-how detaliczny firmy",
+      "related_processes": [
+        "proc-allegro-listing"
+      ],
+      "benchmark_estimate": null,
+      "source_quotes": [
+        {
+          "text": "sprzedajemy tam dwadzieścia kilka tysięcy rzeszemiesięcznie",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "metric-sku",
+      "name": "Liczba SKU na magazynie",
+      "category": "count",
+      "current_value": 400000,
+      "unit": "unikalnych SKU",
+      "context": "400 tys unikalnych pozycji - wyzwanie dla pricingu ML",
+      "related_processes": [
+        "proc-pricing",
+        "proc-inventory"
+      ],
+      "benchmark_estimate": null,
+      "source_quotes": [
+        {
+          "text": "mamy 400 tysięcy rzeczy na magazynie i to są to unikalne sklepki",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "metric-instagram",
+      "name": "Followersi Instagram",
+      "category": "count",
+      "current_value": 1700,
+      "unit": "obserwujących",
+      "context": "Konkurencja ma 5-6k, lider 22k. Reklama na Instagram działała w sierpniu - dużo leadów",
+      "related_processes": [
+        "proc-lead-search"
+      ],
+      "benchmark_estimate": "5000+",
+      "source_quotes": [
+        {
+          "text": "my mamy 1700 obserwującego Instagramie. Nasza konkurencja ma 6 tysięcy, druga 5 tysięcy",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "metric-dnb-cost",
+      "name": "Koszt D&B (baza leadów)",
+      "category": "money",
+      "current_value": "4000-5000",
+      "unit": "PLN/pakiet",
+      "context": "Najwyższy pakiet pozwalający ściągnąć tylko 5 tys kontaktów",
+      "related_processes": [
+        "proc-lead-search"
+      ],
+      "benchmark_estimate": null,
+      "source_quotes": [
+        {
+          "text": "za 4 tysięcy rącznie czy 5 i mamy inwestycją w najwyższą w tym pakiecie, że możemy ściągnąć tylko 5 tysięcy kontaktów",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "id": "metric-ai-photo-cost",
+      "name": "Koszt wygenerowanego AI zdjęcia na modelu",
+      "category": "money",
+      "current_value": "0.18-0.20",
+      "unit": "PLN/zdjęcie",
+      "context": "Koszt generowanego zdjęcia AI z modelką z prawami autorskimi - rozwiązuje problem licencji zdjęć katalogowych",
+      "related_processes": [
+        "proc-allegro-listing"
+      ],
+      "benchmark_estimate": null,
+      "source_quotes": [
+        {
+          "text": "Zrobienie tego zdjęcia to chyba 18 czy 20 groszy kosztuje",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "id": "tool-apsica-crm",
+      "name": "Apsica CRM (custom)",
+      "category": "crm",
+      "vendor": null,
+      "is_custom": true,
+      "used_in_processes": [
+        "proc-lead-search",
+        "proc-outreach"
+      ],
+      "used_by_roles": [
+        "Handlowiec",
+        "Founder"
+      ],
+      "satisfaction": "works_but_painful",
+      "has_api": false,
+      "has_mcp": false,
+      "data_quality": "semi_structured",
+      "switching_cost": "high",
+      "source_quotes": [
+        {
+          "text": "zbudował Wojtek NCRMA na Apsicach (...) wygląda jak tawella w eksemu bardziej. Nie jest przyjazd, ale jakby gromadzi te dane",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "tool-wms",
+      "name": "WMS",
+      "category": "wms",
+      "vendor": null,
+      "is_custom": false,
+      "used_in_processes": [
+        "proc-inventory",
+        "proc-product-presentation"
+      ],
+      "used_by_roles": [
+        "Magazynier"
+      ],
+      "satisfaction": "adequate",
+      "has_api": null,
+      "has_mcp": false,
+      "data_quality": "structured",
+      "switching_cost": "high",
+      "source_quotes": [
+        {
+          "text": "W WMS mamy tam takie pole komentarz, jaki to jest sezon",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "tool-erp-custom",
+      "name": "ERP custom (StockHurt)",
+      "category": "erp",
+      "vendor": null,
+      "is_custom": true,
+      "used_in_processes": [
+        "proc-inventory",
+        "proc-allegro-listing",
+        "proc-pricing"
+      ],
+      "used_by_roles": [
+        "Wszyscy"
+      ],
+      "satisfaction": "works_but_painful",
+      "has_api": true,
+      "has_mcp": false,
+      "data_quality": "structured",
+      "switching_cost": "extreme",
+      "source_quotes": [
+        {
+          "text": "Ma swojego ERPA, który jest napisany pod nas do tego",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "tool-notion",
+      "name": "Notion",
+      "category": "documentation",
+      "vendor": "Notion",
+      "is_custom": false,
+      "used_in_processes": [],
+      "used_by_roles": [
+        "Founder",
+        "Zespół"
+      ],
+      "satisfaction": "adequate",
+      "has_api": true,
+      "has_mcp": true,
+      "data_quality": "unstructured",
+      "switching_cost": "low",
+      "source_quotes": [
+        {
+          "text": "Baza wiedzy chyba (...) zacinał się po prostu ze zbytych loży",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "tool-google-workspace",
+      "name": "Google Workspace (Sheets, Gmail, Gemini, Drive)",
+      "category": "spreadsheet",
+      "vendor": "Google",
+      "is_custom": false,
+      "used_in_processes": [
+        "proc-outreach",
+        "proc-lead-search"
+      ],
+      "used_by_roles": [
+        "Wszyscy"
+      ],
+      "satisfaction": "adequate",
+      "has_api": true,
+      "has_mcp": true,
+      "data_quality": "semi_structured",
+      "switching_cost": "medium",
+      "source_quotes": [
+        {
+          "text": "zdecydowaźmy się na środowisko Google'a (...) Mamy, każdy mało Workspace'a",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "tool-gemini",
+      "name": "Gemini",
+      "category": "ai",
+      "vendor": "Google",
+      "is_custom": false,
+      "used_in_processes": [
+        "proc-outreach"
+      ],
+      "used_by_roles": [
+        "Handlowiec",
+        "Founder"
+      ],
+      "satisfaction": "loved",
+      "has_api": true,
+      "has_mcp": true,
+      "data_quality": "unstructured",
+      "switching_cost": "low",
+      "source_quotes": [
+        {
+          "text": "Jeminaja nauczyliśmy kim jest Krzysztof Sarnecki (...) ta komunikacja się mega ostatnio u nas (...) poprawiła",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "tool-gmail",
+      "name": "Gmail",
+      "category": "comms",
+      "vendor": "Google",
+      "is_custom": false,
+      "used_in_processes": [
+        "proc-outreach"
+      ],
+      "used_by_roles": [
+        "Handlowiec"
+      ],
+      "satisfaction": "adequate",
+      "has_api": true,
+      "has_mcp": true,
+      "data_quality": "unstructured",
+      "switching_cost": "low",
+      "source_quotes": [
+        {
+          "text": "Wszystko jest na Gmail'a",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "tool-whatsapp",
+      "name": "WhatsApp",
+      "category": "comms",
+      "vendor": "Meta",
+      "is_custom": false,
+      "used_in_processes": [
+        "proc-outreach",
+        "proc-customer-knowledge"
+      ],
+      "used_by_roles": [
+        "Handlowiec",
+        "Founder"
+      ],
+      "satisfaction": "works_but_painful",
+      "has_api": true,
+      "has_mcp": false,
+      "data_quality": "unstructured",
+      "switching_cost": "high",
+      "source_quotes": [
+        {
+          "text": "z 97% można pomóc z komunikacji na Whatsappie",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "tool-allegro",
+      "name": "Allegro",
+      "category": "marketplace",
+      "vendor": "Allegro",
+      "is_custom": false,
+      "used_in_processes": [
+        "proc-allegro-listing",
+        "proc-pricing"
+      ],
+      "used_by_roles": [
+        "Dział Allegro"
+      ],
+      "satisfaction": "adequate",
+      "has_api": true,
+      "has_mcp": false,
+      "data_quality": "structured",
+      "switching_cost": "extreme",
+      "source_quotes": [
+        {
+          "text": "98% to jest ale",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "tool-dnb",
+      "name": "Dun & Bradstreet (D&B)",
+      "category": "analytics",
+      "vendor": "D&B",
+      "is_custom": false,
+      "used_in_processes": [
+        "proc-lead-search"
+      ],
+      "used_by_roles": [
+        "Handlowiec"
+      ],
+      "satisfaction": "critical_friction",
+      "has_api": true,
+      "has_mcp": false,
+      "data_quality": "structured",
+      "switching_cost": "low",
+      "source_quotes": [
+        {
+          "text": "teraz kupiliśmy taką DNB (...) za 4 tysięcy rącznie czy 5 (...) możemy ściągnąć tylko 5 tysięcy kontaktów",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "tool-apollo",
+      "name": "Apollo / ZoomInfo (wzmianka)",
+      "category": "analytics",
+      "vendor": "Apollo",
+      "is_custom": false,
+      "used_in_processes": [
+        "proc-lead-search"
+      ],
+      "used_by_roles": [
+        "Handlowiec"
+      ],
+      "satisfaction": "adequate",
+      "has_api": true,
+      "has_mcp": false,
+      "data_quality": "structured",
+      "switching_cost": "low",
+      "source_quotes": [
+        {
+          "text": "narzędzia typu ZoomInfo, Apollo, jakiekolwiek takie do dostania większej informacji",
+          "source": "transcript",
+          "speaker": "consultant",
+          "timestamp": null,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "id": "tool-ai-zdjecia",
+      "name": "AI bot do generowania zdjęć na modelkach (custom)",
+      "category": "ai",
+      "vendor": null,
+      "is_custom": true,
+      "used_in_processes": [
+        "proc-allegro-listing"
+      ],
+      "used_by_roles": [
+        "Dział Allegro"
+      ],
+      "satisfaction": "loved",
+      "has_api": false,
+      "has_mcp": false,
+      "data_quality": "unstructured",
+      "switching_cost": "medium",
+      "source_quotes": [
+        {
+          "text": "mamy zdjęcie kartalogowe i możemy na podstawie tego zdjęcia wygenerować na własnej modelce, AI-owe zdjęcie (...) 18 czy 20 groszy",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "tool-website",
+      "name": "Strona internetowa StockHurt",
+      "category": "custom_built",
+      "vendor": null,
+      "is_custom": true,
+      "used_in_processes": [
+        "proc-product-presentation"
+      ],
+      "used_by_roles": [
+        "Founder",
+        "Handlowiec"
+      ],
+      "satisfaction": "works_but_painful",
+      "has_api": null,
+      "has_mcp": false,
+      "data_quality": "semi_structured",
+      "switching_cost": "medium",
+      "source_quotes": [
+        {
+          "text": "Katarzyk produktowy jest ogólnie dostępny na naszej stronie internetowej",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "stakeholders": [
+    {
+      "id": "stk-paweł",
+      "role": "Co-founder / Sales",
+      "name": "Paweł",
+      "is_decision_maker": true,
+      "primary_concerns": [
+        "sprzedaż",
+        "jakość komunikacji z klientem",
+        "wizualna prezentacja oferty",
+        "B2C-like experience"
+      ],
+      "emotional_signal": "Frustracja brakiem centralnego źródła informacji o kliencie, chce zbudować 'mózg firmy'",
+      "source_quotes": [
+        {
+          "text": "my z Paweł pracowaliśmy w sprzedaży, ile się gubiło po prostu tej informacji",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "stk-maciej",
+      "role": "Co-founder",
+      "name": "Maciej",
+      "is_decision_maker": true,
+      "primary_concerns": [
+        "sprzedaż",
+        "konkurencja Unfrozen",
+        "skalowanie biznesu"
+      ],
+      "emotional_signal": "Determinacja by 'podjąć rękawicę' z Unfrozen, kopiować ich model",
+      "source_quotes": [
+        {
+          "text": "My z Maciej mamy bardzo proste podejście do biznesu (...) widzimy coś, co działa, kopiujemy bezczelnie",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "stk-wojtek",
+      "role": "IT lead / dev",
+      "name": "Wojtek",
+      "is_decision_maker": false,
+      "primary_concerns": [
+        "budowa narzędzi",
+        "integracje",
+        "CRM Apsica",
+        "ML pricing"
+      ],
+      "emotional_signal": "Przeciążony, 'nie wydala', wkurzony że firma chce dużo zrobić",
+      "source_quotes": [
+        {
+          "text": "Wojtek to jest taki IT guy od sobą specjalistą (...) jest przeciążone",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "stk-agata",
+      "role": "Handlowiec / Sales",
+      "name": "Agata",
+      "is_decision_maker": false,
+      "primary_concerns": [
+        "czas potrzebny na lead research",
+        "skuteczność outreach"
+      ],
+      "emotional_signal": "Frustracja czasochłonnością procesu",
+      "source_quotes": [
+        {
+          "text": "jak tu na przykład Agata mówi: 'kurde, to jest tyle czasu, żeby tam ktoś w ogóle coś odpowiedział'",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "id": "stk-kuba",
+      "role": "HyperHuman consultant",
+      "name": "Kuba",
+      "is_decision_maker": false,
+      "primary_concerns": [
+        "automatyzacja sales",
+        "AI agents pipeline",
+        "kopiowanie Unfrozen"
+      ],
+      "emotional_signal": "Energia wokół projektu, widzi misję + sidequest",
+      "source_quotes": [
+        {
+          "text": "mnie najbardziej kręci to, żeby podnieść tą rękawicę rywalizacji z unfrozen",
+          "source": "transcript",
+          "speaker": "Kuba",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "stk-janek",
+      "role": "HyperHuman consultant (tech)",
+      "name": "Janek",
+      "is_decision_maker": false,
+      "primary_concerns": [
+        "analiza stack technologiczny",
+        "integracje",
+        "mapping procesów fizycznych"
+      ],
+      "emotional_signal": "Spokojny analityk",
+      "source_quotes": [
+        {
+          "text": "Janek będzie się na pewno zrozumieć, stak technologiczny, którego używacie do czego",
+          "source": "transcript",
+          "speaker": "consultant",
+          "timestamp": null,
+          "confidence": "medium"
+        }
+      ]
+    }
+  ],
+  "competitors": [
+    {
+      "id": "comp-unfrozen",
+      "name": "Unfrozen",
+      "model": "B2B stock fashion z piękną stroną typu Zalando Lounge: share picking pojedyncze sztuki + loty palet z pełną listą pakunkową, AI generated zdjęcia, agresywny marketing Instagram",
+      "threat_level": "high",
+      "time_to_react": "3_6_months",
+      "scale_estimate": {
+        "revenue": {
+          "value": 10000000,
+          "currency": "EUR",
+          "period": "yearly"
+        },
+        "customers": null,
+        "geo_reach": [
+          "EU",
+          "RO",
+          "PL"
+        ],
+        "growth_rate": "szybko rośnie, w 5 lat przebili Stockhurt który ma 12 lat"
+      },
+      "key_advantages": [
+        "produktyzacja - share picking + loty",
+        "piękna strona / katalog",
+        "zdjęcia AI",
+        "silny brand premium positioning",
+        "onboarding klienta z formularzem charakteryzacji",
+        "brak kosztu handlowca w marży",
+        "marketing na Instagramie"
+      ],
+      "key_disadvantages": [
+        "mają dostęp tylko do większych klientów",
+        "brak detalu",
+        "nie mają machine learning pricing",
+        "brak własnych modeli foto AI z kontrolą detalu"
+      ],
+      "positioning": {
+        "inventory_model": "hybrid",
+        "revenue_model": "margin",
+        "target_customer": "outlety, B2B średni i większy, sklepy multi-brand",
+        "geographic_reach": "EU (głównie z Rumunii)",
+        "tech_stack_visibility": "prawdopodobnie używają gotowych AI tools (typu X-Finder), nie mają lokalnego modelu"
+      },
+      "source_quotes": [
+        {
+          "text": "unfrozen (...) w 25 roku mieli 10 milionów euro przychodu (...) przebili już nasz hurt",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        },
+        {
+          "text": "oni opakowują to trochę jak Apple, a Wy opakowujecie to trochę jak Xiaomi",
+          "source": "transcript",
+          "speaker": "consultant",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "comp-miglo",
+      "name": "Miglo",
+      "model": "Podobny model do Unfrozen ale w elektronice. Skanują każdą rzecz z palet Amazona, można wybierać loty z pełną informacją.",
+      "threat_level": "low",
+      "time_to_react": "1_year_plus",
+      "scale_estimate": {
+        "revenue": null,
+        "customers": null,
+        "geo_reach": [
+          "PL"
+        ],
+        "growth_rate": "szybko - 5 lat z Polski do Hiszpanii"
+      },
+      "key_advantages": [
+        "skanowanie każdej rzeczy",
+        "loty z pełną informacją"
+      ],
+      "key_disadvantages": [
+        "nie mają pickingu pojedynczych sztuk",
+        "inna branża - nie bezpośrednia konkurencja"
+      ],
+      "positioning": {
+        "inventory_model": "holds_stock",
+        "revenue_model": "margin",
+        "target_customer": "B2B elektronika",
+        "geographic_reach": "PL+ES",
+        "tech_stack_visibility": "unknown"
+      },
+      "source_quotes": [
+        {
+          "text": "Drugą firmą jest Miglo z elektronicą (...) zrobili to samo na paletach Amazona, gdzie po prostu każdą rzecz skanują",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "comp-remis-bg",
+      "name": "Remis (BG)",
+      "model": "Bułgarska firma 800 pracowników robiących zdjęcia produktów, wykupiona przez fundusz za 28M USD, model biznesowy padł przez wzrost minimalnej pensji.",
+      "threat_level": "irrelevant",
+      "time_to_react": "1_year_plus",
+      "scale_estimate": {
+        "revenue": null,
+        "customers": null,
+        "geo_reach": [
+          "BG"
+        ],
+        "growth_rate": "upadek"
+      },
+      "key_advantages": [
+        "perfekcyjny proces fotograficzny"
+      ],
+      "key_disadvantages": [
+        "operuje jak mała firma, nie skalowalna",
+        "koszty pracy zabiły model"
+      ],
+      "positioning": {
+        "inventory_model": "holds_stock",
+        "revenue_model": "margin",
+        "target_customer": "klienci e-commerce potrzebujący zdjęć",
+        "geographic_reach": "BG/EU",
+        "tech_stack_visibility": "manualny"
+      },
+      "source_quotes": [
+        {
+          "text": "Bułgarii, który umarł (...) fundusz kupił ich za 28 milionów dolarów, oni mieli 800 pracowników",
+          "source": "transcript",
+          "speaker": "founder",
+          "timestamp": null,
+          "confidence": "medium"
+        }
+      ]
+    }
+  ],
+  "market_signals": [
+    {
+      "id": "sig-unfrozen-growth",
+      "detected_at": "2025-01-20T12:00:00Z",
+      "source": "competitor_website",
+      "source_url": null,
+      "signal_type": "competitor_move",
+      "title": "Unfrozen wyprzedził StockHurt w przychodach po 5 latach",
+      "description": "Konkurent z Rumunii Unfrozen osiągnął 10M EUR przychodu w 2025 vs 7M EUR StockHurt po 12 latach. Wykorzystują model produktyzacji share-picking + loty z pełną informacją.",
+      "affects_competitors": [
+        "comp-unfrozen"
+      ],
+      "implications_for_company": "Brak działania = utrata pozycji konkurencyjnej. Wymaga kopii modelu z dodaniem przewag (zdjęcia AI, ML pricing, dostęp do średniaków i małych klientów).",
+      "suggested_actions": [],
+      "severity": "urgent",
+      "confidence": "confirmed"
+    },
+    {
+      "id": "sig-zalando-photo",
+      "detected_at": "2025-01-20T12:00:00Z",
+      "source": "industry_news",
+      "source_url": null,
+      "signal_type": "industry_trend",
+      "title": "Zalando cut 90% kosztów modelek/foto przez AI (Eiger)",
+      "description": "Zalando ostatnio obcięło 90% kosztów związanych z modelkami przez wdrożenie AI photo. Rynek przesuwa się w stronę AI generated product photography.",
+      "affects_competitors": [
+        "comp-unfrozen"
+      ],
+      "implications_for_company": "StockHurt już ma własny model AI photo - można go zoperacjonalizować i sprzedawać jako bonus przy zakupie hurtowym.",
+      "suggested_actions": [],
+      "severity": "noteworthy",
+      "confidence": "likely"
+    },
+    {
+      "id": "sig-allegro-migration",
+      "detected_at": "2025-01-20T12:00:00Z",
+      "source": "industry_news",
+      "source_url": null,
+      "signal_type": "new_market_entrant",
+      "title": "Marketplace Brzoski jako alternatywa dla Allegro",
+      "description": "Firma rozważa migrację z Allegro na marketplace Brzoski - wymaga zachowania pozycjonowania.",
+      "affects_competitors": [],
+      "implications_for_company": "Ryzyko utraty przychodu detalu przy złej migracji 400k SKU.",
+      "suggested_actions": [],
+      "severity": "noteworthy",
+      "confidence": "likely"
+    }
+  ],
+  "play_matches": [
+    {
+      "play_id": "P-020",
+      "matched_pains": [
+        "pain-no-pickability",
+        "pain-wojtek-overload",
+        "pain-founder-detachment"
+      ],
+      "business_impact_score": 10,
+      "ai_fit_score": 5.6,
+      "implementation_ease_score": 7,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4.5,
+        "tools": 4.4,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 6.08
+      },
+      "composite_score": 89,
+      "estimated_effort_weeks": 3,
+      "estimated_impact_pln_monthly": 532500,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "3 pain(s) matched, top problem score 100. CAVAC composite 6.1/10, 3w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-021",
+      "matched_pains": [
+        "pain-no-pickability",
+        "pain-pricing-manual",
+        "pain-wojtek-overload",
+        "pain-founder-detachment"
+      ],
+      "business_impact_score": 10,
+      "ai_fit_score": 6.5,
+      "implementation_ease_score": 6,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4.5,
+        "tools": 4.4,
+        "skills": 4.93,
+        "integrations": 10,
+        "composite": 5.96
+      },
+      "composite_score": 89,
+      "estimated_effort_weeks": 4,
+      "estimated_impact_pln_monthly": 538900,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "4 pain(s) matched, top problem score 100. CAVAC composite 6.0/10, 4w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-019",
+      "matched_pains": [
+        "pain-lost-context-wa",
+        "pain-no-pickability",
+        "pain-wojtek-overload",
+        "pain-founder-detachment"
+      ],
+      "business_impact_score": 10,
+      "ai_fit_score": 6.5,
+      "implementation_ease_score": 5,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4,
+        "tools": 3.6,
+        "skills": 4.93,
+        "integrations": 10,
+        "composite": 5.63
+      },
+      "composite_score": 86,
+      "estimated_effort_weeks": 5,
+      "estimated_impact_pln_monthly": 542500,
+      "confidence": "medium",
+      "uncertainty_factors": [
+        "tools: brak narzędzi lub krytyczna friction"
+      ],
+      "reasoning": "4 pain(s) matched, top problem score 100. CAVAC composite 5.6/10, 5w typical effort.",
+      "caveats": [
+        "tools: brak narzędzi lub krytyczna friction"
+      ]
+    },
+    {
+      "play_id": "P-003",
+      "matched_pains": [
+        "pain-lost-context-wa",
+        "pain-no-pickability",
+        "pain-wojtek-overload",
+        "pain-founder-detachment"
+      ],
+      "business_impact_score": 10,
+      "ai_fit_score": 5,
+      "implementation_ease_score": 8,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4,
+        "tools": 6,
+        "skills": 5.43,
+        "integrations": 9,
+        "composite": 6.11
+      },
+      "composite_score": 80,
+      "estimated_effort_weeks": 2,
+      "estimated_impact_pln_monthly": 542500,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "4 pain(s) matched, top problem score 100. CAVAC composite 6.1/10, 2w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-015",
+      "matched_pains": [
+        "pain-tools-fragmentation"
+      ],
+      "business_impact_score": 10,
+      "ai_fit_score": 4.9,
+      "implementation_ease_score": 8,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 3.67,
+        "tools": 6,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 6.27
+      },
+      "composite_score": 80,
+      "estimated_effort_weeks": 2,
+      "estimated_impact_pln_monthly": 275000,
+      "confidence": "medium",
+      "uncertainty_factors": [
+        "knowledge: procesy nieudokumentowane"
+      ],
+      "reasoning": "1 pain(s) matched, top problem score 100. CAVAC composite 6.3/10, 2w typical effort.",
+      "caveats": [
+        "knowledge: procesy nieudokumentowane"
+      ]
+    },
+    {
+      "play_id": "P-016",
+      "matched_pains": [
+        "pain-no-pickability",
+        "pain-pricing-manual",
+        "pain-wojtek-overload",
+        "pain-founder-detachment"
+      ],
+      "business_impact_score": 10,
+      "ai_fit_score": 5.3,
+      "implementation_ease_score": 6,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4.5,
+        "tools": 5.2,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 6.28
+      },
+      "composite_score": 78,
+      "estimated_effort_weeks": 4,
+      "estimated_impact_pln_monthly": 538900,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "4 pain(s) matched, top problem score 100. CAVAC composite 6.3/10, 4w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-009",
+      "matched_pains": [
+        "pain-lost-leads",
+        "pain-no-pickability",
+        "pain-wojtek-overload",
+        "pain-founder-detachment"
+      ],
+      "business_impact_score": 10,
+      "ai_fit_score": 6.2,
+      "implementation_ease_score": 4,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4.5,
+        "tools": 5.2,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 6.28
+      },
+      "composite_score": 76,
+      "estimated_effort_weeks": 6,
+      "estimated_impact_pln_monthly": 682500,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "4 pain(s) matched, top problem score 100. CAVAC composite 6.3/10, 6w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-008",
+      "matched_pains": [
+        "pain-lost-leads",
+        "pain-no-pickability",
+        "pain-pricing-manual",
+        "pain-wojtek-overload",
+        "pain-founder-detachment"
+      ],
+      "business_impact_score": 10,
+      "ai_fit_score": 6.5,
+      "implementation_ease_score": 0,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4.5,
+        "tools": 4.4,
+        "skills": 4.93,
+        "integrations": 10,
+        "composite": 5.96
+      },
+      "composite_score": 70,
+      "estimated_effort_weeks": 10,
+      "estimated_impact_pln_monthly": 688900,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "5 pain(s) matched, top problem score 100. CAVAC composite 6.0/10, 10w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-005",
+      "matched_pains": [
+        "pain-lost-leads",
+        "pain-no-product-viz",
+        "pain-pricing-manual"
+      ],
+      "business_impact_score": 6.21,
+      "ai_fit_score": 6.5,
+      "implementation_ease_score": 7,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4.75,
+        "tools": 5.2,
+        "skills": 4.93,
+        "integrations": 10,
+        "composite": 6.22
+      },
+      "composite_score": 69,
+      "estimated_effort_weeks": 3,
+      "estimated_impact_pln_monthly": 331400,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "3 pain(s) matched, top problem score 55. CAVAC composite 6.2/10, 3w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-014",
+      "matched_pains": [
+        "pain-lost-leads",
+        "pain-no-product-viz"
+      ],
+      "business_impact_score": 6.03,
+      "ai_fit_score": 5.3,
+      "implementation_ease_score": 8,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4.67,
+        "tools": 6,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 6.52
+      },
+      "composite_score": 69,
+      "estimated_effort_weeks": 2,
+      "estimated_impact_pln_monthly": 325000,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "2 pain(s) matched, top problem score 55. CAVAC composite 6.5/10, 2w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-012",
+      "matched_pains": [
+        "pain-no-product-viz"
+      ],
+      "business_impact_score": 5.5,
+      "ai_fit_score": 5.3,
+      "implementation_ease_score": 8,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 5,
+        "tools": 6,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 6.61
+      },
+      "composite_score": 68,
+      "estimated_effort_weeks": 2,
+      "estimated_impact_pln_monthly": 175000,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "1 pain(s) matched, top problem score 55. CAVAC composite 6.6/10, 2w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-017",
+      "matched_pains": [
+        "pain-no-product-viz"
+      ],
+      "business_impact_score": 5.5,
+      "ai_fit_score": 5.9,
+      "implementation_ease_score": 7,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 5,
+        "tools": 6,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 6.61
+      },
+      "composite_score": 67,
+      "estimated_effort_weeks": 3,
+      "estimated_impact_pln_monthly": 175000,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "1 pain(s) matched, top problem score 55. CAVAC composite 6.6/10, 3w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-004",
+      "matched_pains": [
+        "pain-no-product-viz",
+        "pain-pricing-manual"
+      ],
+      "business_impact_score": 5.77,
+      "ai_fit_score": 7.4,
+      "implementation_ease_score": 5,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 5,
+        "tools": 4.4,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 6.21
+      },
+      "composite_score": 66,
+      "estimated_effort_weeks": 5,
+      "estimated_impact_pln_monthly": 181400,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "2 pain(s) matched, top problem score 55. CAVAC composite 6.2/10, 5w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-006",
+      "matched_pains": [
+        "pain-lost-leads",
+        "pain-no-product-viz"
+      ],
+      "business_impact_score": 6.03,
+      "ai_fit_score": 5.3,
+      "implementation_ease_score": 7,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4.67,
+        "tools": 4.4,
+        "skills": 5.43,
+        "integrations": 9,
+        "composite": 5.87
+      },
+      "composite_score": 66,
+      "estimated_effort_weeks": 3,
+      "estimated_impact_pln_monthly": 325000,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "2 pain(s) matched, top problem score 55. CAVAC composite 5.9/10, 3w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-002",
+      "matched_pains": [
+        "pain-lost-leads",
+        "pain-no-product-viz"
+      ],
+      "business_impact_score": 6.03,
+      "ai_fit_score": 7.1,
+      "implementation_ease_score": 4,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4.67,
+        "tools": 4.4,
+        "skills": 4.93,
+        "integrations": 10,
+        "composite": 6
+      },
+      "composite_score": 65,
+      "estimated_effort_weeks": 6,
+      "estimated_impact_pln_monthly": 325000,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "2 pain(s) matched, top problem score 55. CAVAC composite 6.0/10, 6w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-001",
+      "matched_pains": [
+        "pain-lost-context-wa"
+      ],
+      "business_impact_score": 5,
+      "ai_fit_score": 5.9,
+      "implementation_ease_score": 6,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 2,
+        "tools": 6,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 5.86
+      },
+      "composite_score": 62,
+      "estimated_effort_weeks": 4,
+      "estimated_impact_pln_monthly": 10000,
+      "confidence": "medium",
+      "uncertainty_factors": [
+        "knowledge: procesy nieudokumentowane"
+      ],
+      "reasoning": "1 pain(s) matched, top problem score 50. CAVAC composite 5.9/10, 4w typical effort.",
+      "caveats": [
+        "knowledge: procesy nieudokumentowane"
+      ]
+    },
+    {
+      "play_id": "P-007",
+      "matched_pains": [
+        "pain-lost-leads"
+      ],
+      "business_impact_score": 3.5,
+      "ai_fit_score": 5.9,
+      "implementation_ease_score": 7,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4,
+        "tools": 4.4,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 5.96
+      },
+      "composite_score": 60,
+      "estimated_effort_weeks": 3,
+      "estimated_impact_pln_monthly": 150000,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "1 pain(s) matched, top problem score 35. CAVAC composite 6.0/10, 3w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-011",
+      "matched_pains": [
+        "pain-pricing-manual"
+      ],
+      "business_impact_score": 1.8,
+      "ai_fit_score": 5.3,
+      "implementation_ease_score": 8,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 5,
+        "tools": 6,
+        "skills": 5.43,
+        "integrations": 9,
+        "composite": 6.36
+      },
+      "composite_score": 56,
+      "estimated_effort_weeks": 2,
+      "estimated_impact_pln_monthly": 6400,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "1 pain(s) matched, top problem score 18. CAVAC composite 6.4/10, 2w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-013",
+      "matched_pains": [
+        "pain-pricing-manual"
+      ],
+      "business_impact_score": 1.8,
+      "ai_fit_score": 5.6,
+      "implementation_ease_score": 7,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 5,
+        "tools": 6,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 6.61
+      },
+      "composite_score": 56,
+      "estimated_effort_weeks": 3,
+      "estimated_impact_pln_monthly": 6400,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "1 pain(s) matched, top problem score 18. CAVAC composite 6.6/10, 3w typical effort.",
+      "caveats": []
+    },
+    {
+      "play_id": "P-010",
+      "matched_pains": [
+        "pain-lost-leads"
+      ],
+      "business_impact_score": 3.5,
+      "ai_fit_score": 5.9,
+      "implementation_ease_score": 4,
+      "data_readiness_score": 10,
+      "cavac_readiness": {
+        "knowledge": 4,
+        "tools": 4.4,
+        "skills": 5.43,
+        "integrations": 10,
+        "composite": 5.96
+      },
+      "composite_score": 55,
+      "estimated_effort_weeks": 6,
+      "estimated_impact_pln_monthly": 150000,
+      "confidence": "medium",
+      "uncertainty_factors": [],
+      "reasoning": "1 pain(s) matched, top problem score 35. CAVAC composite 6.0/10, 6w typical effort.",
+      "caveats": []
+    }
+  ],
+  "ranked_opportunities": [
+    "P-020",
+    "P-021",
+    "P-019",
+    "P-003",
+    "P-015",
+    "P-016",
+    "P-009",
+    "P-008",
+    "P-005",
+    "P-014"
+  ],
+  "action_points": [],
+  "next_step_pack": {
+    "id": "pack-001-first",
+    "title": "Pierwszy pakiet wdrożeniowy (4 play, ~11w)",
+    "one_liner": "Pakiet 4 AI plays adresujących 2 burning pain(s) i 3 imminent risk(s) w budżecie 11/12 tygodni.",
+    "selected_plays": [
+      "P-001",
+      "P-020",
+      "P-021",
+      "P-019"
+    ],
+    "framing": "pilot",
+    "rationale": "Greedy selekcja po composite score z constraints: budżet 12w, layer order brain→tools→skills→workflows→cowork, prerequisites enforced. Coverage: 2/2 burning pains, layers used: brain, founder-facing.",
+    "scope": {
+      "in_scope": [
+        "P-001: Sales Operations Knowledge Base",
+        "P-020: Founder Daily/Weekly Briefing",
+        "P-021: Action Points Generator & Tracker",
+        "P-019: Market Intelligence Continuous Monitoring"
+      ],
+      "out_of_scope": [
+        "Plays nie spełniające budżetu czasowego pierwszego pakietu",
+        "Plays z nieusatysfakcjonowanymi prerequisitami spoza tego pakietu"
+      ]
+    },
+    "timeline_weeks": 11,
+    "pricing": null,
+    "deliverables": [
+      "P-001 — Sales Operations Knowledge Base: Fundament dla wszystkich pozostałych plays. Onboarding nowego handlowca z 4 miesięcy do 2-3 tygodni. Likwidacja \"pytaj E",
+      "P-020 — Founder Daily/Weekly Briefing: Founder odzyskuje pełny obraz w 5 minut rano. Nie musi przyjeżdżać żeby wiedzieć co się dzieje. Stagnacja 5% YoY zaczyna",
+      "P-021 — Action Points Generator & Tracker: Operacyjny layer mózgu firmy — sygnały z dashboardu stają się akcjami. Closes gap między \"wiem\" a \"robię\".",
+      "P-019 — Market Intelligence Continuous Monitoring: Founderzy odzyskują \"uszy na rynku\" bez manualnego śledzenia. Wczesne ostrzeżenia o Unfrosen moves."
+    ],
+    "success_metrics": [],
+    "team_required": [
+      "HyperHuman 2-3 osoby",
+      "Klient: 1 champion + dostęp do danych"
+    ],
+    "client_commitment": [
+      "Wywiady ~1h z kluczowymi osobami (P-001)",
+      "Dostęp do narzędzi z requires.data",
+      "Cotygodniowy 1h checkpoint"
+    ],
+    "risks_and_assumptions": [
+      "Selekcja oparta na composite score — może wymagać korekty po review founderskim",
+      "Budżet 12w to wstępna estymata; szczegółowa estymacja po decision call"
+    ],
+    "next_logical_step_after": "Layer 2: pozostałe high-score plays + deeper integrations po walidacji Layer 1."
+  },
+  "last_continuous_refresh": null,
+  "ingestion_sources_active": [],
+  "overall_confidence": "medium",
+  "data_gaps": [
+    "Brak dokładnych danych finansowych (marża %, koszty operacyjne)",
+    "Brak metryk per handlowiec (czas, konwersja)",
+    "Brak listy aktualnych narzędzi (zapowiedziana lista do przesłania)",
+    "Brak danych o procesie inwentaryzacji fizycznej w magazynie",
+    "Brak konkretnych liczb na temat Unfrozen poza przychodem",
+    "Nie wiadomo jaka część dostaw ma listy pakunkowe a jaka nie (oszacowanie ~50%)"
+  ],
+  "followup_questions": [
+    "Jakie konkretne narzędzia są używane na co dzień (lista przygotowywana przez klienta)?",
+    "Jak wygląda proces fizyczny inwentaryzacji palet w magazynie?",
+    "Jakie są dokładne koszty handlowca per transakcja i marża per kanał (hurt B2B vs Allegro vs Stilo)?",
+    "Czy listy pakunkowe od dostawców (Zalando, Trendyol, About You) są precyzyjne enough by share picking ruszyć bez pełnego skanowania?",
+    "Jak wygląda migracja na Marketplace Brzoski i jakie są wymagania techniczne?",
+    "Jakie konkretnie były skrypty Pythona Wojtka do CRM i pricing ML - co konkretnie nie działało?",
+    "Jaki jest podział revenue: hurt B2B vs detal Allegro vs Stilo?"
+  ]
+}

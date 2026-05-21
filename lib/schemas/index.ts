@@ -355,7 +355,7 @@ export const AIPlaySchema = z.object({
   one_liner: z.string(),
 
   industry_tags: z.array(z.string()),
-  cavac_layer: z.enum(['brain', 'tools', 'skills', 'workflows', 'cowork']),
+  cavac_layer: z.enum(['brain', 'tools', 'skills', 'workflows', 'cowork', 'founder-facing']),
 
   solves_pain_categories: z.array(z.string()),
   solution_pattern: z.string().describe('3-5 zdań jak działa'),
@@ -365,6 +365,12 @@ export const AIPlaySchema = z.object({
     typical: z.number(),
     max: z.number(),
   }),
+
+  effort_weeks_mvp: z.object({
+    typical: z.number(),
+  }).nullable().describe(
+    'MVP variant — krótszy timeline, 60-80% value z full. Używany w selektor pierwszego pakietu. Null = nie ma sensownego MVP variant, używaj effort_weeks.',
+  ),
 
   expected_impact_qualitative: z.string(),
   expected_impact_quantitative: z.string().nullable(),

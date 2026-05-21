@@ -9,15 +9,24 @@ const MODEL = 'claude-opus-4-7';
 
 const PHASE_A_ADDENDUM = `
 
-PHASE-A SCOPE NOTE:
-This is the initial extraction (Phase A). You are NOT computing scoring or recommendations yet. For the required schema fields that belong to downstream layers, output the following placeholders so the output validates:
-- play_matches: []
-- ranked_opportunities: []
-- action_points: []
-- next_step_pack: { id: "placeholder", title: "TBD — Phase A only", one_liner: "Pending scoring", selected_plays: [], framing: "pilot", rationale: "Pending downstream scoring pass.", scope: { in_scope: [], out_of_scope: [] }, timeline_weeks: 0, pricing: null, deliverables: [], success_metrics: [], team_required: [], client_commitment: [], risks_and_assumptions: [], next_logical_step_after: "Run scoring + plays matching pass." }
-- last_continuous_refresh: null
-- ingestion_sources_active: []
-Fill metadata.case_id with "stock-hurt", metadata.generated_at with current ISO timestamp, metadata.pipeline_version with "0.1-phase-a".`;
+PHASE-A SCOPE & COMPLETENESS RULES (CRITICAL — output WILL be rejected otherwise):
+
+1. EVERY top-level field of the CompanyAnalysis schema MUST be present in your tool call, even if empty. Missing fields = hard failure.
+2. For entity arrays you ARE extracting (company, processes, pains, metrics, tools, risks, stakeholders, competitors, market_signals): fill from the transcript.
+3. If a category has zero evidence in the transcript, emit an empty array []. Do NOT omit the key.
+4. Downstream layers — emit these EXACTLY as placeholders, do NOT enrich:
+   - play_matches: []
+   - ranked_opportunities: []
+   - action_points: []
+   - next_step_pack: { id: "placeholder", title: "TBD — Phase A only", one_liner: "Pending scoring", selected_plays: [], framing: "pilot", rationale: "Pending downstream scoring pass.", scope: { in_scope: [], out_of_scope: [] }, timeline_weeks: 0, pricing: null, deliverables: [], success_metrics: [], team_required: [], client_commitment: [], risks_and_assumptions: [], next_logical_step_after: "Run scoring + plays matching pass." }
+5. Required scalar/array fields at top level — emit even if shallow:
+   - last_continuous_refresh: null  (or current ISO timestamp)
+   - ingestion_sources_active: []
+   - overall_confidence: must be one of "high" | "medium" | "low" (NOT a number)
+   - data_gaps: [] (or short strings if obvious gaps in transcript)
+   - followup_questions: [] (or short strings)
+6. metadata: case_id="stock-hurt", generated_at=current ISO timestamp, pipeline_version="0.1-phase-a".
+7. BREVITY: 1-2 source_quotes per entity max. Keep descriptions tight. Don't pad. Token budget matters.`;
 
 export interface ExtractOptions {
   caseId?: string;
@@ -32,19 +41,19 @@ export async function extractFromTranscript(
   const apiKey = options.apiKey ?? process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error('Missing ANTHROPIC_API_KEY (set in .env.local)');
 
-  const client = new Anthropic({ apiKey });
+  const client = new Anthropic({ apiKey, timeout: 30 * 60 * 1000 });
 
   const jsonSchema = z.toJSONSchema(CompanyAnalysisSchema, {
-    target: 'draft-7',
+    target: 'draft-2020-12',
     reused: 'inline',
   }) as Record<string, unknown>;
   delete jsonSchema['$schema'];
 
   const toolName = 'extract_company_analysis';
 
-  const response = await client.messages.create({
+  const stream = client.messages.stream({
     model: MODEL,
-    max_tokens: 16000,
+    max_tokens: 32000,
     system: MASTER_EXTRACTION_PROMPT + PHASE_A_ADDENDUM,
     tools: [
       {
@@ -63,6 +72,18 @@ export async function extractFromTranscript(
     ],
   });
 
+  let lastLog = Date.now();
+  stream.on('text', () => {});
+  stream.on('inputJson', () => {
+    if (Date.now() - lastLog > 5000) {
+      process.stderr.write('.');
+      lastLog = Date.now();
+    }
+  });
+
+  const response = await stream.finalMessage();
+  process.stderr.write('\n');
+
   const toolUse = response.content.find((b) => b.type === 'tool_use');
   if (!toolUse || toolUse.type !== 'tool_use') {
     throw new Error(
@@ -70,7 +91,18 @@ export async function extractFromTranscript(
     );
   }
 
-  const parsed = CompanyAnalysisSchema.safeParse(toolUse.input);
+  let raw: unknown = toolUse.input;
+  if (
+    raw &&
+    typeof raw === 'object' &&
+    !Array.isArray(raw) &&
+    'company_analysis' in raw &&
+    Object.keys(raw).length === 1
+  ) {
+    raw = (raw as { company_analysis: unknown }).company_analysis;
+  }
+
+  const parsed = CompanyAnalysisSchema.safeParse(raw);
   if (!parsed.success) {
     const errPath = options.outputPath
       ? options.outputPath.replace(/\.json$/, '.invalid.json')

@@ -1,0 +1,35 @@
+{
+  "source_overlay_type": "consultant_strategic_briefing",
+  "source": "HyperHuman briefing — Konrad",
+  "additional_pains": [
+    {
+      "id": "pain-founder-detachment",
+      "title": "Founderzy stracili pełny obraz firmy",
+      "description": "Paweł i Maciej zbudowali firmę siłą determinacji przez 12 lat. Doszli do operacyjnej dojrzałości — kadra zarządzająca przejęła stery, oni odsuwają się od codziennej operacji. Ale firma traci 5% rocznie nie z powodu rynku, lecz dlatego, że nikt nie ma już ich pełnego obrazu. Decyzje strategiczne zapadają z niepełnymi danymi. To pułapka średniego rozwoju.",
+      "category": "scaling_blocker",
+      "affected_processes": [],
+      "affected_roles": ["Paweł", "Maciej"],
+      "frequency": "constant",
+      "severity": "critical",
+      "strategic_impact": "blocks_endgame",
+      "founder_emotional_intensity": "burning",
+      "founder_quoted_phrase": null,
+      "source_quotes": [
+        {
+          "text": "firma z roku na rok traci 5% przychodów, popadła w stagnację",
+          "source": "inferred",
+          "speaker": "Konrad (HyperHuman consultant briefing)",
+          "timestamp": null,
+          "confidence": "high"
+        },
+        {
+          "text": "ten mózg firmy ma być takimi ich oczami, mózgiem, uszami, żeby oni wiedzieli, co w tej firmie się dzieje",
+          "source": "inferred",
+          "speaker": "Konrad (HyperHuman consultant briefing)",
+          "timestamp": null,
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}
