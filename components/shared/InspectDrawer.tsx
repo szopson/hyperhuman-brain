@@ -32,6 +32,12 @@ const CONFIDENCE_COLOR: Record<SourceQuote['confidence'], string> = {
   low: 'bg-rose-900/40 text-rose-300 ring-rose-700/50',
 };
 
+const CONFIDENCE_LABEL: Record<SourceQuote['confidence'], string> = {
+  high: 'wysoka',
+  medium: 'średnia',
+  low: 'niska',
+};
+
 export function InspectTrigger({
   payload,
   children,
@@ -75,18 +81,18 @@ export function InspectTrigger({
             {payload.scoreMath && (
               <section>
                 <h3 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-                  Scoring math
+                  Jak liczona jest ocena
                 </h3>
                 <div className="mt-2 rounded-md border border-zinc-800 bg-zinc-900 p-3">
                   <p className="text-sm text-zinc-300">
-                    Final score:{' '}
+                    Ocena końcowa:{' '}
                     <span className="font-mono text-zinc-50">
                       {payload.scoreMath.final_score_0_100}
                     </span>
                     <span className="text-zinc-500"> / 100</span>
                   </p>
                   <p className="mt-1 text-xs text-zinc-500">
-                    Formula:{' '}
+                    Wzór:{' '}
                     <span className="font-mono text-zinc-400">
                       {payload.scoreMath.formula}
                     </span>
@@ -101,7 +107,7 @@ export function InspectTrigger({
             {payload.extra && payload.extra.length > 0 && (
               <section>
                 <h3 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-                  Properties
+                  Szczegóły
                 </h3>
                 <dl className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
                   {payload.extra.map((e) => (
@@ -116,11 +122,11 @@ export function InspectTrigger({
 
             <section>
               <h3 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-                Source quotes ({payload.quotes.length})
+                Skąd to wiemy ({payload.quotes.length})
               </h3>
               {payload.quotes.length === 0 ? (
                 <p className="mt-2 text-sm text-zinc-500">
-                  Brak source quotes dla tej encji.
+                  Brak źródeł dla tego elementu.
                 </p>
               ) : (
                 <ul className="mt-2 space-y-3">
@@ -140,17 +146,11 @@ export function InspectTrigger({
                             CONFIDENCE_COLOR[q.confidence],
                           )}
                         >
-                          {q.confidence}
+                          Pewność: {CONFIDENCE_LABEL[q.confidence]}
                         </Badge>
-                        <span className="text-zinc-500">
-                          source:{' '}
-                          <span className="font-mono text-zinc-300">
-                            {q.source}
-                          </span>
-                        </span>
                         {q.speaker && (
                           <span className="text-zinc-500">
-                            speaker:{' '}
+                            mówca:{' '}
                             <span className="text-zinc-300">{q.speaker}</span>
                           </span>
                         )}

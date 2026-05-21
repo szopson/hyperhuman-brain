@@ -5,6 +5,20 @@ import { InspectTrigger } from '@/components/shared/InspectDrawer';
 
 const fmt = (n: number) => n.toLocaleString('pl-PL');
 
+const PAIN_CATEGORY_LABEL: Record<string, string> = {
+  time_waste: 'Strata czasu',
+  manual_repetitive_work: 'Praca ręczna',
+  knowledge_silos: 'Wiedza w głowach',
+  lost_context: 'Brak kontekstu',
+  data_quality: 'Jakość danych',
+  communication_breakdown: 'Komunikacja',
+  tooling_friction: 'Narzędzia',
+  lost_revenue: 'Stracony przychód',
+  customer_experience: 'Doświadczenie klienta',
+  compliance_risk: 'Compliance',
+  scaling_blocker: 'Bariera wzrostu',
+};
+
 export default async function Page() {
   const a = await loadAnalysis();
   const { leakage_scores, problem_scores } = computeAllScores(a);
@@ -35,52 +49,53 @@ export default async function Page() {
       <div className="mx-auto max-w-6xl space-y-8">
         <header>
           <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            View 04 · Revenue Leakage
+            04 · Gdzie uciekają pieniądze
           </p>
           <h1 className="mt-1 text-3xl font-semibold tracking-tight text-zinc-50">
             ~{fmt(Math.round(totalRecoverable / 1000))}k PLN/mo recoverable
           </h1>
           <p className="mt-2 max-w-3xl text-zinc-400">
-            Każda kwota = estymata, NIE pomiar. Kliknij liczbę żeby zobaczyć
-            assumptions, recoverability rate i sensitivity range ±50%. Bazowa
-            estymata używa severity × frequency × kategoria-specific recoverability.
-            Cap: 500k PLN/mo per pain żeby uniknąć absurdów.
+            Każda kwota to estymata, nie pomiar. Kliknij sumę aby zobaczyć
+            założenia i zakres niepewności ±50%. Bazujemy na intensywności
+            problemu × częstotliwości × szansie odzysku zależnej od typu.
+            Maksymalna kwota per problem: 500 tys. PLN/m-c, żeby uniknąć
+            zawyżenia.
           </p>
         </header>
 
         <section className="grid gap-3 sm:grid-cols-3">
           <SummaryCard
-            label="Total estimated monthly leak"
+            label="Szacunkowa miesięczna strata"
             value={`${fmt(Math.round(totalLeak / 1000))}k PLN`}
-            sub="Suma surowych estymat per pain"
+            sub="Suma surowych estymat per problem"
           />
           <SummaryCard
-            label="Total recoverable monthly"
+            label="Możliwe do odzyskania"
             value={`${fmt(Math.round(totalRecoverable / 1000))}k PLN`}
-            sub="Po recoverability rate per category"
+            sub="Po realnym współczynniku odzysku"
           />
           <SummaryCard
-            label="Annual recovery potential"
+            label="Potencjał roczny"
             value={`${fmt(Math.round((totalRecoverable * 12) / 1000))}k PLN`}
-            sub="12 × monthly · zakładając stabilny baseline"
+            sub="12 miesięcy · stabilna baza"
           />
         </section>
 
         <section>
           <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            Leakage per pain
+            Wyciek per problem
           </h2>
           <div className="mt-3 overflow-x-auto rounded-md border border-zinc-800">
             <table className="w-full text-sm">
               <thead className="bg-zinc-900 text-left text-[11px] uppercase tracking-wider text-zinc-500">
                 <tr>
-                  <th className="px-4 py-3 font-medium">Pain</th>
-                  <th className="px-4 py-3 font-medium">Category</th>
-                  <th className="px-4 py-3 font-medium">Raw leak/mo</th>
-                  <th className="px-4 py-3 font-medium">Rate</th>
-                  <th className="px-4 py-3 font-medium">Recoverable/mo</th>
-                  <th className="px-4 py-3 font-medium">Range ±50%</th>
-                  <th className="px-4 py-3 font-medium">Conf</th>
+                  <th className="px-4 py-3 font-medium">Problem</th>
+                  <th className="px-4 py-3 font-medium">Bolączka</th>
+                  <th className="px-4 py-3 font-medium">Strata/m-c</th>
+                  <th className="px-4 py-3 font-medium">Odzysk %</th>
+                  <th className="px-4 py-3 font-medium">Możliwe do odzyskania</th>
+                  <th className="px-4 py-3 font-medium">Zakres ±50%</th>
+                  <th className="px-4 py-3 font-medium">Pewność</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-800">
@@ -91,12 +106,9 @@ export default async function Page() {
                   >
                     <td className="px-4 py-3 max-w-md">
                       <p className="text-zinc-100">{r.pain.title}</p>
-                      <p className="mt-0.5 font-mono text-[10px] text-zinc-500">
-                        {r.pain.id}
-                      </p>
                     </td>
-                    <td className="px-4 py-3 font-mono text-xs text-zinc-400">
-                      {r.pain.category}
+                    <td className="px-4 py-3 text-xs text-zinc-400">
+                      {PAIN_CATEGORY_LABEL[r.pain.category] ?? r.pain.category}
                     </td>
                     <td className="px-4 py-3 font-mono text-xs text-zinc-300">
                       {r.leakage
@@ -147,7 +159,13 @@ export default async function Page() {
                         : '—'}
                     </td>
                     <td className="px-4 py-3 font-mono text-xs uppercase text-zinc-400">
-                      {r.leakage?.confidence ?? '—'}
+                      {r.leakage
+                        ? r.leakage.confidence === 'high'
+                          ? 'wysoka'
+                          : r.leakage.confidence === 'medium'
+                            ? 'średnia'
+                            : 'niska'
+                        : '—'}
                     </td>
                   </tr>
                 ))}
@@ -155,12 +173,12 @@ export default async function Page() {
               <tfoot className="bg-zinc-900/60 text-xs">
                 <tr>
                   <td className="px-4 py-3 font-medium text-zinc-300" colSpan={2}>
-                    Total
+                    Razem
                   </td>
                   <td className="px-4 py-3 font-mono text-zinc-200">
                     {fmt(totalLeak)} PLN
                   </td>
-                  <td className="px-4 py-3 text-zinc-500">avg blended</td>
+                  <td className="px-4 py-3 text-zinc-500">średnia ważona</td>
                   <td className="px-4 py-3 font-mono text-zinc-50">
                     {fmt(totalRecoverable)} PLN
                   </td>
@@ -172,11 +190,11 @@ export default async function Page() {
         </section>
 
         <p className="text-xs text-zinc-500">
-          Methodology: Recovery rate per category — manual_repetitive_work 0.8,
-          time_waste 0.7, data_quality 0.6, tooling_friction 0.55, scaling_blocker
-          0.5, knowledge_silos 0.5, communication_breakdown 0.45, lost_context 0.4,
-          customer_experience 0.35, lost_revenue 0.3, compliance_risk 0.6. Per-pain
-          cap 500k PLN/mo żeby unikać absurdów (revenue-as-leak conflation).
+          Metodologia: współczynnik odzysku dobierany per typ problemu — praca
+          ręczna 80%, strata czasu 70%, jakość danych i compliance 60%, narzędzia
+          55%, wiedza i bariera wzrostu 50%, komunikacja 45%, brak kontekstu 40%,
+          doświadczenie klienta 35%, stracony przychód 30%. Maksymalna kwota per
+          problem: 500 tys. PLN/m-c.
         </p>
       </div>
     </AppShell>

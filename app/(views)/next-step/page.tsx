@@ -13,6 +13,15 @@ const LAYER_COLOR: Record<string, string> = {
   cowork: 'bg-zinc-900 text-zinc-300 ring-zinc-800',
 };
 
+const LAYER_LABEL: Record<string, string> = {
+  brain: 'Fundament',
+  'founder-facing': 'Dla zarządu',
+  tools: 'Narzędzie',
+  skills: 'Automatyzacja',
+  workflows: 'Workflow',
+  cowork: 'Wdrożenie zespołu',
+};
+
 export default async function Page() {
   const a = await loadAnalysis();
   const pack = a.next_step_pack;
@@ -32,12 +41,17 @@ export default async function Page() {
       <div className="mx-auto max-w-5xl space-y-10">
         <header>
           <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            View 09 · Recommended Next Step
+            09 · Nasza propozycja
           </p>
           <h1 className="mt-1 text-3xl font-semibold tracking-tight text-zinc-50">
-            Founder Brain Foundation + Sales Department Layer
+            Co proponujemy jako pierwszy krok
           </h1>
-          <p className="mt-2 max-w-3xl text-zinc-400">{pack.one_liner}</p>
+          <p className="mt-2 max-w-3xl text-zinc-400">
+            Fundament mózgu firmy + warstwa wsparcia zarządu. Pakiet
+            {' ' + pack.selected_plays.length} wdrożeń w {pack.timeline_weeks}{' '}
+            tygodni, każde wybrane tak, żeby adresować realne problemy z
+            transkryptu i zostawiać przestrzeń na kolejne kroki.
+          </p>
         </header>
 
         {/* TIMELINE + COMPOSITION HERO */}
@@ -45,7 +59,7 @@ export default async function Page() {
           <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-amber-300/80">
-                Timeline
+                Czas wdrożenia
               </p>
               <p className="mt-1 text-4xl font-semibold text-zinc-50">
                 {pack.timeline_weeks}{' '}
@@ -54,7 +68,7 @@ export default async function Page() {
             </div>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-amber-300/80">
-                Plays
+                Wdrożenia
               </p>
               <p className="mt-1 text-4xl font-semibold text-zinc-50">
                 {pack.selected_plays.length}
@@ -62,20 +76,19 @@ export default async function Page() {
             </div>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-amber-300/80">
-                Framing
+                Charakter
               </p>
-              <p className="mt-1 text-xl font-semibold capitalize text-zinc-50">
-                {pack.framing}
+              <p className="mt-1 text-xl font-semibold text-zinc-50">
+                Pierwszy krok
               </p>
             </div>
           </div>
-          <p className="mt-4 text-sm text-zinc-300">{pack.rationale}</p>
         </section>
 
         {/* SELECTED PLAYS */}
         <section>
           <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            Selected plays · pakiet pierwszy
+            Wybrane wdrożenia w pakiecie
           </h2>
           <ol className="mt-3 space-y-3">
             {selectedPlays.map(({ play, match }, i) => {
@@ -91,7 +104,7 @@ export default async function Page() {
                     <div>
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="font-mono text-xs text-zinc-500">
-                          0{i + 1} · {play.id}
+                          0{i + 1}
                         </span>
                         <Badge
                           className={cn(
@@ -99,16 +112,16 @@ export default async function Page() {
                             LAYER_COLOR[play.cavac_layer],
                           )}
                         >
-                          {play.cavac_layer}
+                          {LAYER_LABEL[play.cavac_layer] ?? play.cavac_layer}
                         </Badge>
                         {mvp && (
                           <Badge className="bg-emerald-950 text-emerald-300 ring-1 ring-emerald-800 text-[10px]">
-                            MVP {mvp}w (full {play.effort_weeks.typical}w)
+                            Faza 1: {mvp} tyg. (pełna: {play.effort_weeks.typical} tyg.)
                           </Badge>
                         )}
                       </div>
                       <h3 className="mt-1 text-lg font-semibold text-zinc-50">
-                        {play.name}
+                        {play.name_pl ?? play.name}
                       </h3>
                       <p className="mt-1 text-sm text-zinc-400">
                         {play.one_liner}
@@ -119,30 +132,30 @@ export default async function Page() {
                         {match?.composite_score ?? '—'}
                       </p>
                       <p className="text-[10px] uppercase tracking-wider text-zinc-500">
-                        composite
+                        ocena końcowa
                       </p>
                     </div>
                   </div>
 
                   <div className="mt-3 grid grid-cols-2 gap-4 text-xs sm:grid-cols-4">
                     <div>
-                      <p className="text-zinc-500">Effort</p>
-                      <p className="mt-0.5 font-mono text-zinc-200">{eff}w</p>
+                      <p className="text-zinc-500">Czas</p>
+                      <p className="mt-0.5 font-mono text-zinc-200">{eff} tyg.</p>
                     </div>
                     <div>
-                      <p className="text-zinc-500">Matched pains</p>
+                      <p className="text-zinc-500">Problemy adresowane</p>
                       <p className="mt-0.5 font-mono text-zinc-200">
                         {match?.matched_pains.length ?? 0}
                       </p>
                     </div>
                     <div>
-                      <p className="text-zinc-500">Confidence</p>
+                      <p className="text-zinc-500">Pewność</p>
                       <p className="mt-0.5 font-mono uppercase text-zinc-200">
-                        {match?.confidence ?? '—'}
+                        {match?.confidence === 'high' ? 'wysoka' : match?.confidence === 'medium' ? 'średnia' : 'niska'}
                       </p>
                     </div>
                     <div>
-                      <p className="text-zinc-500">€/mo recoverable</p>
+                      <p className="text-zinc-500">PLN/m-c odzysk</p>
                       <p className="mt-0.5 font-mono text-zinc-200">
                         {match?.estimated_impact_pln_monthly
                           ? `${(match.estimated_impact_pln_monthly / 1000).toFixed(0)}k PLN`
@@ -153,7 +166,7 @@ export default async function Page() {
 
                   <p className="mt-3 text-sm text-zinc-400">
                     <span className="font-medium text-zinc-300">
-                      Expected impact:
+                      Oczekiwany efekt:
                     </span>{' '}
                     {play.expected_impact_qualitative}
                   </p>
@@ -167,7 +180,7 @@ export default async function Page() {
         {pack.deliverables.length > 0 && (
           <section>
             <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-              Deliverables
+              Co dostarczamy
             </h2>
             <ul className="mt-3 space-y-1.5 text-sm text-zinc-300">
               {pack.deliverables.map((d, i) => (
@@ -184,7 +197,7 @@ export default async function Page() {
         <section className="grid gap-6 lg:grid-cols-2">
           <div>
             <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-              Team required
+              Nasz zespół
             </h2>
             <ul className="mt-3 space-y-1.5 text-sm text-zinc-300">
               {pack.team_required.map((t, i) => (
@@ -194,7 +207,7 @@ export default async function Page() {
           </div>
           <div>
             <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-              Client commitment
+              Czego potrzebujemy od was
             </h2>
             <ul className="mt-3 space-y-1.5 text-sm text-zinc-300">
               {pack.client_commitment.map((t, i) => (
@@ -208,7 +221,7 @@ export default async function Page() {
         {pack.risks_and_assumptions.length > 0 && (
           <section>
             <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-              Risks & assumptions
+              Ryzyka i założenia
             </h2>
             <ul className="mt-3 space-y-1.5 text-sm text-zinc-300">
               {pack.risks_and_assumptions.map((r, i) => (
@@ -224,10 +237,12 @@ export default async function Page() {
         {/* LAYER 2 SNEAK PEEK */}
         <section className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-6">
           <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            Layer 2 · next logical step after success
+            Co dalej po pierwszym kroku
           </h2>
           <p className="mt-2 text-sm text-zinc-300">
-            {pack.next_logical_step_after}
+            Po sukcesie pakietu pierwszego naturalnie wchodzi drugi etap — trzy
+            wdrożenia o najwyższej ocenie spoza obecnego pakietu, gotowe do
+            uruchomienia gdy fundament działa.
           </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
             {layer2.map(({ play, match }) => {
@@ -237,12 +252,11 @@ export default async function Page() {
                   key={play.id}
                   className="rounded-md border border-zinc-800 bg-zinc-950 p-3"
                 >
-                  <p className="font-mono text-xs text-zinc-500">{play.id}</p>
-                  <p className="mt-1 text-sm font-medium text-zinc-100">
-                    {play.name}
+                  <p className="text-sm font-medium text-zinc-100">
+                    {play.name_pl ?? play.name}
                   </p>
                   <p className="mt-2 font-mono text-xs text-zinc-400">
-                    composite {match.composite_score} · {play.effort_weeks.typical}w
+                    ocena {match.composite_score} · {play.effort_weeks.typical} tyg.
                   </p>
                 </div>
               );

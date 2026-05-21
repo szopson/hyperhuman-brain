@@ -27,7 +27,7 @@ export default async function Page() {
       <div className="mx-auto max-w-5xl space-y-10">
         <header>
           <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            View 01 · Company Snapshot
+            01 · Stan firmy
           </p>
           <h1 className="mt-1 text-3xl font-semibold tracking-tight text-zinc-50">
             {a.company.name}
@@ -40,7 +40,7 @@ export default async function Page() {
           <section className="rounded-xl border border-amber-900/50 bg-amber-950/20 p-6">
             <div className="flex items-center gap-2">
               <Badge className="bg-amber-900 text-amber-100 hover:bg-amber-900">
-                Diagnoza centralna
+                Diagnoza HyperHuman
               </Badge>
               <span className="text-xs text-amber-300/70">
                 pułapka średniego rozwoju
@@ -64,11 +64,11 @@ export default async function Page() {
         {/* COMPANY METRICS */}
         <section>
           <h3 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            Company metrics
+            Firma w liczbach
           </h3>
           <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <MetricCard
-              label="Revenue (est.)"
+              label="Przychód (est.)"
               value={
                 a.company.revenue_estimate
                   ? fmtMoney(
@@ -82,32 +82,32 @@ export default async function Page() {
               quotesTitle="Revenue source quotes"
             />
             <MetricCard
-              label="Years in business"
+              label="Lat na rynku"
               value={a.company.years_in_business?.toString() ?? '—'}
-              sub="founder-led"
+              sub="zarządzane przez founderów"
               quotes={a.company.source_quotes}
-              quotesTitle="Years source quotes"
+              quotesTitle="Skąd to wiemy — lata działalności"
             />
             <MetricCard
-              label="Industry"
+              label="Branża"
               value={a.company.industry.slice(0, 30)}
               sub={a.company.sub_industry?.slice(0, 50) ?? ''}
               quotes={a.company.source_quotes}
-              quotesTitle="Industry source"
+              quotesTitle="Skąd to wiemy — branża"
             />
             <MetricCard
-              label="Geo markets"
+              label="Rynki geograficzne"
               value={a.company.geo_markets.slice(0, 5).join(', ')}
               sub={`${a.company.geo_markets.length} rynków`}
               quotes={a.company.source_quotes}
-              quotesTitle="Geo source"
+              quotesTitle="Skąd to wiemy — geografia"
             />
           </div>
 
           {a.company.revenue_breakdown && (
             <div className="mt-3 rounded-md border border-zinc-800 bg-zinc-900/50 p-4">
               <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-                Revenue breakdown
+                Skąd pochodzi przychód
               </p>
               <ul className="mt-2 space-y-1 text-sm">
                 {Object.entries(a.company.revenue_breakdown).map(([k, v]) => (
@@ -126,12 +126,12 @@ export default async function Page() {
         {/* STRATEGIC AZYMUT */}
         <section>
           <h3 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            Strategic azymut
+            Strategiczny azymut
           </h3>
           <div className="mt-3 grid gap-3 lg:grid-cols-2">
             <div className="rounded-md border border-zinc-800 bg-zinc-900/50 p-5">
               <p className="text-xs uppercase tracking-wider text-zinc-500">
-                Top competitive threat
+                Główne zagrożenie konkurencyjne
               </p>
               {topCompetitor ? (
                 <>
@@ -143,10 +143,10 @@ export default async function Page() {
                   </p>
                   <div className="mt-3 flex gap-2 text-xs">
                     <Badge className="bg-rose-900/50 text-rose-200 hover:bg-rose-900/50">
-                      threat: {topCompetitor.threat_level}
+                      zagrożenie: {topCompetitor.threat_level}
                     </Badge>
                     <Badge variant="outline" className="border-zinc-700">
-                      react: {topCompetitor.time_to_react}
+                      reagować w: {topCompetitor.time_to_react}
                     </Badge>
                   </div>
                 </>
@@ -156,7 +156,7 @@ export default async function Page() {
             </div>
             <div className="rounded-md border border-zinc-800 bg-zinc-900/50 p-5">
               <p className="text-xs uppercase tracking-wider text-zinc-500">
-                Burning pains (founder-level signal)
+                Problemy krytyczne dla zarządu
               </p>
               <p className="mt-2 text-3xl font-semibold text-zinc-50">
                 {burningPains.length}
@@ -176,7 +176,7 @@ export default async function Page() {
         {a.data_gaps.length > 0 && (
           <section>
             <h3 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-              Data gaps · what we don&apos;t know yet
+              Czego jeszcze nie wiemy
             </h3>
             <ul className="mt-3 space-y-1.5 text-sm text-zinc-300">
               {a.data_gaps.map((g, i) => (
@@ -190,13 +190,13 @@ export default async function Page() {
         )}
 
         <footer className="border-t border-zinc-800 pt-6 text-xs text-zinc-500">
-          Overall confidence:{' '}
+          Pewność analizy:{' '}
           <span className="font-mono uppercase text-zinc-300">
-            {a.overall_confidence}
+            {a.overall_confidence === 'high' ? 'wysoka' : a.overall_confidence === 'medium' ? 'średnia' : 'niska'}
           </span>{' '}
-          · {a.processes.length} processes · {a.pains.length} pains ·{' '}
-          {a.risks.length} risks · {a.tools.length} tools · {a.stakeholders.length}{' '}
-          stakeholders
+          · {a.processes.length} procesów · {a.pains.length} problemów ·{' '}
+          {a.risks.length} ryzyk · {a.tools.length} narzędzi · {a.stakeholders.length}{' '}
+          osób
         </footer>
       </div>
     </AppShell>

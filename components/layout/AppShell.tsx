@@ -1,18 +1,17 @@
 import Link from 'next/link';
 import { loadCaseMeta } from '@/lib/storage/load-analysis';
 import { cn } from '@/lib/utils';
-import { formatDistanceToNow } from 'date-fns';
 
 const TABS = [
-  { slug: 'snapshot', label: 'Snapshot' },
-  { slug: 'problems', label: 'Problems' },
-  { slug: 'processes', label: 'Processes' },
-  { slug: 'leakage', label: 'Leakage' },
-  { slug: 'risks', label: 'Risks' },
-  { slug: 'opportunities', label: 'Opportunities' },
-  { slug: 'competitive', label: 'Competitive' },
-  { slug: 'actions', label: 'Actions' },
-  { slug: 'next-step', label: 'Next Step' },
+  { slug: 'snapshot', label: 'Stan firmy' },
+  { slug: 'problems', label: 'Gdzie boli' },
+  { slug: 'processes', label: 'Mapa procesów' },
+  { slug: 'leakage', label: 'Gdzie uciekają pieniądze' },
+  { slug: 'risks', label: 'Ryzyka strategiczne' },
+  { slug: 'opportunities', label: 'Co warto wdrożyć' },
+  { slug: 'competitive', label: 'Pozycja na rynku' },
+  { slug: 'actions', label: 'Plan działania' },
+  { slug: 'next-step', label: 'Nasza propozycja' },
 ];
 
 export async function AppShell({
@@ -23,12 +22,6 @@ export async function AppShell({
   children: React.ReactNode;
 }) {
   const meta = await loadCaseMeta();
-  let lastUpdatedRel = '—';
-  try {
-    lastUpdatedRel = formatDistanceToNow(new Date(meta.last_updated_iso), {
-      addSuffix: true,
-    });
-  } catch {}
 
   return (
     <div className="flex min-h-dvh bg-zinc-950 text-zinc-100">
@@ -36,19 +29,16 @@ export async function AppShell({
         <div className="space-y-6">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-              HyperHuman / Brain
+              HyperHuman × Stock-Hurt
             </p>
             <h2 className="mt-1 text-lg font-semibold text-zinc-50">
               {meta.display_name}
             </h2>
-            <p className="mt-1 text-xs text-zinc-500">
-              Case id: <span className="font-mono">{meta.case_id}</span>
-            </p>
           </div>
 
           <div>
             <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-              Founders
+              Founderzy
             </p>
             <ul className="mt-2 space-y-1">
               {meta.founders.length === 0 && (
@@ -60,22 +50,6 @@ export async function AppShell({
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-              Pipeline
-            </p>
-            <p className="mt-2 text-xs text-zinc-400">
-              version <span className="font-mono">{meta.pipeline_version}</span>
-            </p>
-            <p className="mt-0.5 text-xs text-zinc-400">
-              generated <span className="font-mono">{lastUpdatedRel}</span>
-            </p>
-            <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-emerald-950 px-2 py-0.5 text-[10px] font-medium text-emerald-300 ring-1 ring-emerald-800/50">
-              <span className="size-1.5 rounded-full bg-emerald-400" />
-              continuous · refreshed 2 min ago
-            </span>
           </div>
         </div>
       </aside>

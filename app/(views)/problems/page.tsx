@@ -20,6 +20,42 @@ const EMO_COLOR: Record<string, string> = {
   background: 'bg-zinc-950 text-zinc-600 ring-zinc-900',
 };
 
+const EMO_LABEL: Record<string, string> = {
+  burning: 'Krytyczny',
+  frustrating: 'Pilny',
+  mentioned: 'Istotny',
+  background: 'Tło',
+};
+
+const SEV_LABEL: Record<string, string> = {
+  critical: 'krytyczna',
+  high: 'wysoka',
+  medium: 'średnia',
+  low: 'niska',
+};
+
+const FREQ_LABEL: Record<string, string> = {
+  constant: 'stale',
+  daily: 'codziennie',
+  weekly: 'co tydzień',
+  monthly: 'co miesiąc',
+  occasional: 'okazjonalnie',
+};
+
+const PAIN_CATEGORY_LABEL: Record<string, string> = {
+  time_waste: 'Strata czasu',
+  manual_repetitive_work: 'Praca ręczna',
+  knowledge_silos: 'Wiedza w głowach',
+  lost_context: 'Brak kontekstu',
+  data_quality: 'Jakość danych',
+  communication_breakdown: 'Komunikacja',
+  tooling_friction: 'Narzędzia',
+  lost_revenue: 'Stracony przychód',
+  customer_experience: 'Doświadczenie klienta',
+  compliance_risk: 'Compliance',
+  scaling_blocker: 'Bariera wzrostu',
+};
+
 export default async function Page() {
   const a = await loadAnalysis();
   const { problem_scores, leakage_scores } = computeAllScores(a);
@@ -43,15 +79,16 @@ export default async function Page() {
       <div className="mx-auto max-w-7xl space-y-6">
         <header>
           <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            View 02 · Problem Map
+            02 · Gdzie boli
           </p>
           <h1 className="mt-1 text-3xl font-semibold tracking-tight text-zinc-50">
-            {rows.length} pains identified
+            {rows.length} zidentyfikowanych problemów
           </h1>
           <p className="mt-2 max-w-3xl text-zinc-400">
-            Sorted by Problem Score (frequency × severity × strategic × emotional ×
-            coverage). Click any score to inspect scoring math + source quotes +
-            leakage estimate.
+            Sortowane przez Ocenę problemu (jak często boli × jak bardzo × czy
+            blokuje strategiczne cele × intensywność dla zarządu × ile procesów
+            dotyka). Kliknij ocenę aby zobaczyć skąd to wiemy i ile pieniędzy
+            ucieka miesięcznie.
           </p>
         </header>
 
@@ -60,14 +97,14 @@ export default async function Page() {
             <thead className="bg-zinc-900 text-left text-[11px] uppercase tracking-wider text-zinc-500">
               <tr>
                 <th className="px-4 py-3 font-medium">#</th>
-                <th className="px-4 py-3 font-medium">Score</th>
-                <th className="px-4 py-3 font-medium">Title</th>
-                <th className="px-4 py-3 font-medium">Category</th>
-                <th className="px-4 py-3 font-medium">Sev</th>
-                <th className="px-4 py-3 font-medium">Emo</th>
-                <th className="px-4 py-3 font-medium">Freq</th>
-                <th className="px-4 py-3 font-medium">€/mo</th>
-                <th className="px-4 py-3 font-medium">Plays</th>
+                <th className="px-4 py-3 font-medium">Ocena</th>
+                <th className="px-4 py-3 font-medium">Problem</th>
+                <th className="px-4 py-3 font-medium">Bolączka</th>
+                <th className="px-4 py-3 font-medium">Wpływ</th>
+                <th className="px-4 py-3 font-medium">Priorytet</th>
+                <th className="px-4 py-3 font-medium">Częstość</th>
+                <th className="px-4 py-3 font-medium">Strata/m-c</th>
+                <th className="px-4 py-3 font-medium">Wdrożenia</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-zinc-800">
@@ -120,7 +157,7 @@ export default async function Page() {
                     </InspectTrigger>
                     {i < 5 && (
                       <div className="mt-0.5 text-[10px] uppercase text-rose-400">
-                        Critical
+                        Najważniejsze
                       </div>
                     )}
                   </td>
@@ -133,13 +170,13 @@ export default async function Page() {
                     )}
                   </td>
                   <td className="px-4 py-3 align-top">
-                    <span className="font-mono text-xs text-zinc-400">
-                      {r.pain.category}
+                    <span className="text-xs text-zinc-400">
+                      {PAIN_CATEGORY_LABEL[r.pain.category] ?? r.pain.category}
                     </span>
                   </td>
                   <td className="px-4 py-3 align-top">
                     <Badge className={cn('ring-1', SEV_COLOR[r.pain.severity])}>
-                      {r.pain.severity}
+                      {SEV_LABEL[r.pain.severity] ?? r.pain.severity}
                     </Badge>
                   </td>
                   <td className="px-4 py-3 align-top">
@@ -149,11 +186,11 @@ export default async function Page() {
                         EMO_COLOR[r.pain.founder_emotional_intensity],
                       )}
                     >
-                      {r.pain.founder_emotional_intensity}
+                      {EMO_LABEL[r.pain.founder_emotional_intensity] ?? r.pain.founder_emotional_intensity}
                     </Badge>
                   </td>
                   <td className="px-4 py-3 font-mono text-xs text-zinc-400 align-top">
-                    {r.pain.frequency}
+                    {FREQ_LABEL[r.pain.frequency] ?? r.pain.frequency}
                   </td>
                   <td className="px-4 py-3 font-mono text-xs text-zinc-300 align-top">
                     {r.leakage

@@ -352,6 +352,7 @@ export type ActionPoint = z.infer<typeof ActionPointSchema>;
 export const AIPlaySchema = z.object({
   id: z.string(),
   name: z.string(),
+  name_pl: z.string().nullable().describe('Polska, klient-facing nazwa wdrożenia'),
   one_liner: z.string(),
 
   industry_tags: z.array(z.string()),
@@ -359,6 +360,7 @@ export const AIPlaySchema = z.object({
 
   solves_pain_categories: z.array(z.string()),
   solution_pattern: z.string().describe('3-5 zdań jak działa'),
+  solution_pattern_pl: z.string().nullable().describe('Polski opis działania, klient-facing'),
 
   effort_weeks: z.object({
     min: z.number(),

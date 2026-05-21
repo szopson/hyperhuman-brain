@@ -31,7 +31,7 @@ const views = [
     console.log(`✓ ${v.name}.png`);
   }
 
-  // Bonus: drawer-open shot — kliknij score w problems
+  // Bonus 1: drawer-open shot — kliknij score w problems
   await page.goto('http://localhost:3000/problems', { waitUntil: 'networkidle' });
   const trigger = page.locator('[data-inspect-trigger]').first();
   if ((await trigger.count()) > 0) {
@@ -42,6 +42,32 @@ const views = [
       fullPage: true,
     });
     console.log('✓ problems-drawer-open.png');
+  }
+
+  // Bonus 2: PlayDetailDrawer dla P-020 (Codzienny briefing dla zarządu)
+  await page.goto('http://localhost:3000/opportunities', { waitUntil: 'networkidle' });
+  // First triggers in DOM should map to top row (P-020 = position 1)
+  const playTrigger = page.locator('[data-inspect-trigger]').first();
+  if ((await playTrigger.count()) > 0) {
+    await playTrigger.click();
+    await page.waitForTimeout(700);
+    await page.screenshot({
+      path: 'data/cases/stock-hurt/debug/screenshots/opportunities-drawer-p020.png',
+      fullPage: true,
+    });
+    console.log('✓ opportunities-drawer-p020.png (tab 1: overview)');
+
+    // Switch to scoring tab
+    const scoringTab = page.locator('button[role="tab"]:has-text("Scoring")').first();
+    if ((await scoringTab.count()) > 0) {
+      await scoringTab.click();
+      await page.waitForTimeout(400);
+      await page.screenshot({
+        path: 'data/cases/stock-hurt/debug/screenshots/opportunities-drawer-p020-scoring.png',
+        fullPage: true,
+      });
+      console.log('✓ opportunities-drawer-p020-scoring.png (tab 2: scoring)');
+    }
   }
 
   await browser.close();

@@ -31,15 +31,16 @@ export default async function Page() {
       <div className="mx-auto max-w-6xl space-y-8">
         <header>
           <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            View 07 · Competitive Positioning
+            07 · Pozycja na rynku
           </p>
           <h1 className="mt-1 text-3xl font-semibold tracking-tight text-zinc-50">
             {a.competitors.length} konkurentów zidentyfikowanych
           </h1>
           <p className="mt-2 max-w-3xl text-zinc-400">
-            5-dimensional positioning (inventory_model · revenue_model ·
-            target_customer · geographic_reach · tech_stack_visibility) + threat
-            level + reaction urgency. Click name aby zobaczyć source quotes.
+            Pozycjonowanie w pięciu wymiarach (model zapasów · model przychodu ·
+            klient docelowy · zasięg geograficzny · widoczna technologia) +
+            poziom zagrożenia + pilność reakcji. Kliknij nazwę aby zobaczyć
+            źródła informacji.
           </p>
         </header>
 
@@ -100,13 +101,13 @@ export default async function Page() {
                         THREAT_COLOR[c.threat_level],
                       )}
                     >
-                      threat · {c.threat_level}
+                      zagrożenie · {c.threat_level}
                     </Badge>
                     <Badge
                       variant="outline"
                       className="border-zinc-700 text-[10px]"
                     >
-                      react · {c.time_to_react}
+                      reakcja · {c.time_to_react}
                     </Badge>
                   </div>
                   <p className="mt-2 text-sm text-zinc-300">{c.model}</p>
@@ -118,7 +119,7 @@ export default async function Page() {
                       {c.scale_estimate.revenue.currency}
                     </p>
                     <p className="text-[10px] uppercase tracking-wider text-zinc-500">
-                      revenue · {c.scale_estimate.revenue.period}
+                      przychód · {c.scale_estimate.revenue.period}
                     </p>
                     {c.scale_estimate.growth_rate && (
                       <p className="mt-1 text-xs text-emerald-400">
@@ -132,10 +133,10 @@ export default async function Page() {
               {/* 5-DIM POSITIONING */}
               <dl className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-xs sm:grid-cols-5">
                 {[
-                  ['inventory', c.positioning.inventory_model],
-                  ['revenue', c.positioning.revenue_model],
-                  ['target', c.positioning.target_customer],
-                  ['geo', c.positioning.geographic_reach],
+                  ['zapasy', c.positioning.inventory_model],
+                  ['przychód', c.positioning.revenue_model],
+                  ['klient', c.positioning.target_customer],
+                  ['geografia', c.positioning.geographic_reach],
                   ['tech', c.positioning.tech_stack_visibility],
                 ].map(([k, v]) => (
                   <div key={k}>

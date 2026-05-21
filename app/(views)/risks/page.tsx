@@ -16,6 +16,27 @@ const HORIZON_LABEL: Record<Risk['time_horizon'], string> = {
   long_term_2_plus_years: '2+ lat',
 };
 
+const PROB_LABEL: Record<Risk['probability'], string> = {
+  certain: 'pewne',
+  likely: 'prawdopodobne',
+  possible: 'możliwe',
+  unlikely: 'mało prawdop.',
+};
+
+const IMPACT_LABEL: Record<Risk['impact'], string> = {
+  existential: 'egzystencjalne',
+  major: 'duże',
+  moderate: 'umiarkowane',
+  minor: 'małe',
+};
+
+const MITIGATION_LABEL: Record<Risk['mitigation_status'], string> = {
+  none: 'brak',
+  planned: 'planowane',
+  in_progress: 'w toku',
+  partial: 'częściowe',
+};
+
 const HORIZON_COLOR: Record<Risk['time_horizon'], string> = {
   imminent_3_months: 'bg-rose-950 text-rose-200 ring-rose-800',
   near_term_6_12_months: 'bg-amber-950 text-amber-200 ring-amber-800',
@@ -46,22 +67,22 @@ export default async function Page() {
       <div className="mx-auto max-w-6xl space-y-8">
         <header>
           <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            View 05 · Risk Radar
+            05 · Ryzyka strategiczne
           </p>
           <h1 className="mt-1 text-3xl font-semibold tracking-tight text-zinc-50">
-            {a.risks.length} risks tracked
+            {a.risks.length} ryzyk monitorowanych
           </h1>
           <p className="mt-2 max-w-3xl text-zinc-400">
-            Macierz probability × impact. Severity score uwzględnia horyzont
-            czasowy (imminent ×1.2, long_term ×0.5) i status mitigacji (none 1.0 →
-            partial 0.5). Top-right quadrant (likely+ × major+) = action priority.
+            Macierz prawdopodobieństwo × skala wpływu. Ocena uwzględnia horyzont
+            czasowy (rosnąca dla bliższych) i status zabezpieczenia (rosnąca dla
+            niezabezpieczonych). Prawy-górny kwadrant = pilna akcja.
           </p>
         </header>
 
         {/* QUADRANT MATRIX */}
         <section>
           <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            Probability × Impact quadrant
+            Macierz: prawdopodobieństwo × skala wpływu
           </h2>
           <div className="mt-3 rounded-md border border-zinc-800 bg-zinc-900/30 p-4">
             <div className="grid grid-cols-[80px_repeat(4,1fr)] gap-1.5 text-xs">
@@ -71,13 +92,13 @@ export default async function Page() {
                   key={imp}
                   className="px-1 text-center font-mono text-[10px] uppercase tracking-wider text-zinc-500"
                 >
-                  {imp}
+                  {IMPACT_LABEL[imp]}
                 </div>
               ))}
               {[...PROB_AXIS].reverse().map((prob) => (
                 <div key={prob} className="contents">
                   <div className="flex items-center justify-end pr-2 font-mono text-[10px] uppercase tracking-wider text-zinc-500">
-                    {prob}
+                    {PROB_LABEL[prob]}
                   </div>
                   {IMPACT_AXIS.map((imp) => {
                     const key = `${prob}|${imp}`;
@@ -117,7 +138,7 @@ export default async function Page() {
         {/* LISTING */}
         <section>
           <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            All risks · sorted by severity
+            Wszystkie ryzyka · sortowane wg pilności
           </h2>
           <div className="mt-3 space-y-2">
             {sorted.map(({ risk, score }) => (
@@ -128,9 +149,6 @@ export default async function Page() {
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="font-mono text-[11px] text-zinc-500">
-                        {risk.id}
-                      </span>
                       <Badge className="bg-zinc-800 text-zinc-300 ring-1 ring-zinc-700 text-[10px]">
                         {risk.category}
                       </Badge>
@@ -142,9 +160,9 @@ export default async function Page() {
                       >
                         {HORIZON_LABEL[risk.time_horizon]}
                       </Badge>
-                      <span className="font-mono text-[10px] text-zinc-500">
-                        prob: {risk.probability} · impact: {risk.impact} ·
-                        mit: {risk.mitigation_status}
+                      <span className="text-[10px] text-zinc-500">
+                        prawdop.: {PROB_LABEL[risk.probability]} · wpływ: {IMPACT_LABEL[risk.impact]} ·
+                        zabezp.: {MITIGATION_LABEL[risk.mitigation_status]}
                       </span>
                     </div>
                     <h3 className="mt-1 text-base font-semibold text-zinc-50">
@@ -175,8 +193,8 @@ export default async function Page() {
                     </h3>
                     {risk.specific_actors && risk.specific_actors.length > 0 && (
                       <p className="mt-1 text-xs text-zinc-500">
-                        actors:{' '}
-                        <span className="font-mono text-zinc-300">
+                        gracze:{' '}
+                        <span className="text-zinc-300">
                           {risk.specific_actors.join(', ')}
                         </span>
                       </p>
@@ -187,7 +205,7 @@ export default async function Page() {
                       {score?.severity_score_0_100 ?? '—'}
                     </p>
                     <p className="text-[10px] uppercase tracking-wider text-zinc-500">
-                      severity
+                      pilność
                     </p>
                   </div>
                 </div>
