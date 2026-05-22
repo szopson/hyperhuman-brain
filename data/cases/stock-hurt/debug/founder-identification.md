@@ -1,88 +1,94 @@
-# Founder identification — Stockhurt case
+# Founder identification — Stock-Hurt case
 
 Transkrypt nie zawiera explicit speaker labels ani timestampów — tylko ciągły strumień utterances. Lokator = numer linii (L###) w `inputs/conversation-transcript.txt`.
 
-## Werdykt ról
+> **Revision history**
+> v1 (Day 1): Paweł + Maciej jako co-founderzy, Kuba jako HH consultant. **Błędne.**
+> v2 (Day 4 post-review): Paweł + Kuba jako co-founderzy, Maciej jako HH consultant. **Aktualne.**
+
+## Werdykt v2
 
 | Osoba | Rola | Strona |
 |---|---|---|
-| **Paweł** | Co-founder Stockhurt, sales/operations | klient |
-| **Maciej** | Co-founder Stockhurt, partner biznesowy Pawła | klient |
-| **Kuba** | Consultant strategy/sales | HyperHuman |
-| **Wojtek** | IT lead (employee, NIE founder) | klient |
+| **Paweł** | Co-founder Stock-Hurt, sales/operations | klient |
+| **Kuba** | Co-founder Stock-Hurt (drugi partner Pawła) | klient |
+| **Wojtek** | IT lead Stock-Hurt (employee, NIE founder) | klient |
+| **Maciej** | Consultant strategy/business | **HyperHuman** |
+| **Janek** | Consultant tech | **HyperHuman** |
 
 ---
 
-## Paweł — co-founder Stockhurt, sales side
+## Decydujący dowód — L1685-1693
 
-Wzmianki przez innych (głównie Macieja, jego partnera). Spektrum: wspólna sprzedaż, dopisywanie opinii do produktów, opinia o ryzyku biznesowym.
+Wypowiedź osoby z HH:
+
+> *"My z Maciej mamy bardzo proste podejście do biznesu, ale to jest bardzo sprawdzalne. I się sprawdza po prostu, że widzimy coś, co działa, kopiujemy bezczelnie i dodajemy swoje przewagi konkurencyjne. **Większość biznesów tak zbudowaliśmy i w marketingu to działa.** Jeżeli mamy taki przykład, to ja bym tylko zapytał, jakie jeszcze są **Wasze** ewentualne przewagi konkurencyjne. Czy widzicie, że **macie lepszy towar**?"*
+
+Mówca:
+- "w marketingu to działa" → domena marketing, nie off-price fashion
+- pyta "jakie są **Wasze** przewagi" / "**macie** lepszy towar" → adresuje Stock-Hurt jako outsider
+
+Następna kwestia (odpowiedź Stock-Hurt):
+> *"Możemy tym potem na przykład dorobić wszystkie zdjęcia na modelach... mamy sklep detaliczny... sprzedajemy 20-kilka tysięcy miesięcznie, mamy know-how detaliczny."*
+
+→ Speaker z "my z Maciej" to **HyperHuman**, więc **Maciej = HyperHuman consultant**.
+
+---
+
+## Paweł — co-founder Stock-Hurt (sales)
 
 | Loc | Treść | Co dowodzi |
 |---|---|---|
-| L199 | "Ja wiem jak my z Paweł pracowaliśmy w sprzedaży, ile się gubiło po prostu tej informacji." | Mówca (Maciej) i Paweł WSPÓLNIE pracowali w sprzedaży — wspólni co-founderzy operacyjni |
-| L343 | "Bo ten… Paweł… dopisuje [opinię producenta], i mamy więcej w tym produkcie, mamy wspólną bazę." | Paweł aktywnie operacyjnie wzbogaca bazę produktową — codzienna praca sales/ops |
-| L347 | "I kurczę, czasami my z Pawełem w [sejsie] sprzedawaliśmy 20 a 30 produktów na magazynie, to zapominało się." | Pierwsza osoba l.mn. "my z Pawełem sprzedawaliśmy" — mówca jest partnerem Pawła w sprzedaży |
-| L3181 | "trudno będzie wyeliminować ryzyko, o którym mówił Paweł, czyli czy po tym share-pickingu okaże się, że to się sprzedaje czy nie sprzedaje" | Paweł wskazuje ryzyko biznesowe związane z PROCESEM SPRZEDAŻY ich firmy — perspektywa właściciela/decydenta |
-| L3425 | "mogę tu z Paweł, z Nataszą, żeby tam Kasia była i Natalia" | Paweł zwołuje pracowników (Natasza, Kasia, Natalia) — pozycja przełożonego/founder'a |
-
-**Diagnoza**: founder operating-side (sales). Wszystkie wypowiedzi obracają się wokół ich produktów, ich bazy, ich ludzi, ich procesów.
+| L199 | "Ja wiem jak my z Paweł pracowaliśmy w sprzedaży, ile się gubiło tej informacji." | Drugi founder Stock-Hurt mówi o wspólnej pracy z Pawłem w sprzedaży |
+| L347 | "my z Pawełem w sejsu sprzedawaliśmy 20 a 30 produktów na magazynie, to zapominało się" | Wspólna sprzedaż z magazynu Stock-Hurt — Paweł co-founder |
+| L3181 | "ryzyko, o którym mówił Paweł — czy po share-pickingu okaże się, że to się sprzedaje" | Paweł rozważa business risk własnej firmy |
+| L3425 | "mogę tu z Paweł, z Nataszą, żeby tam Kasia była i Natalia" | Zwołuje swoich pracowników Stock-Hurt |
 
 ---
 
-## Maciej — co-founder Stockhurt, partner biznesowy Pawła
+## Kuba — co-founder Stock-Hurt (drugi partner Pawła) — **REVISED z v1**
 
-Tylko 2 explicit mentions, ale obie mocne. Maciej jest mówcą wielu fragmentów w transkrypcie (mówi "my z Pawełem", "my z Maciej" gdy mówi Paweł).
+Kluczowy zwrot interpretacji: skoro Maciej to HH, to mówca który mówił "my z Pawełem sprzedawaliśmy 20-30 produktów na magazynie" (L347) musi być **drugim founderem Stock-Hurt** — czyli Kubą.
 
 | Loc | Treść | Co dowodzi |
 |---|---|---|
-| L1687 | "My z Maciej mamy bardzo proste podejście do biznesu, ale to jest bardzo sprawdzalne." | Mówca (Paweł) bezpośrednio identyfikuje Macieja jako równorzędnego partnera biznesowego |
-| L1689 | "I się sprawdza — widzimy coś co działa, kopiujemy bezczelnie i dodajemy swoje przewagi konkurencyjne. Większość biznesów tak zbudowaliśmy." | Kontekst zdania o Macieju: "większość biznesów [PLURAL] tak zbudowaliśmy" — Maciej jest współ-założycielem wielu biznesów z Pawłem |
-| L347 (mówi Maciej) | "kurczę, czasami my z Pawełem w sejsie sprzedawaliśmy 20 a 30 produktów" | Mówca (Maciej) — wraz z Pawłem operuje sprzedaż |
-| L199 (mówi Maciej) | "Ja wiem jak my z Paweł pracowaliśmy w sprzedaży, ile się gubiło tej informacji." | Maciej referuje wspólną historię pracy z Pawłem |
-| L2823 | "tak, że przyjąć, że nawet jak Maciej ma 6659 sztuk…" | Maciej referowany przy konkretnym scenariuszu z liczbami magazynowymi — operacyjny founder z dostępem do stocku |
-
-**Diagnoza**: drugi founder. Razem z Pawłem zbudowali serię biznesów, dziś prowadzą Stockhurt.
+| L99 | "ty cały czas, Kuba, słusznie wskazujesz, że ten kontakt z klientem B2B powinien być bardziej profesjonalny" | HH consultant validuje Kuby self-observation o ich (Stock-Hurt) komunikacji B2B |
+| L1219 | "to co na początku Kuba powiedziała o takiej konkurencji w Rumunii — unfrozen" | Kuba (Stock-Hurt founder) podnosi zagrożenie konkurencji — perspektywa właściciela |
+| L3249-3251 | "rozmawiałem też z Kubą, i Kuba mówił, że **rozważacie** tą migrację z Allegro" | HH consultant rozmawiał z Kubą osobno; Kuba mówił "wy (Stock-Hurt) rozważacie migrację" — Kuba mówi w imieniu Stock-Hurt |
+| L347 (mówi Kuba) | "my z Pawełem sprzedawaliśmy 20-30 produktów na magazynie" | Wspólny operating z Pawłem w magazynie Stock-Hurt |
+| L199 (mówi Kuba) | "my z Paweł pracowaliśmy w sprzedaży, ile się gubiło tej informacji" | Wspólna historia ze sprzedaży Stock-Hurt |
 
 ---
 
-## Kuba — HyperHuman consultant (strategy/sales lead)
-
-Adresowany jako external advisor; surfacuje insighty o rynku; ma osobne 1:1 strategy calls z klientem.
+## Maciej — HyperHuman consultant (strategy/business) — **REVISED z v1**
 
 | Loc | Treść | Co dowodzi |
 |---|---|---|
-| L99 | "ty cały czas, Kuba, słusznie moim zdaniem wskazujesz na to, że ten kontakt z klientem B2B powinien być bardziej profesjonalny, bardziej opakowany." | Klient zwraca się do Kuby — Kuba forsuje rekomendację o PROFESJONALIZACJI komunikacji B2B = perspektywa doradcza |
-| L1219 | "to co na początku Kuba powiedziała o takiej konkurencji w Rumunii, która szybko rośnie — unfrozen." | Kuba przyniósł market intel (rumuński konkurent) — analityczna rola consultanta |
-| L3249-3251 | "Bo rozmawiałem też z Kubą, i Kuba mówił, że rozważacie tą migrację z Allegro na ten Marketplace Brzoski." | Kuba ma OSOBNE rozmowy strategiczne z klientem (poza tym callem) — relacja consultant-client |
-| L3425 | "mogę tu z Paweł, z Nataszą, żeby tam Kasia była i Natalia" — kontekst: planowanie kolejnego callu z udziałem Kuby | Kuba uczestnik harmonogramowanych spotkań cyklicznych z klientem = engagement model |
-| L3443 | "Kolejny [call] był wieczorem, Kuba nie odzywał się…" | Kuba uczestniczy w wielu callach — pattern recurring meetings z klientem |
-
-**Diagnoza**: HyperHuman strategy consultant. Adresowany jako "ty" przez klienta z respektem, mówi o "Waszej stronie", wnosi rekomendacje, ma osobny 1:1 access.
+| L1687 | "My z Maciej mamy bardzo proste podejście do biznesu" | Mówca (HH) identyfikuje Macieja jako swojego partnera (HH-side) |
+| L1689 | "Większość biznesów tak zbudowaliśmy i **w marketingu** to działa" | Mówca + Maciej zbudowali wiele biznesów w domenie marketing — nie off-price fashion |
+| L1693 | "ja bym tylko zapytał, jakie jeszcze są **Wasze** ewentualne przewagi konkurencyjne" | Adres "Wasze" do Stock-Hurt — outsider |
+| L2823 | "tak, że przyjąć, że nawet jak Maciej ma 6659 sztuk…" | Maciej referowany w scenariuszu — prawdopodobnie speaker dyskutuje hipotetyczne use case z Macieja perspektywy biznesowej |
 
 ---
 
-## Wojtek — klient-side IT lead (NIE founder)
-
-Wewnętrzny techniczny, buduje no-code rzeczy, przeciążony, próbował i nie dał rady na trudniejszych projektach.
+## Wojtek — Stock-Hurt IT employee (NIE founder, NIE HH)
 
 | Loc | Treść | Co dowodzi |
 |---|---|---|
-| L3 | "zbudował Wojtek NCRMA na Apsicach, który jest taki trochę kurczę, wygląda jak tabela w Excelu bardziej." | Wojtek BUDUJE wewnętrzny CRM na Apps Script — internal IT, low-code/no-code, ograniczone narzędzia |
-| L1837 | "Wojtek próbował się 3 miesiące z tym [ML pricing 400k SKU] bawić, ale nie dał rady." | Wojtek dostał ambitny task ML i go nie dowiózł przez 3 miesiące — pojedynczy IT z ograniczoną przepustowością, nie strategiczny decydent |
-| L2401 | "Wojtek to jest taki IT guy od [wszystkiego] specjalistą" | Eksplicit etykieta "IT guy" — operacyjny, nie founder |
-| L2403 | "Dokładnie, on jest przerośnięty tym wszystkim i nie wydala" | Wojtek = bottleneck — klient mówi że jego IT nie wyrabia (typowy wzorzec employee, nie partner) |
-| L2405 | "Wojtek jest wkurzony, że firma chce dużo zrobić, nie?" | "Firma chce" + "Wojtek wkurzony" — Wojtek jest PO DRUGIEJ STRONIE od strategii firmy. Founder by tak nie został opisany. |
-
-**Diagnoza**: pracownik IT, NIE founder. Pozycja: jednoosobowy IT od wszystkiego, przeciążony, frustracja względem strategii zarządu. Klasyczny "Wojtek bottleneck" pain w extraction.
+| L3 | "zbudował Wojtek NCRMA na Apsicach, który jest taki trochę kurczę, wygląda jak tabela w Excelu" | Wojtek buduje wewnętrzny CRM Stock-Hurt na Apps Script |
+| L161-167 | "sejsi mają kontakt z klientami... Wojtkowi się udało sparsować te rozmowy do pliku tekstowego" | Wojtek parsuje WhatsApp-rozmowy handlowców Stock-Hurt z klientami — wewnętrzna robota Stock-Hurt |
+| L1837 | "my mamy 400 tysięcy rzeczy na magazynie... Wojtek właśnie próbował się 3 miesiące z tym bawić, ale nie dał rady" | Mówca (Stock-Hurt) ma 400k SKU na magazynie; Wojtek 3 miesiące próbował ML pricing dla tego magazynu i nie dał rady |
+| L2401 | "Wojtek to jest taki IT guy od [wszystkiego]" | Explicit etykieta employee |
+| L2405 | "Wojtek jest wkurzony, że **firma** chce dużo zrobić" | "Firma" vs "Wojtek" — pracownik vs strategia zarządu Stock-Hurt |
 
 ---
 
-## Konkluzja dla ekstrakcji
+## Aplikacja w repo
 
-Phase A ekstrakcja modelu była **prawidłowa**:
-- Paweł — Co-founder / Sales ✓
-- Maciej — Co-founder ✓
-- Kuba — HyperHuman consultant ✓
-- Wojtek — IT lead (employee) ✓
+Po werdykcie v2:
+- `analysis-raw.json` stakeholders: `maciej.role` → "HyperHuman consultant (strategy / business)", `kuba.role` → "Co-founder", `is_decision_maker` flipped
+- `strategic-briefing-overlay.json`: pain `pain-founder-detachment` description i `affected_roles` → "Paweł i Kuba"
+- Sidebar (`AppShell`): auto-update przez `loadCaseMeta` (filtruje stakeholders po `role` matching `founder`)
+- Diagram w `/next-step`: subgraf `OUT["Codzienny output dla Pawła i Kuby"]`
 
-Wcześniejsze przypuszczenie "Paweł + Kuba founders" było **błędne**. Nie wymaga regeneracji `analysis-raw.json`.
+Pipeline `npm run pipeline` re-run żeby zregenerować `analysis-full.json` z poprawionymi stakeholdersami.

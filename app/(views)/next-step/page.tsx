@@ -3,6 +3,60 @@ import { loadAnalysis } from '@/lib/storage/load-analysis';
 import { getPlayById } from '@/lib/plays/library';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import { MermaidDiagram } from '@/components/shared/MermaidDiagram';
+
+const ARCHITECTURE_DIAGRAM = `flowchart LR
+    subgraph SYS["Wasze systemy"]
+        ERP["ERP"]
+        WMS["WMS — magazyn"]
+        CRM["CRM — 1000+ klientów"]
+        WA["WhatsApp — 97% komunikacji"]
+        AL["Allegro — 200k SKU"]
+        MKT["Rynek — Unfrozen i branża"]
+    end
+
+    INTG["Automatyczne integracje"]
+
+    KB["Spójna baza wiedzy firmy (P-001)"]
+
+    MKI["Monitoring rynku (P-019)"]
+
+    subgraph OUT["Codzienny output dla Pawła i Kuby"]
+        BRF["Briefing dzienny (P-020)"]
+        ACT["Plan działań (P-021)"]
+    end
+
+    subgraph SAL["Layer 2 — narzędzia dla działu sprzedaży"]
+        CM["Pamięć klienta (P-002)"]
+        OFF["Spersonalizowane oferty (P-005)"]
+        LEA["Pipeline leadów B2B (P-008)"]
+    end
+
+    ERP --> INTG
+    WMS --> INTG
+    CRM --> INTG
+    WA --> INTG
+    AL --> INTG
+    INTG --> KB
+
+    MKT --> MKI
+
+    KB --> BRF
+    MKI --> BRF
+    KB --> ACT
+
+    BRF -. "cykl dzienny" .-> KB
+
+    KB -. "po Layer 1" .-> CM
+    KB -. "po Layer 1" .-> OFF
+    KB -. "po Layer 1" .-> LEA
+
+    classDef existing fill:#1c1917,stroke:#52525b,color:#a1a1aa
+    classDef phase1 fill:#451a03,stroke:#b45309,color:#fde68a
+    classDef phase2 fill:#0c1929,stroke:#1e3a8a,color:#93c5fd
+    class ERP,WMS,CRM,WA,AL,MKT,INTG existing
+    class KB,MKI,BRF,ACT phase1
+    class CM,OFF,LEA phase2`;
 
 const LAYER_COLOR: Record<string, string> = {
   brain: 'bg-violet-950 text-violet-200 ring-violet-800',
@@ -174,6 +228,21 @@ export default async function Page() {
               );
             })}
           </ol>
+        </section>
+
+        {/* ARCHITECTURE DIAGRAM */}
+        <section>
+          <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+            Jak to będzie zbudowane
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm text-zinc-400">
+            Wasze istniejące systemy podłączamy do warstwy mózgu firmy przez
+            automatyczne integracje. Mózg karmi codzienny output dla zarządu i
+            jest fundamentem pod kolejną warstwę — narzędzia dla działu sprzedaży.
+          </p>
+          <div className="mt-4 rounded-xl border border-zinc-800 bg-zinc-950 p-4 lg:p-6">
+            <MermaidDiagram id="architecture-next-step" chart={ARCHITECTURE_DIAGRAM} />
+          </div>
         </section>
 
         {/* DELIVERABLES */}

@@ -5,10 +5,10 @@
     {
       "id": "pain-founder-detachment",
       "title": "Founderzy stracili pełny obraz firmy",
-      "description": "Paweł i Maciej zbudowali firmę siłą determinacji przez 12 lat. Doszli do operacyjnej dojrzałości — kadra zarządzająca przejęła stery, oni odsuwają się od codziennej operacji. Ale firma traci 5% rocznie nie z powodu rynku, lecz dlatego, że nikt nie ma już ich pełnego obrazu. Decyzje strategiczne zapadają z niepełnymi danymi. To pułapka średniego rozwoju.",
+      "description": "Paweł i Kuba zbudowali firmę siłą determinacji przez 12 lat. Doszli do operacyjnej dojrzałości — kadra zarządzająca przejęła stery, oni odsuwają się od codziennej operacji. Ale firma traci 5% rocznie nie z powodu rynku, lecz dlatego, że nikt nie ma już ich pełnego obrazu. Decyzje strategiczne zapadają z niepełnymi danymi. To pułapka średniego rozwoju.",
       "category": "scaling_blocker",
       "affected_processes": [],
-      "affected_roles": ["Paweł", "Maciej"],
+      "affected_roles": ["Paweł", "Kuba"],
       "frequency": "constant",
       "severity": "critical",
       "strategic_impact": "blocks_endgame",
