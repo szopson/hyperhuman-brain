@@ -53,7 +53,7 @@ Kluczowy zwrot interpretacji: skoro Maciej to HH, to mówca który mówił "my z
 | Loc | Treść | Co dowodzi |
 |---|---|---|
 | L99 | "ty cały czas, Kuba, słusznie wskazujesz, że ten kontakt z klientem B2B powinien być bardziej profesjonalny" | HH consultant validuje Kuby self-observation o ich (Stock-Hurt) komunikacji B2B |
-| L1219 | "to co na początku Kuba powiedziała o takiej konkurencji w Rumunii — unfrozen" | Kuba (Stock-Hurt founder) podnosi zagrożenie konkurencji — perspektywa właściciela |
+| L1219 | "to co na początku Kuba powiedziała o takiej konkurencji w Rumunii — unfrosen" | Kuba (Stock-Hurt founder) podnosi zagrożenie konkurencji — perspektywa właściciela |
 | L3249-3251 | "rozmawiałem też z Kubą, i Kuba mówił, że **rozważacie** tą migrację z Allegro" | HH consultant rozmawiał z Kubą osobno; Kuba mówił "wy (Stock-Hurt) rozważacie migrację" — Kuba mówi w imieniu Stock-Hurt |
 | L347 (mówi Kuba) | "my z Pawełem sprzedawaliśmy 20-30 produktów na magazynie" | Wspólny operating z Pawłem w magazynie Stock-Hurt |
 | L199 (mówi Kuba) | "my z Paweł pracowaliśmy w sprzedaży, ile się gubiło tej informacji" | Wspólna historia ze sprzedaży Stock-Hurt |

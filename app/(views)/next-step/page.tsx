@@ -12,7 +12,7 @@ const ARCHITECTURE_DIAGRAM = `flowchart LR
         CRM["CRM — 1000+ klientów"]
         WA["WhatsApp — 97% komunikacji"]
         AL["Allegro — 200k SKU"]
-        MKT["Rynek — Unfrozen i branża"]
+        MKT["Rynek — Unfrosen i branża"]
     end
 
     INTG["Automatyczne integracje"]
@@ -75,6 +75,134 @@ const LAYER_LABEL: Record<string, string> = {
   workflows: 'Workflow',
   cowork: 'Wdrożenie zespołu',
 };
+
+interface PlayPrecedent {
+  source: string;
+  text: string;
+}
+
+// Mapping wdrożeń z pakietu + Layer 2 do konkretnych wyników z
+// docs/2026-05-21-desk-research-results.md
+const PLAY_PRECEDENT: Record<string, PlayPrecedent> = {
+  'P-001': {
+    source: 'Best Colorful Socks / Belstaff Review',
+    text: 'Redukcja kosztów operacyjnych o 80% przy przejściu z Excela na strukturyzowaną bazę wiedzy.',
+  },
+  'P-020': {
+    source: 'World Bank / Bain — Founder\'s Mentality',
+    text: '31% utraty innowacyjności gdy founder nie ma cyfrowej konsoli i pozostaje w mikrozarządzaniu.',
+  },
+  'P-021': {
+    source: 'Modanisa / Hello Charles',
+    text: '70% zapytań handlowych obsłużonych bez człowieka po systemizacji działań.',
+  },
+  'P-019': {
+    source: 'McKinsey B2B Pulse 2024',
+    text: '65% rynku B2B przejmą marketplace\'y do 2025 — wholesalerzy bez monitoringu rynku tracą 5-7% marży EBITDA.',
+  },
+  'P-002': {
+    source: 'NN.07 / Centra Case Study',
+    text: '3 lata z rzędu dwucyfrowego wzrostu sprzedaży hurtowej po przejściu z PDF/WhatsApp na strukturyzowaną pamięć klienta.',
+  },
+  'P-005': {
+    source: 'Arc\'teryx / NuORDER',
+    text: '+31% wzrost sprzedaży hurtowej, +23% zamówień self-service po wdrożeniu personalizowanej platformy ofertowej.',
+  },
+  'P-008': {
+    source: 'Global Fashion Retail / MapleSage',
+    text: '+46% YoY przychodu online, +31% AOV po centralizacji pipeline\'u B2B z ERP/CRM.',
+  },
+};
+
+interface CaseStudy {
+  name: string;
+  problem: string;
+  action: string;
+  result: string;
+  source: string;
+}
+
+const CASE_STUDIES: CaseStudy[] = [
+  {
+    name: 'NN.07',
+    problem: 'WhatsApp bottleneck — dane w telefonach handlowców, błędy w stanach',
+    action: 'Migracja z PDF/WhatsApp na platformę B2B, WhatsApp API jako most',
+    result: '3 lata z rzędu dwucyfrowego wzrostu sprzedaży hurtowej',
+    source: 'Hello Charles / Centra Case',
+  },
+  {
+    name: 'Arc\'teryx / Tribal',
+    problem: 'Niska efektywność tradycyjnych targów i manualnego zbierania zamówień',
+    action: 'Platforma NuORDER dla wszystkich partnerów B2B',
+    result: '+31% sprzedaży hurtowej, +23% zamówień self-service',
+    source: 'NuORDER Client Data',
+  },
+  {
+    name: 'Global Fashion Retail',
+    problem: 'Fragmentacja marek, silosy danych, brak elastyczności cenowej',
+    action: 'Centralizacja B2B (Shopify Plus / BigCommerce) z ERP + CRM',
+    result: '+46% YoY przychodu online, +31% AOV',
+    source: 'MapleSage Analysis',
+  },
+  {
+    name: 'Moda Operandi',
+    problem: 'Ryzyko kapitałowe związane z zakupem stocku',
+    action: 'Model marketplace / dropship via Mirakl',
+    result: '+51% YoY wzrost przychodów z dropshippingu (2025)',
+    source: 'Mirakl Case Study',
+  },
+  {
+    name: 'Modanisa',
+    problem: 'Przeciążenie działu handlowego powtarzalnymi zapytaniami',
+    action: 'AI Chatboty na WhatsApp zintegrowane z platformą',
+    result: '70% zapytań rozwiązywanych bez człowieka',
+    source: 'WhatsApp Business Case',
+  },
+];
+
+interface ResearchFinding {
+  source: string;
+  finding: string;
+  implication: string;
+}
+
+const RESEARCH_FINDINGS: ResearchFinding[] = [
+  {
+    source: 'McKinsey B2B Pulse 2024 / Gartner',
+    finding: '65% udziału w rynku B2B e-commerce przejmą marketplace\'y do 2025.',
+    implication:
+      'Model Unfrosen to nie trend, a standard przetrwania. Wholesalerzy bez platformy tracą 5-7% marży EBITDA.',
+  },
+  {
+    source: 'World Bank / Bain — Founder\'s Mentality',
+    finding:
+      'Firmy tracą 31% innowacyjności i dynamiki, gdy founder nie oddaje kontroli operacyjnej procesom cyfrowym.',
+    implication:
+      'Mózg firmy jest jedynym sposobem na zachowanie wizji foundera przy jednoczesnym uwolnieniu od mikrozarządzania.',
+  },
+  {
+    source: 'Akerlof (1970) — Market for Lemons',
+    finding:
+      'Brak transparentności (asymetria informacji) obniża ceny o 20-40% vs realnej wartości stocku.',
+    implication:
+      'Budowa zaufania cyfrowego (metadane, zdjęcia, tracking) odzyskuje marżę ukrytą przez asymetrię.',
+  },
+];
+
+const STRATEGIC_PATTERNS = [
+  {
+    title: 'WhatsApp-First, Platform-Final',
+    body: 'Najskuteczniejsze firmy nie porzucają WhatsAppa (98% open rate), ale przesuwają transakcję i prawdę o stanach na platformę. WhatsApp do relacji, platforma do zamknięcia i trackingu.',
+  },
+  {
+    title: 'Ucieczka z pułapki średniego rozwoju',
+    body: 'Firmy tracą kontrolę, gdy wiedza o rynku siedzi w głowach handlowców. Mózg firmy musi agregować intencje zakupowe i powody odmów, by founder widział rynek bez filtra handlowca.',
+  },
+  {
+    title: 'Monetyzacja przejrzystości',
+    body: 'W branży stockowej największą przewagę daje redukcja asymetrii informacji. Platforma, która pokazuje "co jest w środku palety" lepiej niż konkurencja, może dyktować wyższe ceny — premium for trust.',
+  },
+];
 
 export default async function Page() {
   const a = await loadAnalysis();
@@ -224,6 +352,20 @@ export default async function Page() {
                     </span>{' '}
                     {play.expected_impact_qualitative}
                   </p>
+
+                  {PLAY_PRECEDENT[play.id] && (
+                    <div className="mt-3 rounded-md border border-emerald-900/50 bg-emerald-950/20 p-3">
+                      <p className="font-mono text-[10px] uppercase tracking-widest text-emerald-300/80">
+                        Branżowy precedens
+                      </p>
+                      <p className="mt-1 text-sm text-zinc-200">
+                        {PLAY_PRECEDENT[play.id].text}
+                      </p>
+                      <p className="mt-1 text-[11px] text-emerald-400/60">
+                        źródło: {PLAY_PRECEDENT[play.id].source}
+                      </p>
+                    </div>
+                  )}
                 </li>
               );
             })}
@@ -303,6 +445,107 @@ export default async function Page() {
           </section>
         )}
 
+        {/* DESK RESEARCH — DLACZEGO TO ZADZIAŁA */}
+        <section className="space-y-6">
+          <header>
+            <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+              Dlaczego to zadziała — wzorce z branży
+            </h2>
+            <p className="mt-2 max-w-3xl text-sm text-zinc-400">
+              To nie jest hipoteza. 7 firm w pokrewnym segmencie zrobiło coś
+              podobnego i osiągnęło konkretne wyniki. Poniżej kondensat: 3 wzorce
+              strategiczne, 5 najmocniejszych case studies i 3 badania
+              makro-rynkowe.
+            </p>
+          </header>
+
+          {/* 3 STRATEGIC PATTERNS */}
+          <div>
+            <h3 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+              3 wzorce strategiczne
+            </h3>
+            <div className="mt-3 grid gap-3 lg:grid-cols-3">
+              {STRATEGIC_PATTERNS.map((p) => (
+                <article
+                  key={p.title}
+                  className="rounded-md border border-amber-900/40 bg-amber-950/15 p-4"
+                >
+                  <h4 className="text-sm font-semibold text-amber-200">
+                    {p.title}
+                  </h4>
+                  <p className="mt-2 text-xs leading-relaxed text-zinc-300">
+                    {p.body}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* CASE STUDIES — 5 CARDS */}
+          <div>
+            <h3 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+              Case studies — firmy z podobnym problemem
+            </h3>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {CASE_STUDIES.map((c) => (
+                <article
+                  key={c.name}
+                  className="rounded-md border border-zinc-800 bg-zinc-900/40 p-4"
+                >
+                  <p className="font-mono text-[11px] text-zinc-500">
+                    {c.source}
+                  </p>
+                  <h4 className="mt-1 text-base font-semibold text-zinc-50">
+                    {c.name}
+                  </h4>
+                  <p className="mt-2 text-xs text-zinc-400">
+                    <span className="font-medium text-zinc-300">Problem:</span>{' '}
+                    {c.problem}
+                  </p>
+                  <p className="mt-1 text-xs text-zinc-400">
+                    <span className="font-medium text-zinc-300">Wdrożenie:</span>{' '}
+                    {c.action}
+                  </p>
+                  <p className="mt-2 rounded bg-emerald-950/30 px-2 py-1.5 text-xs font-medium text-emerald-200 ring-1 ring-emerald-900/40">
+                    Wynik: {c.result}
+                  </p>
+                </article>
+              ))}
+            </div>
+            <p className="mt-3 text-xs text-zinc-500">
+              Pełen raport (7 case studies + 5 badań + metodologia) →{' '}
+              <code className="font-mono text-zinc-400">
+                docs/2026-05-21-desk-research-results.md
+              </code>
+            </p>
+          </div>
+
+          {/* RESEARCH FINDINGS — 3 CALLOUTS */}
+          <div>
+            <h3 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+              Co mówią McKinsey, Gartner, World Bank, Akerlof
+            </h3>
+            <div className="mt-3 space-y-3">
+              {RESEARCH_FINDINGS.map((r) => (
+                <article
+                  key={r.source}
+                  className="rounded-md border border-blue-900/40 bg-blue-950/20 p-4"
+                >
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-blue-300/80">
+                    {r.source}
+                  </p>
+                  <p className="mt-1.5 text-sm font-medium text-zinc-100">
+                    {r.finding}
+                  </p>
+                  <p className="mt-1 text-xs text-zinc-400">
+                    → {r.implication}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* LAYER 2 SNEAK PEEK */}
         <section className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-6">
           <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
@@ -316,6 +559,7 @@ export default async function Page() {
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
             {layer2.map(({ play, match }) => {
               if (!play) return null;
+              const prec = PLAY_PRECEDENT[play.id];
               return (
                 <div
                   key={play.id}
@@ -327,6 +571,11 @@ export default async function Page() {
                   <p className="mt-2 font-mono text-xs text-zinc-400">
                     ocena {match.composite_score} · {play.effort_weeks.typical} tyg.
                   </p>
+                  {prec && (
+                    <p className="mt-2 text-[11px] text-emerald-300/80">
+                      precedens: {prec.text.slice(0, 90)}…
+                    </p>
+                  )}
                 </div>
               );
             })}

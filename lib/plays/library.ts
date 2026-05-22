@@ -188,7 +188,7 @@ const PLAYS_RAW: AIPlay[] = [
     solves_pain_categories: ['data_quality', 'lost_revenue'],
     solution_pattern:
       'Strona apply.stockhurt.eu z formularzem. Backend: scraping linków klienta (Allegro/OLX/strona) przez AI dla automatycznej charakterystyki: jakie marki sprzedają, jaki segment, jaka skala. Auto-tier assignment. Marketing attribution.',
-    solution_pattern_pl: 'Strona apply.stockhurt.eu — formularz inspirowany Unfrozen: KRS, link do sklepu, zdjęcie magazynu. Backend automatycznie scrape linki klienta (Allegro/OLX), AI analizuje jakie marki sprzedają, w jakim segmencie. Auto-przypisanie tieru. Marketing wie skąd przychodzą klienci. Auto-routing do odpowiedniego handlowca.',
+    solution_pattern_pl: 'Strona apply.stockhurt.eu — formularz inspirowany Unfrosen: KRS, link do sklepu, zdjęcie magazynu. Backend automatycznie scrape linki klienta (Allegro/OLX), AI analizuje jakie marki sprzedają, w jakim segmencie. Auto-przypisanie tieru. Marketing wie skąd przychodzą klienci. Auto-routing do odpowiedniego handlowca.',
     effort_weeks: { min: 2, typical: 3, max: 4 },
     effort_weeks_mvp: null,
     expected_impact_qualitative:
@@ -255,11 +255,11 @@ const PLAYS_RAW: AIPlay[] = [
     solves_pain_categories: ['data_quality', 'lost_revenue', 'scaling_blocker'],
     solution_pattern:
       'Magazynier robi zdjęcia palety. AI analizuje zdjęcia → identyfikuje brandy (logo recognition), kategorie, szacuje rozmiary. Generuje JSON listy pakunkowej + opis "lot". Replikujemy Allegro bot dla hurtu.',
-    solution_pattern_pl: 'Magazynier robi zdjęcia palety. AI rozpoznaje brandy (logo recognition), kategorie odzieży, szacuje rozmiary. Generuje listę pakunkową i opis „lot" gotowy do sprzedaży jako paczka — model Unfrozen — zamiast „na kilo" z niską marżą. Odblokowuje 50%+ obecnego big-grade na wyższe marże.',
+    solution_pattern_pl: 'Magazynier robi zdjęcia palety. AI rozpoznaje brandy (logo recognition), kategorie odzieży, szacuje rozmiary. Generuje listę pakunkową i opis „lot" gotowy do sprzedaży jako paczka — model Unfrosen — zamiast „na kilo" z niską marżą. Odblokowuje 50%+ obecnego big-grade na wyższe marże.',
     effort_weeks: { min: 4, typical: 6, max: 10 },
     effort_weeks_mvp: null,
     expected_impact_qualitative:
-      'Odblokowuje endgame Unfrozen-like model dla 50%+ obecnego big-grade.',
+      'Odblokowuje endgame Unfrosen-like model dla 50%+ obecnego big-grade.',
     expected_impact_quantitative:
       'Big-grade dziś sprzedawane "na kilo" niskie marży; jako lots = +50-100% margin uplift.',
     requires: {
@@ -525,7 +525,7 @@ const PLAYS_RAW: AIPlay[] = [
     solves_pain_categories: ['scaling_blocker', 'lost_context', 'knowledge_silos'],
     solution_pattern:
       'Crawler scrapowy (daily) na strony konkurencji — produkty, pricing, kampanie. RSS/API ingestion industry news. LLM klasyfikuje severity/relevance. Generuje MarketSignal entities. Founder dostaje weekly digest.',
-    solution_pattern_pl: 'Codziennie crawler skanuje strony konkurentów (Unfrozen, Faire, Ankorstore) — nowe produkty, zmiany cen, kampanie. RSS i industry news o branży fashion off-price. AI klasyfikuje co ważne, generuje weekly digest dla zarządu: co się dzieje na rynku, co wymaga reakcji.',
+    solution_pattern_pl: 'Codziennie crawler skanuje strony konkurentów (Unfrosen, Faire, Ankorstore) — nowe produkty, zmiany cen, kampanie. RSS i industry news o branży fashion off-price. AI klasyfikuje co ważne, generuje weekly digest dla zarządu: co się dzieje na rynku, co wymaga reakcji.',
     effort_weeks: { min: 3, typical: 5, max: 8 },
     effort_weeks_mvp: { typical: 3 },
     expected_impact_qualitative:
