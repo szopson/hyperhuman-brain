@@ -15,19 +15,46 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { PendingQueueSchema, type PendingEntity } from '../lib/schemas';
+import { PendingQueueSchema, CompanyAnalysisSchema, type PendingEntity } from '../lib/schemas';
+import { extractDailyNote } from '../lib/extraction/extract-daily';
 
-interface CliArgs { caseSlug: string; since: string | null }
+function loadEnvLocal() {
+  const envPath = path.join(process.cwd(), '.env.local');
+  if (!fs.existsSync(envPath)) return;
+  for (const line of fs.readFileSync(envPath, 'utf8').split('\n')) {
+    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
+    if (!m) continue;
+    const [, k, rawV] = m;
+    if (process.env[k]) continue;
+    process.env[k] = rawV.replace(/^['"]|['"]$/g, '');
+  }
+}
+
+interface CliArgs { caseSlug: string; since: string | null; llm: boolean }
 
 function parseArgs(): CliArgs {
   const args = process.argv.slice(2);
   let caseSlug = 'stock-hurt';
   let since: string | null = null;
+  let llm = false;
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--case' && args[i + 1]) caseSlug = args[++i];
     if (args[i] === '--since' && args[i + 1]) since = args[++i];
+    if (args[i] === '--llm') llm = true;
   }
-  return { caseSlug, since };
+  return { caseSlug, since, llm };
+}
+
+function loadKnownEntities(caseSlug: string) {
+  const p = path.join(process.cwd(), 'data/cases', caseSlug, 'outputs/analysis-full.json');
+  if (!fs.existsSync(p)) return [];
+  const a = CompanyAnalysisSchema.parse(JSON.parse(fs.readFileSync(p, 'utf8')));
+  return [
+    ...a.pains.map((x) => ({ id: x.id, title: x.title, kind: 'pain' })),
+    ...a.risks.map((x) => ({ id: x.id, title: x.title, kind: 'risk' })),
+    ...a.processes.map((x) => ({ id: x.id, title: x.name, kind: 'process' })),
+    ...a.metrics.map((x) => ({ id: x.id, title: x.name, kind: 'metric' })),
+  ];
 }
 
 interface Frontmatter {
@@ -101,13 +128,21 @@ function splitIntoChunks(body: string): string[] {
   return chunks;
 }
 
-function main() {
-  const { caseSlug, since } = parseArgs();
+async function main() {
+  loadEnvLocal();
+  const { caseSlug, since, llm } = parseArgs();
   const root = path.join(process.cwd(), 'data/cases', caseSlug, 'inputs/daily');
   if (!fs.existsSync(root)) {
     console.error(`No daily inputs at ${root}`);
     process.exit(0);
   }
+
+  const knownEntities = llm ? loadKnownEntities(caseSlug) : [];
+  console.log(
+    llm
+      ? `LLM mode: ${knownEntities.length} known entities for matching`
+      : 'Heuristic mode (use --llm for Claude-driven extraction)',
+  );
 
   const entities: PendingEntity[] = [];
   const dateDirs = fs.readdirSync(root).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)).sort();
@@ -117,10 +152,25 @@ function main() {
     for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.md'))) {
       const raw = fs.readFileSync(path.join(dir, file), 'utf8');
       const { fm, body } = parseFrontmatter(raw);
-      const chunks = splitIntoChunks(body);
-      chunks.forEach((chunk, idx) => {
-        entities.push(makePendingEntity(path.join(dir, file), fm, chunk, idx));
-      });
+
+      if (llm) {
+        process.stderr.write(`extracting ${dateDir}/${file}…`);
+        const llmEntities = await extractDailyNote({
+          rawNote: body,
+          authorId: fm.author_id,
+          authorRole: fm.author_role,
+          recordedAt: fm.recorded_at,
+          sourceType: fm.source_type,
+          knownEntities,
+        });
+        process.stderr.write(` → ${llmEntities.length} entries\n`);
+        entities.push(...llmEntities);
+      } else {
+        const chunks = splitIntoChunks(body);
+        chunks.forEach((chunk, idx) => {
+          entities.push(makePendingEntity(path.join(dir, file), fm, chunk, idx));
+        });
+      }
     }
   }
 
@@ -136,4 +186,7 @@ function main() {
   console.log(`Wrote ${entities.length} pending entities to ${outPath}`);
 }
 
-main();
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

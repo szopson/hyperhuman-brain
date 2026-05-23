@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "case_id": "hyperhuman",
+    "generated_at": "2026-05-23T10:00:00Z",
+    "pipeline_version": "0.2-dogfood",
+    "input_sources": [
+      { "type": "transcript", "identifier": "meeting-hyperhuman-self", "token_count": null }
+    ]
+  },
+  "company": {
+    "id": "company-hyperhuman",
+    "name": "HyperHuman",
+    "anonymized_name": "HyperHuman",
+    "industry": "AI consulting / AI implementation",
+    "sub_industry": "Custom AI implementations dla średnich firm (CAVAC pattern)",
+    "business_model": "Buduje AI plays (mózg firmy, briefingi, knowledge base, market intelligence) dla średnich firm z 'pułapki średniego rozwoju'. Projekt-based + długoterminowe wdrożenia.",
+    "revenue_estimate": null,
+    "revenue_breakdown": null,
+    "employee_count_estimate": null,
+    "years_in_business": null,
+    "geo_markets": ["PL"],
+    "source_quotes": [
+      { "text": "robimy mózgi firm dla klientów, a sami mózgu nie mamy", "source": "transcript", "speaker": "Konrad", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null },
+      { "text": "Mamy 21 plays, prawie wszystkie udowodnione na klientach", "source": "transcript", "speaker": "Konrad", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+    ]
+  },
+  "processes": [
+    {
+      "id": "proc-sales-presales",
+      "name": "Sales / pre-sales tłumaczenia",
+      "description": "Każdy deal to ~2 tygodnie pre-sales w którym founder tłumaczy architekturę i CAVAC od zera. Brak materiałów które kapitalizowały by wcześniejsze rozmowy.",
+      "category": "sales",
+      "current_owner_role": "Founder",
+      "frequency": "weekly",
+      "estimated_hours_per_execution": 14,
+      "estimated_executions_per_month": 3,
+      "tools_used": ["tool-slack", "tool-notion", "tool-linkedin"],
+      "knowledge_ready": { "score": 4, "reasoning": "Treść istnieje w głowach founderów, nie jest pakowana do reusable materials", "gaps": ["case studies", "demo materiałów", "1-pager produktu"] },
+      "tools_ready": { "score": 2, "reasoning": "Zero CRM, pipeline w głowie founderów", "gaps": ["CRM", "lead tracking", "pre-sales kit"] },
+      "integration_ready": { "score": 1, "reasoning": "Brak integracji LinkedIn ↔ CRM ↔ Slack ↔ calendar", "missing_mcp": ["linkedin", "crm", "calendar"] },
+      "skill_ready": { "score": 5, "reasoning": "Founderzy umieją, ale nie ma onboardowalnej skill", "is_repeatable": false, "is_describable": false },
+      "depends_on": [],
+      "enables": ["proc-deal-closure"],
+      "source_quotes": [
+        { "text": "Każdy deal to dwa tygodnie pre-sales w którym tłumaczę architekturę. To jest niefair time-wise dla obu stron.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+      ],
+      "review": { "status": "approved", "reviewed_by": null, "reviewed_at": null, "review_comment": null }
+    },
+    {
+      "id": "proc-content-marketing",
+      "name": "LinkedIn content + webinars",
+      "description": "Produkcja treści przez founderów. Brak pomiarów konwersji treść → deal, brak flywheel.",
+      "category": "marketing",
+      "current_owner_role": "Founder",
+      "frequency": "weekly",
+      "estimated_hours_per_execution": 4,
+      "estimated_executions_per_month": 6,
+      "tools_used": ["tool-linkedin"],
+      "knowledge_ready": { "score": 5, "reasoning": "Founderzy mają pomysły, ale brak strategy doc i editorial calendar", "gaps": ["editorial calendar", "ICP-specific angles"] },
+      "tools_ready": { "score": 2, "reasoning": "Manualny LinkedIn, brak schedulera, brak analytics", "gaps": ["scheduler", "analytics", "attribution"] },
+      "integration_ready": { "score": 1, "reasoning": "Brak attribution content → deal", "missing_mcp": ["linkedin-analytics", "ga4"] },
+      "skill_ready": { "score": 4, "reasoning": "Produkujemy ale nie wiemy co działa", "is_repeatable": true, "is_describable": false },
+      "depends_on": [],
+      "enables": ["proc-sales-presales"],
+      "source_quotes": [
+        { "text": "Próbowaliśmy LinkedIn content, próbowaliśmy webinarów. Treści wychodziły ok, ale konwersja na deal-e — niska. Nie wiem czy ICP źle dobrane, czy hook słaby, czy follow-up niezrobiony.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+      ],
+      "review": { "status": "approved", "reviewed_by": null, "reviewed_at": null, "review_comment": null }
+    },
+    {
+      "id": "proc-product-ideation",
+      "name": "Ideacja produktów (Hyper Invest, suplementy)",
+      "description": "Lawina pomysłów (Hyper Invest, suplementy, kosmetyki, ...) bez ICP, bez walidacji, bez triażu. Każdy pomysł odbiera uwagę od core consulting business.",
+      "category": "product",
+      "current_owner_role": "Founder",
+      "frequency": "ad_hoc",
+      "estimated_hours_per_execution": null,
+      "estimated_executions_per_month": null,
+      "tools_used": ["tool-notion"],
+      "knowledge_ready": { "score": 3, "reasoning": "Pomysły rozproszone w głowie + Notion, brak formalnego triage frameworku", "gaps": ["ICP per produkt", "kryteria triage", "validation playbook"] },
+      "tools_ready": { "score": 2, "reasoning": "Brak validation framework", "gaps": ["validation pipeline", "experiment tracking"] },
+      "integration_ready": { "score": 1, "reasoning": "Brak", "missing_mcp": [] },
+      "skill_ready": { "score": 3, "reasoning": "Brak repeatable validation skill", "is_repeatable": false, "is_describable": false },
+      "depends_on": [],
+      "enables": [],
+      "source_quotes": [
+        { "text": "Mam pomysłów na produkty mnóstwo (...) pomysłów dwadzieścia, walidacji zero, ICP nieokreślone w żadnym.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+      ],
+      "review": { "status": "approved", "reviewed_by": null, "reviewed_at": null, "review_comment": null }
+    }
+  ],
+  "pains": [
+    {
+      "id": "pain-distribution-gap",
+      "title": "Brak skalowalnego kanału dotarcia do klienta",
+      "description": "Wszystkie deal-e przez referencje + konferencje + LinkedIn-network. Sieć, nie kanał. Brak compounding marketing — każdy sales jest od zera. To bezpośrednio limituje wzrost firmy.",
+      "category": "scaling_blocker",
+      "affected_processes": ["proc-sales-presales", "proc-content-marketing"],
+      "affected_roles": ["Founder", "Sales"],
+      "frequency": "constant",
+      "severity": "critical",
+      "strategic_impact": "blocks_endgame",
+      "founder_emotional_intensity": "burning",
+      "founder_quoted_phrase": "po prostu nie wiemy jak to zrobić bez pożyczania uwagi",
+      "source_quotes": [
+        { "text": "Najdziurawsze — dotarcie do klienta. Po prostu nie wiemy jak to zrobić bez pożyczania uwagi.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null },
+        { "text": "Z referencji głównie, z konferencji, z LinkedIn-a (...) To jest sieć, nie kanał. Nie potrafię tego skalować.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+      ],
+      "review": { "status": "approved", "reviewed_by": null, "reviewed_at": null, "review_comment": null }
+    },
+    {
+      "id": "pain-marketing-skill-gap",
+      "title": "Brak kompetencji marketingowych w środku zespołu",
+      "description": "Produkcja contentu wychodzi, ale nie wiadomo czy konwertuje na deal-e. Brak attribution, brak ICP-specific angles, brak follow-up. Bez pomiarów nie wiadomo co poprawiać.",
+      "category": "knowledge_silos",
+      "affected_processes": ["proc-content-marketing"],
+      "affected_roles": ["Founder"],
+      "frequency": "constant",
+      "severity": "high",
+      "strategic_impact": "major",
+      "founder_emotional_intensity": "frustrating",
+      "founder_quoted_phrase": "bez pomiarów nie wiem co rozjebać",
+      "source_quotes": [
+        { "text": "nie ma kompetencji marketingowych w środku zespołu, a wszystko co próbowaliśmy do tej pory ma low repeatability", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null },
+        { "text": "Nie wiem czy ICP źle dobrane, czy hook słaby, czy follow-up niezrobiony. Bez pomiarów nie wiem co rozjebać.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+      ],
+      "review": { "status": "approved", "reviewed_by": null, "reviewed_at": null, "review_comment": null }
+    },
+    {
+      "id": "pain-product-cannibalization",
+      "title": "Lawina pomysłów produktowych bez walidacji kanibalizuje core consulting",
+      "description": "Hyper Invest, suplementy, kosmetyki — wszystkie ciekawe, żaden walidowany ICP-wise. Każda gałąź odbiera uwagę founderom od wdrożeń konsultingowych, które dziś żywią firmę.",
+      "category": "lost_context",
+      "affected_processes": ["proc-product-ideation"],
+      "affected_roles": ["Founder"],
+      "frequency": "constant",
+      "severity": "high",
+      "strategic_impact": "blocks_endgame",
+      "founder_emotional_intensity": "burning",
+      "founder_quoted_phrase": "pomysłów dwadzieścia, walidacji zero, ICP nieokreślone w żadnym",
+      "source_quotes": [
+        { "text": "pomysłów dwadzieścia, walidacji zero, ICP nieokreślone w żadnym", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null },
+        { "text": "jak zaczniemy ścigać Hyper Invest, to kto będzie wdrażał klientów konsultingowych? Mamy core business który nas żywi i mamy dwadzieścia pomysłów, które są niewalidowane.", "source": "transcript", "speaker": "Konrad", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+      ],
+      "review": { "status": "approved", "reviewed_by": null, "reviewed_at": null, "review_comment": null }
+    },
+    {
+      "id": "pain-no-presales-kit",
+      "title": "Każdy pre-sales od zera — brak demo / case study packów",
+      "description": "Founder tłumaczy CAVAC, plays library i anty-halucynacyjną dyscyplinę w każdej rozmowie od zera. Nie ma materiałów które robią to za niego. Niefair time-wise dla obu stron, blokuje skalowanie deal flow.",
+      "category": "manual_repetitive_work",
+      "affected_processes": ["proc-sales-presales"],
+      "affected_roles": ["Founder"],
+      "frequency": "weekly",
+      "severity": "high",
+      "strategic_impact": "major",
+      "founder_emotional_intensity": "frustrating",
+      "founder_quoted_phrase": "Klient pyta 'co dokładnie dostanę za te pieniądze' i nie umiem tego pokazać w dwóch slidach",
+      "source_quotes": [
+        { "text": "Klient pyta 'co dokładnie dostanę za te pieniądze' i nie umiem tego pokazać w dwóch slidach. Każdy deal to dwa tygodnie pre-sales w którym tłumaczę architekturę.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+      ],
+      "review": { "status": "approved", "reviewed_by": null, "reviewed_at": null, "review_comment": null }
+    },
+    {
+      "id": "pain-no-internal-brain",
+      "title": "Brak własnego 'brain' — własna firma jest najsłabiej zorganizowana",
+      "description": "Slack + Notion + Drive + brak CRM-a. Pipeline w głowie founderów. Ironia: HyperHuman buduje brainy klientom, sam ich nie ma. Wskazuje wprost na deficyt 'eating own dogfood'.",
+      "category": "tooling_friction",
+      "affected_processes": ["proc-sales-presales", "proc-content-marketing", "proc-product-ideation"],
+      "affected_roles": ["Founder"],
+      "frequency": "daily",
+      "severity": "high",
+      "strategic_impact": "major",
+      "founder_emotional_intensity": "frustrating",
+      "founder_quoted_phrase": "robimy mózgi firm dla klientów, a sami mózgu nie mamy",
+      "source_quotes": [
+        { "text": "robimy mózgi firm dla klientów, a sami mózgu nie mamy", "source": "transcript", "speaker": "Konrad", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null },
+        { "text": "Slack + Notion + Google Drive. Zero CRM. Pipeline w głowie. Lead-y też w głowie albo w mailu.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+      ],
+      "review": { "status": "approved", "reviewed_by": null, "reviewed_at": null, "review_comment": null }
+    }
+  ],
+  "risks": [
+    {
+      "id": "risk-founder-burnout",
+      "title": "Founder bottleneck — każdy deal idzie przez założycieli",
+      "category": "operational",
+      "description": "Pre-sales, content, ideacja produktowa, ICP — wszystko zatrzymuje się na founderach. Jeśli nie zbudują warstwy która ich odciąża, dochód i wzrost są deterministycznie capped przez ich czas.",
+      "time_horizon": "imminent_3_months",
+      "probability": "likely",
+      "impact": "major",
+      "specific_actors": null,
+      "mitigation_status": "none",
+      "source_quotes": [
+        { "text": "Stabilny inbound — 3-5 deal-i na miesiąc bez pożyczania uwagi od founderów.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+      ],
+      "review": { "status": "approved", "reviewed_by": null, "reviewed_at": null, "review_comment": null }
+    },
+    {
+      "id": "risk-product-cannibalization",
+      "title": "Pivot do produktów (Hyper Invest, suplementy) zabiera attention od consulting-u",
+      "category": "concentration",
+      "description": "Bez ICP i validation framework, każda nowa gałąź produktowa kanibalizuje deal flow consulting-u. Realne ryzyko że firma rozpływa się w 'maybe products' zamiast dominować w core area.",
+      "time_horizon": "near_term_6_12_months",
+      "probability": "possible",
+      "impact": "major",
+      "specific_actors": null,
+      "mitigation_status": "none",
+      "source_quotes": [
+        { "text": "jak zaczniemy ścigać Hyper Invest, to kto będzie wdrażał klientów konsultingowych?", "source": "transcript", "speaker": "Konrad", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+      ],
+      "review": { "status": "approved", "reviewed_by": null, "reviewed_at": null, "review_comment": null }
+    },
+    {
+      "id": "risk-commoditization",
+      "title": "Komodytyzacja 'AI consulting' — pojawiają się szybcy konkurenci bez dyscypliny",
+      "category": "competitive",
+      "description": "Rynek wypełnia się 'AI agencjami' obiecującymi to samo. Bez compounding marketing i case studies HyperHuman traci pozycjonowanie 'premium dyscyplina' i wpada do średniej cenowej.",
+      "time_horizon": "near_term_6_12_months",
+      "probability": "likely",
+      "impact": "moderate",
+      "specific_actors": null,
+      "mitigation_status": "none",
+      "source_quotes": [
+        { "text": "Klienci którzy zrozumieją co dostają, kupują od ręki.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "medium", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }
+      ],
+      "review": { "status": "approved", "reviewed_by": null, "reviewed_at": null, "review_comment": null }
+    }
+  ],
+  "metrics": [
+    { "id": "metric-deals-mo", "name": "Deal-e zamknięte / miesiąc", "category": "count", "current_value": "1-2", "unit": "deal/mo", "context": "Bazując na deklarowanym celu '3-5 deal-i' jako stretch — obecny stan to poniżej tego", "related_processes": ["proc-sales-presales"], "benchmark_estimate": "3-5", "source_quotes": [{ "text": "Stabilny inbound — 3-5 deal-i na miesiąc bez pożyczania uwagi od founderów.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "medium", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }] },
+    { "id": "metric-presales-hours", "name": "Pre-sales czas founderów / deal", "category": "time", "current_value": 14, "unit": "h/deal", "context": "Dwa tygodnie pre-sales × ~7h tygodniowo founder-time na rozmowę = ~14h na deal", "related_processes": ["proc-sales-presales"], "benchmark_estimate": 3, "source_quotes": [{ "text": "Każdy deal to dwa tygodnie pre-sales", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "medium", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }] },
+    { "id": "metric-plays-validated", "name": "Validated plays w library", "category": "count", "current_value": 21, "unit": "plays", "context": "Plays library z udowodnionymi wdrożeniami u klientów", "related_processes": [], "benchmark_estimate": null, "source_quotes": [{ "text": "Mamy 21 plays, prawie wszystkie udowodnione na klientach", "source": "transcript", "speaker": "Konrad", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }] }
+  ],
+  "tools": [
+    { "id": "tool-slack", "name": "Slack", "category": "comms", "vendor": "Slack", "is_custom": false, "used_in_processes": ["proc-sales-presales"], "used_by_roles": ["Founder"], "satisfaction": "adequate", "has_api": true, "has_mcp": true, "data_quality": "semi_structured", "switching_cost": "high", "source_quotes": [{ "text": "Slack + Notion + Google Drive", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }] },
+    { "id": "tool-notion", "name": "Notion", "category": "documentation", "vendor": "Notion", "is_custom": false, "used_in_processes": ["proc-product-ideation"], "used_by_roles": ["Founder"], "satisfaction": "works_but_painful", "has_api": true, "has_mcp": true, "data_quality": "semi_structured", "switching_cost": "medium", "source_quotes": [{ "text": "Slack + Notion + Google Drive", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }] },
+    { "id": "tool-linkedin", "name": "LinkedIn", "category": "marketplace", "vendor": "LinkedIn", "is_custom": false, "used_in_processes": ["proc-content-marketing", "proc-sales-presales"], "used_by_roles": ["Founder"], "satisfaction": "works_but_painful", "has_api": false, "has_mcp": false, "data_quality": "unstructured", "switching_cost": "extreme", "source_quotes": [{ "text": "Z referencji głównie, z konferencji, z LinkedIn-a od osób które już mnie kojarzą.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }] }
+  ],
+  "stakeholders": [
+    { "id": "stk-igor", "role": "Founder / CEO", "name": "Igor Pielas", "is_decision_maker": true, "primary_concerns": ["dystrybucja", "skalowanie", "produktyzacja", "ICP"], "emotional_signal": "frustracja brakiem skalowalnego kanału, ekscytacja możliwościami produktowymi", "source_quotes": [{ "text": "Mam pomysłów na produkty mnóstwo.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }] },
+    { "id": "stk-konrad", "role": "Founder / Co-founder", "name": "Konrad", "is_decision_maker": true, "primary_concerns": ["dyscyplina", "core business", "compounding asset"], "emotional_signal": "ostrożny wobec rozpraszania uwagi, bardzo dobrze rozumie sytuację 'cobbler's children'", "source_quotes": [{ "text": "robimy mózgi firm dla klientów, a sami mózgu nie mamy", "source": "transcript", "speaker": "Konrad", "timestamp": null, "confidence": "high", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }] }
+  ],
+  "competitors": [
+    { "id": "comp-generic-ai-agencies", "name": "Generyczne agencje AI", "model": "Tanie wdrożenia AI bez dyscypliny, sprzedają 'chat z dokumentami' jako 'cyfrowa transformacja'", "threat_level": "medium", "time_to_react": "3_6_months", "scale_estimate": { "revenue": null, "customers": null, "geo_reach": ["PL", "EU"], "growth_rate": "wysoki" }, "key_advantages": ["niski cenowy próg wejścia", "szybkie deploy"], "key_disadvantages": ["brak dyscypliny anty-halucynacyjnej", "one-shot bez follow-up"], "positioning": { "inventory_model": "pure_marketplace", "revenue_model": "subscription", "target_customer": "SMB szukające 'taniego AI'", "geographic_reach": "PL/EU", "tech_stack_visibility": "GPT wrapper + n8n" }, "source_quotes": [{ "text": "Klienci którzy zrozumieją co dostają, kupują od ręki.", "source": "transcript", "speaker": "Igor", "timestamp": null, "confidence": "low", "source_role": "founder", "source_type": "transcript", "author_id": null, "ingested_at": null }] }
+  ],
+  "market_signals": [
+    { "id": "sig-ai-consulting-boom", "detected_at": "2026-05-23T10:00:00Z", "source": "industry_news", "source_url": null, "signal_type": "industry_trend", "title": "Boom 'AI consulting' segment", "description": "Rynek wypełnia się szybko ofertami 'AI dla firm'. Bez wyraźnego pozycjonowania i compounding marketing łatwo wpaść w komodytyzację cenową.", "affects_competitors": ["comp-generic-ai-agencies"], "implications_for_company": "Pilnie potrzebne wyraźne pozycjonowanie + case studies + content compounding asset", "suggested_actions": [], "severity": "noteworthy", "confidence": "likely" }
+  ],
+  "play_matches": [
+    { "play_id": "P-001", "matched_pains": ["pain-no-internal-brain", "pain-no-presales-kit"], "business_impact_score": 9, "ai_fit_score": 10, "implementation_ease_score": 9, "data_readiness_score": 8, "cavac_readiness": { "knowledge": 9, "tools": 7, "skills": 9, "integrations": 6, "composite": 8 }, "composite_score": 91, "estimated_effort_weeks": 4, "estimated_impact_pln_monthly": null, "confidence": "high", "uncertainty_factors": [], "reasoning": "Dogfooding: HyperHuman buduje brain dla siebie z własną library. Najkrótsza droga do reduce founder pre-sales czasu i materializacji 'compounding asset'.", "caveats": ["Wymaga 2-3 tyg founder time na inputs"] },
+    { "play_id": "P-020", "matched_pains": ["pain-no-internal-brain", "pain-distribution-gap"], "business_impact_score": 8, "ai_fit_score": 9, "implementation_ease_score": 9, "data_readiness_score": 7, "cavac_readiness": { "knowledge": 8, "tools": 8, "skills": 9, "integrations": 7, "composite": 8 }, "composite_score": 86, "estimated_effort_weeks": 2, "estimated_impact_pln_monthly": null, "confidence": "high", "uncertainty_factors": [], "reasoning": "Founder Briefing daje founderom pełny obraz pipeline-u i marketingu w 5 minut dziennie. Bez tego pivot produktowy będzie chaotyczny.", "caveats": [] },
+    { "play_id": "P-019", "matched_pains": ["pain-marketing-skill-gap", "pain-product-cannibalization"], "business_impact_score": 8, "ai_fit_score": 9, "implementation_ease_score": 7, "data_readiness_score": 5, "cavac_readiness": { "knowledge": 6, "tools": 7, "skills": 8, "integrations": 5, "composite": 6 }, "composite_score": 75, "estimated_effort_weeks": 3, "estimated_impact_pln_monthly": null, "confidence": "medium", "uncertainty_factors": ["ICP nieokreślone"], "reasoning": "Market Intelligence pomaga walidować Hyper Invest vs core consulting na sygnałach rynkowych, nie intuicji. Krytyczne dla decyzji o pivocie.", "caveats": ["Wymaga sprecyzowania ICP na wejściu"] },
+    { "play_id": "P-015", "matched_pains": ["pain-marketing-skill-gap", "pain-distribution-gap"], "business_impact_score": 9, "ai_fit_score": 8, "implementation_ease_score": 6, "data_readiness_score": 5, "cavac_readiness": { "knowledge": 5, "tools": 6, "skills": 7, "integrations": 6, "composite": 6 }, "composite_score": 73, "estimated_effort_weeks": 6, "estimated_impact_pln_monthly": null, "confidence": "medium", "uncertainty_factors": ["wymaga ICP", "wymaga content engine"], "reasoning": "Content Distribution Engine — automatyzacja repurposingu case studies → LinkedIn/newsletter/web. Bez tego marketing nie skaluje się.", "caveats": [] }
+  ],
+  "ranked_opportunities": ["P-001", "P-020", "P-019", "P-015"],
+  "action_points": [],
+  "next_step_pack": {
+    "id": "pack-hh-self",
+    "title": "Dogfood pack: HyperHuman uruchamia własny brain (4 play, ~9w)",
+    "one_liner": "HyperHuman wdraża dla siebie te same plays które sprzedaje klientom — case study w realnym czasie + redukcja founder bottleneck.",
+    "selected_plays": ["P-001", "P-020", "P-019", "P-015"],
+    "framing": "foundation",
+    "rationale": "Sekwencja: Brain (P-001) jako baza wiedzy o własnej firmie → Founder Briefing (P-020) jako codzienna pigułka dla Igora i Konrada → Market Intelligence (P-019) do walidacji direction Hyper Invest vs core → Content Distribution (P-015) jako compounding marketing asset. Razem ~9 tygodni, w 100% z istniejącej library.",
+    "scope": {
+      "in_scope": [
+        "P-001: Brain wewnętrzny HyperHuman (deal pipeline, plays library, case studies)",
+        "P-020: Daily Briefing dla Igora i Konrada (deal status, content performance, decyzje)",
+        "P-019: Market Intelligence — sygnały rynkowe AI consulting + walidacja kierunku Hyper Invest",
+        "P-015: Content Distribution Engine — repurposing case studies → LinkedIn / newsletter / SEO"
+      ],
+      "out_of_scope": [
+        "Hyper Invest jako produkt (na razie tylko walidacja przez P-019)",
+        "Pivot do suplementów / kosmetyków (poza scope)",
+        "Hiring marketing managera (zastępujemy AI workflow)"
+      ]
+    },
+    "timeline_weeks": 9,
+    "pricing": null,
+    "deliverables": [
+      "P-001 — Brain HyperHuman: pipeline + plays library + case studies w jednym indexed source",
+      "P-020 — Founder Briefing: codzienny digest dla Igora i Konrada",
+      "P-019 — Market Intelligence: sygnały AI consulting + Hyper Invest segment",
+      "P-015 — Content Distribution Engine: case study → 5 LinkedIn posts + newsletter + SEO page"
+    ],
+    "success_metrics": [
+      { "metric": "Founder pre-sales czas / deal", "baseline": "14h", "target": "3h", "measurement_method": "manual log w Brain" },
+      { "metric": "Inbound deal-e / mo", "baseline": "1-2", "target": "3-5", "measurement_method": "Brain pipeline view" },
+      { "metric": "Decyzja Hyper Invest go/no-go", "baseline": "ad hoc", "target": "data-driven w 8w", "measurement_method": "P-019 raport + scoring" }
+    ],
+    "team_required": ["HyperHuman: 2 founderów × 4h/tydz", "1 implementer AI System Lead"],
+    "client_commitment": ["Wywiady ~1h każdy founder", "Dostęp do Slack, Notion, LinkedIn analytics", "Decyzja o ICP w 2 tyg"],
+    "risks_and_assumptions": [
+      "ICP musi zostać sprecyzowane w pierwszych 2 tyg, inaczej P-019 i P-015 nie ruszą",
+      "Założenie: founderzy zainwestują 4h tygodniowo — bez tego pre-sales nie spadnie",
+      "Hyper Invest jako produkt poza scope; walidacja tylko sygnałowa"
+    ],
+    "next_logical_step_after": "Po 9 tyg dogfood: decyzja Hyper Invest go/no-go + zewnętrzny case study 'HyperHuman uruchomił własny brain' jako compounding marketing asset"
+  },
+  "last_continuous_refresh": "2026-05-23T10:00:00Z",
+  "ingestion_sources_active": ["transcript"],
+  "overall_confidence": "medium",
+  "data_gaps": [
+    "Brak rzeczywistych liczb deal-flow / revenue — szacunki z wywiadu",
+    "ICP nieokreślone — kluczowy gap przed odpaleniem marketingu",
+    "Nie znamy konkretnych liczb LinkedIn analytics / content performance"
+  ],
+  "followup_questions": [
+    "Jaki dokładnie ICP planujemy ścigać dla consulting-u w najbliższe 6 miesięcy?",
+    "Hyper Invest — kto byłby champion-em po stronie HyperHuman jeśli go-decision?",
+    "Czy są dostępne dane LinkedIn analytics z ostatnich 6 mc?"
+  ]
+}

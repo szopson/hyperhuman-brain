@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { loadCaseMeta } from '@/lib/storage/load-analysis';
+import { loadCaseMeta, AVAILABLE_CASES, currentCaseSlug } from '@/lib/storage/load-analysis';
+import { CaseSwitcher } from '@/components/layout/CaseSwitcher';
 import { cn } from '@/lib/utils';
 
 const TABS = [
@@ -24,6 +25,7 @@ export async function AppShell({
   children: React.ReactNode;
 }) {
   const meta = await loadCaseMeta();
+  const activeCase = await currentCaseSlug();
 
   return (
     <div className="flex min-h-dvh bg-zinc-950 text-zinc-100">
@@ -31,11 +33,20 @@ export async function AppShell({
         <div className="space-y-6">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-              HyperHuman × Stock-Hurt
+              HyperHuman × {meta.display_name}
             </p>
             <h2 className="mt-1 text-lg font-semibold text-zinc-50">
               {meta.display_name}
             </h2>
+          </div>
+
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+              Case
+            </p>
+            <div className="mt-2">
+              <CaseSwitcher cases={AVAILABLE_CASES} active={activeCase} />
+            </div>
           </div>
 
           <div>

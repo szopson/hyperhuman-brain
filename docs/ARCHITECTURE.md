@@ -1,8 +1,10 @@
 # HyperHuman Company Brain — Architecture
 
 > **v0.2 status**: na branchu `feature/stock-hurt-v0.2` dochodzą Phase A′ (daily
-> ingestion), review queue, chat-over-brain i weekly founder briefing. Sekcje
-> oznaczone *(v0.2)* opisują warstwę, która jeszcze nie weszła do `main`.
+> ingestion), review queue, chat-over-brain, weekly founder briefing, **MCP
+> server** wystawiający mózg jako tool surface dla agentów, **LLM-driven
+> ekstrakcja** daily notes i **multi-case** (HyperHuman jako case 2 — dogfood).
+> Sekcje oznaczone *(v0.2)* opisują warstwę, która jeszcze nie weszła do `main`.
 
 ## High-level system
 
@@ -133,6 +135,58 @@ digest składający: nowe pending entities, top 5 painów po score, imminent ris
 status next-step pack i 3 decyzje na tydzień. Dogfood: to **dokładnie play
 P-020** z naszej własnej plays library — używamy naszego produktu na samych
 sobie.
+
+## MCP server — brain jako infrastructure *(v0.2)*
+
+`npm run mcp` startuje stdio MCP server (`@modelcontextprotocol/sdk`) wystawiający
+mózg jako tool surface dla innych agentów (Claude Desktop, Claude Code, własne
+workflowy). To jest core "AI System Lead" move — mózg nie jest tylko dashboardem,
+jest tool-em dla agentów.
+
+Tools exposed:
+- `list_pains(case_id?, category?, min_score?)` — painy z problem_score, kategorią, count cytatów
+- `list_risks(case_id?, horizon?)` — ryzyka z severity_score
+- `get_play(case_id?, play_id)` — pełne details play match (BI/AI fit/ease/data/CAVAC)
+- `get_source_quote(case_id?, entity_id)` — **kluczowy tool anty-halucynacyjny**: dosłowne cytaty backing-ujące encję
+- `get_next_step_pack(case_id?)` — rekomendowany pakiet plays
+
+Każdy tool wymusza ten sam anty-halucynacyjny kontrakt co reszta produktu — agent
+pytający „dlaczego ten pain jest top?" musi sięgnąć po `get_source_quote` żeby
+odpowiedź miała grunt.
+
+## LLM-driven Phase A′ ekstrakcja *(v0.2)*
+
+`npm run ingest -- --case stock-hurt --llm` używa Claude Opus 4.7 z tool_use +
+Zod schema do strukturalnej ekstrakcji daily notes (zamiast regex heurystyki).
+Wejście: notatka pracownika + lista istniejących encji w mózgu. Wyjście:
+`PendingEntity[]` z entity_type, title, description, **dosłowny source_quote**
+z notatki, confidence i `related_entity_ids` dopasowane do istniejących encji.
+
+Krzysiek's notatka „system pokazuje 'produkt niedostępny' mimo że stock jest
+na hali" automatycznie wpada jako entity_type=pain z `related_entity_ids:
+['pain-tools-fragmentation', 'proc-allegro-listing']` — bez ręcznej klasyfikacji.
+
+## Multi-case · HyperHuman jako case 2 *(v0.2)*
+
+`data/cases/hyperhuman/` to drugi pełny case zbudowany z mini-rozmowy z
+HyperHuman o ich własnych painach (distribution gap, brak marketing skills,
+product cannibalization, brak własnego brain-a). Cookie-based case switcher w
+AppShell pozwala przełączać kontekst całego UI bez touchowania URL.
+
+Cel: pokazać że produkt jest reproducible między case-ami **i** że HyperHuman
+samo siedzi w tej samej pułapce, którą leczy klientom. Powstaje dogfood pack:
+P-001 (brain wewnętrzny) → P-020 (founder briefing) → P-019 (market intel) →
+P-015 (content distribution).
+
+## Live brain indicator *(v0.2)*
+
+Snapshot dostał ticker `LiveBrainTicker` pokazujący w czasie rzeczywistym:
+- ostatnie scoring refresh
+- ostatni daily ingest (z czasem względnym: "12h temu")
+- pending queue count (linka do `/review` jeśli > 0)
+- approved entities w ostatnich 7 dniach
+
+Wizualnie destrukcja narracji „one-shot raport" — mózg ma żyć.
 
 ## Data flow per case
 

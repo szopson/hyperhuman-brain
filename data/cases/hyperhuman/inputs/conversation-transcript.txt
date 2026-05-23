@@ -1,0 +1,49 @@
+[Konsultant zewnętrzny — Jakub Baranowski; Founderzy HyperHuman]
+
+Konsultant: To powiedzcie mi jak teraz jest. Najmocniejszy punkt i najbardziej dziurawy.
+
+Founder Igor: Najmocniejszy to know-how. Stack technologiczny do wdrożeń AI — naprawdę głęboka kompetencja. CAVAC pattern, plays library, dyscyplina anty-halucynacyjna, to nie jest "wpisz prompt do ChataGPT". Klienci którzy zrozumieją co dostają, kupują od ręki.
+
+Founder Igor: Najdziurawsze — dotarcie do klienta. Po prostu nie wiemy jak to zrobić bez pożyczania uwagi. Nie ma kompetencji marketingowych w środku zespołu, a wszystko co próbowaliśmy do tej pory ma low repeatability.
+
+Konsultant: Czyli zlecenia przychodzą ale skąd?
+
+Founder Igor: Z referencji głównie, z konferencji, z LinkedIn-a od osób które już mnie kojarzą. To jest sieć, nie kanał. Nie potrafię tego skalować.
+
+Founder Konrad: I to jest dokładnie ten pain founderowy — robisz dobre rzeczy, ale jak nie masz dystrybucji to one umierają w szufladzie. Mamy 21 plays, prawie wszystkie udowodnione na klientach, a stoisz przed dwudziestą rozmową w której znowu tłumaczysz od zera czym jest brain.
+
+Konsultant: A co z produktyzacją? Słyszałem o Hyper Invest.
+
+Founder Igor: Mam pomysłów na produkty mnóstwo. Hyper Invest — AI asystent inwestycyjny do publicznych rynków, łączy z naszą filozofią "upgrade'u człowieka". Mam też kontakt rodzinny do producenta suplementów / kosmetyków — myślę żeby na tym walczyć z dropshipperami przez własną markę. I to jest właśnie problem — pomysłów dwadzieścia, walidacji zero, ICP nieokreślone w żadnym.
+
+Konsultant: Czyli ten sam pain co u Stock-Hurt — utrata pełnego obrazu, tylko inaczej zlokalizowana. Tam founder traci obraz firmy. Tu traci obraz w którym produkcie warto się dziś budować.
+
+Founder Konrad: Tak. I dochodzi kanibalizacja — jak zaczniemy ścigać Hyper Invest, to kto będzie wdrażał klientów konsultingowych? Mamy core business który nas żywi i mamy dwadzieścia pomysłów, które są niewalidowane.
+
+Konsultant: Jak rozmawiacie z klientem, co najczęściej zatrzymuje deal?
+
+Founder Igor: Klient pyta "co dokładnie dostanę za te pieniądze" i nie umiem tego pokazać w dwóch slidach. Każdy deal to dwa tygodnie pre-sales w którym tłumaczę architekturę. To jest niefair time-wise dla obu stron.
+
+Konsultant: Marketing?
+
+Founder Igor: Próbowaliśmy LinkedIn content, próbowaliśmy webinarów. Treści wychodziły ok, ale konwersja na deal-e — niska. Nie wiem czy ICP źle dobrane, czy hook słaby, czy follow-up niezrobiony. Bez pomiarów nie wiem co rozjebać.
+
+Founder Konrad: I to się łączy z poprzednim — bez "compounding asset" w marketingu (case studies, treść, demo-y), każde sales jest od nowa. Robimy dobre rzeczy ale nie kapitalizujemy ich.
+
+Konsultant: A wewnętrznie — jak działacie?
+
+Founder Igor: Slack + Notion + Google Drive. Zero CRM. Pipeline w głowie. Lead-y też w głowie albo w mailu.
+
+Founder Konrad: Co śmieszne — robimy mózgi firm dla klientów, a sami mózgu nie mamy.
+
+Founder Igor: Tak — to dosłownie ten sam case. Dlatego ten projekt z Jakubem mnie ciekawi. Chcę zobaczyć czy potrafi narysować to dla nas.
+
+Konsultant: Co byłoby dla was sukcesem za pół roku?
+
+Founder Igor: Stabilny inbound — 3-5 deal-i na miesiąc bez pożyczania uwagi od founderów. Walidowany jeden produkt obok consulting-u. I pełny obraz pipeline-u — który deal gdzie jest, co zatrzymuje, ile to warte.
+
+Konsultant: Krótko-term — co cię najbardziej blokuje teraz?
+
+Founder Igor: Brak ICP. Każdy klient inny — fashion, fintech, marketplace, food. Nie umiem powiedzieć handlowcom "szukamy X" bo każdego dnia jest inna definicja X.
+
+Founder Konrad: I brak "compounding marketing" — robimy content ale nie ma flywheel.

@@ -1,16 +1,32 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { cache } from 'react';
+import { cookies } from 'next/headers';
 import { CompanyAnalysisSchema, type CompanyAnalysis } from '@/lib/schemas';
-
-const ANALYSIS_PATH = path.join(
-  process.cwd(),
-  'data/cases/stock-hurt/outputs/analysis-full.json',
-);
 
 const STALE_THRESHOLD_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
+export const AVAILABLE_CASES = [
+  { slug: 'stock-hurt', label: 'Stock-Hurt', subtitle: 'B2B off-price fashion · 7M EUR' },
+  { slug: 'hyperhuman', label: 'HyperHuman (self)', subtitle: 'AI consulting · dogfood' },
+] as const;
+
+export const DEFAULT_CASE = 'stock-hurt';
+
+export async function currentCaseSlug(): Promise<string> {
+  const store = await cookies();
+  const value = store.get('case')?.value;
+  if (value && AVAILABLE_CASES.some((c) => c.slug === value)) return value;
+  return DEFAULT_CASE;
+}
+
+function analysisPath(caseSlug: string): string {
+  return path.join(process.cwd(), 'data/cases', caseSlug, 'outputs/analysis-full.json');
+}
+
 export const loadAnalysis = cache(async (): Promise<CompanyAnalysis> => {
+  const caseSlug = await currentCaseSlug();
+  const ANALYSIS_PATH = analysisPath(caseSlug);
   if (!fs.existsSync(ANALYSIS_PATH)) {
     throw new Error(
       `analysis-full.json not found at ${ANALYSIS_PATH}. Run \`npm run pipeline\` first.`,

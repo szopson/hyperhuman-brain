@@ -62,7 +62,15 @@ W każdym widoku liczby są **klikalne**. Klik na Problem Score 100 dla pain-fou
 - ✅ 9 widoków UI z realnymi danymi + inspect-math drawer
 - ✅ Anti-hallucination jako kod (Zod validate, source_quotes required, deterministic scoring)
 
-## Co weszło w v0.2 (branch `feature/stock-hurt-v0.2`) — odpowiedź na feedback HyperHuman
+## Co weszło w v0.2 (branch `feature/stock-hurt-v0.2`) — odpowiedź na feedback HyperHuman + przewaga konkurencyjna
+
+**Drugi sprint v0.2** dorzucił 4 rzeczy które celują w "AI System Lead" mindset:
+- **MCP server** — mózg jako tool surface dla innych agentów, nie tylko dashboard. `npm run mcp` startuje stdio server z 5 toolami (list_pains, list_risks, get_play, get_source_quote, get_next_step_pack).
+- **LLM-driven Phase A′** — `npm run ingest -- --llm` używa Claude Opus 4.7 + tool_use + Zod schema do strukturyzowanej ekstrakcji daily notes. Każda obserwacja dostaje verbatim source_quote i auto-match do istniejących encji.
+- **HyperHuman jako case 2** — pełny dogfood case w `data/cases/hyperhuman/`. Cookie-based case switcher w AppShell. Pokazuje że produkt jest reproducible i że HyperHuman siedzi w tej samej pułapce.
+- **Live Brain Ticker** — snapshot pokazuje ostatni ingest, pending count, approved/7d — wizualnie destrukcja narracji "one-shot raport".
+
+
 
 Rozmowa z HyperHuman pokazała, że ich wizja to **„centralny mózg firmy" zasilany
 codziennie przez zespół**, nie jednorazowy raport diagnostyczny. v0.2 dokłada

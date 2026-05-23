@@ -3,6 +3,7 @@ import { loadPendingQueue } from '@/lib/storage/load-pending';
 import { Badge } from '@/components/ui/badge';
 import { ReviewActions } from '@/components/views/ReviewActions';
 import { cn } from '@/lib/utils';
+import { currentCaseSlug } from '@/lib/storage/load-analysis';
 
 export const dynamic = 'force-dynamic';
 
@@ -27,7 +28,8 @@ const ROLE_LABEL: Record<string, string> = {
 };
 
 export default async function Page() {
-  const queue = loadPendingQueue('stock-hurt');
+  const caseSlug = await currentCaseSlug();
+  const queue = loadPendingQueue(caseSlug);
   const pending = queue.entities.filter((e) => e.review.status === 'pending');
   const reviewed = queue.entities.filter((e) => e.review.status !== 'pending');
 
@@ -99,7 +101,7 @@ export default async function Page() {
                     </p>
                   )}
                   <div className="mt-3 border-t border-zinc-800 pt-3">
-                    <ReviewActions caseSlug="stock-hurt" entityId={e.id} />
+                    <ReviewActions caseSlug={caseSlug} entityId={e.id} />
                   </div>
                 </article>
               );

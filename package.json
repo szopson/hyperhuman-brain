@@ -10,10 +10,12 @@
     "pipeline": "tsx scripts/test-full-pipeline.ts",
     "screenshots": "tsx scripts/screenshot-views.ts",
     "ingest": "tsx scripts/ingest-daily.ts",
-    "briefing": "tsx scripts/generate-briefing.ts"
+    "briefing": "tsx scripts/generate-briefing.ts",
+    "mcp": "tsx scripts/mcp-server.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.97.1",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.2.1",

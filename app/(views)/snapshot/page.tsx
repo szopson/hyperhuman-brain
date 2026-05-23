@@ -2,6 +2,9 @@ import { AppShell } from '@/components/layout/AppShell';
 import { loadAnalysis } from '@/lib/storage/load-analysis';
 import { Badge } from '@/components/ui/badge';
 import { InspectTrigger } from '@/components/shared/InspectDrawer';
+import { LiveBrainTicker } from '@/components/views/LiveBrainTicker';
+
+export const dynamic = 'force-dynamic';
 
 function fmtMoney(value: number, currency: string): string {
   if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M ${currency}`;
@@ -33,6 +36,9 @@ export default async function Page() {
             {a.company.name}
           </h1>
           <p className="mt-2 max-w-2xl text-zinc-400">{a.company.business_model}</p>
+          <div className="mt-4">
+            <LiveBrainTicker lastRefreshIso={a.last_continuous_refresh} />
+          </div>
         </header>
 
         {/* HERO DIAGNOZA */}
