@@ -62,12 +62,41 @@ W każdym widoku liczby są **klikalne**. Klik na Problem Score 100 dla pain-fou
 - ✅ 9 widoków UI z realnymi danymi + inspect-math drawer
 - ✅ Anti-hallucination jako kod (Zod validate, source_quotes required, deterministic scoring)
 
-## Co dalej (v0.2 — flagged in code as `TODO v0.2`)
+## Co weszło w v0.2 (branch `feature/stock-hurt-v0.2`) — odpowiedź na feedback HyperHuman
+
+Rozmowa z HyperHuman pokazała, że ich wizja to **„centralny mózg firmy" zasilany
+codziennie przez zespół**, nie jednorazowy raport diagnostyczny. v0.2 dokłada
+architekturę tej warstwy:
+
+- **Phase A′ — daily ingestion**: `data/cases/{slug}/inputs/daily/{date}/{author}.md`
+  z frontmatter (author_id, role, source_type, related_entities). `npm run ingest`
+  parsuje, klasyfikuje entity_type i zapisuje do `pending-queue.json` z
+  `review.status='pending'`.
+- **Review queue (`/review`)**: human-in-the-loop bramka. Manager / dev klika
+  approve → encja wchodzi do mózgu; reject → archiwum. Pending entities NIE są
+  liczone w scoring i nie pojawiają się w dashboardach.
+- **Chat over brain (`/chat`)**: drugi tryb obok dashboardów, dla mniej
+  technicznych pracowników klienta. Server-side składa compact RAG context z
+  approved entities i forsuje 3 zasady: inline citations [chunk-id], dosłowne
+  cytaty, „nie mam tej informacji" gdy kontekst nie pokrywa pytania. Ten sam
+  anty-halucynacyjny kontrakt co inspect drawer, w formacie czatu.
+- **Weekly Founder Briefing (`npm run briefing`)**: dogfood play P-020 z naszej
+  własnej library — markdown digest z nowymi sygnałami, top painami, imminent
+  risks, statusem next-step pack i 3 decyzjami na tydzień.
+- **Schemas**: `SourceQuote` dostała `source_role`, `source_type`, `author_id`,
+  `ingested_at` (defaultowane, więc istniejące `analysis-full.json` dalej
+  waliduje). `Pain`/`Risk`/`Process` mają `review: ReviewMetadata`. Nowy
+  `PendingEntitySchema` + `PendingQueueSchema`.
+
+## Co dalej (v0.3+)
 
 - **`PainSchema.category` enum bump** — dodać `competitive_risk`, regenerować Phase A
 - **Bi=10.0 saturation** — top plays mają identyczny business_impact bo composite painów /10 saturuje przy burning+critical paina. Znormalizować przez log scale lub percentile ranking
 - **Tied 100/100 top pains** — clamp ceiling. Tie-breaker przez source-quote count lub depth-of-evidence
 - **Phase B Enrichment Pass** — wzbogacenie encji o szczegółowe pola post-ekstrakcji, zamiast inline w Phase A (master prompt verbatim)
-- **Continuous ingestion** — WhatsApp/Email/Allegro feeds → Phase A automatic refresh → dashboard pokazuje rzeczywiście „2 min ago"
+- **LLM-driven Phase A′ ekstrakcja** — obecnie ingestion klasyfikuje entity_type heurystyką po keywords. Następny krok: prompt Phase A na pojedynczym daily input + merge z istniejącym schematem
+- **Source role weighting w scoring** — `source_role: 'employee'` powinno mieć inną wagę niż `'founder'` w problem-score (np. employee-reported pain = walidacja, founder-reported = burning emocja)
+- **Auth + multi-tenant** — UI hardcoduje `stock-hurt`. Dodać case switcher + per-case dostęp
+- **Real-time connectors** — WhatsApp/Email/Allegro feeds → daily ingestion automatic (zamiast manualnego dropowania plików .md)
+- **Audio in/out** — Whisper dla voice notes na wejściu, TTS dla briefingu na wyjściu (HH explicite preferowało voice format)
 - **5 pozostałych widoków polish** — pełna Kanban dla actions z drag-and-drop, dependency graph dla processes, P&I matrix interactive dla risks
-- **Multi-case repo layout** — `data/cases/{client_slug}/` już skalowalne, ale UI hardcoduje `stock-hurt`. Dodać case switcher.

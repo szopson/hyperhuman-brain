@@ -8,7 +8,9 @@
     "start": "next start",
     "extract": "tsx scripts/test-extract.ts",
     "pipeline": "tsx scripts/test-full-pipeline.ts",
-    "screenshots": "tsx scripts/screenshot-views.ts"
+    "screenshots": "tsx scripts/screenshot-views.ts",
+    "ingest": "tsx scripts/ingest-daily.ts",
+    "briefing": "tsx scripts/generate-briefing.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.97.1",

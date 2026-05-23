@@ -8,8 +8,65 @@ export const SourceQuoteSchema = z.object({
   speaker: z.string().nullable().describe('Kto powiedział, jeśli transcript'),
   timestamp: z.string().nullable().describe('Pozycja w transcript jeśli dostępne'),
   confidence: z.enum(['high', 'medium', 'low']).describe('Pewność ekstrakcji'),
+  // v0.2 additions — default so old data still validates
+  source_role: z.enum(['founder', 'employee', 'consultant', 'external', 'unknown']).default('unknown')
+    .describe('Rola autora źródła — wpływa na trust w scoring v0.3'),
+  source_type: z.enum([
+    'founder_call',
+    'employee_voice_note',
+    'employee_form',
+    'document',
+    'chat_dump',
+    'gdrive_doc',
+    'transcript',
+    'overlay',
+    'unknown',
+  ]).default('unknown'),
+  author_id: z.string().nullable().default(null)
+    .describe('ID osoby, która wprowadziła dane (employee/founder)'),
+  ingested_at: z.string().nullable().default(null)
+    .describe('ISO timestamp ingestion — null dla bootstrap, set dla daily updates'),
 });
 export type SourceQuote = z.infer<typeof SourceQuoteSchema>;
+
+// ============= V0.2: REVIEW STATUS =============
+
+export const ReviewStatusSchema = z.enum(['approved', 'pending', 'rejected']).default('approved');
+export type ReviewStatus = z.infer<typeof ReviewStatusSchema>;
+
+export const ReviewMetadataSchema = z.object({
+  status: ReviewStatusSchema,
+  reviewed_by: z.string().nullable().default(null),
+  reviewed_at: z.string().nullable().default(null),
+  review_comment: z.string().nullable().default(null),
+}).default({ status: 'approved', reviewed_by: null, reviewed_at: null, review_comment: null });
+export type ReviewMetadata = z.infer<typeof ReviewMetadataSchema>;
+
+// ============= V0.2: PENDING ENTITY =============
+// Pending entities from daily ingestion live separately until approved by manager/dev.
+// On approval they get merged into analysis-full.json proper.
+
+export const PendingEntitySchema = z.object({
+  id: z.string(),
+  entity_type: z.enum(['pain', 'risk', 'process_update', 'metric', 'observation']),
+  payload: z.unknown().describe('Raw extracted entity — shape depends on entity_type'),
+  raw_input: z.string().describe('Original employee text / transcript chunk'),
+  author_id: z.string().describe('Employee or founder id'),
+  author_role: z.enum(['founder', 'employee', 'consultant']),
+  ingested_at: z.string(),
+  source_type: z.enum(['employee_voice_note', 'employee_form', 'chat_dump', 'gdrive_doc']),
+  review: ReviewMetadataSchema,
+  related_entity_ids: z.array(z.string()).default([])
+    .describe('Existing pain/process/risk IDs this update refers to'),
+});
+export type PendingEntity = z.infer<typeof PendingEntitySchema>;
+
+export const PendingQueueSchema = z.object({
+  case_id: z.string(),
+  generated_at: z.string(),
+  entities: z.array(PendingEntitySchema),
+});
+export type PendingQueue = z.infer<typeof PendingQueueSchema>;
 
 export const MoneyAmountSchema = z.object({
   value: z.number(),
@@ -89,6 +146,7 @@ export const ProcessSchema = z.object({
   enables: z.array(z.string()).describe('IDs procesów odblokowywanych'),
 
   source_quotes: z.array(SourceQuoteSchema),
+  review: ReviewMetadataSchema,
 });
 export type Process = z.infer<typeof ProcessSchema>;
 
@@ -124,6 +182,7 @@ export const PainSchema = z.object({
     .describe("Cytat typu 'najbardziej mnie wkurza', 'nie mogę spać przez to'"),
 
   source_quotes: z.array(SourceQuoteSchema),
+  review: ReviewMetadataSchema,
 });
 export type Pain = z.infer<typeof PainSchema>;
 
@@ -176,6 +235,7 @@ export const RiskSchema = z.object({
   mitigation_status: z.enum(['none', 'planned', 'in_progress', 'partial']),
 
   source_quotes: z.array(SourceQuoteSchema),
+  review: ReviewMetadataSchema,
 });
 export type Risk = z.infer<typeof RiskSchema>;
 

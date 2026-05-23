@@ -1,5 +1,9 @@
 # HyperHuman Company Brain — Architecture
 
+> **v0.2 status**: na branchu `feature/stock-hurt-v0.2` dochodzą Phase A′ (daily
+> ingestion), review queue, chat-over-brain i weekly founder briefing. Sekcje
+> oznaczone *(v0.2)* opisują warstwę, która jeszcze nie weszła do `main`.
+
 ## High-level system
 
 ```mermaid
@@ -60,6 +64,75 @@ flowchart LR
     V3 -.-> D
     V6 -.-> D
 ```
+
+## Phase A′ — Daily Ingestion *(v0.2)*
+
+Wizja HyperHuman: pracownicy codziennie zostawiają krótką notatkę / głosówkę,
+mózg się aktualizuje, manager dostaje pigułkę raportową. Bootstrap z foundera
+(Phase A) zostaje fundamentem, daily updates idą przez bramkę review:
+
+```mermaid
+flowchart LR
+    subgraph Employees["Zespół (klient)"]
+        E1[Pracownik form/voice]
+        E2[Founder voice note]
+    end
+
+    subgraph Daily["data/cases/{slug}/inputs/daily/{date}/{author}.md"]
+        D[markdown z frontmatter:<br/>author_id, role, source_type,<br/>related_entities]
+    end
+
+    subgraph Ingest["npm run ingest"]
+        IG[ingest-daily.ts<br/>parse frontmatter +<br/>classify entity_type]
+    end
+
+    subgraph Queue["data/cases/{slug}/outputs/pending-queue.json"]
+        PE[PendingEntity[]<br/>review.status = 'pending']
+    end
+
+    subgraph Review["UI · /review"]
+        UI[Manager / dev przegląda<br/>approve → mózg<br/>reject → out]
+    end
+
+    subgraph Brain["analysis-full.json<br/>(approved entities only)"]
+        AF[Phase B re-score<br/>dashboardy + chat]
+    end
+
+    E1 --> D
+    E2 --> D
+    D --> IG
+    IG --> PE
+    PE --> UI
+    UI -->|approved| AF
+    UI -->|rejected| X[archive]
+```
+
+Kontrakt: encje w statusie `pending` **nie istnieją** dla scoring i dashboardów.
+Dopiero gdy `review.status === 'approved'` wchodzą do `analysis-full.json` przy
+następnym `npm run pipeline`. Dzięki temu LLM-hallucynacja albo plotka nie
+zdeformuje &bdquo;centralnego mózgu&rdquo;.
+
+## Chat over brain *(v0.2)*
+
+`/chat` to drugi tryb (obok dashboardów) dla mniej technicznych użytkowników z
+zespołu klienta. Server-side łączy `analysis-full.json` w **compact RAG context**
+(pains + risks + processes + top plays + ich source_quotes), wstrzykuje to do
+system prompta Claude Opus 4.7 z trzema twardymi zasadami:
+
+1. każde twierdzenie z dosłownym cytatem z kontekstu,
+2. inline reference do chunk ID (`[pain-founder-detachment]`),
+3. eksplicytne &bdquo;nie mam tej informacji w mózgu firmy&rdquo; gdy kontekst nie pokrywa pytania.
+
+Ten sam anty-halucynacyjny kontrakt co inspect drawer — tylko że w naturalnym
+formacie czatu.
+
+## Weekly Founder Briefing *(v0.2)*
+
+`npm run briefing -- --case stock-hurt --since 2026-05-16` produkuje markdown
+digest składający: nowe pending entities, top 5 painów po score, imminent risks,
+status next-step pack i 3 decyzje na tydzień. Dogfood: to **dokładnie play
+P-020** z naszej własnej plays library — używamy naszego produktu na samych
+sobie.
 
 ## Data flow per case
 
@@ -134,11 +207,12 @@ Każda liczba w UI jest **klikalna** — pokazuje formula + raw components + raw
 
 ```
 lib/
-  schemas/         — Zod (CompanyAnalysisSchema, AIPlaySchema, ...) · single source of truth
+  schemas/         — Zod (CompanyAnalysisSchema, AIPlaySchema, PendingEntity, ReviewMetadata, ...) · single source of truth
   extraction/      — Phase A (LLM tool_use + Zod validate)
   scoring/         — deterministic TS · problem/leakage/risk/opportunity
   plays/           — 21 plays library + matching + selection
-  storage/         — server-side analysis loader (React cache)
+  storage/         — server-side analysis loader (React cache) + load-pending
+  chat/            — v0.2: RAG context builder dla /chat
 app/
   page.tsx         — redirect → /snapshot
   layout.tsx       — root (dark mode)
@@ -152,6 +226,8 @@ app/
     competitive/   — 5-dim positioning
     actions/       — Kanban preview (P-021 placeholder)
     next-step/     — Pack hero + Layer 2 sneak peek
+    review/        — v0.2: kolejka pending entities z daily ingestion (approve/reject)
+    chat/          — v0.2: czat nad mózgiem firmy, każda odpowiedź z inline citations
 components/
   layout/AppShell.tsx
   shared/InspectDrawer.tsx · ScoreBar.tsx · ComingSoonStub.tsx
@@ -160,11 +236,16 @@ scripts/
   test-extract.ts        — npm run extract
   test-full-pipeline.ts  — npm run pipeline
   screenshot-views.ts    — npm run screenshots
+  ingest-daily.ts        — v0.2: npm run ingest (Phase A′)
+  generate-briefing.ts   — v0.2: npm run briefing (weekly digest)
 data/cases/stock-hurt/
   inputs/conversation-transcript.txt
   inputs/strategic-briefing-overlay.json
+  inputs/daily/                       — v0.2: {YYYY-MM-DD}/{author}.md frontmatter + body
   outputs/analysis-raw.json
   outputs/analysis-full.json
+  outputs/pending-queue.json          — v0.2: PendingEntity[] z statusem review
+  outputs/briefings/                  — v0.2: markdown briefings z weekly digest
   debug/screenshots/*.png
   debug/founder-identification.md
 ```

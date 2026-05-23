@@ -38,6 +38,11 @@ yarn-error.log*
 # case outputs (keep folder structure via .gitkeep)
 data/cases/*/outputs/*
 !data/cases/*/outputs/.gitkeep
+!data/cases/*/outputs/analysis-full.json
+!data/cases/*/outputs/analysis-raw.json
+!data/cases/*/outputs/pending-queue.json
+!data/cases/*/outputs/briefings
+!data/cases/*/outputs/briefings/*
 
 # vercel
 .vercel

@@ -12,6 +12,8 @@ const TABS = [
   { slug: 'competitive', label: 'Pozycja na rynku' },
   { slug: 'actions', label: 'Plan działania' },
   { slug: 'next-step', label: 'Nasza propozycja' },
+  { slug: 'review', label: 'Kolejka review', v: '0.2' },
+  { slug: 'chat', label: 'Czat z mózgiem', v: '0.2' },
 ];
 
 export async function AppShell({
@@ -64,13 +66,18 @@ export async function AppShell({
                   key={t.slug}
                   href={`/${t.slug}`}
                   className={cn(
-                    'rounded-md px-3 py-1.5 text-sm font-medium transition',
+                    'inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition',
                     isActive
                       ? 'bg-zinc-800 text-zinc-50'
                       : 'text-zinc-400 hover:bg-zinc-900 hover:text-zinc-200',
                   )}
                 >
                   {t.label}
+                  {t.v && (
+                    <span className="rounded bg-emerald-900/40 px-1 font-mono text-[9px] tracking-wide text-emerald-300">
+                      v{t.v}
+                    </span>
+                  )}
                 </Link>
               );
             })}
