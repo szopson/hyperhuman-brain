@@ -8,12 +8,12 @@ const ARCHITECTURE_CHART = `
 flowchart TB
     subgraph IN["WEJŚCIE · jak wiedza wpada do mózgu"]
         direction TB
-        I1[Rozmowa foundera<br/>Whisper transkrypt]
-        I2[Notatki głosowe<br/>pracowników]
-        I3[Formularze webowe<br/>pracowników]
-        I4[Konektory<br/>Slack · Email · GDrive<br/>WhatsApp · Allegro · CRM]
-        EXT[Phase A / A'<br/>Claude Opus 4.7<br/>tool_use + Zod schema<br/>wymuszone source quotes]
-        REV[Kolejka review<br/>human-in-the-loop<br/>approve / reject]
+        I1["Rozmowa foundera<br/>Whisper transkrypt"]
+        I2["Notatki głosowe<br/>pracowników"]
+        I3["Formularze webowe<br/>pracowników"]
+        I4["Konektory<br/>Slack · Email · GDrive<br/>WhatsApp · Allegro · CRM"]
+        EXT["Phase A i A prim<br/>Claude Opus 4.7<br/>tool_use plus Zod schema<br/>wymuszone source quotes"]
+        REV["Kolejka review<br/>human-in-the-loop<br/>approve lub reject"]
         I1 --> EXT
         I2 --> EXT
         I3 --> EXT
@@ -22,10 +22,10 @@ flowchart TB
     end
 
     subgraph CORE["RDZEŃ · single source of truth"]
-        DB[(Postgres + Drizzle ORM<br/>schemat Zod = jedyne źródło typów<br/>cases · pains · risks · processes<br/>plays · pending · source_quotes<br/>audit_log · scoring_history)]
-        SCORE[Scoring engine<br/>deterministyczny TS<br/>zero LLM]
-        PLAYS[Plays library<br/>21+ plays curated<br/>CAVAC + constraint selektor]
-        API[Brain API<br/>Next.js RSC + MCP server]
+        DB[("Postgres plus Drizzle ORM<br/>schemat Zod jedyne źródło typów<br/>cases · pains · risks · processes<br/>plays · pending · source quotes<br/>audit log · scoring history")]
+        SCORE["Scoring engine<br/>deterministyczny TS<br/>zero LLM"]
+        PLAYS["Plays library<br/>21 plays curated<br/>CAVAC plus constraint selektor"]
+        API["Brain API<br/>Next.js RSC plus MCP server"]
         DB --> SCORE
         DB --> PLAYS
         SCORE --> API
@@ -33,17 +33,17 @@ flowchart TB
     end
 
     subgraph OUT["WYJŚCIE · dla kogo i jak"]
-        O1[Panel<br/>founder + konsultant<br/>9 widoków diagnostycznych]
-        O2[Czat<br/>zespół klienta<br/>inline citations]
-        O3[Briefing<br/>founder daily/weekly<br/>markdown + TTS audio]
-        O4[Serwer MCP<br/>Claude Desktop · Claude Code<br/>5+ toolów dla agentów]
-        O5[Eksporty<br/>JSON · PDF · Notion · Linear]
+        O1["Panel<br/>founder plus konsultant<br/>9 widoków diagnostycznych"]
+        O2["Czat<br/>zespół klienta<br/>inline citations"]
+        O3["Briefing<br/>founder daily lub weekly<br/>markdown plus TTS audio"]
+        O4["Serwer MCP<br/>Claude Desktop · Claude Code<br/>5 toolów dla agentów"]
+        O5["Eksporty<br/>JSON · PDF · Notion · Linear"]
     end
 
     subgraph OBS["OBSERWACJA · niezależna warstwa kontroli"]
-        OB1[/eval telemetria<br/>coverage · fidelity · velocity<br/>cost per case]
-        OB2[Audit log<br/>kto · kiedy · dlaczego]
-        OB3[History snapshots<br/>time-travel mózgu]
+        OB1["Telemetria pipeline<br/>coverage · fidelity · velocity<br/>cost per case"]
+        OB2["Audit log<br/>kto · kiedy · dlaczego"]
+        OB3["History snapshots<br/>time-travel mózgu"]
     end
 
     REV -->|tylko approved| DB
