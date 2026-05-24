@@ -39,7 +39,7 @@ function tryWriteFile(filePath: string, content: string): { ok: boolean; reason?
     return { ok: true };
   } catch (e) {
     const code = (e as NodeJS.ErrnoException).code;
-    if (code === 'EROFS' || code === 'EACCES' || code === 'EPERM') {
+    if (code === 'EROFS' || code === 'EACCES' || code === 'EPERM' || code === 'ENOENT') {
       return { ok: false, reason: 'read-only filesystem (Vercel serverless)' };
     }
     throw e;
@@ -103,7 +103,7 @@ function snapshotAnalysis(caseSlug: string, analysis: CompanyAnalysis): string {
     fs.writeFileSync(snapPath, JSON.stringify(analysis, null, 2));
   } catch (e) {
     const code = (e as NodeJS.ErrnoException).code;
-    if (code !== 'EROFS' && code !== 'EACCES' && code !== 'EPERM') throw e;
+    if (code !== 'EROFS' && code !== 'EACCES' && code !== 'EPERM' && code !== 'ENOENT') throw e;
     // Fallback: keep history in memory store
     const arr = store.histories.get(caseSlug) ?? [];
     arr.push({ iso: stamp.replace(/-(\d{2})-(\d{2})-(\d{3}Z)$/, ':$1:$2.$3'), analysis });

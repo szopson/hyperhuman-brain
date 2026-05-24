@@ -1,6 +1,7 @@
 import { AppShell } from '@/components/layout/AppShell';
 import { computeQualityReport } from '@/lib/eval/metrics';
 import { currentCaseSlug } from '@/lib/storage/load-analysis';
+import { StackInfo } from '@/components/shared/StackInfo';
 import { cn } from '@/lib/utils';
 
 export const dynamic = 'force-dynamic';
@@ -206,6 +207,8 @@ export default async function Page() {
             />
           </div>
         </section>
+
+        <StackInfo />
 
         <section className="rounded-md border border-dashed border-zinc-800 bg-zinc-900/30 p-5">
           <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">

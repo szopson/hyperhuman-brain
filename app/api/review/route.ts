@@ -11,21 +11,30 @@ const BodySchema = z.object({
 });
 
 export async function POST(req: Request) {
-  const body = await req.json();
-  const parsed = BodySchema.parse(body);
-  const queue = updateEntityStatus(
-    parsed.case_id,
-    parsed.entity_id,
-    parsed.status,
-    parsed.reviewer,
-    parsed.comment,
-  );
+  try {
+    const body = await req.json();
+    const parsed = BodySchema.parse(body);
+    const queue = updateEntityStatus(
+      parsed.case_id,
+      parsed.entity_id,
+      parsed.status,
+      parsed.reviewer,
+      parsed.comment,
+    );
 
-  let merge: { snapshot?: string; added?: { kind: string; id: string; title: string } | null; reason?: string } | null = null;
-  if (parsed.status === 'approved') {
-    const result = mergeApprovedToAnalysis(parsed.case_id, parsed.entity_id);
-    merge = { snapshot: result.snapshotPath, added: result.added, reason: result.reason };
+    let merge: { snapshot?: string; added?: { kind: string; id: string; title: string } | null; reason?: string } | null = null;
+    if (parsed.status === 'approved') {
+      const result = mergeApprovedToAnalysis(parsed.case_id, parsed.entity_id);
+      merge = { snapshot: result.snapshotPath, added: result.added, reason: result.reason };
+    }
+
+    return NextResponse.json({ ok: true, entity_count: queue.entities.length, merge });
+  } catch (e) {
+    const err = e as Error & { code?: string };
+    console.error('[api/review] error:', err.code, err.message, err.stack);
+    return NextResponse.json(
+      { error: err.message, code: err.code ?? null },
+      { status: 500 },
+    );
   }
-
-  return NextResponse.json({ ok: true, entity_count: queue.entities.length, merge });
 }

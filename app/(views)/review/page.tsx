@@ -2,6 +2,7 @@ import { AppShell } from '@/components/layout/AppShell';
 import { loadPendingQueue } from '@/lib/storage/load-pending';
 import { Badge } from '@/components/ui/badge';
 import { ReviewActions } from '@/components/views/ReviewActions';
+import { StackInfo } from '@/components/shared/StackInfo';
 import { cn } from '@/lib/utils';
 import { currentCaseSlug } from '@/lib/storage/load-analysis';
 
@@ -142,6 +143,8 @@ export default async function Page() {
             </div>
           </section>
         )}
+
+        <StackInfo />
 
         <section className="rounded-md border border-dashed border-emerald-900/50 bg-emerald-950/10 p-5">
           <p className="font-mono text-[10px] uppercase tracking-widest text-emerald-400">
