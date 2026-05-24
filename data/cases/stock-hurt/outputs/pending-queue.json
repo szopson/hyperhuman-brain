@@ -1,13 +1,16 @@
 {
   "case_id": "stock-hurt",
-  "generated_at": "2026-05-24T08:34:25.110Z",
+  "generated_at": "2026-05-24T16:43:06.864Z",
   "entities": [
     {
-      "id": "pending-2026-05-22-krzysiek-0",
-      "entity_type": "process_update",
+      "id": "pending-2026-05-22-krzysiek-llm-0",
+      "entity_type": "pain",
       "payload": {
-        "title": "Klient Decathlon Czechy dzwonił po cenniku — wysłałem ofertę na rękę, bo system pokazuje że \"produkt niedostępny\" mimo ż",
-        "description": "Klient Decathlon Czechy dzwonił po cenniku — wysłałem ofertę na rękę, bo system pokazuje że \"produkt niedostępny\" mimo że stock jest na hali. Trzeci raz w tym tygodniu. Mogę kogoś prosić żeby spojrzał na sync między WMS a Allegro? Tracę 20 min na deal, czasem deal w ogóle ucieka."
+        "title": "Desync WMS↔Allegro - produkty 'niedostępne' mimo stocku na hali",
+        "description": "Krzysiek zgłasza powtarzający się problem: system pokazuje 'produkt niedostępny' mimo że stock fizycznie jest na hali. Wymusza ręczne wysyłanie ofert. Trzeci raz w tym tygodniu - sugeruje to systematyczny problem synchronizacji między WMS a Allegro, nie incydent.",
+        "source_quote": "system pokazuje że \"produkt niedostępny\" mimo że stock jest na hali. Trzeci raz w tym tygodniu. Mogę kogoś prosić żeby spojrzał na sync między WMS a Allegro?",
+        "confidence": "high",
+        "llm_extracted": true
       },
       "raw_input": "Klient Decathlon Czechy dzwonił po cenniku — wysłałem ofertę na rękę, bo system pokazuje że \"produkt niedostępny\" mimo że stock jest na hali. Trzeci raz w tym tygodniu. Mogę kogoś prosić żeby spojrzał na sync między WMS a Allegro? Tracę 20 min na deal, czasem deal w ogóle ucieka.",
       "author_id": "krzysiek",
@@ -21,40 +24,98 @@
         "review_comment": null
       },
       "related_entity_ids": [
-        "process-b2b-quoting"
+        "pain-tools-fragmentation",
+        "proc-allegro-listing"
       ]
     },
     {
-      "id": "pending-2026-05-22-maciek-0",
-      "entity_type": "risk",
-      "payload": {
-        "title": "Allegro zaczęło wpychać nowe regulaminy do programu Smart, od czerwca koszt darmowej dostawy idzie 100% na sprzedawcę dl",
-        "description": "Allegro zaczęło wpychać nowe regulaminy do programu Smart, od czerwca koszt darmowej dostawy idzie 100% na sprzedawcę dla zamówień poniżej 80 PLN. To nie wybucha jutro, ale szacuję że ścina nam marżę detalu o 3-5 pp. Trzeba przeliczyć assumptions w leakage view."
-      },
-      "raw_input": "Allegro zaczęło wpychać nowe regulaminy do programu Smart, od czerwca koszt darmowej dostawy idzie 100% na sprzedawcę dla zamówień poniżej 80 PLN. To nie wybucha jutro, ale szacuję że ścina nam marżę detalu o 3-5 pp. Trzeba przeliczyć assumptions w leakage view.",
-      "author_id": "maciek",
-      "author_role": "founder",
-      "ingested_at": "2026-05-22T17:40:00+02:00",
-      "source_type": "employee_voice_note",
-      "review": {
-        "status": "pending",
-        "reviewed_by": null,
-        "reviewed_at": null,
-        "review_comment": null
-      },
-      "related_entity_ids": [
-        "pain-founder-detachment",
-        "process-allegro-listing"
-      ]
-    },
-    {
-      "id": "pending-2026-05-22-maciek-1",
+      "id": "pending-2026-05-22-krzysiek-llm-1",
       "entity_type": "pain",
       "payload": {
-        "title": "Handlowiec Krzysiek mówi że co najmniej dwa razy w tygodniu wraca z klientem do oferty którą rok temu robił Paweł, a on ",
-        "description": "Handlowiec Krzysiek mówi że co najmniej dwa razy w tygodniu wraca z klientem do oferty którą rok temu robił Paweł, a on tego nie ma w żadnym CRM-ie. To dokładnie ten pain o utracie kontekstu — ale teraz mam też konkretny case że to kosztuje deal-e B2B, nie tylko frustruje founderów."
+        "title": "Ręczne wysyłanie ofert obchodzi systemowy problem dostępności",
+        "description": "Handlowiec musi wysyłać ofertę 'na rękę' obchodząc system - to workaround, który kosztuje czas i ryzyko utraty deala. Konkretny przypadek: Decathlon Czechy zadzwonił po cennik.",
+        "source_quote": "Klient Decathlon Czechy dzwonił po cennik — wysłałem ofertę na rękę, bo system pokazuje że \"produkt niedostępny\"",
+        "confidence": "high",
+        "llm_extracted": true
       },
-      "raw_input": "Handlowiec Krzysiek mówi że co najmniej dwa razy w tygodniu wraca z klientem do oferty którą rok temu robił Paweł, a on tego nie ma w żadnym CRM-ie. To dokładnie ten pain o utracie kontekstu — ale teraz mam też konkretny case że to kosztuje deal-e B2B, nie tylko frustruje founderów.",
+      "raw_input": "Klient Decathlon Czechy dzwonił po cenniku — wysłałem ofertę na rękę, bo system pokazuje że \"produkt niedostępny\" mimo że stock jest na hali. Trzeci raz w tym tygodniu. Mogę kogoś prosić żeby spojrzał na sync między WMS a Allegro? Tracę 20 min na deal, czasem deal w ogóle ucieka.",
+      "author_id": "krzysiek",
+      "author_role": "employee",
+      "ingested_at": "2026-05-22T18:10:00+02:00",
+      "source_type": "employee_form",
+      "review": {
+        "status": "pending",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_comment": null
+      },
+      "related_entity_ids": [
+        "pain-handlowcy-czas",
+        "proc-product-presentation"
+      ]
+    },
+    {
+      "id": "pending-2026-05-22-krzysiek-llm-2",
+      "entity_type": "metric",
+      "payload": {
+        "title": "20 min straconego czasu handlowca na jeden deal przez desync",
+        "description": "Krzysiek kwantyfikuje koszt problemu sync: 20 minut na pojedynczy deal idzie na obejście błędu systemu. Dodatkowo część dealów ucieka całkowicie - czyli realny koszt to czas + utracony przychód.",
+        "source_quote": "Tracę 20 min na deal, czasem deal w ogóle ucieka.",
+        "confidence": "high",
+        "llm_extracted": true
+      },
+      "raw_input": "Klient Decathlon Czechy dzwonił po cenniku — wysłałem ofertę na rękę, bo system pokazuje że \"produkt niedostępny\" mimo że stock jest na hali. Trzeci raz w tym tygodniu. Mogę kogoś prosić żeby spojrzał na sync między WMS a Allegro? Tracę 20 min na deal, czasem deal w ogóle ucieka.",
+      "author_id": "krzysiek",
+      "author_role": "employee",
+      "ingested_at": "2026-05-22T18:10:00+02:00",
+      "source_type": "employee_form",
+      "review": {
+        "status": "pending",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_comment": null
+      },
+      "related_entity_ids": [
+        "pain-handlowcy-czas",
+        "pain-lost-leads"
+      ]
+    },
+    {
+      "id": "pending-2026-05-22-krzysiek-llm-3",
+      "entity_type": "observation",
+      "payload": {
+        "title": "Decathlon Czechy jako aktywny lead B2B hurtowy",
+        "description": "Decathlon Czechy zadzwonił sam po cennik - inbound lead od dużej marki. Warto odnotować jako sygnał aktywności w segmencie B2B zagraniczny.",
+        "source_quote": "Klient Decathlon Czechy dzwonił po cennik",
+        "confidence": "high",
+        "llm_extracted": true
+      },
+      "raw_input": "Klient Decathlon Czechy dzwonił po cenniku — wysłałem ofertę na rękę, bo system pokazuje że \"produkt niedostępny\" mimo że stock jest na hali. Trzeci raz w tym tygodniu. Mogę kogoś prosić żeby spojrzał na sync między WMS a Allegro? Tracę 20 min na deal, czasem deal w ogóle ucieka.",
+      "author_id": "krzysiek",
+      "author_role": "employee",
+      "ingested_at": "2026-05-22T18:10:00+02:00",
+      "source_type": "employee_form",
+      "review": {
+        "status": "pending",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_comment": null
+      },
+      "related_entity_ids": [
+        "metric-revenue-hurt"
+      ]
+    },
+    {
+      "id": "pending-2026-05-22-maciek-llm-0",
+      "entity_type": "risk",
+      "payload": {
+        "title": "Allegro Smart - nowy regulamin zwiększa koszt darmowej dostawy",
+        "description": "Od czerwca Allegro przerzuca 100% kosztu darmowej dostawy w programie Smart na sprzedawcę dla zamówień poniżej 80 PLN. Maciek szacuje wpływ na marżę detalu o 3-5 punktów procentowych. Wzmacnia ryzyko zależności od Allegro - platforma jednostronnie zmienia warunki.",
+        "source_quote": "Allegro zaczęło wpychać nowe regulaminy do programu Smart, od czerwca koszt darmowej dostawy idzie 100% na sprzedawcę dla zamówień poniżej 80 PLN.",
+        "confidence": "high",
+        "llm_extracted": true
+      },
+      "raw_input": "Krótka aktualizacja z piątku. Dwie rzeczy:\n\n1. Allegro zaczęło wpychać nowe regulaminy do programu Smart, od czerwca koszt darmowej dostawy idzie 100% na sprzedawcę dla zamówień poniżej 80 PLN. To nie wybucha jutro, ale szacuję że ścina nam marżę detalu o 3-5 pp. Trzeba przeliczyć assumptions w leakage view.\n\n2. Handlowiec Krzysiek mówi że co najmniej dwa razy w tygodniu wraca z klientem do oferty którą rok temu robił Paweł, a on tego nie ma w żadnym CRM-ie. To dokładnie ten pain o utracie kontekstu — ale teraz mam też konkretny case że to kosztuje deal-e B2B, nie tylko frustruje founderów.",
       "author_id": "maciek",
       "author_role": "founder",
       "ingested_at": "2026-05-22T17:40:00+02:00",
@@ -66,8 +127,85 @@
         "review_comment": null
       },
       "related_entity_ids": [
-        "pain-founder-detachment",
-        "process-allegro-listing"
+        "risk-allegro-dependency"
+      ]
+    },
+    {
+      "id": "pending-2026-05-22-maciek-llm-1",
+      "entity_type": "metric",
+      "payload": {
+        "title": "Szacowany spadek marży detalu Allegro: 3-5 pp",
+        "description": "Maciek szacuje, że nowe zasady Smart zetną marżę detalu o 3-5 punktów procentowych. To assumption do przeliczenia w leakage view - jeszcze nie zmaterializowane, ale konkretna estymata foundera.",
+        "source_quote": "szacuję że ścina nam marżę detalu o 3-5 pp. Trzeba przeliczyć assumptions w leakage view.",
+        "confidence": "medium",
+        "llm_extracted": true
+      },
+      "raw_input": "Krótka aktualizacja z piątku. Dwie rzeczy:\n\n1. Allegro zaczęło wpychać nowe regulaminy do programu Smart, od czerwca koszt darmowej dostawy idzie 100% na sprzedawcę dla zamówień poniżej 80 PLN. To nie wybucha jutro, ale szacuję że ścina nam marżę detalu o 3-5 pp. Trzeba przeliczyć assumptions w leakage view.\n\n2. Handlowiec Krzysiek mówi że co najmniej dwa razy w tygodniu wraca z klientem do oferty którą rok temu robił Paweł, a on tego nie ma w żadnym CRM-ie. To dokładnie ten pain o utracie kontekstu — ale teraz mam też konkretny case że to kosztuje deal-e B2B, nie tylko frustruje founderów.",
+      "author_id": "maciek",
+      "author_role": "founder",
+      "ingested_at": "2026-05-22T17:40:00+02:00",
+      "source_type": "employee_voice_note",
+      "review": {
+        "status": "pending",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_comment": null
+      },
+      "related_entity_ids": [
+        "risk-allegro-dependency",
+        "metric-allegro-sales"
+      ]
+    },
+    {
+      "id": "pending-2026-05-22-maciek-llm-2",
+      "entity_type": "pain",
+      "payload": {
+        "title": "Utrata kontekstu klienta kosztuje konkretne deal-e B2B (case Krzysiek/Paweł)",
+        "description": "Handlowiec Krzysiek co najmniej 2x w tygodniu wraca do klienta z ofertą którą rok temu robił Paweł, ale nie ma tego w żadnym CRM-ie. Konkretny case pokazujący że brak centralizacji wiedzy o kliencie nie tylko frustruje, ale kosztuje deal-e B2B.",
+        "source_quote": "Handlowiec Krzysiek mówi że co najmniej dwa razy w tygodniu wraca z klientem do oferty którą rok temu robił Paweł, a on tego nie ma w żadnym CRM-ie.",
+        "confidence": "high",
+        "llm_extracted": true
+      },
+      "raw_input": "Krótka aktualizacja z piątku. Dwie rzeczy:\n\n1. Allegro zaczęło wpychać nowe regulaminy do programu Smart, od czerwca koszt darmowej dostawy idzie 100% na sprzedawcę dla zamówień poniżej 80 PLN. To nie wybucha jutro, ale szacuję że ścina nam marżę detalu o 3-5 pp. Trzeba przeliczyć assumptions w leakage view.\n\n2. Handlowiec Krzysiek mówi że co najmniej dwa razy w tygodniu wraca z klientem do oferty którą rok temu robił Paweł, a on tego nie ma w żadnym CRM-ie. To dokładnie ten pain o utracie kontekstu — ale teraz mam też konkretny case że to kosztuje deal-e B2B, nie tylko frustruje founderów.",
+      "author_id": "maciek",
+      "author_role": "founder",
+      "ingested_at": "2026-05-22T17:40:00+02:00",
+      "source_type": "employee_voice_note",
+      "review": {
+        "status": "pending",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_comment": null
+      },
+      "related_entity_ids": [
+        "pain-lost-context-wa",
+        "proc-customer-knowledge"
+      ]
+    },
+    {
+      "id": "pending-2026-05-22-maciek-llm-3",
+      "entity_type": "observation",
+      "payload": {
+        "title": "Pain utraty kontekstu eskaluje z frustracji do utraty deal-i",
+        "description": "Maciek explicite re-framuje pain o utracie kontekstu klienta - to już nie tylko frustracja founderów, ale udokumentowany koszt biznesowy w postaci traconych deal-i B2B. Sygnał do podniesienia priorytetu tego pain.",
+        "source_quote": "teraz mam też konkretny case że to kosztuje deal-e B2B, nie tylko frustruje founderów.",
+        "confidence": "high",
+        "llm_extracted": true
+      },
+      "raw_input": "Krótka aktualizacja z piątku. Dwie rzeczy:\n\n1. Allegro zaczęło wpychać nowe regulaminy do programu Smart, od czerwca koszt darmowej dostawy idzie 100% na sprzedawcę dla zamówień poniżej 80 PLN. To nie wybucha jutro, ale szacuję że ścina nam marżę detalu o 3-5 pp. Trzeba przeliczyć assumptions w leakage view.\n\n2. Handlowiec Krzysiek mówi że co najmniej dwa razy w tygodniu wraca z klientem do oferty którą rok temu robił Paweł, a on tego nie ma w żadnym CRM-ie. To dokładnie ten pain o utracie kontekstu — ale teraz mam też konkretny case że to kosztuje deal-e B2B, nie tylko frustruje founderów.",
+      "author_id": "maciek",
+      "author_role": "founder",
+      "ingested_at": "2026-05-22T17:40:00+02:00",
+      "source_type": "employee_voice_note",
+      "review": {
+        "status": "pending",
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "review_comment": null
+      },
+      "related_entity_ids": [
+        "pain-lost-context-wa",
+        "pain-founder-detachment"
       ]
     }
   ]
