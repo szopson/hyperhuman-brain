@@ -16,6 +16,7 @@ const TABS = [
   { slug: 'review', label: 'Kolejka review', v: '0.2' },
   { slug: 'chat', label: 'Czat z mózgiem', v: '0.2' },
   { slug: 'eval', label: 'Telemetria', v: '0.2' },
+  { slug: 'architecture', label: 'Dalsza architektura', v: '0.2' },
 ];
 
 export async function AppShell({
