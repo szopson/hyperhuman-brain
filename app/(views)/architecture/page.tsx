@@ -1,10 +1,9 @@
 import { AppShell } from '@/components/layout/AppShell';
-import { MermaidDiagram } from '@/components/shared/MermaidDiagram';
 import { cn } from '@/lib/utils';
 
 export const dynamic = 'force-dynamic';
 
-const ARCHITECTURE_CHART = `
+const _UNUSED_CHART = `
 flowchart TB
     subgraph IN["WEJŚCIE · jak wiedza wpada do mózgu"]
         direction TB
@@ -136,12 +135,10 @@ export default function Page() {
           <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
             Diagram · wejście → rdzeń → wyjście + obserwacja
           </h2>
-          <div className="mt-3 rounded-md border border-zinc-800 bg-zinc-950 p-6">
-            <MermaidDiagram chart={ARCHITECTURE_CHART} id="arch" />
-          </div>
+          <ArchitectureDiagram />
           <p className="mt-2 font-mono text-[10px] text-zinc-500">
-            <span className="inline-block h-2 w-2 rounded-sm bg-emerald-700 align-middle" /> zielone · gotowe ·{' '}
-            <span className="inline-block h-2 w-2 rounded-sm bg-zinc-700 align-middle" /> szare · roadmapa v0.3+
+            <span className="inline-block h-2 w-2 rounded-sm bg-emerald-700 align-middle" /> zielone — gotowe ·{' '}
+            <span className="inline-block h-2 w-2 rounded-sm bg-zinc-700 align-middle" /> szare — roadmapa v0.3+
           </p>
         </section>
 
@@ -360,5 +357,177 @@ function MilestoneRow({
         ))}
       </ul>
     </article>
+  );
+}
+
+// ============= ARCHITECTURE DIAGRAM =============
+
+interface Box {
+  label: string;
+  sub?: string;
+  status: 'done' | 'todo';
+}
+
+function Node({ box }: { box: Box }) {
+  const isDone = box.status === 'done';
+  return (
+    <div
+      className={cn(
+        'rounded-md border px-3 py-2 text-center text-xs leading-tight',
+        isDone
+          ? 'border-emerald-800/60 bg-emerald-950/30 text-emerald-100'
+          : 'border-zinc-800 bg-zinc-950 text-zinc-400',
+      )}
+    >
+      <p className="font-medium">{box.label}</p>
+      {box.sub && (
+        <p className={cn('mt-0.5 font-mono text-[9px]', isDone ? 'text-emerald-300/60' : 'text-zinc-500')}>
+          {box.sub}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function Layer({
+  badge,
+  title,
+  subtitle,
+  tone,
+  children,
+}: {
+  badge: string;
+  title: string;
+  subtitle?: string;
+  tone: 'in' | 'core' | 'out' | 'obs';
+  children: React.ReactNode;
+}) {
+  const toneClass = {
+    in: 'border-sky-900/60 bg-sky-950/10',
+    core: 'border-indigo-900/60 bg-indigo-950/10',
+    out: 'border-violet-900/60 bg-violet-950/10',
+    obs: 'border-amber-900/60 bg-amber-950/10',
+  }[tone];
+  const badgeClass = {
+    in: 'bg-sky-900/60 text-sky-100',
+    core: 'bg-indigo-900/60 text-indigo-100',
+    out: 'bg-violet-900/60 text-violet-100',
+    obs: 'bg-amber-900/60 text-amber-100',
+  }[tone];
+  return (
+    <div className={cn('rounded-lg border p-4', toneClass)}>
+      <div className="mb-3 flex items-center gap-2">
+        <span className={cn('rounded px-2 py-0.5 font-mono text-[10px] tracking-widest', badgeClass)}>
+          {badge}
+        </span>
+        <h3 className="text-sm font-semibold text-zinc-100">{title}</h3>
+        {subtitle && <span className="font-mono text-[10px] text-zinc-500">{subtitle}</span>}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function Arrow({ label }: { label?: string }) {
+  return (
+    <div className="flex items-center justify-center py-1">
+      <div className="flex flex-col items-center text-zinc-600">
+        {label && <span className="font-mono text-[10px] uppercase tracking-widest">{label}</span>}
+        <span className="text-2xl leading-none">↓</span>
+      </div>
+    </div>
+  );
+}
+
+const INPUT_NODES: Box[] = [
+  { label: 'Rozmowa foundera', sub: 'Whisper transkrypt', status: 'done' },
+  { label: 'Notatki głosowe', sub: 'pracownicy', status: 'todo' },
+  { label: 'Formularze webowe', sub: 'pracownicy', status: 'todo' },
+  { label: 'Konektory', sub: 'Slack · GDrive · CRM · Allegro', status: 'todo' },
+];
+
+const CORE_NODES: Box[] = [
+  { label: 'Scoring engine', sub: 'deterministyczny TS', status: 'done' },
+  { label: 'Plays library', sub: '21 plays + CAVAC', status: 'done' },
+  { label: 'Brain API', sub: 'Next.js RSC + MCP', status: 'done' },
+];
+
+const OUTPUT_NODES: Box[] = [
+  { label: 'Panel', sub: '9 widoków · founder + konsultant', status: 'done' },
+  { label: 'Czat', sub: 'inline citations · zespół', status: 'done' },
+  { label: 'Briefing', sub: 'markdown + TTS audio', status: 'done' },
+  { label: 'Serwer MCP', sub: 'agenty · 5 toolów', status: 'done' },
+  { label: 'Eksporty', sub: 'JSON · Notion · Linear', status: 'todo' },
+];
+
+const OBS_NODES: Box[] = [
+  { label: 'Telemetria', sub: 'coverage · fidelity · velocity', status: 'done' },
+  { label: 'Audit log', sub: 'kto · kiedy · dlaczego', status: 'done' },
+  { label: 'History snapshots', sub: 'time-travel mózgu', status: 'done' },
+];
+
+function ArchitectureDiagram() {
+  return (
+    <div className="mt-3 rounded-md border border-zinc-800 bg-zinc-950 p-6">
+      <div className="space-y-2">
+        {/* WEJŚCIE */}
+        <Layer badge="01" title="WEJŚCIE" subtitle="jak wiedza wpada do mózgu" tone="in">
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+            {INPUT_NODES.map((n) => <Node key={n.label} box={n} />)}
+          </div>
+          <Arrow label="ekstrakcja" />
+          <div className="rounded-md border border-emerald-800/60 bg-emerald-950/30 px-4 py-3 text-center">
+            <p className="text-sm font-medium text-emerald-100">Phase A oraz A prim</p>
+            <p className="mt-0.5 font-mono text-[10px] text-emerald-300/70">
+              Claude Opus 4.7 · tool_use · Zod schema · wymuszone source quotes
+            </p>
+          </div>
+          <Arrow label="kandydaci" />
+          <div className="rounded-md border border-emerald-800/60 bg-emerald-950/30 px-4 py-3 text-center">
+            <p className="text-sm font-medium text-emerald-100">Kolejka review</p>
+            <p className="mt-0.5 font-mono text-[10px] text-emerald-300/70">
+              human-in-the-loop · approve lub reject · audit trail
+            </p>
+          </div>
+        </Layer>
+
+        <Arrow label="tylko approved" />
+
+        {/* RDZEŃ */}
+        <Layer badge="02" title="RDZEŃ" subtitle="single source of truth" tone="core">
+          <div className="rounded-md border border-zinc-700 bg-zinc-900 px-4 py-3 text-center">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-400">Baza danych</p>
+            <p className="mt-1 text-sm font-medium text-zinc-100">
+              JSON dziś → Postgres + Drizzle ORM (v0.3)
+            </p>
+            <p className="mt-1 font-mono text-[10px] text-zinc-500">
+              schemat Zod = jedyne źródło typów · cases · pains · risks · processes ·
+              plays · pending · source_quotes · audit_log · scoring_history
+            </p>
+          </div>
+          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            {CORE_NODES.map((n) => <Node key={n.label} box={n} />)}
+          </div>
+        </Layer>
+
+        <Arrow label="serwuje" />
+
+        {/* WYJŚCIE */}
+        <Layer badge="03" title="WYJŚCIE" subtitle="dla kogo i jak" tone="out">
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+            {OUTPUT_NODES.map((n) => <Node key={n.label} box={n} />)}
+          </div>
+        </Layer>
+
+        {/* OBSERWACJA */}
+        <div className="mt-2">
+          <Layer badge="04" title="OBSERWACJA" subtitle="niezależna warstwa kontroli" tone="obs">
+            <div className="grid gap-2 sm:grid-cols-3">
+              {OBS_NODES.map((n) => <Node key={n.label} box={n} />)}
+            </div>
+          </Layer>
+        </div>
+      </div>
+    </div>
   );
 }
