@@ -86,7 +86,8 @@ const STACK: StackRow[] = [
   { layer: 'Trwały storage', tech: 'Vercel Blob dla raw audio / transkryptów', status: 'todo', note: 'v0.3' },
   { layer: 'Voice in', tech: 'Whisper API dla notatek głosowych', status: 'todo', note: 'v0.3' },
   { layer: 'Voice out (briefing)', tech: 'OpenAI TTS lub ElevenLabs', status: 'todo', note: 'v0.4' },
-  { layer: 'Konektory ingestion', tech: 'Slack / Email / GDrive / WhatsApp / Allegro', status: 'todo', note: 'v0.4-0.5' },
+  { layer: 'WhatsApp connector', tech: 'Baileys na VPS · webhook · opt-in wątki · PII scrubber', status: 'todo', note: 'v0.5 priorytet #1' },
+  { layer: 'Pozostałe konektory', tech: 'Slack / Email / GDrive / Allegro / CRM (ten sam wzór adaptera)', status: 'todo', note: 'v0.5' },
   { layer: 'Auth + multi-tenant', tech: 'Clerk + per-case permissions', status: 'todo', note: 'v0.4' },
   { layer: 'Cron + ciągłe odświeżanie', tech: 'Vercel Cron + Phase A′ batch', status: 'todo', note: 'v0.4' },
   { layer: 'Cost tracking', tech: 'OpenTelemetry + Anthropic usage API', status: 'todo', note: 'v0.3' },
@@ -140,6 +141,174 @@ export default function Page() {
             <span className="inline-block h-2 w-2 rounded-sm bg-emerald-700 align-middle" /> zielone — gotowe ·{' '}
             <span className="inline-block h-2 w-2 rounded-sm bg-zinc-700 align-middle" /> szare — roadmapa v0.3+
           </p>
+        </section>
+
+        {/* WHATSAPP CASE STUDY */}
+        <section>
+          <h2 className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+            Kluczowy konektor · WhatsApp jako pierwszy priorytet
+          </h2>
+          <article className="mt-3 rounded-md border border-emerald-800/40 bg-emerald-950/10 p-5">
+            <div className="flex flex-wrap items-baseline gap-3">
+              <span className="rounded bg-emerald-900/60 px-2 py-0.5 font-mono text-[10px] tracking-widest text-emerald-100 ring-1 ring-emerald-700">
+                priorytet #1
+              </span>
+              <h3 className="text-lg font-semibold text-zinc-50">
+                97% komunikacji z klientem Stock-Hurt idzie przez WhatsApp
+              </h3>
+            </div>
+            <blockquote className="mt-3 border-l-2 border-emerald-700/60 pl-3 text-sm italic text-zinc-300">
+              &bdquo;W CRM wiadomości nie ma — tam są tylko zrealizowane transakcje."
+              <span className="ml-2 font-mono text-[10px] not-italic text-zinc-500">— founder Stock-Hurt</span>
+            </blockquote>
+            <p className="mt-3 text-sm text-zinc-400">
+              To największe źródło utraconego kontekstu w firmie i powód, dla którego WhatsApp
+              ląduje w architekturze <span className="text-emerald-300">na pierwszym miejscu</span>{' '}
+              — przed Slack, przed CRM, przed Allegro. Każdy konektor potem to ta sama mechanika,
+              tylko inny adapter.
+            </p>
+
+            <div className="mt-5 grid gap-4 lg:grid-cols-2">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-emerald-400">
+                  Architektura przepływu
+                </p>
+                <ol className="mt-2 space-y-2 text-sm text-zinc-300">
+                  <li className="flex gap-2">
+                    <span className="font-mono text-emerald-400">1.</span>
+                    <span>
+                      <span className="font-medium text-zinc-100">Connector na VPS</span> —
+                      biblioteka Baileys w Node.js, długo żyjąca sesja TCP do serwerów Mety.
+                      Mały daemon za 5 USD/mc (Vercel serverless nie utrzyma sesji).
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="font-mono text-emerald-400">2.</span>
+                    <span>
+                      <span className="font-medium text-zinc-100">Filtry</span> — tylko
+                      whitelisted biznesowe numery, tylko wątki oznaczone tagiem &bdquo;dla brain"
+                      w aplikacji managera, opt-in per klient w umowie.
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="font-mono text-emerald-400">3.</span>
+                    <span>
+                      <span className="font-medium text-zinc-100">Webhook</span> → POST{' '}
+                      <code className="rounded bg-zinc-900 px-1 font-mono text-[11px]">
+                        /api/ingest/whatsapp
+                      </code>{' '}
+                      na Vercelu. Walidacja schematem Zod, przekształcenie w PendingEntity
+                      z <code className="rounded bg-zinc-900 px-1 font-mono text-[11px]">source_type=&apos;chat_dump&apos;</code>.
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="font-mono text-emerald-400">4.</span>
+                    <span>
+                      <span className="font-medium text-zinc-100">Kolejka review</span> —
+                      manager widzi: kto pisał, kiedy, czego dotyczy. Klika approve.
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="font-mono text-emerald-400">5.</span>
+                    <span>
+                      <span className="font-medium text-zinc-100">Phase A&apos; ekstrakcja</span> —
+                      Claude Opus wyciąga pain / risk / metric / observation z dosłownym
+                      cytatem z wiadomości, auto-match do istniejących encji.
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="font-mono text-emerald-400">6.</span>
+                    <span>
+                      <span className="font-medium text-zinc-100">Mózg się aktualizuje</span> —
+                      z pełnym attribution: source_type, author_id, ingested_at. Scoring
+                      przelicza się on-the-fly.
+                    </span>
+                  </li>
+                </ol>
+              </div>
+
+              <div className="space-y-4">
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-emerald-400">
+                    Konkretny przykład wiadomości
+                  </p>
+                  <div className="mt-2 rounded-md border border-zinc-800 bg-zinc-950 p-3">
+                    <p className="font-mono text-[10px] text-zinc-500">handlowiec Krzysiek · WhatsApp · wczoraj 14:32</p>
+                    <p className="mt-1 text-sm text-zinc-200">
+                      &bdquo;Cześć, mam jeszcze ten Decathlon ze stycznia, pamiętasz?"
+                    </p>
+                  </div>
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+                    Co Phase A&apos; z tego wyciąga
+                  </p>
+                  <ul className="mt-1 space-y-1 text-xs text-zinc-400">
+                    <li>
+                      • <span className="text-zinc-200">kontekst klienta</span> — Decathlon link
+                      do istniejącego stakeholdera albo nowy
+                    </li>
+                    <li>
+                      • <span className="text-zinc-200">sygnał lost_context</span> — handlowiec
+                      pyta &bdquo;pamiętasz" = aktualizacja pain-lost-context-wa
+                    </li>
+                    <li>
+                      • <span className="text-zinc-200">metryka relacji</span> — time-since-last-interaction
+                      Decathlon ↔ Stock-Hurt
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-emerald-400">
+                    Privacy + zgodność
+                  </p>
+                  <ul className="mt-1 space-y-1 text-xs text-zinc-400">
+                    <li>• whitelist biznesowych numerów, opt-in w umowie</li>
+                    <li>• PII scrubber (telefony, PESEL, kwoty zostają — imiona anonimizowane jeśli umowa wymaga)</li>
+                    <li>• retention raw wiadomości 30 dni, potem tylko ekstrakcje</li>
+                    <li>• RODO export per klient na żądanie</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-md border border-zinc-800 bg-zinc-950 p-3">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+                  v0.5 · domyślne wdrożenie
+                </p>
+                <p className="mt-1 text-sm text-zinc-200">Baileys connector</p>
+                <p className="font-mono text-[10px] text-zinc-500">VPS ~5 USD/mc</p>
+              </div>
+              <div className="rounded-md border border-zinc-800 bg-zinc-950 p-3">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+                  fallback · pierwsze 30 dni pilotażu
+                </p>
+                <p className="mt-1 text-sm text-zinc-200">Manual export .zip</p>
+                <p className="font-mono text-[10px] text-zinc-500">klient eksportuje czat</p>
+              </div>
+              <div className="rounded-md border border-zinc-800 bg-zinc-950 p-3">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+                  upgrade · &gt;5 klientów na WA
+                </p>
+                <p className="mt-1 text-sm text-zinc-200">Oficjalna API Mety</p>
+                <p className="font-mono text-[10px] text-zinc-500">~0.02 zł / wiadomość</p>
+              </div>
+            </div>
+
+            <p className="mt-5 border-t border-emerald-900/40 pt-4 text-sm text-zinc-300">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-emerald-400">
+                Dlaczego ta architektura jest re-usable
+              </span>
+              <br />
+              Slack, Email, Allegro, CRM — każdy konektor to ten sam wzór: adapter źródła
+              → webhook → Zod walidacja → pending queue → bramka review → Phase A&apos; → mózg.{' '}
+              <span className="text-zinc-200">
+                Adapter się zmienia, reszta pipeline zostaje.
+              </span>{' '}
+              Dlatego WhatsApp jest najlepszym pierwszym connectorem — pokrywa największy pain,
+              udowadnia wzór, otwiera drogę dla pozostałych pięciu.
+            </p>
+          </article>
         </section>
 
         {/* TRZY ZASADY */}
@@ -254,17 +423,18 @@ export default function Page() {
                 'Clerk auth + per-case permissions',
                 'Vercel Cron + Phase A′ batch ingestion',
                 'TTS dla briefingu (audio dla foundera w samochodzie)',
-                'Pierwsze konektory: Slack + Google Drive',
+                'Pierwsze lekkie konektory: Slack + Google Drive',
               ]}
             />
             <MilestoneRow
               version="v0.5"
               status="produkcja v1.0"
-              title="Ekosystem"
+              title="Ekosystem · WhatsApp priorytet #1"
               items={[
+                'WhatsApp connector (Baileys na VPS) — pokrywa 97% komunikacji Stock-Hurt',
+                'Pozostałe konektory: Email · Allegro · CRM (ten sam wzór adaptera)',
                 'MCP po HTTP dla agentów partnerskich',
                 'Dwukierunkowy sync z Notion i Linear',
-                'Pozostałe konektory: Email · WhatsApp · Allegro · CRM',
                 'Marketplace plays library — kontrybucje społeczności',
               ]}
             />
@@ -440,10 +610,11 @@ function Arrow({ label }: { label?: string }) {
 }
 
 const INPUT_NODES: Box[] = [
+  { label: 'WhatsApp', sub: 'connector + opt-in wątki', status: 'todo' },
   { label: 'Rozmowa foundera', sub: 'Whisper transkrypt', status: 'done' },
   { label: 'Notatki głosowe', sub: 'pracownicy', status: 'todo' },
   { label: 'Formularze webowe', sub: 'pracownicy', status: 'todo' },
-  { label: 'Konektory', sub: 'Slack · GDrive · CRM · Allegro', status: 'todo' },
+  { label: 'Pozostałe konektory', sub: 'Slack · GDrive · CRM · Allegro · Email', status: 'todo' },
 ];
 
 const CORE_NODES: Box[] = [
@@ -472,7 +643,7 @@ function ArchitectureDiagram() {
       <div className="space-y-2">
         {/* WEJŚCIE */}
         <Layer badge="01" title="WEJŚCIE" subtitle="jak wiedza wpada do mózgu" tone="in">
-          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
             {INPUT_NODES.map((n) => <Node key={n.label} box={n} />)}
           </div>
           <Arrow label="ekstrakcja" />
