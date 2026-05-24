@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-import { updateEntityStatus } from '@/lib/storage/load-pending';
+import { updateEntityStatus, mergeApprovedToAnalysis } from '@/lib/storage/load-pending';
 
 const BodySchema = z.object({
   case_id: z.string().default('stock-hurt'),
@@ -20,5 +20,12 @@ export async function POST(req: Request) {
     parsed.reviewer,
     parsed.comment,
   );
-  return NextResponse.json({ ok: true, entity_count: queue.entities.length });
+
+  let merge: { snapshot?: string; added?: { kind: string; id: string; title: string } | null; reason?: string } | null = null;
+  if (parsed.status === 'approved') {
+    const result = mergeApprovedToAnalysis(parsed.case_id, parsed.entity_id);
+    merge = { snapshot: result.snapshotPath, added: result.added, reason: result.reason };
+  }
+
+  return NextResponse.json({ ok: true, entity_count: queue.entities.length, merge });
 }

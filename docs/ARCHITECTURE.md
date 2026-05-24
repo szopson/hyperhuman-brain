@@ -188,6 +188,38 @@ Snapshot dostał ticker `LiveBrainTicker` pokazujący w czasie rzeczywistym:
 
 Wizualnie destrukcja narracji „one-shot raport" — mózg ma żyć.
 
+## Sprint 3 · Domknięcie pętli + telemetria + historia *(v0.2)*
+
+Dziury które domykamy: (1) approve nie zmieniał `analysis-full.json`, (2) brak telemetrii pipeline-u, (3) brak historii i score deltas.
+
+### Auto-merge approved → brain
+
+`mergeApprovedToAnalysis(caseSlug, entityId)` w `lib/storage/load-pending.ts`:
+1. Snapshot bieżącego `analysis-full.json` → `outputs/history/{ISO}.json` (audit trail).
+2. Konwersja `PendingEntity` → minimalny `Pain` / `Risk` (entity_type-driven) z `source_quote` z payload-u, `source_role`/`source_type`/`author_id`/`ingested_at` z pending entity.
+3. Push do `analysis.pains` / `analysis.risks`, update `last_continuous_refresh`, zapis.
+
+Wywoływane z `app/api/review/route.ts` na każdy approve. UI feedback w `ReviewActions.tsx` pokazuje toast „dodano pain do mózgu".
+
+### `/eval` view · telemetria
+
+`lib/eval/metrics.ts` deterministycznie liczy z `analysis-full.json` + `pending-queue.json`:
+- **Schema validation** — zielone/czerwone na każdy plik
+- **Source quote coverage** — % painów/risków/procesów z ≥1 quote (target 100%)
+- **Scoring distribution** — histogram problem_score po bucketach, z czerwonym ostrzeżeniem o clamp ceiling 100/100
+- **Pending velocity** — total, pending now, approved 7d, approval ratio
+- **Phase A′ fidelity** — dla LLM-mode pending: % wpisów których `source_quote` faktycznie występuje w `raw_input` (sprawdza czy LLM nie halucynował cytatu)
+- **History** — count snapshotów + latest
+
+### Snapshot history + score delta
+
+`lib/storage/load-history.ts` czyta najnowszy snapshot z `outputs/history/`.
+`diffScores(prev, curr)` zwraca listę zmian ≥3pkt.
+- `scripts/generate-briefing.ts` dorzuca sekcję „Score deltas vs ostatni snapshot" z ↑/↓ arrows i wartościami prev → curr.
+- `LiveBrainTicker` na snapshot dorzuca top-pain delta label jeśli historia istnieje.
+
+Dzięki temu briefing pokazuje **`pain-X: 95 → 100 (+5)`** po approve nowego cytatu — mózg ma historię, nie tylko stan.
+
 ## Data flow per case
 
 ```mermaid

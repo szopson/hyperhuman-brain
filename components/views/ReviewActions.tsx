@@ -13,9 +13,11 @@ export function ReviewActions({ caseSlug, entityId }: Props) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
+  const [toast, setToast] = useState<string | null>(null);
 
   async function send(status: 'approved' | 'rejected') {
     setError(null);
+    setToast(null);
     const res = await fetch('/api/review', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -24,6 +26,18 @@ export function ReviewActions({ caseSlug, entityId }: Props) {
     if (!res.ok) {
       setError(`HTTP ${res.status}`);
       return;
+    }
+    const data = (await res.json()) as {
+      merge?: { added?: { kind: string; title: string } | null; reason?: string } | null;
+    };
+    if (status === 'approved') {
+      if (data.merge?.added) {
+        setToast(`→ dodano ${data.merge.added.kind}: "${data.merge.added.title.slice(0, 60)}…" do mózgu`);
+      } else if (data.merge?.reason) {
+        setToast(`approved (${data.merge.reason})`);
+      }
+    } else {
+      setToast('rejected');
     }
     startTransition(() => router.refresh());
   }
@@ -49,6 +63,7 @@ export function ReviewActions({ caseSlug, entityId }: Props) {
         Reject
       </Button>
       {error && <span className="text-xs text-rose-400">{error}</span>}
+      {toast && <span className="font-mono text-[11px] text-emerald-300">{toast}</span>}
     </div>
   );
 }

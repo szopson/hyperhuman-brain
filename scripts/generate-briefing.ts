@@ -19,6 +19,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { CompanyAnalysisSchema, PendingQueueSchema, type CompanyAnalysis, type PendingEntity } from '../lib/schemas';
 import { computeAllScores } from '../lib/scoring';
+import { loadLatestSnapshot, diffScores } from '../lib/storage/load-history';
 
 interface Args { caseSlug: string; since: Date }
 
@@ -101,6 +102,48 @@ function main() {
     lines.push(`   - kategoria: ${p.category} · emocja: ${p.founder_emotional_intensity} · severity: ${p.severity}`);
     if (p.founder_quoted_phrase) {
       lines.push(`   - cytat: *"${p.founder_quoted_phrase}"*`);
+    }
+  }
+  lines.push('');
+
+  lines.push('## Score deltas vs ostatni snapshot');
+  const prevSnap = loadLatestSnapshot(caseSlug);
+  if (!prevSnap) {
+    lines.push('*Brak poprzedniego snapshotu — pierwsze uruchomienie po merge.*');
+  } else {
+    const prevScores = computeAllScores(prevSnap.analysis);
+    const prevPainMap = new Map(
+      [...prevScores.problem_scores].map(([id, b]) => [id, b.final_score_0_100]),
+    );
+    const currPainMap = new Map(
+      [...problem_scores].map(([id, b]) => [id, b.final_score_0_100]),
+    );
+    const painTitles = new Map(a.pains.map((p) => [p.id, p.title]));
+    const painDeltas = diffScores(prevPainMap, currPainMap, painTitles, 3);
+
+    const prevRiskMap = new Map(
+      [...prevScores.risk_scores].map(([id, b]) => [id, b.severity_score_0_100]),
+    );
+    const currRiskMap = new Map(
+      [...risk_scores].map(([id, b]) => [id, b.severity_score_0_100]),
+    );
+    const riskTitles = new Map(a.risks.map((r) => [r.id, r.title]));
+    const riskDeltas = diffScores(prevRiskMap, currRiskMap, riskTitles, 3);
+
+    if (painDeltas.length === 0 && riskDeltas.length === 0) {
+      lines.push(`*Bez istotnych zmian (≥3pkt) vs snapshot z ${fmtDate(prevSnap.takenAtIso)}.*`);
+    } else {
+      lines.push(`*Vs snapshot z ${fmtDate(prevSnap.takenAtIso)} (Δ ≥ 3pkt):*`);
+      for (const d of painDeltas.slice(0, 5)) {
+        const arrow = d.delta > 0 ? '↑' : '↓';
+        const sign = d.delta > 0 ? '+' : '';
+        lines.push(`- ${arrow} **${d.title}** — ${d.prev.toFixed(0)} → ${d.curr.toFixed(0)} (${sign}${d.delta.toFixed(0)})`);
+      }
+      for (const d of riskDeltas.slice(0, 3)) {
+        const arrow = d.delta > 0 ? '↑' : '↓';
+        const sign = d.delta > 0 ? '+' : '';
+        lines.push(`- ${arrow} *risk* **${d.title}** — ${d.prev.toFixed(0)} → ${d.curr.toFixed(0)} (${sign}${d.delta.toFixed(0)})`);
+      }
     }
   }
   lines.push('');

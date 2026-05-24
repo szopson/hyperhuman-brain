@@ -64,6 +64,11 @@ W każdym widoku liczby są **klikalne**. Klik na Problem Score 100 dla pain-fou
 
 ## Co weszło w v0.2 (branch `feature/stock-hurt-v0.2`) — odpowiedź na feedback HyperHuman + przewaga konkurencyjna
 
+**Trzeci sprint v0.2** dorzucił domknięcie pętli operacyjnej:
+- **Auto-merge approve → brain** — approve w `/review` przekształca PendingEntity w pełnoprawny Pain/Risk, robi snapshot poprzedniej wersji do `outputs/history/` i wpycha do `analysis-full.json`. Pętla zamknięta: ingest → review → approve → mózg się zmienia.
+- **`/eval` view** — telemetria pipeline: schema validation, source quote coverage, scoring distribution z ostrzeżeniem clamp ceiling, pending velocity, Phase A′ extraction fidelity (czy LLM nie halucynuje cytatów). Odpowiedź na „jak mierzysz że to działa".
+- **Snapshot history + score deltas** — briefing pokazuje `pain-X: 95 → 100 (+5)` vs poprzedni snapshot, ticker pokazuje top-pain delta. Mózg ma historię.
+
 **Drugi sprint v0.2** dorzucił 4 rzeczy które celują w "AI System Lead" mindset:
 - **MCP server** — mózg jako tool surface dla innych agentów, nie tylko dashboard. `npm run mcp` startuje stdio server z 5 toolami (list_pains, list_risks, get_play, get_source_quote, get_next_step_pack).
 - **LLM-driven Phase A′** — `npm run ingest -- --llm` używa Claude Opus 4.7 + tool_use + Zod schema do strukturyzowanej ekstrakcji daily notes. Każda obserwacja dostaje verbatim source_quote i auto-match do istniejących encji.
