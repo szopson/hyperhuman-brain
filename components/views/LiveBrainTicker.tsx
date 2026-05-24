@@ -56,8 +56,11 @@ export async function LiveBrainTicker({
 
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-1 rounded-md border border-emerald-900/40 bg-emerald-950/10 px-3 py-2 font-mono text-[11px]">
-      <span className="flex items-center gap-1.5 text-emerald-300">
-        <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+      <span className="flex items-center gap-2 font-medium text-emerald-200">
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+        </span>
         brain live
       </span>
       {lastRefreshIso && (
