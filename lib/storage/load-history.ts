@@ -16,6 +16,21 @@ export interface HistorySnapshot {
  * Snapshots are written by mergeApprovedToAnalysis() in load-pending.ts.
  */
 export function loadLatestSnapshot(caseSlug: string): HistorySnapshot | null {
+  // Check in-memory history first (Vercel serverless fallback)
+  try {
+    // Lazy import to avoid circular dep
+    const { getInMemoryHistory } = require('./load-pending') as {
+      getInMemoryHistory: (slug: string) => { iso: string; analysis: CompanyAnalysis }[];
+    };
+    const mem = getInMemoryHistory(caseSlug);
+    if (mem.length > 0) {
+      const latest = mem[mem.length - 1];
+      return { takenAtIso: latest.iso, analysis: latest.analysis };
+    }
+  } catch {
+    // fall through
+  }
+
   const dir = historyDir(caseSlug);
   if (!fs.existsSync(dir)) return null;
   const files = fs

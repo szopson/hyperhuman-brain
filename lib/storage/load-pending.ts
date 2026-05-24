@@ -16,7 +16,40 @@ function queuePath(caseSlug: string): string {
   return path.join(process.cwd(), 'data/cases', caseSlug, 'outputs/pending-queue.json');
 }
 
+/**
+ * Hybrid storage: Vercel serverless filesystem is read-only (except /tmp ephemeral).
+ * We try fs.writeFileSync first (works locally + persistent). On EROFS fall back to
+ * an in-memory store on globalThis that survives across requests within the same
+ * warm Lambda. Demo state is preserved for the session; cold start resets to bundle.
+ */
+type StoreShape = {
+  queues: Map<string, PendingQueue>;
+  analyses: Map<string, CompanyAnalysis>;
+  histories: Map<string, { iso: string; analysis: CompanyAnalysis }[]>;
+};
+const _g = globalThis as unknown as { __brainStore?: StoreShape };
+if (!_g.__brainStore) {
+  _g.__brainStore = { queues: new Map(), analyses: new Map(), histories: new Map() };
+}
+const store = _g.__brainStore;
+
+function tryWriteFile(filePath: string, content: string): { ok: boolean; reason?: string } {
+  try {
+    fs.writeFileSync(filePath, content);
+    return { ok: true };
+  } catch (e) {
+    const code = (e as NodeJS.ErrnoException).code;
+    if (code === 'EROFS' || code === 'EACCES' || code === 'EPERM') {
+      return { ok: false, reason: 'read-only filesystem (Vercel serverless)' };
+    }
+    throw e;
+  }
+}
+
 export function loadPendingQueue(caseSlug = 'stock-hurt'): PendingQueue {
+  // Memory store wins (demo session state in prod)
+  const cached = store.queues.get(caseSlug);
+  if (cached) return cached;
   const p = queuePath(caseSlug);
   if (!fs.existsSync(p)) {
     return { case_id: caseSlug, generated_at: new Date().toISOString(), entities: [] };
@@ -42,7 +75,13 @@ export function updateEntityStatus(
     review_comment: comment,
   };
   queue.generated_at = new Date().toISOString();
-  fs.writeFileSync(queuePath(caseSlug), JSON.stringify(queue, null, 2));
+
+  const write = tryWriteFile(queuePath(caseSlug), JSON.stringify(queue, null, 2));
+  // Always update memory store — guarantees subsequent reads see the change.
+  store.queues.set(caseSlug, queue);
+  if (!write.ok) {
+    console.log(`[brain] pending queue persisted to memory store (${write.reason})`);
+  }
   return queue;
 }
 
@@ -57,12 +96,32 @@ function historyDir(caseSlug: string): string {
 }
 
 function snapshotAnalysis(caseSlug: string, analysis: CompanyAnalysis): string {
-  const dir = historyDir(caseSlug);
-  fs.mkdirSync(dir, { recursive: true });
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const snapPath = path.join(dir, `${stamp}.json`);
-  fs.writeFileSync(snapPath, JSON.stringify(analysis, null, 2));
+  const snapPath = path.join(historyDir(caseSlug), `${stamp}.json`);
+  try {
+    fs.mkdirSync(historyDir(caseSlug), { recursive: true });
+    fs.writeFileSync(snapPath, JSON.stringify(analysis, null, 2));
+  } catch (e) {
+    const code = (e as NodeJS.ErrnoException).code;
+    if (code !== 'EROFS' && code !== 'EACCES' && code !== 'EPERM') throw e;
+    // Fallback: keep history in memory store
+    const arr = store.histories.get(caseSlug) ?? [];
+    arr.push({ iso: stamp.replace(/-(\d{2})-(\d{2})-(\d{3}Z)$/, ':$1:$2.$3'), analysis });
+    store.histories.set(caseSlug, arr);
+  }
   return snapPath;
+}
+
+export function loadAnalysisFromStoreOrFile(caseSlug: string): CompanyAnalysis | null {
+  const cached = store.analyses.get(caseSlug);
+  if (cached) return cached;
+  const p = analysisPath(caseSlug);
+  if (!fs.existsSync(p)) return null;
+  return CompanyAnalysisSchema.parse(JSON.parse(fs.readFileSync(p, 'utf8')));
+}
+
+export function getInMemoryHistory(caseSlug: string) {
+  return store.histories.get(caseSlug) ?? [];
 }
 
 function buildSourceQuote(ent: PendingEntity): SourceQuote {
@@ -110,14 +169,13 @@ export function mergeApprovedToAnalysis(caseSlug: string, entityId: string): Mer
     return { snapshotPath: '', added: null, reason: 'not approved' };
   }
 
-  const analysisP = analysisPath(caseSlug);
-  if (!fs.existsSync(analysisP)) {
+  const analysis = loadAnalysisFromStoreOrFile(caseSlug);
+  if (!analysis) {
     return { snapshotPath: '', added: null, reason: 'no analysis-full.json' };
   }
-  const raw = JSON.parse(fs.readFileSync(analysisP, 'utf8'));
-  const analysis = CompanyAnalysisSchema.parse(raw);
+  const analysisP = analysisPath(caseSlug);
 
-  const snapshotPath = snapshotAnalysis(caseSlug, analysis);
+  const snapshotPath = snapshotAnalysis(caseSlug, structuredClone(analysis));
 
   const payload = ent.payload as { title?: string; description?: string };
   const title = payload?.title ?? ent.raw_input.split('\n')[0].slice(0, 120);
@@ -186,7 +244,11 @@ export function mergeApprovedToAnalysis(caseSlug: string, entityId: string): Mer
   }
 
   analysis.last_continuous_refresh = new Date().toISOString();
-  fs.writeFileSync(analysisP, JSON.stringify(analysis, null, 2));
+  const write = tryWriteFile(analysisP, JSON.stringify(analysis, null, 2));
+  store.analyses.set(caseSlug, analysis);
+  if (!write.ok) {
+    console.log(`[brain] analysis persisted to memory store (${write.reason})`);
+  }
 
   return { snapshotPath, added };
 }

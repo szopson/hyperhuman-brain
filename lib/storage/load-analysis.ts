@@ -26,6 +26,23 @@ function analysisPath(caseSlug: string): string {
 
 export const loadAnalysis = cache(async (): Promise<CompanyAnalysis> => {
   const caseSlug = await currentCaseSlug();
+  // Memory store wins (sprint 3 hybrid storage — survives read-only filesystem)
+  const { loadAnalysisFromStoreOrFile } = await import('./load-pending');
+  const fromStore = loadAnalysisFromStoreOrFile(caseSlug);
+  if (fromStore) {
+    const generatedAt = new Date(fromStore.metadata.generated_at);
+    const ageMs = Date.now() - generatedAt.getTime();
+    if (!Number.isFinite(ageMs) || ageMs > STALE_THRESHOLD_MS) {
+      const nowIso = new Date().toISOString();
+      return {
+        ...fromStore,
+        metadata: { ...fromStore.metadata, generated_at: nowIso },
+        last_continuous_refresh: fromStore.last_continuous_refresh ?? nowIso,
+      };
+    }
+    return fromStore;
+  }
+
   const ANALYSIS_PATH = analysisPath(caseSlug);
   if (!fs.existsSync(ANALYSIS_PATH)) {
     throw new Error(
